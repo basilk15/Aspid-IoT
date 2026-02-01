@@ -307,14 +307,16 @@ main::after {
 
 .hero-features {
   position: absolute;
-  right: clamp(0.5rem, 3vw, 2.8rem);
+  right: clamp(-2rem, -1vw, 0rem);
   top: 50%;
+  --hero-features-x: 8rem;
   display: flex;
   flex-direction: column;
   gap: clamp(0.6rem, 1.4vw, 1.1rem);
   text-align: left;
+  padding-right: 1.4rem;
   opacity: 0;
-  transform: translateY(calc(-50% + 16px));
+  transform: translateY(calc(-50% + 16px)) translateX(var(--hero-features-x, 0));
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
 }
@@ -322,12 +324,13 @@ main::after {
 .hero.hero--scrub .hero-features {
   transition: none;
   opacity: var(--hero-features-opacity, 0);
-  transform: translateY(calc(-50% + var(--hero-features-shift, 16px)));
+  transform: translateY(calc(-50% + var(--hero-features-shift, 16px)))
+    translateX(var(--hero-features-x, 0));
 }
 
 .hero-feature {
   font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: clamp(1.6rem, 3.8vw, 3.2rem);
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
   line-height: 1.1;
   letter-spacing: 0.04em;
   color: var(--ink);
@@ -356,7 +359,7 @@ main::after {
 
 .hero-dot {
   color: var(--accent);
-  margin-left: 0.25rem;
+  margin-left: 0.05rem;
   opacity: 0.8;
 }
 
