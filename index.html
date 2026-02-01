@@ -8,15 +8,30 @@
   </head>
   <body>
     <main>
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="hero-bg"></div>
+        <div class="hero-3d scene-layer" aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+        </div>
         <div class="hero-content">
-          <img class="logo" src="logo.png" alt="AspidIoT logo" />
+          <div class="hero-brand">
+            <div class="hero-core" aria-hidden="true"></div>
+            <img class="logo" src="logo.png" alt="AspidIoT logo" />
+            <p class="hero-tagline">Lightweight Cryptographic Framework for Secure IoT</p>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feature">Secure <span class="hero-dot">•</span></div>
+            <div class="hero-feature">Modular <span class="hero-dot">•</span></div>
+            <div class="hero-feature">Lightweight <span class="hero-dot">•</span></div>
+          </div>
         </div>
       </section>
 
-      <section class="narrative" aria-label="Project narrative">
+      <section class="narrative" id="narrative" aria-label="Project narrative">
         <div class="device-bridge" aria-hidden="true">
+          <div class="bridge-3d scene-layer">
+            <canvas id="bridge-canvas"></canvas>
+          </div>
           <img class="device device-left" src="esp32.png" alt="" />
           <div class="link-line">
             <span class="link-track"></span>
@@ -53,7 +68,7 @@
         </div>
       </section>
 
-      <section class="network" aria-label="Encrypted mesh to gateway">
+      <section class="network" id="network" aria-label="Encrypted mesh to gateway">
         <div class="network-content">
           <div class="network-text reveal">
             <p class="network-kicker">Encrypted Uplink</p>
@@ -65,39 +80,46 @@
             </p>
           </div>
           <div class="network-viz" aria-hidden="true">
-            <svg class="network-lines" viewBox="0 0 800 520" preserveAspectRatio="none">
-              <line class="line line-1" x1="96" y1="94" x2="400" y2="280" />
-              <line class="line line-2" x1="688" y1="104" x2="400" y2="280" />
-              <line class="line line-3" x1="80" y1="291" x2="400" y2="280" />
-              <line class="line line-4" x1="704" y1="312" x2="400" y2="280" />
-              <line class="line line-5" x1="176" y1="437" x2="400" y2="280" />
-              <line class="line line-6" x1="592" y1="458" x2="400" y2="280" />
-            </svg>
-            <div class="sink-node">
-              <div class="sink-screen"></div>
-              <div class="sink-base"></div>
-              <span class="sink-label">Gateway / Sink</span>
+            <div class="network-3d scene-layer">
+              <canvas id="network-canvas"></canvas>
             </div>
-            <div class="node node-1"><img src="esp32.png" alt="" /></div>
-            <div class="node node-2"><img src="esp32.png" alt="" /></div>
-            <div class="node node-3"><img src="esp32.png" alt="" /></div>
-            <div class="node node-4"><img src="esp32.png" alt="" /></div>
-            <div class="node node-5"><img src="esp32.png" alt="" /></div>
-            <div class="node node-6"><img src="esp32.png" alt="" /></div>
-            <div class="lwc-tag tag-1">LWC</div>
-            <div class="lwc-tag tag-2">LWC</div>
-            <div class="lwc-tag tag-3">LWC</div>
-            <div class="lwc-tag tag-4">LWC</div>
-            <div class="lwc-tag tag-5">LWC</div>
+            <div class="network-tooltip" aria-hidden="true"></div>
+            <div class="network-2d">
+              <svg class="network-lines" viewBox="0 0 800 520" preserveAspectRatio="none">
+                <line class="line line-1" x1="96" y1="94" x2="400" y2="280" />
+                <line class="line line-2" x1="688" y1="104" x2="400" y2="280" />
+                <line class="line line-3" x1="80" y1="291" x2="400" y2="280" />
+                <line class="line line-4" x1="704" y1="312" x2="400" y2="280" />
+                <line class="line line-5" x1="176" y1="437" x2="400" y2="280" />
+                <line class="line line-6" x1="592" y1="458" x2="400" y2="280" />
+              </svg>
+              <div class="sink-node">
+                <div class="sink-screen"></div>
+                <div class="sink-base"></div>
+                <span class="sink-label">Gateway / Sink</span>
+              </div>
+              <div class="node node-1"><img src="esp32.png" alt="" /></div>
+              <div class="node node-2"><img src="esp32.png" alt="" /></div>
+              <div class="node node-3"><img src="esp32.png" alt="" /></div>
+              <div class="node node-4"><img src="esp32.png" alt="" /></div>
+              <div class="node node-5"><img src="esp32.png" alt="" /></div>
+              <div class="node node-6"><img src="esp32.png" alt="" /></div>
+              <div class="lwc-tag tag-1">LWC</div>
+              <div class="lwc-tag tag-2">LWC</div>
+              <div class="lwc-tag tag-3">LWC</div>
+              <div class="lwc-tag tag-4">LWC</div>
+              <div class="lwc-tag tag-5">LWC</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="final">
+      <section class="final" id="final">
         <div class="coming-soon reveal">Coming Soon</div>
       </section>
     </main>
 
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
