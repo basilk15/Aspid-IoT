@@ -65,11 +65,13 @@ body::after {
   background-image:
     linear-gradient(90deg, rgba(89, 247, 255, 0.035) 1px, transparent 1px),
     linear-gradient(0deg, rgba(89, 247, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 20% 20%, rgba(89, 247, 255, 0.05), transparent 45%);
-  background-size: 180px 180px, 180px 180px, 100% 100%;
-  background-position: 0 0, 0 0, 0 0;
-  opacity: 0.35;
-  animation: gridDrift 80s linear infinite;
+    radial-gradient(circle, rgba(89, 247, 255, 0.75) 0 1.2px, transparent 2.8px),
+    radial-gradient(circle, rgba(125, 177, 255, 0.45) 0 1px, transparent 2.4px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 0 0.9px, transparent 2px);
+  background-size: 180px 180px, 180px 180px, 160px 160px, 110px 110px, 220px 220px;
+  background-position: 0 0, 0 0, 0 -600px, 90px -1200px, -40px -900px;
+  opacity: 0.6;
+  animation: starRain 16s linear infinite;
 }
 
 main::before {
@@ -425,8 +427,8 @@ body:not(.is-loaded) .hero-3d {
   position: relative;
   padding: 6rem 1.5rem 8rem;
   background:
-    linear-gradient(180deg, rgba(5, 7, 12, 0.96) 0%, rgba(6, 11, 20, 0.92) 100%),
-    radial-gradient(circle at 20% 80%, rgba(89, 247, 255, 0.08), transparent 50%);
+    linear-gradient(180deg, rgba(5, 7, 12, 0.22) 0%, rgba(6, 11, 20, 0.28) 100%),
+    radial-gradient(circle at 20% 80%, rgba(89, 247, 255, 0.12), transparent 55%);
 }
 
 .device-bridge {
@@ -668,7 +670,7 @@ body:not(.is-loaded) .hero-3d {
   padding: 5rem 1.5rem 7rem;
   background:
     radial-gradient(circle at 80% 10%, rgba(89, 247, 255, 0.12), transparent 50%),
-    linear-gradient(180deg, rgba(6, 10, 20, 0.92), rgba(3, 7, 15, 0.98));
+    linear-gradient(180deg, rgba(6, 10, 20, 0.62), rgba(3, 7, 15, 0.7));
 }
 
 .network-content {
@@ -964,7 +966,7 @@ body:not(.is-loaded) .hero-3d {
   padding: 5rem 1.5rem 6rem;
   background:
     radial-gradient(circle at 70% 20%, rgba(89, 247, 255, 0.16), transparent 55%),
-    linear-gradient(180deg, rgba(6, 10, 20, 0.94), rgba(3, 6, 13, 1));
+    linear-gradient(180deg, rgba(6, 10, 20, 0.65), rgba(3, 6, 13, 0.75));
 }
 
 .coming-soon {
@@ -1179,12 +1181,12 @@ body:not(.is-loaded) .hero-3d {
   }
 }
 
-@keyframes gridDrift {
+@keyframes starRain {
   0% {
-    background-position: 0 0, 0 0, 0 0;
+    background-position: 0 0, 0 0, 0 -600px, 90px -1200px, -40px -900px;
   }
   100% {
-    background-position: 180px 120px, -120px 180px, 0 0;
+    background-position: 180px 120px, -120px 180px, 0 1600px, 90px 1400px, -40px 1200px;
   }
 }
 
