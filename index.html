@@ -4,11 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AspidIoT | Research-Grade IoT VPN Framework</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=clarity-16" />
   </head>
   <body>
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="#home" data-nav-link>Home</a>
+          <a class="nav-link" href="#features" data-nav-link>Features</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu" id="products-menu" data-dropdown-panel>
+              <div class="mega-menu-head">
+                <p class="mega-menu-kicker">Featured Product</p>
+                <h2>Focused security infrastructure for modern IoT systems</h2>
+              </div>
+
+              <div class="mega-menu-grid">
+                <a class="product-card product-card-featured" href="#products" data-product-link>
+                  <span class="product-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false">
+                      <path d="M12 2l7 3v5c0 5.2-3.3 9.8-7 12-3.7-2.2-7-6.8-7-12V5l7-3zm0 4.1L8 7.8v2c0 3.7 2 7 4 8.7 2-1.7 4-5 4-8.7v-2l-4-1.7zm-.9 3h1.8v2h2v1.8h-2v2h-1.8v-2h-2V11h2V9.1z"/>
+                    </svg>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                      <span class="product-badge">New</span>
+                    </span>
+                    <span class="product-description">
+                      Lightweight authentication framework for secure communication and identity verification.
+                    </span>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#about" data-nav-link>About</a>
+          <a class="nav-link" href="#contact" data-nav-link>Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="button-link button-link-muted" href="#about">Sign In</a>
+          <a class="button-link button-link-primary" href="#products">Get Started</a>
+        </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="#features" data-mobile-link>Features</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <a class="mobile-product-card mobile-product-card-featured" href="#products" data-mobile-link>
+                <span class="mobile-product-title-row">
+                  <span>Auth-X</span>
+                  <span class="product-badge">New</span>
+                </span>
+                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="#about" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="#contact" data-mobile-link>Contact</a>
+
+          <div class="mobile-actions">
+            <a class="button-link button-link-muted" href="#about" data-mobile-link>Sign In</a>
+            <a class="button-link button-link-primary" href="#products" data-mobile-link>Get Started</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <main>
-      <section class="hero" id="hero">
+      <section class="hero" id="home">
         <div class="hero-bg"></div>
         <div class="hero-3d scene-layer" aria-hidden="true">
           <canvas id="hero-canvas"></canvas>
@@ -27,33 +157,84 @@
         </div>
       </section>
 
-      <section class="narrative" id="narrative" aria-label="Project narrative">
-        <div class="device-bridge" aria-hidden="true">
-          <div class="bridge-3d scene-layer">
+      <section class="narrative" id="features" aria-label="Project narrative">
+        <div class="narrative-intro">
+          <p class="section-kicker">Packet protection / live flow</p>
+          <h2 class="narrative-title">Readable data goes in. Protected telemetry comes out.</h2>
+          <p class="narrative-summary">
+            Watch a sensor payload cross the link, pass through the Lightweight Cryptography gate,
+            and arrive as ciphertext that an eavesdropper cannot read.
+          </p>
+        </div>
+
+        <div class="device-bridge">
+          <div class="device-node device-node-source">
+            <span class="device-status"><span class="status-dot"></span>Source node</span>
+            <img class="device" src="esp32.png" alt="" />
+            <span class="device-label">ESP32 <span>· sensor</span></span>
+          </div>
+
+          <div class="bridge-3d scene-layer" aria-hidden="true">
             <canvas id="bridge-canvas"></canvas>
           </div>
-          <img class="device device-left" src="esp32.png" alt="" />
+
           <div class="link-line">
-            <span class="link-track"></span>
+            <span class="flow-direction">Telemetry flow <span aria-hidden="true">→</span></span>
+            <span class="link-track" aria-hidden="true"></span>
+            <span class="track-zone track-zone-plain" aria-hidden="true">Readable</span>
+            <span class="track-zone track-zone-cipher" aria-hidden="true">Encrypted</span>
+
+            <div class="bridge-stage-label bridge-stage-plain" aria-hidden="true">
+              <span class="stage-index">01</span>
+              <span class="stage-copy"><strong>Readable payload</strong><small>Sensor values are visible</small></span>
+            </div>
+
             <div class="packet packet-plain">
-              <span class="packet-label">Plaintext Packet</span>
+              <span class="packet-label">Plaintext payload</span>
+              <span class="packet-meta">Temperature · humidity · gas</span>
               <pre class="packet-body">{ "temp": 24.7, "hum": 61, "gas": 0.02 }</pre>
             </div>
+
+            <div class="bridge-stage-label bridge-stage-encrypt" aria-hidden="true">
+              <span class="stage-index">02</span>
+              <span class="stage-copy"><strong>LWC encryption gate</strong><small>Payload is transformed here</small></span>
+            </div>
+
             <div class="packet packet-cipher">
-              <span class="packet-label">Encrypted (LWC)</span>
+              <span class="packet-label">Ciphertext</span>
+              <span class="packet-meta">Unreadable on the wire</span>
               <pre class="packet-body">9f 4b a2 7e c3 1d 88 04 6a 9b</pre>
             </div>
+
+            <div class="bridge-stage-label bridge-stage-deliver" aria-hidden="true">
+              <span class="stage-index">03</span>
+              <span class="stage-copy"><strong>Protected delivery</strong><small>Only the destination can use it</small></span>
+            </div>
+
             <div class="lock-indicator">
               <img src="lock-removebg-preview.png" alt="" />
-              <span class="lock-label">Secured</span>
+              <span class="lock-label"><strong>LWC gate</strong><small>Encrypted here</small></span>
             </div>
+
             <div class="hacker-figure">
               <img src="hacker-removebg-preview.png" alt="" />
-              <span class="hacker-tag">Eavesdropper</span>
+              <span class="hacker-tag"><strong>Eavesdropper blocked</strong><small>Cannot read the payload</small></span>
             </div>
           </div>
-          <img class="device device-right" src="esp32.png" alt="" />
+
+          <div class="device-node device-node-destination">
+            <span class="device-status"><span class="status-dot"></span>Destination node</span>
+            <img class="device" src="esp32.png" alt="" />
+            <span class="device-label">ESP32 <span>· receiver</span></span>
+          </div>
         </div>
+
+        <div class="bridge-legend" aria-label="Animation legend">
+          <span><i class="legend-swatch legend-swatch-plain"></i>Readable before encryption</span>
+          <span><i class="legend-swatch legend-swatch-gate"></i>Protected at the LWC gate</span>
+          <span><i class="legend-swatch legend-swatch-cipher"></i>Ciphertext in transit</span>
+        </div>
+
         <div class="story-sticky">
           <div class="story-lines">
             <p class="story-line is-active">A novel, end-to-end <span class="accent">VPN</span> framework.</p>
@@ -68,58 +249,189 @@
         </div>
       </section>
 
-      <section class="network" id="network" aria-label="Encrypted mesh to gateway">
+      <section class="network" id="network" aria-label="Encrypted device network">
         <div class="network-content">
           <div class="network-text reveal">
-            <p class="network-kicker">Encrypted Uplink</p>
-            <h2 class="network-title">LWC-secured telemetry to the sink</h2>
+            <p class="network-kicker">Encrypted tunnel / scalable hub-and-spoke</p>
+            <h2 class="network-title">Encrypted telemetry, built to scale.</h2>
             <p class="network-summary">
-              Multiple ESP32 nodes encrypt their telemetry with standardized Lightweight
-              Cryptography and transmit it to a high-resource gateway for aggregation,
-              policy enforcement, and monitoring.
+              Connected devices encrypt telemetry before sending it through authenticated tunnels
+              to a central server, where it is verified, decrypted, and aggregated.
             </p>
+            <div class="network-legend" aria-label="Network legend">
+              <span><i class="legend-device"></i>Sensor node</span>
+              <span><i class="legend-tunnel"></i>Encrypted channel</span>
+              <span><i class="legend-server"></i>Central server</span>
+            </div>
           </div>
           <div class="network-viz" aria-hidden="true">
-            <div class="network-3d scene-layer">
-              <canvas id="network-canvas"></canvas>
-            </div>
-            <div class="network-tooltip" aria-hidden="true"></div>
-            <div class="network-2d">
-              <svg class="network-lines" viewBox="0 0 800 520" preserveAspectRatio="none">
-                <line class="line line-1" x1="96" y1="94" x2="400" y2="280" />
-                <line class="line line-2" x1="688" y1="104" x2="400" y2="280" />
-                <line class="line line-3" x1="80" y1="291" x2="400" y2="280" />
-                <line class="line line-4" x1="704" y1="312" x2="400" y2="280" />
-                <line class="line line-5" x1="176" y1="437" x2="400" y2="280" />
-                <line class="line line-6" x1="592" y1="458" x2="400" y2="280" />
-              </svg>
-              <div class="sink-node">
-                <div class="sink-screen"></div>
-                <div class="sink-base"></div>
-                <span class="sink-label">Gateway / Sink</span>
+            <div class="network-viz-shell">
+              <div class="network-viz-topline">
+                <span>Secure channels</span>
+                <span class="network-live"><i></i>Network online</span>
               </div>
-              <div class="node node-1"><img src="esp32.png" alt="" /></div>
-              <div class="node node-2"><img src="esp32.png" alt="" /></div>
-              <div class="node node-3"><img src="esp32.png" alt="" /></div>
-              <div class="node node-4"><img src="esp32.png" alt="" /></div>
-              <div class="node node-5"><img src="esp32.png" alt="" /></div>
-              <div class="node node-6"><img src="esp32.png" alt="" /></div>
-              <div class="lwc-tag tag-1">LWC</div>
-              <div class="lwc-tag tag-2">LWC</div>
-              <div class="lwc-tag tag-3">LWC</div>
-              <div class="lwc-tag tag-4">LWC</div>
-              <div class="lwc-tag tag-5">LWC</div>
+
+              <svg class="network-map" viewBox="0 0 800 560" role="presentation">
+                <defs>
+                  <linearGradient id="network-route-gradient" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#88d9ff" stop-opacity="0.2" />
+                    <stop offset="0.5" stop-color="#59f7ff" stop-opacity="0.95" />
+                    <stop offset="1" stop-color="#8b7cff" stop-opacity="0.6" />
+                  </linearGradient>
+                  <filter id="network-packet-glow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <marker id="network-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#59f7ff" />
+                  </marker>
+                </defs>
+
+                <path class="network-route-base" d="M120 112 C235 105 280 220 365 277" />
+                <path class="network-route-line" d="M120 112 C235 105 280 220 365 277" marker-end="url(#network-arrow)" />
+                <path class="network-route-base" d="M680 112 C565 105 520 220 435 277" />
+                <path class="network-route-line" d="M680 112 C565 105 520 220 435 277" marker-end="url(#network-arrow)" />
+                <path class="network-route-base" d="M400 510 C400 438 400 385 400 348" />
+                <path class="network-route-line network-route-line-vertical" d="M400 510 C400 438 400 385 400 348" marker-end="url(#network-arrow)" />
+
+                <circle class="network-packet network-packet-forward" r="6" filter="url(#network-packet-glow)">
+                  <animateMotion dur="3.2s" begin="-0.4s" repeatCount="indefinite" path="M120 112 C235 105 280 220 365 277" />
+                </circle>
+                <circle class="network-packet network-packet-reply" r="4" filter="url(#network-packet-glow)">
+                  <animateMotion dur="3.2s" begin="-1.9s" repeatCount="indefinite" path="M365 277 C280 220 235 105 120 112" />
+                </circle>
+                <circle class="network-packet network-packet-forward" r="6" filter="url(#network-packet-glow)">
+                  <animateMotion dur="3.6s" begin="-1.1s" repeatCount="indefinite" path="M680 112 C565 105 520 220 435 277" />
+                </circle>
+                <circle class="network-packet network-packet-reply" r="4" filter="url(#network-packet-glow)">
+                  <animateMotion dur="3.6s" begin="-0.2s" repeatCount="indefinite" path="M435 277 C520 220 565 105 680 112" />
+                </circle>
+                <circle class="network-packet network-packet-forward" r="6" filter="url(#network-packet-glow)">
+                  <animateMotion dur="2.8s" begin="-0.8s" repeatCount="indefinite" path="M400 510 C400 438 400 385 400 348" />
+                </circle>
+                <circle class="network-packet network-packet-reply" r="4" filter="url(#network-packet-glow)">
+                  <animateMotion dur="2.8s" begin="-1.7s" repeatCount="indefinite" path="M400 348 C400 385 400 438 400 510" />
+                </circle>
+              </svg>
+
+              <div class="network-server">
+                <div class="network-server-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.4 19 5.5v5.1c0 5.1-3.1 9.4-7 11-3.9-1.6-7-5.9-7-11V5.5l7-3.1Zm0 3.1L9 6.8v3.7c0 3.3 1.7 6.3 3 7.3 1.3-1 3-4 3-7.3V6.8l-3-1.3Zm-.9 4h1.8v1.8h1.8v1.8h-1.8v1.8h-1.8v-1.8H9.2v-1.8h1.9V9.5Z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong>Central server</strong>
+                  <span>Verify · decrypt · aggregate</span>
+                </div>
+                <span class="network-server-state"><i></i>Secure</span>
+              </div>
+
+              <div class="network-node network-node-1">
+                <span class="network-node-top"><i></i>Edge node</span>
+                <strong>ESP32</strong>
+                <span>Encrypted uplink</span>
+              </div>
+              <div class="network-node network-node-2">
+                <span class="network-node-top"><i></i>Edge node</span>
+                <strong>ESP32</strong>
+                <span>Encrypted uplink</span>
+              </div>
+              <div class="network-node network-node-3">
+                <span class="network-node-top"><i></i>Edge node</span>
+                <strong>ESP32</strong>
+                <span>Encrypted uplink</span>
+              </div>
+
+              <span class="network-cipher network-cipher-1"><i></i>9F 4B 7E</span>
+              <span class="network-cipher network-cipher-2"><i></i>C3 1D 88</span>
+              <span class="network-cipher network-cipher-3"><i></i>6A 9B 04</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="final" id="final">
-        <div class="coming-soon reveal">Coming Soon</div>
+      <section class="products-section" id="products" aria-label="Products">
+        <div class="section-shell reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Products</p>
+            <h2 class="section-title">Auth-X brings lightweight identity and secure communication to constrained IoT devices.</h2>
+            <p class="section-summary">
+              Auth-X is the first AspidIoT product: a focused authentication layer for establishing trusted device sessions without unnecessary overhead.
+            </p>
+          </div>
+
+          <div class="product-showcase-grid">
+            <article class="showcase-card showcase-card-featured">
+              <div class="showcase-card-top">
+                <span class="showcase-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path d="M12 2l7 3v5c0 5.2-3.3 9.8-7 12-3.7-2.2-7-6.8-7-12V5l7-3zm0 4.1L8 7.8v2c0 3.7 2 7 4 8.7 2-1.7 4-5 4-8.7v-2l-4-1.7zm-.9 3h1.8v2h2v1.8h-2v2h-1.8v-2h-2V11h2V9.1z"/>
+                  </svg>
+                </span>
+                <span class="product-badge">New</span>
+              </div>
+              <h3>Auth-X</h3>
+              <p>
+                Lightweight authentication framework for secure communication and identity verification.
+              </p>
+              <ul class="showcase-list">
+                <li>Device identity verification for constrained environments</li>
+                <li>Low-overhead secure session establishment</li>
+                <li>Composable with the wider AspidIoT security stack</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-label="About AspidIoT">
+        <div class="section-shell about-grid reveal">
+          <div class="section-heading">
+            <p class="section-kicker">About</p>
+            <h2 class="section-title">Research-led foundations presented with a product-first mindset.</h2>
+            <p class="section-summary">
+              Built as an FYP, AspidIoT explores how secure-by-design networking, authentication, and monitoring can be packaged into a practical platform for modern connected systems.
+            </p>
+          </div>
+
+          <div class="about-panel">
+            <div class="about-metric">
+              <strong>1</strong>
+              <span>Active product module</span>
+            </div>
+            <div class="about-metric">
+              <strong>LWC</strong>
+              <span>Standardized cryptographic foundation</span>
+            </div>
+            <div class="about-metric">
+              <strong>ESP32</strong>
+              <span>Constrained-device deployment focus</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final" id="contact">
+        <div class="contact-panel reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 class="contact-title">Ready to explore Auth-X?</h2>
+          <p class="contact-copy">
+            Dive into the architecture, review the new Auth-X module, and position the project like a polished startup platform instead of a classroom prototype.
+          </p>
+          <div class="contact-actions">
+            <a class="button-link button-link-primary" href="#products">Get Started</a>
+            <a class="button-link button-link-muted" href="#about">Learn More</a>
+          </div>
+        </div>
       </section>
     </main>
 
     <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=network-3"></script>
   </body>
 </html>
