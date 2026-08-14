@@ -300,13 +300,24 @@ const ensureHeroUnlockedForViewport = () => {
 
   const heroTop = heroSection.offsetTop;
   const atHero = window.scrollY <= heroTop + 2;
-  if (!atHero || !shouldGateHero()) {
+  if (!atHero) {
+    heroHasExited = true;
     unlockHeroScroll();
-    if (!atHero) {
-      setHeroProgress(1);
-      heroTargetProgress = 1;
-      applyHeroState(2);
-    }
+    setHeroProgress(1);
+    heroTargetProgress = 1;
+    applyHeroState(2);
+    return;
+  }
+
+  if (shouldGateHero() && heroHasExited) {
+    heroHasExited = false;
+    setHeroProgress(0);
+    heroTargetProgress = 0;
+    applyHeroState(0);
+  }
+
+  if (!shouldGateHero()) {
+    unlockHeroScroll();
   }
 };
 
@@ -416,10 +427,11 @@ const setHeroLeftShift = () => {
 let heroProgress = 0;
 let heroLocked = false;
 let heroLeftShiftPx = 0;
-const HERO_SCRUB_DELTA = 650;
-const HERO_SCRUB_SMOOTH = 0.18;
+const HERO_SCRUB_DELTA = 1100;
+const HERO_SCRUB_SMOOTH = 0.14;
 let heroTargetProgress = 0;
 let heroScrubRaf = null;
+let heroHasExited = false;
 
 const unlockHeroScroll = () => {
   heroLocked = false;
@@ -439,16 +451,19 @@ const lockHeroScroll = () => {
 const setHeroProgress = (value) => {
   heroProgress = clamp(value, 0, 1);
   heroSection?.style.setProperty("--hero-progress", heroProgress.toFixed(3));
-  const logoProgress = clamp(heroProgress * 1.2, 0, 1);
-  const featureProgress = clamp((heroProgress - 0.35) * 1.6, 0, 1);
+  const orbitProgress = clamp((heroProgress - 0.06) / 0.42, 0, 1);
+  const orbitEase = orbitProgress * orbitProgress * (3 - 2 * orbitProgress);
+  const logoProgress = clamp((heroProgress - 0.68) / 0.32, 0, 1);
+  const featureProgress = clamp((heroProgress - 0.88) / 0.12, 0, 1);
   const logoShift = heroLeftShiftPx * logoProgress;
   const logoScale = 1 - 0.08 * logoProgress;
   const featuresShift = (1 - featureProgress) * 16;
   const featureShift = (1 - featureProgress) * 12;
-  const mobileFeatureOne = clamp((heroProgress - 0.18) / 0.18, 0, 1);
-  const mobileFeatureTwo = clamp((heroProgress - 0.4) / 0.18, 0, 1);
-  const mobileFeatureThree = clamp((heroProgress - 0.62) / 0.18, 0, 1);
-  const mobileActions = clamp((heroProgress - 0.82) / 0.18, 0, 1);
+  const mobileLogoProgress = clamp((heroProgress - 0.6) / 0.4, 0, 1);
+  const mobileFeatureOne = clamp((heroProgress - 0.84) / 0.06, 0, 1);
+  const mobileFeatureTwo = clamp((heroProgress - 0.9) / 0.06, 0, 1);
+  const mobileFeatureThree = clamp((heroProgress - 0.96) / 0.04, 0, 1);
+  const mobileActions = clamp((heroProgress - 0.99) / 0.01, 0, 1);
   heroSection?.style.setProperty("--hero-logo-progress", logoProgress.toFixed(3));
   heroSection?.style.setProperty("--hero-features-progress", featureProgress.toFixed(3));
   heroSection?.style.setProperty("--hero-logo-shift", `${logoShift.toFixed(2)}px`);
@@ -456,8 +471,12 @@ const setHeroProgress = (value) => {
   heroSection?.style.setProperty("--hero-features-opacity", featureProgress.toFixed(3));
   heroSection?.style.setProperty("--hero-features-shift", `${featuresShift.toFixed(2)}px`);
   heroSection?.style.setProperty("--hero-feature-shift", `${featureShift.toFixed(2)}px`);
-  heroSection?.style.setProperty("--mobile-logo-lift", `${(heroProgress * 150).toFixed(2)}px`);
-  heroSection?.style.setProperty("--mobile-logo-scale", (1 - heroProgress * 0.2).toFixed(3));
+  heroSection?.style.setProperty("--hero-orbit-opacity", orbitEase.toFixed(3));
+  heroSection?.style.setProperty("--hero-orbit-scale", (0.88 + orbitEase * 0.12).toFixed(3));
+  heroSection?.style.setProperty("--hero-core-opacity", (0.65 * orbitEase).toFixed(3));
+  heroSection?.style.setProperty("--hero-scroll-cue-opacity", clamp(1 - heroProgress * 5, 0, 1).toFixed(3));
+  heroSection?.style.setProperty("--mobile-logo-lift", `${(mobileLogoProgress * 150).toFixed(2)}px`);
+  heroSection?.style.setProperty("--mobile-logo-scale", (1 - mobileLogoProgress * 0.2).toFixed(3));
   heroSection?.style.setProperty("--mobile-feature-1", mobileFeatureOne.toFixed(3));
   heroSection?.style.setProperty("--mobile-feature-2", mobileFeatureTwo.toFixed(3));
   heroSection?.style.setProperty("--mobile-feature-3", mobileFeatureThree.toFixed(3));
@@ -702,15 +721,15 @@ const createHeroScene = (canvas, section) => {
   coreGroup.add(core);
 
   const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(1.9, 0.06, 20, 100),
+    new THREE.TorusGeometry(2.05, 0.1, 24, 120),
     new THREE.MeshStandardMaterial({
-      color: 0x0b1c2b,
+      color: 0x1b5364,
       metalness: 0.6,
       roughness: 0.2,
       emissive: 0x59f7ff,
-      emissiveIntensity: 0.45,
+      emissiveIntensity: 0.72,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.72,
     })
   );
   ring.rotation.x = Math.PI / 2.3;
@@ -720,9 +739,9 @@ const createHeroScene = (canvas, section) => {
   const ringBack = new THREE.Mesh(
     ring.geometry,
     new THREE.MeshBasicMaterial({
-      color: 0x0f2835,
+      color: 0x2a7b84,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.24,
     })
   );
   ringBack.rotation.x = ring.rotation.x;

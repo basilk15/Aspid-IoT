@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Auth-X is AspidIoT's lightweight device-authentication layer for trusted IoT sessions."
+    />
+    <title>Auth-X | Lightweight Device Authentication | AspidIoT</title>
+    <link rel="stylesheet" href="styles.css?v=clarity-18" />
+  </head>
+  <body class="auth-x-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home" data-nav-link>Home</a>
+          <a class="nav-link" href="index.html#features" data-nav-link>Features</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu" id="products-menu" data-dropdown-panel>
+              <div class="mega-menu-head">
+                <p class="mega-menu-kicker">Featured Product</p>
+                <h2>Focused security infrastructure for modern IoT systems</h2>
+              </div>
+
+              <div class="mega-menu-grid">
+                <a class="product-card product-card-featured" href="auth-x.html" data-product-link aria-current="page">
+                  <span class="product-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false">
+                      <path d="M12 2l7 3v5c0 5.2-3.3 9.8-7 12-3.7-2.2-7-6.8-7-12V5l7-3zm0 4.1L8 7.8v2c0 3.7 2 7 4 8.7 2-1.7 4-5 4-8.7v-2l-4-1.7zm-.9 3h1.8v2h2v1.8h-2v2h-1.8v-2h-2V11h2V9.1z"/>
+                    </svg>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                      <span class="product-badge">New</span>
+                    </span>
+                    <span class="product-description">
+                      Lightweight authentication framework for secure communication and identity verification.
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="index.html#about" data-nav-link>About</a>
+          <a class="nav-link" href="index.html#contact" data-nav-link>Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="index.html#features" data-mobile-link>Features</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link aria-current="page">
+                <span class="mobile-product-title-row">
+                  <span>Auth-X</span>
+                  <span class="product-badge">New</span>
+                </span>
+                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="index.html#about" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="index.html#contact" data-mobile-link>Contact</a>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="products-section auth-x-section" id="auth-x" aria-label="Auth-X product">
+        <div class="section-shell auth-x-shell">
+          <div class="auth-x-hero reveal">
+            <div class="auth-x-hero-copy">
+              <div class="auth-x-eyebrow">
+                <span class="auth-x-eyebrow-line"></span>
+                <span>Product / Auth-X</span>
+                <span class="product-badge">New</span>
+              </div>
+              <h1 class="auth-x-title">Trust every device before it earns a session.</h1>
+              <p class="auth-x-lede">
+                Auth-X is a lightweight identity layer for IoT systems that need reliable trust
+                decisions without the weight of enterprise infrastructure.
+              </p>
+              <div class="auth-x-actions">
+                <a class="button-link button-link-primary" href="#auth-x-benchmarks">View observed results</a>
+                <a class="button-link button-link-muted" href="#auth-x-flow">See how it works</a>
+              </div>
+              <div class="auth-x-trust-strip" aria-label="Auth-X characteristics">
+                <span><i></i>Device-first</span>
+                <span><i></i>Challenge-aware</span>
+                <span><i></i>LWC-ready</span>
+              </div>
+            </div>
+
+            <div class="auth-x-hero-visual auth-x-signal-flow" data-auth-x-signal aria-label="Generic Auth-X authentication message flow">
+              <div class="auth-x-signal-grid" aria-hidden="true"></div>
+              <div class="auth-x-signal-topline">
+                <span>SESSION NEGOTIATION</span>
+                <span><i></i>LIVE FLOW</span>
+              </div>
+
+              <div class="auth-x-signal-endpoints">
+                <span class="auth-x-signal-participant">
+                  <i></i><strong>DEVICE</strong><small>request origin</small>
+                </span>
+                <span class="auth-x-signal-participant auth-x-signal-participant-verifier">
+                  <i></i><strong>VERIFIER</strong><small>trust decision</small>
+                </span>
+              </div>
+
+              <div class="auth-x-signal-sequence">
+                <div class="auth-x-signal-row auth-x-signal-row-forward">
+                  <span class="auth-x-signal-index">01</span>
+                  <span class="auth-x-signal-copy"><strong>Identity request</strong><small>Device → verifier</small></span>
+                  <span class="auth-x-signal-line"><i></i></span>
+                </div>
+                <div class="auth-x-signal-row auth-x-signal-row-reverse">
+                  <span class="auth-x-signal-index">02</span>
+                  <span class="auth-x-signal-copy"><strong>Fresh challenge</strong><small>Verifier → device</small></span>
+                  <span class="auth-x-signal-line"><i></i></span>
+                </div>
+                <div class="auth-x-signal-row auth-x-signal-row-forward">
+                  <span class="auth-x-signal-index">03</span>
+                  <span class="auth-x-signal-copy"><strong>Proof response</strong><small>Device → verifier</small></span>
+                  <span class="auth-x-signal-line"><i></i></span>
+                </div>
+                <div class="auth-x-signal-row auth-x-signal-row-reverse">
+                  <span class="auth-x-signal-index">04</span>
+                  <span class="auth-x-signal-copy"><strong>Session confirmation</strong><small>Verifier → device</small></span>
+                  <span class="auth-x-signal-line"><i></i></span>
+                </div>
+              </div>
+
+              <div class="auth-x-orbit-stage" aria-hidden="true">
+                <span class="auth-x-orbit-stage-label">IDENTITY FORGED</span>
+                <div class="auth-x-forge-field">
+                  <span class="auth-x-forge-source auth-x-forge-source-left">
+                    <i></i><small>DEVICE ID</small>
+                  </span>
+                  <span class="auth-x-forge-source auth-x-forge-source-right">
+                    <small>VERIFIER ID</small><i></i>
+                  </span>
+                  <span class="auth-x-forge-impact"></span>
+                  <div class="auth-x-orbit-field">
+                    <span class="auth-x-orbit-ring auth-x-orbit-ring-one"></span>
+                    <span class="auth-x-orbit-ring auth-x-orbit-ring-two"></span>
+                    <strong class="auth-x-orbit-word">Auth-X</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="auth-x-signal-footer">
+                <span><i></i>PROTECTED HANDOFF</span>
+                <strong>SESSION READY</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-x-flow-section" id="auth-x-flow">
+            <div class="auth-x-section-heading reveal">
+              <p class="section-kicker">Authentication flow</p>
+              <h2 class="section-title">Four stages from device identity to a live secure session.</h2>
+              <p class="section-summary">
+                This is the implemented sequence: the device identifies itself, receives a fresh
+                challenge, proves the session, and completes confirmation before traffic is trusted.
+              </p>
+            </div>
+
+            <div class="auth-x-flow-grid">
+              <article class="auth-x-flow-card reveal">
+                <span class="auth-x-flow-index">01</span>
+                <span class="auth-x-flow-chip">Identity</span>
+                <h3>Start with device proof</h3>
+                <p>The device opens with its identity, a fresh nonce, and an integrity check.</p>
+              </article>
+              <article class="auth-x-flow-card reveal" data-delay="80">
+                <span class="auth-x-flow-index">02</span>
+                <span class="auth-x-flow-chip">Challenge</span>
+                <h3>Receive a fresh challenge</h3>
+                <p>The verifier returns a session-specific challenge before any trust decision is made.</p>
+              </article>
+              <article class="auth-x-flow-card reveal" data-delay="160">
+                <span class="auth-x-flow-index">03</span>
+                <span class="auth-x-flow-chip">Proof</span>
+                <h3>Prove the session</h3>
+                <p>The device answers with a challenge-bound proof; identity, freshness, and integrity are checked together.</p>
+              </article>
+              <article class="auth-x-flow-card reveal" data-delay="240">
+                <span class="auth-x-flow-index">04</span>
+                <span class="auth-x-flow-chip">Confirmation</span>
+                <h3>Confirm and install</h3>
+                <p>Both sides confirm the session context, then the protected device session is installed.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="auth-x-properties-section">
+            <div class="auth-x-section-heading reveal">
+              <p class="section-kicker">Security properties</p>
+              <h2 class="section-title">Guardrails around every trust decision.</h2>
+              <p class="section-summary">
+                These are properties of the authentication flow above—not additional handshake steps.
+              </p>
+            </div>
+
+            <div class="auth-x-feature-grid">
+              <article class="auth-x-feature-card reveal">
+                <span class="auth-x-feature-mark">BOUND</span>
+                <h3>Device-specific trust</h3>
+                <p>Separate device identities let the verifier make an intentional decision for every endpoint.</p>
+              </article>
+              <article class="auth-x-feature-card reveal" data-delay="80">
+                <span class="auth-x-feature-mark">FRESH</span>
+                <h3>Replay-aware by design</h3>
+                <p>Fresh challenge material keeps old proofs from becoming new permissions.</p>
+              </article>
+              <article class="auth-x-feature-card reveal" data-delay="160">
+                <span class="auth-x-feature-mark">STOP</span>
+                <h3>Fail-closed handoff</h3>
+                <p>Invalid, stale, or mismatched proofs stop the flow before a trusted session is installed.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="auth-x-benchmark-panel" id="auth-x-benchmarks">
+            <div class="auth-x-benchmark-heading reveal">
+              <div>
+                <p class="section-kicker">Observed lab evidence</p>
+                <h2 class="section-title">Proof you can put next to the promise.</h2>
+                <p class="section-summary">
+                  Results below come from the recorded 16 April EDS-3 server run and are shown as
+                  observed engineering evidence, not a universal performance guarantee.
+                </p>
+              </div>
+            </div>
+
+            <div class="auth-x-stat-grid">
+              <div class="auth-x-stat-card reveal" data-delay="80">
+                <strong>156<span>ms</span></strong>
+                <span>average to authentication success</span>
+                <small>server-side observation</small>
+              </div>
+              <div class="auth-x-stat-card reveal" data-delay="140">
+                <strong>88–279<span>ms</span></strong>
+                <span>observed authentication range</span>
+                <small>across observed runs</small>
+              </div>
+              <div class="auth-x-stat-card reveal" data-delay="200">
+                <strong>427<span>ms</span></strong>
+                <span>average to full session installation</span>
+                <small>including secure handoff</small>
+              </div>
+            </div>
+
+            <div class="auth-x-chart-grid">
+              <figure class="auth-x-chart auth-x-timing-chart reveal" data-delay="140">
+                <div class="auth-x-chart-heading">
+                  <div>
+                    <span class="auth-x-chart-kicker">Timing comparison</span>
+                    <h3>Authentication stays lightweight before session unlock.</h3>
+                  </div>
+                  <span class="auth-x-chart-scale">same scale · 0–500 ms</span>
+                </div>
+                <div class="auth-x-chart-axis" aria-hidden="true">
+                  <span>0</span>
+                  <span>100</span>
+                  <span>200</span>
+                  <span>300</span>
+                  <span>400</span>
+                  <span>500 ms</span>
+                </div>
+                <div class="auth-x-chart-body">
+                  <div class="auth-x-chart-row">
+                    <div class="auth-x-chart-label"><span>Authentication confirmed</span><strong>156 ms</strong></div>
+                    <div class="auth-x-chart-track"><span class="auth-x-chart-bar auth-x-chart-bar-auth" style="--chart-width: 31.2%"></span></div>
+                  </div>
+                  <div class="auth-x-chart-row">
+                    <div class="auth-x-chart-label"><span>Secure session installed</span><strong>427 ms</strong></div>
+                    <div class="auth-x-chart-track"><span class="auth-x-chart-bar auth-x-chart-bar-session" style="--chart-width: 85.4%"></span></div>
+                  </div>
+                </div>
+                <figcaption>Lower is faster. Both measures use the same observed server-side time scale.</figcaption>
+              </figure>
+
+              <figure class="auth-x-chart auth-x-range-chart reveal" data-delay="220">
+                <div class="auth-x-chart-heading">
+                  <div>
+                    <span class="auth-x-chart-kicker">Latency spread</span>
+                    <h3>The full observed authentication band.</h3>
+                  </div>
+                  <span class="auth-x-chart-scale">observed runs · 0–300 ms</span>
+                </div>
+                <div class="auth-x-chart-axis auth-x-range-axis" aria-hidden="true">
+                  <span>0</span>
+                  <span>100</span>
+                  <span>200</span>
+                  <span>300 ms</span>
+                </div>
+                <div class="auth-x-range-plot" role="img" aria-label="Authentication latency ranged from 88 to 279 milliseconds, with an average of 156 milliseconds." style="--range-start: 29.3%; --range-width: 63.7%; --range-end: 93%; --range-average: 52%;">
+                  <div class="auth-x-range-grid"></div>
+                  <span class="auth-x-range-band"></span>
+                  <span class="auth-x-range-average"><i></i><strong>156 ms avg</strong></span>
+                  <span class="auth-x-range-min">88</span>
+                  <span class="auth-x-range-max">279</span>
+                </div>
+                <div class="auth-x-range-legend">
+                  <span><i class="auth-x-legend-band"></i>observed range</span>
+                  <span><i class="auth-x-legend-average"></i>average</span>
+                </div>
+                <figcaption>Each point is an observed successful server-side authentication run.</figcaption>
+              </figure>
+            </div>
+
+          </div>
+
+          <div class="auth-x-product-footer reveal">
+            <div>
+              <span class="auth-x-product-footer-kicker">AspidIoT / Auth-X</span>
+              <strong>Start with identity. Scale into secure sessions.</strong>
+            </div>
+            <a class="button-link button-link-primary" href="index.html#contact">Talk to AspidIoT</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="auth-x.js?v=1"></script>
+  </body>
+</html>
