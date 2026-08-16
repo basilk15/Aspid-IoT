@@ -20,6 +20,8 @@ const productLinks = document.querySelectorAll("[data-product-link]");
 const navShell = document.querySelector(".nav-shell");
 const navTraceSvg = navShell?.querySelector(".nav-shell-trace svg");
 const navTracePath = navShell?.querySelector(".nav-shell-trace-path");
+let dropdownCloseTimer = null;
+let dropdownHoverOpened = false;
 
 const getNavTracePath = (width, height) => {
   const inset = 0.9;
@@ -89,11 +91,30 @@ const setMobileMenuState = (isOpen) => {
   document.body.classList.toggle("menu-open", isOpen && isMobileViewport());
 };
 
+const cancelDropdownClose = () => {
+  if (dropdownCloseTimer !== null) {
+    window.clearTimeout(dropdownCloseTimer);
+    dropdownCloseTimer = null;
+  }
+};
+
+const scheduleDropdownClose = () => {
+  cancelDropdownClose();
+  dropdownCloseTimer = window.setTimeout(() => {
+    dropdownCloseTimer = null;
+    setDropdownState(false);
+  }, 280);
+};
+
 const setDropdownState = (isOpen) => {
   if (!dropdown || !dropdownToggle || !dropdownPanel) {
     return;
   }
 
+  cancelDropdownClose();
+  if (!isOpen) {
+    dropdownHoverOpened = false;
+  }
   dropdown.classList.toggle("is-open", isOpen);
   dropdownToggle.setAttribute("aria-expanded", String(isOpen));
   dropdownPanel.setAttribute("aria-hidden", String(!isOpen));
@@ -311,9 +332,13 @@ const ensureHeroUnlockedForViewport = () => {
 
   if (shouldGateHero() && heroHasExited) {
     heroHasExited = false;
-    setHeroProgress(0);
-    heroTargetProgress = 0;
-    applyHeroState(0);
+    heroTargetProgress = 1;
+    setHeroProgress(1);
+    applyHeroState(2);
+    // A trackpad often still has momentum as it crosses back onto the hero.
+    // Briefly hold the completed composition, then let the next intentional
+    // gesture scrub it in reverse.
+    heroReentryCooldownUntil = performance.now() + 280;
   }
 
   if (!shouldGateHero()) {
@@ -341,30 +366,53 @@ dropdownToggle?.addEventListener("click", () => {
   if (isMobileViewport()) {
     return;
   }
-  setDropdownState(!dropdown?.classList.contains("is-open"));
+  const isOpen = dropdown?.classList.contains("is-open");
+  if (isOpen && dropdownHoverOpened) {
+    dropdownHoverOpened = false;
+    cancelDropdownClose();
+    return;
+  }
+  dropdownHoverOpened = false;
+  setDropdownState(!isOpen);
 });
 
 dropdown?.addEventListener("mouseenter", () => {
+  if (!isMobileViewport()) {
+    cancelDropdownClose();
+    if (!dropdown.classList.contains("is-open")) {
+      dropdownHoverOpened = true;
+      setDropdownState(true);
+    }
+  }
+});
+
+dropdown?.addEventListener("mouseleave", (event) => {
+  if (!isMobileViewport() && !dropdown.contains(event.relatedTarget)) {
+    scheduleDropdownClose();
+  }
+});
+
+dropdownPanel?.addEventListener("mouseenter", () => {
   if (!isMobileViewport()) {
     setDropdownState(true);
   }
 });
 
-dropdown?.addEventListener("mouseleave", () => {
-  if (!isMobileViewport()) {
-    setDropdownState(false);
+dropdownPanel?.addEventListener("mouseleave", (event) => {
+  if (!isMobileViewport() && !dropdown.contains(event.relatedTarget)) {
+    scheduleDropdownClose();
   }
 });
 
 dropdown?.addEventListener("focusin", () => {
   if (!isMobileViewport()) {
-    setDropdownState(true);
+    cancelDropdownClose();
   }
 });
 
 dropdown?.addEventListener("focusout", (event) => {
   if (!isMobileViewport() && !dropdown.contains(event.relatedTarget)) {
-    setDropdownState(false);
+    scheduleDropdownClose();
   }
 });
 
@@ -427,11 +475,41 @@ const setHeroLeftShift = () => {
 let heroProgress = 0;
 let heroLocked = false;
 let heroLeftShiftPx = 0;
-const HERO_SCRUB_DELTA = 1100;
-const HERO_SCRUB_SMOOTH = 0.14;
+// Let the hero complete in about two normal wheel/trackpad gestures while
+// retaining enough interpolation for the composition to feel fluid.
+const HERO_SCRUB_DELTA = 640;
+const HERO_SCRUB_SMOOTH = 0.16;
+const HERO_MAX_GESTURE_DELTA = 320;
+const HERO_GESTURE_IDLE_MS = 140;
 let heroTargetProgress = 0;
 let heroScrubRaf = null;
 let heroHasExited = false;
+let heroReentryCooldownUntil = 0;
+let heroGestureDelta = 0;
+let heroGestureDirection = 0;
+let heroLastWheelAt = 0;
+
+const getHeroWheelDelta = (event) => {
+  const unit = event.deltaMode === WheelEvent.DOM_DELTA_LINE
+    ? 16
+    : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
+      ? window.innerHeight
+      : 1;
+  const rawDelta = event.deltaY * unit;
+  const direction = Math.sign(rawDelta);
+  const now = performance.now();
+
+  if (direction !== heroGestureDirection || now - heroLastWheelAt > HERO_GESTURE_IDLE_MS) {
+    heroGestureDelta = 0;
+    heroGestureDirection = direction;
+  }
+
+  heroLastWheelAt = now;
+  const remaining = Math.max(HERO_MAX_GESTURE_DELTA - heroGestureDelta, 0);
+  const acceptedDelta = direction * Math.min(Math.abs(rawDelta), remaining);
+  heroGestureDelta += Math.abs(acceptedDelta);
+  return acceptedDelta;
+};
 
 const unlockHeroScroll = () => {
   heroLocked = false;
@@ -451,10 +529,17 @@ const lockHeroScroll = () => {
 const setHeroProgress = (value) => {
   heroProgress = clamp(value, 0, 1);
   heroSection?.style.setProperty("--hero-progress", heroProgress.toFixed(3));
-  const orbitProgress = clamp((heroProgress - 0.06) / 0.42, 0, 1);
-  const orbitEase = orbitProgress * orbitProgress * (3 - 2 * orbitProgress);
-  const logoProgress = clamp((heroProgress - 0.68) / 0.32, 0, 1);
-  const featureProgress = clamp((heroProgress - 0.88) / 0.12, 0, 1);
+
+  // Each piece uses an overlapping eased range. The previous staging reserved
+  // the last 12% for the feature words, so one upward trackpad gesture could
+  // remove them in a single frame.
+  const easeStage = (start, duration) => {
+    const progress = clamp((heroProgress - start) / duration, 0, 1);
+    return progress * progress * (3 - 2 * progress);
+  };
+  const orbitEase = easeStage(0.04, 0.6);
+  const logoProgress = easeStage(0.08, 0.92);
+  const featureProgress = easeStage(0, 1);
   const logoShift = heroLeftShiftPx * logoProgress;
   const logoScale = 1 - 0.08 * logoProgress;
   const featuresShift = (1 - featureProgress) * 16;
@@ -474,7 +559,7 @@ const setHeroProgress = (value) => {
   heroSection?.style.setProperty("--hero-orbit-opacity", orbitEase.toFixed(3));
   heroSection?.style.setProperty("--hero-orbit-scale", (0.88 + orbitEase * 0.12).toFixed(3));
   heroSection?.style.setProperty("--hero-core-opacity", (0.65 * orbitEase).toFixed(3));
-  heroSection?.style.setProperty("--hero-scroll-cue-opacity", clamp(1 - heroProgress * 5, 0, 1).toFixed(3));
+  heroSection?.style.setProperty("--hero-scroll-cue-opacity", (1 - easeStage(0, 0.3)).toFixed(3));
   heroSection?.style.setProperty("--mobile-logo-lift", `${(mobileLogoProgress * 150).toFixed(2)}px`);
   heroSection?.style.setProperty("--mobile-logo-scale", (1 - mobileLogoProgress * 0.2).toFixed(3));
   heroSection?.style.setProperty("--mobile-feature-1", mobileFeatureOne.toFixed(3));
@@ -610,12 +695,26 @@ const onWheel = (event) => {
     return;
   }
 
+  if (performance.now() < heroReentryCooldownUntil) {
+    lockHeroScroll();
+    event.preventDefault();
+    return;
+  }
+
   if ((direction > 0 && heroProgress >= 1) || (direction < 0 && heroProgress <= 0)) {
     unlockHeroScroll();
     return;
   }
 
-  const delta = event.deltaY / HERO_SCRUB_DELTA;
+  // A high-velocity trackpad event can otherwise swallow most of the whole
+  // hero timeline. Let one gesture advance a small, visible chapter instead.
+  const wheelDelta = getHeroWheelDelta(event);
+  if (wheelDelta === 0) {
+    event.preventDefault();
+    return;
+  }
+
+  const delta = wheelDelta / HERO_SCRUB_DELTA;
   heroTargetProgress = clamp(heroTargetProgress + delta, 0, 1);
   startHeroScrubAnimation();
   event.preventDefault();
@@ -644,6 +743,12 @@ const onTouchMove = (event) => {
     const direction = Math.sign(delta);
 
     if (direction === 0) {
+      return;
+    }
+
+    if (performance.now() < heroReentryCooldownUntil) {
+      lockHeroScroll();
+      event.preventDefault();
       return;
     }
 
