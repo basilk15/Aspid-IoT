@@ -418,6 +418,20 @@ html[data-theme="light"] .showcase-card-featured {
   border-color: rgba(5, 143, 166, 0.24);
 }
 
+html[data-theme="light"] .about-metric {
+  border-color: rgba(18, 64, 94, 0.14);
+  background: rgba(240, 247, 251, 0.72);
+}
+
+html[data-theme="light"] .about-metric strong {
+  color: #102a3f;
+  text-shadow: none;
+}
+
+html[data-theme="light"] .about-metric span {
+  color: rgba(16, 42, 63, 0.68);
+}
+
 html[data-theme="light"] .showcase-list li {
   color: rgba(16, 42, 63, 0.86);
 }
@@ -610,6 +624,30 @@ html[data-theme="light"] .auth-x-orbit-word,
 html[data-theme="light"] .auth-x-primitives-core span {
   color: #102a3f;
   text-shadow: 0 0 24px rgba(5, 143, 166, 0.3);
+}
+
+html[data-theme="light"] .auth-x-orbit-ring {
+  border-color: rgba(5, 143, 166, 0.72);
+  box-shadow:
+    0 0 18px rgba(5, 143, 166, 0.26),
+    0 0 0 1px rgba(5, 143, 166, 0.08);
+}
+
+html[data-theme="light"] .auth-x-orbit-ring-two {
+  border-color: rgba(105, 87, 198, 0.62);
+  box-shadow:
+    0 0 18px rgba(105, 87, 198, 0.24),
+    0 0 0 1px rgba(105, 87, 198, 0.08);
+}
+
+html[data-theme="light"] .auth-x-orbit-ring::before {
+  background: #058fa6;
+  box-shadow: 0 0 14px rgba(5, 143, 166, 0.78);
+}
+
+html[data-theme="light"] .auth-x-orbit-ring::after {
+  background: #6957c6;
+  box-shadow: 0 0 14px rgba(105, 87, 198, 0.72);
 }
 
 /* About and contact pages. */
