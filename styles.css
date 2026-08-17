@@ -478,6 +478,33 @@ main::after {
   fill: currentColor;
 }
 
+.product-icon-auth-x {
+  width: 6rem;
+  height: 3.6rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.product-icon-auth-x img,
+.mobile-product-logo img,
+.showcase-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(89, 247, 255, 0.24));
+}
+
+.showcase-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: min(100%, 12rem);
+  height: 4rem;
+}
+
 .product-icon-upcoming {
   border-style: dashed;
   border-color: rgba(208, 138, 239, 0.3);
@@ -1331,6 +1358,20 @@ body:not(.is-loaded) .hero-3d {
 
 .auth-x-hero-copy {
   max-width: 700px;
+}
+
+.auth-x-brand-lockup {
+  width: min(100%, 27rem);
+  margin-bottom: clamp(0.2rem, 1vw, 0.75rem);
+}
+
+.auth-x-brand-lockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(0 16px 30px rgba(2, 10, 22, 0.38))
+    drop-shadow(0 0 18px rgba(89, 247, 255, 0.18));
 }
 
 .auth-x-eyebrow {
@@ -4586,6 +4627,14 @@ body:not(.is-loaded) .hero-3d {
     text-decoration: none;
   }
 
+  .mobile-product-logo {
+    display: block;
+    width: min(100%, 15rem);
+    height: 3.85rem;
+    margin-bottom: 0.15rem;
+    padding: 0;
+  }
+
   .mobile-product-card span:first-child {
     color: #fff;
     font-weight: 600;
@@ -4726,6 +4775,10 @@ body:not(.is-loaded) .hero-3d {
   .about-section,
   .final {
     padding: 4rem 1.25rem 5.5rem;
+  }
+
+  .auth-x-section {
+    padding-top: 7.5rem;
   }
 
   .product-showcase-grid,

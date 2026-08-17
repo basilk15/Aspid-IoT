@@ -248,6 +248,13 @@ html[data-theme="light"] .showcase-icon {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
+html[data-theme="light"] .product-icon-auth-x,
+html[data-theme="light"] .mobile-product-logo {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 html[data-theme="light"] .product-icon-upcoming {
   border-color: rgba(105, 87, 198, 0.3);
   background: rgba(105, 87, 198, 0.1);
