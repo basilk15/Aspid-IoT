@@ -8,7 +8,7 @@
       content="AspidIoT builds lightweight security infrastructure for connected devices and IoT systems."
     />
     <title>AspidIoT | Lightweight Security for IoT</title>
-    <link rel="stylesheet" href="styles.css?v=clarity-23" />
+    <link rel="stylesheet" href="styles.css?v=clarity-41" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -75,12 +75,27 @@
                   </span>
                 </a>
 
+                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
+                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
+                    <span>+</span>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">More products</span>
+                      <span class="product-upcoming-label">Coming soon</span>
+                    </span>
+                    <span class="product-description">
+                      New security modules are in development. More tools for the secure edge are on the way.
+                    </span>
+                  </span>
+                </article>
+
               </div>
             </div>
           </div>
 
-          <a class="nav-link" href="#about" data-nav-link>About</a>
-          <a class="nav-link" href="#contact" data-nav-link>Contact</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
         </nav>
 
         <button
@@ -122,11 +137,18 @@
                 </span>
                 <span>Lightweight authentication framework for secure communication and identity verification.</span>
               </a>
+              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
+                <span class="mobile-product-title-row">
+                  <span>More products</span>
+                  <span class="mobile-product-upcoming-label">Coming soon</span>
+                </span>
+                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              </div>
             </div>
           </div>
 
-          <a class="mobile-nav-link" href="#about" data-mobile-link>About</a>
-          <a class="mobile-nav-link" href="#contact" data-mobile-link>Contact</a>
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
 
         </div>
       </div>
@@ -150,10 +172,6 @@
             <div class="hero-feature">Lightweight <span class="hero-dot">•</span></div>
           </div>
         </div>
-        <p class="hero-scroll-cue">
-          <span>Scroll to explore</span>
-          <span class="hero-scroll-cue-line" aria-hidden="true"></span>
-        </p>
       </section>
 
       <section class="narrative" id="features" aria-label="Project narrative">
@@ -413,16 +431,38 @@
       <section class="final" id="contact">
         <div class="contact-panel reveal">
           <p class="section-kicker">Contact</p>
-          <h2 class="contact-title">Ready to explore Auth-X?</h2>
+          <h2 class="contact-title">Meet the founder behind AspidIoT.</h2>
           <p class="contact-copy">
-            Dive into the architecture, review the new Auth-X module, and position the project like a polished startup platform instead of a classroom prototype.
+            Explore the work, the thinking, and the person building lightweight security infrastructure for connected devices.
           </p>
           <div class="contact-actions">
-            <a class="button-link button-link-muted" href="#about">Learn More</a>
+            <a class="button-link button-link-primary" href="contact.html">Meet the founder</a>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="#features">Features</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
     <script src="script.js?v=network-12"></script>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The story of AspidIoT: a final-year project that grew into a focused product direction for secure connected systems."
+    />
+    <title>About AspidIoT | From FYP to Product</title>
+    <link rel="stylesheet" href="styles.css?v=clarity-41" />
+  </head>
+  <body class="about-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home" data-nav-link>Home</a>
+          <a class="nav-link" href="index.html#features" data-nav-link>Features</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu" id="products-menu" data-dropdown-panel>
+              <div class="mega-menu-head">
+                <p class="mega-menu-kicker">Featured Product</p>
+                <h2>Focused security infrastructure for modern IoT systems</h2>
+              </div>
+
+              <div class="mega-menu-grid">
+                <a class="product-card product-card-featured" href="auth-x.html" data-product-link>
+                  <span class="product-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false">
+                      <path d="M12 2l7 3v5c0 5.2-3.3 9.8-7 12-3.7-2.2-7-6.8-7-12V5l7-3zm0 4.1L8 7.8v2c0 3.7 2 7 4 8.7 2-1.7 4-5 4-8.7v-2l-4-1.7zm-.9 3h1.8v2h2v1.8h-2v2h-1.8v-2h-2V11h2V9.1z" />
+                    </svg>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                      <span class="product-badge">New</span>
+                    </span>
+                    <span class="product-description">
+                      Lightweight authentication framework for secure communication and identity verification.
+                    </span>
+                  </span>
+                </a>
+
+                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
+                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
+                    <span>+</span>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">More products</span>
+                      <span class="product-upcoming-label">Coming soon</span>
+                    </span>
+                    <span class="product-description">
+                      New security modules are in development. More tools for the secure edge are on the way.
+                    </span>
+                  </span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link is-active" href="about.html" aria-current="page">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="index.html#features" data-mobile-link>Features</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
+                <span class="mobile-product-title-row">
+                  <span>Auth-X</span>
+                  <span class="product-badge">New</span>
+                </span>
+                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
+                <span class="mobile-product-title-row">
+                  <span>More products</span>
+                  <span class="mobile-product-upcoming-label">Coming soon</span>
+                </span>
+                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link is-active" href="about.html" aria-current="page">About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="about-lore-hero" id="about" aria-labelledby="about-title">
+        <span class="about-lore-orbit about-lore-orbit-one" aria-hidden="true"></span>
+        <span class="about-lore-orbit about-lore-orbit-two" aria-hidden="true"></span>
+
+        <div class="about-lore-shell">
+          <div class="about-lore-intro reveal">
+            <h1 id="about-title" class="about-lore-title">
+              A final-year project with somewhere to go.
+            </h1>
+            <p class="about-lore-lede">
+              AspidIoT began as a question inside a final-year project: how can connected devices
+              establish trust without carrying the weight of an enterprise stack? The answer became
+              a working security framework—and then a product direction of its own.
+            </p>
+
+            <div class="about-lore-links">
+              <a class="about-lore-link" href="auth-x.html">
+                <span>Explore Auth-X</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="about-lore-link about-lore-link-muted" href="contact.html">
+                <span>Meet the founder</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="about-origin-card reveal" data-delay="120" aria-label="AspidIoT project origin">
+            <div class="about-origin-head">
+              <span>Project origin</span>
+            </div>
+            <div class="about-origin-identity" role="img" aria-label="Habib University and AspidIoT">
+              <div class="about-origin-orbit" aria-hidden="true"></div>
+              <div class="about-origin-logo about-origin-logo-habib">
+                <img src="assets/brand/habib-university.svg" alt="Habib University seal" loading="lazy" decoding="async" />
+              </div>
+              <span class="about-origin-cross" aria-hidden="true">×</span>
+              <div class="about-origin-logo about-origin-logo-aspid">
+                <img src="logo.png" alt="AspidIoT shield mark" loading="lazy" decoding="async" />
+              </div>
+              <p class="about-origin-identity-label">Habib University <span aria-hidden="true">×</span> AspidIoT</p>
+            </div>
+            <p class="about-origin-title">Final year project</p>
+            <p class="about-origin-copy">
+              Research, hardware experiments, protocol design, and a working proof that secure IoT
+              can stay focused, legible, and lightweight.
+            </p>
+            <div class="about-origin-rule" aria-hidden="true"></div>
+            <p class="about-origin-foot">Research <span>→</span> prototype <span>→</span> product direction</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="about-story-section" id="origin" aria-labelledby="origin-title">
+        <div class="about-content-shell">
+          <div class="about-story-heading reveal">
+            <div>
+              <h2 id="origin-title" class="about-section-title">We started with a constraint, not a feature list.</h2>
+            </div>
+            <p class="about-section-summary">
+              An FYP has a deadline, limited hardware, and no room for vague abstractions. That pressure
+              gave AspidIoT its character: build the smallest trustworthy path from device identity to a
+              secure session, then make every part understandable.
+            </p>
+          </div>
+
+          <div class="about-story-list">
+            <article class="about-story-row reveal">
+              <div class="about-story-label">The question</div>
+              <div class="about-story-copy">
+                <h3>Can constrained devices earn trust?</h3>
+                <p>
+                  The project began around a practical problem: connected devices need reliable identity
+                  and authentication, but they cannot afford unnecessary complexity or overhead.
+                </p>
+              </div>
+            </article>
+
+            <article class="about-story-row reveal" data-delay="80">
+              <div class="about-story-label">The build</div>
+              <div class="about-story-copy">
+                <h3>Turn the research into a real exchange.</h3>
+                <p>
+                  We shaped the idea around lightweight cryptography, device identity, and a four-step
+                  message flow that could be tested on the edge instead of only explained on paper.
+                </p>
+              </div>
+            </article>
+
+            <article class="about-story-row reveal" data-delay="160">
+              <div class="about-story-label">The proof</div>
+              <div class="about-story-copy">
+                <h3>Make the architecture visible.</h3>
+                <p>
+                  Identity request, fresh challenge, proof response, and session confirmation became the
+                  spine of Auth-X: a sequence people can inspect, reason about, and build on.
+                </p>
+              </div>
+            </article>
+
+            <article class="about-story-row reveal" data-delay="240">
+              <div class="about-story-label">The next chapter</div>
+              <div class="about-story-copy">
+                <h3>Let the project grow beyond the submission.</h3>
+                <p>
+                  The FYP became the starting point. AspidIoT is now being shaped as a product platform,
+                  with Auth-X as its first module and more focused security tools on the way.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="about-content-shell">
+          <div class="about-story-heading about-evidence-heading reveal">
+            <div>
+              <h2 id="evidence-title" class="about-section-title">Built for the lab. Recognized beyond it.</h2>
+            </div>
+            <p class="about-section-summary">
+              The project was not only designed and documented—it was demonstrated as a working system,
+              then recognized by Habib University’s Computer Engineering program for the quality of its capstone design.
+            </p>
+          </div>
+
+          <div class="about-evidence-grid">
+            <figure class="about-evidence-card about-evidence-card-featured reveal">
+              <div class="about-evidence-image">
+                <img
+                  src="about-project-showcase.jpg"
+                  alt="AspidIoT team presenting a lightweight cryptography-based VPN framework for secure IoT communication."
+                />
+              </div>
+              <figcaption>
+                <div class="about-evidence-caption-head">
+                  <span>Capstone showcase</span>
+                </div>
+                <h3>From poster to working demonstration.</h3>
+                <p>
+                  The team brought the architecture into the room: a live demonstration of the lightweight
+                  cryptography-based VPN framework, its authentication flow, and its connected-device stack.
+                </p>
+              </figcaption>
+            </figure>
+
+            <figure class="about-evidence-card about-evidence-card-award reveal" data-delay="120">
+              <div class="about-evidence-image">
+                <img
+                  src="about-capstone-award.jpg"
+                  alt="AspidIoT team receiving recognition for Best Capstone Design Project in Computer Engineering."
+                />
+              </div>
+              <figcaption>
+                <div class="about-evidence-caption-head">
+                  <span>Academic validation</span>
+                </div>
+                <h3>Best Capstone Design Project</h3>
+                <p class="about-evidence-meta">Computer Engineering · Class of 2026 · Habib University</p>
+                <p>
+                  The recognition affirmed the engineering behind the work—and gave the project a stronger
+                  foundation to grow from a final-year submission into a product with a longer horizon.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-principles-section" id="approach" aria-labelledby="approach-title">
+        <div class="about-content-shell">
+          <div class="about-story-heading about-principles-heading reveal">
+            <div>
+              <h2 id="approach-title" class="about-section-title">The product grew. The principles stayed small.</h2>
+            </div>
+            <p class="about-section-summary">
+              AspidIoT is not trying to make connected systems feel heavier. It is about giving the edge
+              the right security primitives, in a form that is focused enough to ship and clear enough to trust.
+            </p>
+          </div>
+
+          <div class="about-principles-grid">
+            <article class="about-principle-card reveal">
+              <span class="about-principle-label">Edge efficiency</span>
+              <h3>Lightweight by necessity</h3>
+              <p>Every layer has to earn its place on a constrained device.</p>
+            </article>
+            <article class="about-principle-card reveal" data-delay="80">
+              <span class="about-principle-label">Session trust</span>
+              <h3>Trust before traffic</h3>
+              <p>Identity and freshness come before a session gets to move data.</p>
+            </article>
+            <article class="about-principle-card reveal" data-delay="160">
+              <span class="about-principle-label">Operational clarity</span>
+              <h3>Built to be understood</h3>
+              <p>Good security should be inspectable by the people who deploy it.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-next-section" id="next" aria-labelledby="next-title">
+        <div class="about-next-card reveal">
+          <div>
+            <h2 id="next-title" class="about-next-title">Auth-X is the first chapter, not the whole story.</h2>
+            <p class="about-next-copy">
+              The work is moving from a final-year milestone into a longer product journey: more modules,
+              more experiments, and a clearer security foundation for the connected edge.
+            </p>
+          </div>
+          <div class="about-next-links">
+            <a class="about-lore-link" href="auth-x.html">
+              <span>See the first module</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="about-lore-link about-lore-link-muted" href="contact.html">
+              <span>Talk to the founder</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="index.html#features">Features</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="script.js?v=network-14"></script>
+  </body>
+</html>

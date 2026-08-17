@@ -8,7 +8,8 @@
       content="Auth-X is AspidIoT's lightweight device-authentication layer for trusted IoT sessions."
     />
     <title>Auth-X | Lightweight Device Authentication | AspidIoT</title>
-    <link rel="stylesheet" href="styles.css?v=clarity-23" />
+    <link rel="stylesheet" href="styles.css?v=clarity-41" />
+    <link rel="stylesheet" href="auth-x-primitives.css?v=2" />
   </head>
   <body class="auth-x-page">
     <header class="site-header" data-header>
@@ -74,12 +75,26 @@
                     </span>
                   </span>
                 </a>
+                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
+                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
+                    <span>+</span>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">More products</span>
+                      <span class="product-upcoming-label">Coming soon</span>
+                    </span>
+                    <span class="product-description">
+                      New security modules are in development. More tools for the secure edge are on the way.
+                    </span>
+                  </span>
+                </article>
               </div>
             </div>
           </div>
 
-          <a class="nav-link" href="index.html#about" data-nav-link>About</a>
-          <a class="nav-link" href="index.html#contact" data-nav-link>Contact</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
         </nav>
 
         <button
@@ -121,11 +136,18 @@
                 </span>
                 <span>Lightweight authentication framework for secure communication and identity verification.</span>
               </a>
+              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
+                <span class="mobile-product-title-row">
+                  <span>More products</span>
+                  <span class="mobile-product-upcoming-label">Coming soon</span>
+                </span>
+                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              </div>
             </div>
           </div>
 
-          <a class="mobile-nav-link" href="index.html#about" data-mobile-link>About</a>
-          <a class="mobile-nav-link" href="index.html#contact" data-mobile-link>Contact</a>
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
 
         </div>
       </div>
@@ -243,6 +265,67 @@
               </article>
             </div>
           </div>
+
+          <section class="auth-x-primitives-section" id="auth-x-primitives" aria-labelledby="auth-x-primitives-title">
+            <div class="auth-x-primitives-heading reveal">
+              <div>
+                <p class="section-kicker">Cryptographic foundation</p>
+                <h2 class="section-title" id="auth-x-primitives-title">Established primitives. A distinctive composition.</h2>
+                <p class="section-summary">
+                  Auth-X brings together existing cryptographic primitives in a purpose-built, lightweight
+                  approach for connected devices.
+                </p>
+              </div>
+              <span class="auth-x-primitives-status">
+                <span>4 PRIMITIVES / ONE APPROACH</span>
+              </span>
+            </div>
+
+            <div class="auth-x-primitives-stage" data-auth-x-primitives>
+              <div class="auth-x-primitives-orbit" aria-label="Four cryptographic primitives used by Auth-X">
+                <div class="auth-x-primitives-orbit-track" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+
+                <div class="auth-x-primitives-core" aria-hidden="true">
+                  <span>AUTH-X</span>
+                  <small>distinctive composition</small>
+                </div>
+
+                <article class="auth-x-primitive-card auth-x-primitive-card-hkdf" data-primitive-card="hkdf">
+                  <span class="auth-x-primitive-mark auth-x-primitive-mark-hkdf" aria-hidden="true">
+                    <img src="assets/auth-x-logos/mbed-tls.png" alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <h3>HKDF-SHA-256</h3>
+                </article>
+
+                <article class="auth-x-primitive-card auth-x-primitive-card-hmac" data-primitive-card="hmac">
+                  <span class="auth-x-primitive-mark auth-x-primitive-mark-hmac" aria-hidden="true">
+                    <img src="assets/auth-x-logos/blake2.png" alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <h3>HMAC-BLAKE2s</h3>
+                </article>
+
+                <article class="auth-x-primitive-card auth-x-primitive-card-x25519" data-primitive-card="x25519">
+                  <span class="auth-x-primitive-mark auth-x-primitive-mark-x25519" aria-hidden="true">
+                    <img src="assets/auth-x-logos/monocypher.png" alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <h3>X25519 / Curve25519</h3>
+                </article>
+
+                <article class="auth-x-primitive-card auth-x-primitive-card-ascon" data-primitive-card="ascon">
+                  <span class="auth-x-primitive-mark auth-x-primitive-mark-ascon auth-x-primitive-mark-wordmark" aria-hidden="true">
+                    <span class="auth-x-primitive-wordmark">ascon</span>
+                  </span>
+                  <h3>Ascon-AEAD128</h3>
+                </article>
+              </div>
+            </div>
+
+            <p class="auth-x-primitives-note">
+              Built from existing cryptographic primitives and brought together in a purpose-built lightweight approach.
+            </p>
+          </section>
 
           <div class="auth-x-properties-section">
             <div class="auth-x-section-heading reveal">
@@ -368,12 +451,35 @@
               <span class="auth-x-product-footer-kicker">AspidIoT / Auth-X</span>
               <strong>Start with identity. Scale into secure sessions.</strong>
             </div>
-            <a class="button-link button-link-primary" href="index.html#contact">Talk to AspidIoT</a>
+            <a class="button-link button-link-primary" href="contact.html">Talk to AspidIoT</a>
           </div>
         </div>
       </section>
     </main>
 
-    <script src="auth-x.js?v=1"></script>
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="index.html#features">Features</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="auth-x.js?v=3"></script>
+    <script src="auth-x-primitives.js?v=2"></script>
   </body>
 </html>

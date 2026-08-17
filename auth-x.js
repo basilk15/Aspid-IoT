@@ -211,6 +211,7 @@ window.addEventListener("resize", () => {
 
 const authXHero = document.querySelector(".auth-x-hero");
 const authXSignalStage = document.querySelector("[data-auth-x-signal]");
+const AUTH_X_ORBIT_DELAY = 3200;
 let authXOrbitTimer = null;
 
 const queueAuthXOrbit = () => {
@@ -224,7 +225,7 @@ const queueAuthXOrbit = () => {
 
   authXOrbitTimer = window.setTimeout(() => {
     authXSignalStage.classList.add("is-orbiting");
-  }, 4300);
+  }, AUTH_X_ORBIT_DELAY);
 };
 
 if (authXHero && authXSignalStage && !prefersReducedMotion.matches) {

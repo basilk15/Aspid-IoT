@@ -559,7 +559,6 @@ const setHeroProgress = (value) => {
   heroSection?.style.setProperty("--hero-orbit-opacity", orbitEase.toFixed(3));
   heroSection?.style.setProperty("--hero-orbit-scale", (0.88 + orbitEase * 0.12).toFixed(3));
   heroSection?.style.setProperty("--hero-core-opacity", (0.65 * orbitEase).toFixed(3));
-  heroSection?.style.setProperty("--hero-scroll-cue-opacity", (1 - easeStage(0, 0.3)).toFixed(3));
   heroSection?.style.setProperty("--mobile-logo-lift", `${(mobileLogoProgress * 150).toFixed(2)}px`);
   heroSection?.style.setProperty("--mobile-logo-scale", (1 - mobileLogoProgress * 0.2).toFixed(3));
   heroSection?.style.setProperty("--mobile-feature-1", mobileFeatureOne.toFixed(3));
