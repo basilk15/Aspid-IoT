@@ -4461,9 +4461,12 @@ body:not(.is-loaded) .hero-3d {
     padding: 0.8rem 0.9rem 0.8rem 1rem;
   }
 
-  .site-nav,
-  .nav-actions {
+  .site-nav {
     display: none;
+  }
+
+  .nav-actions {
+    display: flex;
   }
 
   .nav-toggle {
