@@ -1476,3 +1476,110 @@ body.baudtide-page::after {
     animation: none;
   }
 }
+
+/* BaudTide follows the shared site theme while keeping the product UI
+   screenshots and phone preview intentionally dark, like the real app. */
+html[data-theme="light"] body.baudtide-page {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(5, 143, 166, 0.1), transparent 28%),
+    radial-gradient(circle at 12% 68%, rgba(105, 87, 198, 0.07), transparent 32%),
+    #edf5fb;
+  color: #102a3f;
+}
+
+html[data-theme="light"] body.baudtide-page::after {
+  background-image: none;
+  animation: none;
+  opacity: 0;
+}
+
+html[data-theme="light"] .baudtide-section {
+  background:
+    radial-gradient(circle at 10% 12%, rgba(5, 143, 166, 0.1), transparent 30%),
+    radial-gradient(circle at 92% 72%, rgba(105, 87, 198, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(237, 245, 251, 0.92));
+}
+
+html[data-theme="light"] .baudtide-eyebrow,
+html[data-theme="light"] .baudtide-proof-label,
+html[data-theme="light"] .baudtide-stack-heading {
+  color: rgba(16, 42, 63, 0.58);
+}
+
+html[data-theme="light"] .baudtide-mark,
+html[data-theme="light"] .baudtide-cta-mark {
+  border-color: rgba(5, 143, 166, 0.25);
+  background:
+    radial-gradient(circle at 35% 30%, rgba(5, 143, 166, 0.14), transparent 60%),
+    rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 12px 28px rgba(38, 78, 108, 0.1);
+}
+
+html[data-theme="light"] .baudtide-wordmark,
+html[data-theme="light"] .baudtide-title,
+html[data-theme="light"] .baudtide-open-source .section-title,
+html[data-theme="light"] .baudtide-section-heading .section-title,
+html[data-theme="light"] .baudtide-feature-row h3,
+html[data-theme="light"] .baudtide-proof-copy h3,
+html[data-theme="light"] .baudtide-built-copy .section-title,
+html[data-theme="light"] .baudtide-cta .section-title {
+  color: #102a3f;
+  text-shadow: none;
+}
+
+html[data-theme="light"] .baudtide-lede,
+html[data-theme="light"] .baudtide-open-source .section-summary,
+html[data-theme="light"] .baudtide-facts small,
+html[data-theme="light"] .baudtide-feature-row > div:nth-child(2) p,
+html[data-theme="light"] .baudtide-feature-detail,
+html[data-theme="light"] .baudtide-proof-copy p,
+html[data-theme="light"] .baudtide-cta .section-summary {
+  color: rgba(16, 42, 63, 0.68);
+}
+
+html[data-theme="light"] .baudtide-facts,
+html[data-theme="light"] .baudtide-feature-list,
+html[data-theme="light"] .baudtide-proof-rail,
+html[data-theme="light"] .baudtide-stack-heading,
+html[data-theme="light"] .baudtide-stack-grid div,
+html[data-theme="light"] .baudtide-cta {
+  border-color: rgba(18, 64, 94, 0.14);
+}
+
+html[data-theme="light"] .baudtide-facts strong,
+html[data-theme="light"] .baudtide-feature-meta span:first-child,
+html[data-theme="light"] .baudtide-stack-grid strong,
+html[data-theme="light"] .baudtide-evidence-card figcaption strong {
+  color: rgba(16, 42, 63, 0.86);
+}
+
+html[data-theme="light"] .baudtide-feature-meta,
+html[data-theme="light"] .baudtide-feature-meta span:last-child,
+html[data-theme="light"] .baudtide-proof-label,
+html[data-theme="light"] .baudtide-stack-heading span:last-child,
+html[data-theme="light"] .baudtide-hero-proof figcaption span:last-child {
+  color: #058fa6;
+}
+
+html[data-theme="light"] .baudtide-proof-copy .baudtide-proof-label,
+html[data-theme="light"] .baudtide-hero-proof figcaption,
+html[data-theme="light"] .baudtide-evidence-card figcaption,
+html[data-theme="light"] .baudtide-stack-grid span {
+  color: rgba(16, 42, 63, 0.56);
+}
+
+html[data-theme="light"] .baudtide-feature-detail {
+  border-left-color: rgba(5, 143, 166, 0.28);
+}
+
+html[data-theme="light"] .baudtide-proof-media {
+  background: #dfeef5;
+}
+
+html[data-theme="light"] .baudtide-phone-halo {
+  border-color: rgba(5, 143, 166, 0.18);
+  background: radial-gradient(circle, rgba(5, 143, 166, 0.12), rgba(105, 87, 198, 0.04) 42%, transparent 70%);
+  box-shadow:
+    0 0 0 1.2rem rgba(5, 143, 166, 0.03),
+    0 0 0 3rem rgba(105, 87, 198, 0.018);
+}

@@ -7,8 +7,16 @@
       name="description"
       content="AspidIoT builds lightweight security infrastructure for connected devices and IoT systems."
     />
-    <title>AspidIoT | Lightweight Security for IoT</title>
-    <link rel="stylesheet" href="styles.css?v=clarity-43" />
+   <title>AspidIoT | Lightweight Security for IoT</title>
+    <script>
+      try {
+        if (localStorage.getItem("aspid-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch {}
+    </script>
+   <link rel="stylesheet" href="styles.css?v=clarity-43" />
+    <link rel="stylesheet" href="theme.css?v=3" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -111,20 +119,44 @@
 
           <a class="nav-link" href="about.html">About</a>
           <a class="nav-link" href="contact.html">Contact</a>
-        </nav>
+       </nav>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          data-nav-toggle
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light mode"
+            title="Switch to light mode"
+          >
+            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="3.25"></circle>
+                <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-label" data-theme-label>Light</span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
@@ -510,6 +542,7 @@
     </footer>
 
     <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+    <script src="theme.js?v=1"></script>
     <script src="script.js?v=network-12"></script>
   </body>
 </html>
