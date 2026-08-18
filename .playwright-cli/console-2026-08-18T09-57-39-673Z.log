@@ -1,0 +1,6 @@
+[       1ms] Error: Page crashed and was reset to about:blank.
+    at _Tab.logErrorMessage (/home/basil/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/lib/coreBundle.js:64466:62)
+    at Context.ensureTab (/home/basil/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/lib/coreBundle.js:64820:28)
+    at async Object.handle (/home/basil/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/lib/coreBundle.js:66546:22)
+    at async BrowserBackend.callTool (/home/basil/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/lib/coreBundle.js:65552:11)
+    at async connection.onmessage (/home/basil/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/lib/coreBundle.js:73726:29)

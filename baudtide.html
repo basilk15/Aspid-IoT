@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BaudTide is AspidIoT's open-source Linux serial monitor for ESP32, Arduino, and USB/TTY devices."
+    />
+    <title>BaudTide | Open-Source Serial Monitoring | AspidIoT</title>
+    <link rel="stylesheet" href="styles.css?v=clarity-43" />
+    <link rel="stylesheet" href="baudtide.css?v=4" />
+  </head>
+  <body class="baudtide-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home">Home</a>
+          <a class="nav-link" href="index.html#features">Features</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu" id="products-menu" data-dropdown-panel>
+              <div class="mega-menu-head">
+                <p class="mega-menu-kicker">Product constellation</p>
+                <h2>Focused tools for secure, observable connected devices</h2>
+              </div>
+
+              <div class="mega-menu-grid">
+                <a class="product-card product-card-featured" href="auth-x.html" data-product-link>
+                  <span class="product-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false">
+                      <path d="M12 2l7 3v5c0 5.2-3.3 9.8-7 12-3.7-2.2-7-6.8-7-12V5l7-3zm0 4.1L8 7.8v2c0 3.7 2 7 4 8.7 2-1.7 4-5 4-8.7v-2l-4-1.7zm-.9 3h1.8v2h2v1.8h-2v2h-1.8v-2h-2V11h2V9.1z" />
+                    </svg>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                      <span class="product-badge">New</span>
+                    </span>
+                    <span class="product-description">Lightweight authentication framework for secure communication and identity verification.</span>
+                  </span>
+                </a>
+
+                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link aria-current="page">
+                  <span class="product-icon product-icon-baudtide" aria-hidden="true">
+                    <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">BaudTide</span>
+                      <span class="product-badge product-badge-open">Open source</span>
+                    </span>
+                    <span class="product-description">A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.</span>
+                  </span>
+                </a>
+
+                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
+                  <span class="product-icon product-icon-upcoming" aria-hidden="true"><span>+</span></span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">More products</span>
+                      <span class="product-upcoming-label">Coming soon</span>
+                    </span>
+                    <span class="product-description">New security modules are in development. More tools for the secure edge are on the way.</span>
+                  </span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="index.html#features" data-mobile-link>Features</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
+                <span class="mobile-product-title-row"><span>Auth-X</span><span class="product-badge">New</span></span>
+                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link aria-current="page">
+                <span class="mobile-product-title-row"><span>BaudTide</span><span class="product-badge product-badge-open">Open source</span></span>
+                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
+              </a>
+              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
+                <span class="mobile-product-title-row"><span>More products</span><span class="mobile-product-upcoming-label">Coming soon</span></span>
+                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="baudtide-section" aria-label="BaudTide open-source product">
+        <div class="baudtide-shell">
+          <div class="baudtide-hero">
+            <div class="baudtide-hero-copy reveal">
+              <div class="baudtide-eyebrow">
+                <span class="baudtide-eyebrow-line"></span>
+                <span>Open source / BaudTide</span>
+                <span class="product-badge product-badge-open">MIT license</span>
+              </div>
+
+              <div class="baudtide-brandlockup">
+                <span class="baudtide-mark"><img src="assets/baudtide/baudtide-mark.png" alt="BaudTide mark" /></span>
+                <span class="baudtide-wordmark">baud<span>tide</span></span>
+              </div>
+
+              <h1 class="baudtide-title">Give every device a clearer signal.</h1>
+              <p class="baudtide-lede">
+                BaudTide is AspidIoT's open-source Linux serial monitor for ESP32, Arduino, and USB/TTY devices—built to make embedded development calmer, more observable, and easier to share.
+              </p>
+
+              <div class="baudtide-actions">
+                <a class="button-link button-link-primary" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Open BaudTide on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="button-link button-link-muted" href="#baudtide-features">Explore the workspace</a>
+              </div>
+
+              <div class="baudtide-facts" aria-label="BaudTide product facts">
+                <span><strong>Linux desktop</strong><small>native serial access</small></span>
+                <span><strong>ESP32 + Arduino</strong><small>made for the bench</small></span>
+                <span><strong>Tauri + React</strong><small>Rust-backed workspace</small></span>
+              </div>
+            </div>
+
+            <figure class="baudtide-hero-proof reveal" data-delay="120">
+              <div class="baudtide-screenshot-frame baudtide-screenshot-hero">
+                <img class="baudtide-screenshot-image" src="assets/baudtide/screenshots/welcome.png" alt="BaudTide welcome screen showing a live serial capture preview and device-first setup." />
+              </div>
+              <figcaption><span>BaudTide overview</span><span>Local-first serial workspace</span></figcaption>
+            </figure>
+          </div>
+
+          <section class="baudtide-open-source reveal" aria-labelledby="baudtide-open-source-title">
+            <div>
+              <p class="section-kicker">Open-source ambition</p>
+              <h2 class="section-title" id="baudtide-open-source-title">Tools for the bench should belong to the community using them.</h2>
+              <p class="section-summary">
+                BaudTide is our contribution to the greater IoT community: a public, inspectable workspace for the everyday work between a board, a serial line, and the engineer trying to understand what just happened.
+              </p>
+            </div>
+            <div class="baudtide-open-source-points">
+              <div><span>01</span><strong>Build in public</strong><p>Let the roadmap, issues, and implementation stay visible to the people building with connected hardware.</p></div>
+              <div><span>02</span><strong>Keep the signal local</strong><p>Capture raw device output on the machine where the work is happening, with exports when the team needs them.</p></div>
+              <div><span>03</span><strong>Make contribution easier</strong><p>Give embedded developers a focused starting point for testing, observing, and extending the serial workflow.</p></div>
+            </div>
+          </section>
+
+          <section class="baudtide-feature-section" id="baudtide-features" aria-labelledby="baudtide-features-title">
+            <div class="baudtide-section-heading reveal">
+              <p class="section-kicker">What ships inside</p>
+              <h2 class="section-title" id="baudtide-features-title">One workspace for the whole serial loop.</h2>
+              <p class="section-summary">From the first port discovery to the final exported log, BaudTide keeps embedded debugging readable and close to the device.</p>
+            </div>
+
+            <div class="baudtide-feature-list">
+              <article class="baudtide-feature-row reveal">
+                <div class="baudtide-feature-meta"><span>01</span><span>SET UP</span></div>
+                <div>
+                  <h3>Start with a board, not a configuration maze.</h3>
+                  <p>Discover serial ports automatically or enter a path manually, then keep multiple devices open in tabs or side-by-side views.</p>
+                </div>
+                <p class="baudtide-feature-detail">Auto-discovery / manual paths / session tabs</p>
+              </article>
+              <article class="baudtide-feature-row reveal" data-delay="60">
+                <div class="baudtide-feature-meta"><span>02</span><span>READ + SEND</span></div>
+                <div>
+                  <h3>Read telemetry without leaving the terminal.</h3>
+                  <p>Detect structured values from live output, visualize the fields that matter, and send text or raw hexadecimal with per-device line endings.</p>
+                </div>
+                <p class="baudtide-feature-detail">Live parsing / selected fields / text + hex</p>
+              </article>
+              <article class="baudtide-feature-row reveal" data-delay="120">
+                <div class="baudtide-feature-meta"><span>03</span><span>CAPTURE</span></div>
+                <div>
+                  <h3>Keep the raw signal, even when the screen gets noisy.</h3>
+                  <p>Pause or filter the display while capture continues, then browse, search, preview, export, or delete local logs and saved layouts.</p>
+                </div>
+                <p class="baudtide-feature-detail">Non-destructive capture / local logs / saved workspaces</p>
+              </article>
+              <article class="baudtide-feature-row reveal" data-delay="180">
+                <div class="baudtide-feature-meta"><span>04</span><span>SHARE</span></div>
+                <div>
+                  <h3>Share the useful view, not the whole bench.</h3>
+                  <p>Open a focused, read-only mobile view over the local network, with QR links and explicit opt-in before any remote control is exposed.</p>
+                </div>
+                <p class="baudtide-feature-detail">Local network / read-only by default / opt-in control</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="baudtide-evidence-section" id="baudtide-proof" aria-labelledby="baudtide-proof-title">
+            <div class="baudtide-section-heading reveal">
+              <p class="section-kicker">Product proof / interface tour</p>
+              <h2 class="section-title" id="baudtide-proof-title">See the workspace before you wire in.</h2>
+              <p class="section-summary">These screens are captured from BaudTide's own interface preview, so the promise stays tied to the product people can actually open, inspect, and extend.</p>
+            </div>
+
+            <div class="baudtide-proof-rail">
+              <figure class="baudtide-proof-row reveal">
+                <div class="baudtide-proof-media baudtide-proof-media-terminal">
+                  <img src="assets/baudtide/screenshots/live-terminal.png" alt="BaudTide live terminal screen with an ESP32 environmental sensor session and terminal controls." decoding="async" />
+                </div>
+                <figcaption class="baudtide-proof-copy">
+                  <div class="baudtide-proof-label"><span>02 / LIVE TERMINAL</span></div>
+                  <h3>Independent terminals for every device.</h3>
+                  <p>Reconnect, pause, clear, and filter per session while the rest of the bench stays in view.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="baudtide-proof-row baudtide-proof-row-reverse reveal" data-delay="100">
+                <div class="baudtide-proof-media baudtide-mobile-stage" role="img" aria-label="iPhone-style BaudTide mobile companion showing a read-only ESP32 environmental sensor session shared over a local network.">
+                  <div class="baudtide-phone-halo" aria-hidden="true"></div>
+                  <div class="baudtide-phone">
+                    <div class="baudtide-phone-bezel">
+                      <div class="baudtide-phone-screen">
+                        <div class="baudtide-phone-island" aria-hidden="true"></div>
+                        <div class="baudtide-phone-status" aria-hidden="true"><span>9:41</span><span>5G&nbsp;&nbsp;84%</span></div>
+
+                        <div class="baudtide-phone-appbar">
+                          <div class="baudtide-phone-brand"><img src="assets/baudtide/baudtide-mark.png" alt="" /><span>baud<span>tide</span></span></div>
+                          <span class="baudtide-phone-live">LIVE</span>
+                        </div>
+
+                        <div class="baudtide-phone-content">
+                          <p class="baudtide-phone-kicker">Mobile companion</p>
+                          <h4>ESP32 environmental sensor</h4>
+                          <p class="baudtide-phone-subtitle">Read-only session · local network</p>
+
+                          <div class="baudtide-phone-session">
+                            <div class="baudtide-phone-session-head"><span>Signal stable</span><span>115,200 baud</span></div>
+                            <div class="baudtide-phone-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                          </div>
+
+                          <div class="baudtide-phone-log">
+                            <div class="baudtide-phone-log-head"><span>LIVE OUTPUT</span><span>00:14:32</span></div>
+                            <div class="baudtide-phone-log-line"><span>14:32:01.002</span><strong>temp=24.8°C</strong></div>
+                            <div class="baudtide-phone-log-line"><span>14:32:02.104</span><strong>hum=48.2%</strong></div>
+                            <div class="baudtide-phone-log-line baudtide-phone-log-line-active"><span>14:32:03.201</span><strong>air=stable</strong></div>
+                          </div>
+
+                          <div class="baudtide-phone-readonly"><span>Read-only by default</span><small>Shared from desktop</small></div>
+                        </div>
+                        <div class="baudtide-phone-homebar" aria-hidden="true"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption class="baudtide-proof-copy">
+                  <div class="baudtide-proof-label"><span>03 / MOBILE SHARE</span></div>
+                  <h3>Give the team a window into the signal.</h3>
+                  <p>Share a focused, read-only view with a phone on the local network without handing over the desktop workspace.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="baudtide-proof-row reveal" data-delay="160">
+                <div class="baudtide-proof-media baudtide-proof-media-visualize">
+                  <img src="assets/baudtide/screenshots/visualize.png" alt="BaudTide Visualize screen for inspecting numeric telemetry from an ESP32 session." decoding="async" />
+                </div>
+                <figcaption class="baudtide-proof-copy">
+                  <div class="baudtide-proof-label"><span>04 / VISUALIZE</span></div>
+                  <h3>Turn repeatable bytes into a visible signal.</h3>
+                  <p>Inspect numeric telemetry beside the terminal so changing device values are easier to understand in context.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="baudtide-built-section" aria-labelledby="baudtide-built-title">
+            <div class="baudtide-built-copy reveal">
+              <p class="section-kicker">Built for the real bench</p>
+              <h2 class="section-title" id="baudtide-built-title">Small enough to stay out of the way. Thoughtful enough to earn a place in the loop.</h2>
+              <p class="section-summary">BaudTide pairs a Tauri v2 desktop shell with a React + TypeScript interface and Rust-backed Linux serial access—so the UI stays calm while the device work stays real.</p>
+            </div>
+            <div class="baudtide-stack-panel reveal" data-delay="100">
+              <div class="baudtide-stack-heading"><span>BaudTide / stack</span><span>In active development</span></div>
+              <div class="baudtide-stack-grid">
+                <div><strong>Tauri v2</strong><span>desktop shell</span></div>
+                <div><strong>Rust</strong><span>native serial access</span></div>
+                <div><strong>React</strong><span>workspace UI</span></div>
+                <div><strong>TypeScript</strong><span>product logic</span></div>
+                <div><strong>Vite</strong><span>fast preview loop</span></div>
+                <div><strong>Local files</strong><span>raw capture library</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="baudtide-cta reveal" aria-labelledby="baudtide-cta-title">
+            <div class="baudtide-cta-mark"><img src="assets/baudtide/baudtide-mark.png" alt="" /></div>
+            <div>
+              <p class="section-kicker">AspidIoT / open-source ambitions</p>
+              <h2 class="section-title" id="baudtide-cta-title">Use it, test it, shape what comes next.</h2>
+              <p class="section-summary">The repository is the front door: read the code, try the workflow, report what your hardware needs, and help make IoT tooling more open by default.</p>
+            </div>
+            <div class="baudtide-actions">
+              <a class="button-link button-link-primary" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Visit the BaudTide repository <span aria-hidden="true">↗</span></a>
+              <a class="button-link button-link-muted" href="contact.html">Talk to AspidIoT</a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="index.html#features">Features</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="baudtide.html">BaudTide</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Open tools · secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="script.js?v=network-12"></script>
+  </body>
+</html>

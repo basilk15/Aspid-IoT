@@ -8,7 +8,7 @@
       content="AspidIoT builds lightweight security infrastructure for connected devices and IoT systems."
     />
     <title>AspidIoT | Lightweight Security for IoT</title>
-    <link rel="stylesheet" href="styles.css?v=clarity-41" />
+    <link rel="stylesheet" href="styles.css?v=clarity-43" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -75,6 +75,21 @@
                   </span>
                 </a>
 
+                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link>
+                  <span class="product-icon product-icon-baudtide" aria-hidden="true">
+                    <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">BaudTide</span>
+                      <span class="product-badge product-badge-open">Open source</span>
+                    </span>
+                    <span class="product-description">
+                      A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.
+                    </span>
+                  </span>
+                </a>
+
                 <article class="product-card product-card-upcoming" aria-label="More products coming soon">
                   <span class="product-icon product-icon-upcoming" aria-hidden="true">
                     <span>+</span>
@@ -136,6 +151,13 @@
                   <span class="product-badge">New</span>
                 </span>
                 <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link>
+                <span class="mobile-product-title-row">
+                  <span>BaudTide</span>
+                  <span class="product-badge product-badge-open">Open source</span>
+                </span>
+                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
               </a>
               <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
                 <span class="mobile-product-title-row">
@@ -375,9 +397,9 @@
         <div class="section-shell reveal">
           <div class="section-heading">
             <p class="section-kicker">Products</p>
-            <h2 class="section-title">Focused security infrastructure for connected devices.</h2>
+            <h2 class="section-title">Focused tools for secure, observable connected devices.</h2>
             <p class="section-summary">
-              Meet Auth-X, AspidIoT's lightweight device-authentication layer for establishing trusted sessions at the edge.
+              Meet the products building AspidIoT's security practice—from trusted device sessions to open tools that help the wider IoT community see the signal clearly.
             </p>
           </div>
 
@@ -396,6 +418,28 @@
                 A focused authentication layer for devices that need trusted sessions without unnecessary overhead.
               </p>
               <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
+            </article>
+
+            <article class="showcase-card showcase-card-baudtide">
+              <div class="showcase-card-top">
+                <span class="showcase-icon showcase-icon-baudtide" aria-hidden="true">
+                  <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                </span>
+                <span class="product-badge product-badge-open">Open source</span>
+              </div>
+              <h3>BaudTide</h3>
+              <p>
+                Our open-source serial monitor for the greater IoT community—made for inspecting real devices, keeping raw capture local, and turning structured telemetry into a signal you can act on.
+              </p>
+              <ul class="showcase-list">
+                <li>Monitor multiple ESP32, Arduino, and USB/TTY devices.</li>
+                <li>Visualize telemetry, filter noisy output, and export local logs.</li>
+                <li>Share read-only terminal views over a trusted local network.</li>
+              </ul>
+              <div class="showcase-actions">
+                <a class="button-link button-link-primary" href="baudtide.html">Explore BaudTide</a>
+                <a class="button-link button-link-muted" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
+              </div>
             </article>
           </div>
         </div>
@@ -454,6 +498,7 @@
         <nav class="site-footer-nav" aria-label="Footer">
           <a href="#features">Features</a>
           <a href="auth-x.html">Auth-X</a>
+          <a href="baudtide.html">BaudTide</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>

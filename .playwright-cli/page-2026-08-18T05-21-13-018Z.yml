@@ -1,0 +1,220 @@
+- generic [ref=f5e1]:
+  - banner:
+    - generic [ref=f5e2]:
+      - link "AspidIoT home" [ref=f5e3] [cursor=pointer]:
+        - /url: index.html#home
+        - generic [ref=f5e5]: AspidIoT
+      - button "Toggle navigation" [expanded] [ref=f5e7] [cursor=pointer]
+    - generic [ref=f5e11]:
+      - link "Home" [ref=f5e209] [cursor=pointer]:
+        - /url: index.html#home
+      - link "Features" [ref=f5e210] [cursor=pointer]:
+        - /url: index.html#features
+      - generic [ref=f5e14]:
+        - button "Products" [expanded] [active] [ref=f5e211] [cursor=pointer]
+        - generic [ref=f5e217]:
+          - link "Auth-X New Lightweight authentication framework for secure communication and identity verification." [ref=f5e212] [cursor=pointer]:
+            - /url: auth-x.html
+            - generic [ref=f5e19]:
+              - generic [ref=f5e20]: Auth-X
+              - generic [ref=f5e21]: New
+            - generic [ref=f5e22]: Lightweight authentication framework for secure communication and identity verification.
+          - link "BaudTide Open source Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices." [ref=f5e213] [cursor=pointer]:
+            - /url: baudtide.html
+            - generic [ref=f5e24]:
+              - generic [ref=f5e25]: BaudTide
+              - generic [ref=f5e26]: Open source
+            - generic [ref=f5e27]: Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.
+          - generic "More products coming soon" [ref=f5e214]:
+            - generic [ref=f5e29]:
+              - generic [ref=f5e30]: More products
+              - generic [ref=f5e31]: Coming soon
+            - generic [ref=f5e32]: New security modules are in development. More tools for the secure edge are on the way.
+      - link "About" [ref=f5e215] [cursor=pointer]:
+        - /url: about.html
+      - link "Contact" [ref=f5e216] [cursor=pointer]:
+        - /url: contact.html
+  - main [ref=f5e35]:
+    - region "BaudTide open-source product" [ref=f5e36]:
+      - generic [ref=f5e37]:
+        - generic [ref=f5e38]:
+          - generic [ref=f5e39]:
+            - generic [ref=f5e40]:
+              - generic [ref=f5e42]: Open source / BaudTide
+              - generic [ref=f5e43]: MIT license
+            - generic [ref=f5e44]:
+              - img "BaudTide mark" [ref=f5e46]
+              - generic [ref=f5e47]: baudtide
+            - heading "Give every device a clearer signal." [level=1] [ref=f5e48]
+            - paragraph [ref=f5e49]: BaudTide is AspidIoT's open-source Linux serial monitor for ESP32, Arduino, and USB/TTY devices—built to make embedded development calmer, more observable, and easier to share.
+            - generic [ref=f5e50]:
+              - link "Open BaudTide on GitHub" [ref=f5e51] [cursor=pointer]:
+                - /url: https://github.com/basilk15/baudtide
+                - text: Open BaudTide on GitHub
+                - generic [ref=f5e52]: ↗
+              - link "Explore the workspace" [ref=f5e53] [cursor=pointer]:
+                - /url: "#baudtide-features"
+            - generic "BaudTide product facts" [ref=f5e54]:
+              - generic [ref=f5e55]:
+                - strong [ref=f5e56]: Linux desktop
+                - generic [ref=f5e57]: native serial access
+              - generic [ref=f5e58]:
+                - strong [ref=f5e59]: ESP32 + Arduino
+                - generic [ref=f5e60]: made for the bench
+              - generic [ref=f5e61]:
+                - strong [ref=f5e62]: Tauri + React
+                - generic [ref=f5e63]: Rust-backed workspace
+          - generic [ref=f5e64]:
+            - generic [ref=f5e65]:
+              - generic [ref=f5e66]: Official interface preview
+              - generic [ref=f5e68]: 01 / 04
+            - figure [ref=f5e69]:
+              - img "BaudTide welcome screen showing a live serial capture preview and device-first setup." [ref=f5e70]
+            - generic [ref=f5e71]: Start with a board, keep the signal in focus, and stay close to the bytes.
+        - region [ref=f5e72]:
+          - generic [ref=f5e73]:
+            - paragraph [ref=f5e74]: Open-source ambition
+            - heading "Tools for the bench should belong to the community using them." [level=2] [ref=f5e75]
+            - paragraph [ref=f5e76]: "BaudTide is our contribution to the greater IoT community: a public, inspectable workspace for the everyday work between a board, a serial line, and the engineer trying to understand what just happened."
+          - generic [ref=f5e77]:
+            - generic [ref=f5e78]:
+              - generic [ref=f5e79]: "01"
+              - strong [ref=f5e80]: Build in public
+              - paragraph [ref=f5e81]: Let the roadmap, issues, and implementation stay visible to the people building with connected hardware.
+            - generic [ref=f5e82]:
+              - generic [ref=f5e83]: "02"
+              - strong [ref=f5e84]: Keep the signal local
+              - paragraph [ref=f5e85]: Capture raw device output on the machine where the work is happening, with exports when the team needs them.
+            - generic [ref=f5e86]:
+              - generic [ref=f5e87]: "03"
+              - strong [ref=f5e88]: Make contribution easier
+              - paragraph [ref=f5e89]: Give embedded developers a focused starting point for testing, observing, and extending the serial workflow.
+        - region [ref=f5e90]:
+          - generic [ref=f5e91]:
+            - paragraph [ref=f5e92]: What ships inside
+            - heading "One workspace for the whole serial loop." [level=2] [ref=f5e93]
+            - paragraph [ref=f5e94]: From the first port discovery to the final exported log, BaudTide keeps embedded debugging readable and close to the device.
+          - generic [ref=f5e95]:
+            - article [ref=f5e96]:
+              - text: 01 / DISCOVER
+              - heading "Find the port faster" [level=3] [ref=f5e97]
+              - paragraph [ref=f5e98]: Discover available serial ports automatically or enter a path manually when your hardware setup calls for it.
+            - article [ref=f5e99]:
+              - text: 02 / MONITOR
+              - heading "Keep several devices open" [level=3] [ref=f5e100]
+              - paragraph [ref=f5e101]: Work across multiple devices in tabs or side-by-side terminal views, with connection settings kept per session.
+            - article [ref=f5e102]:
+              - text: 03 / VISUALIZE
+              - heading "Turn telemetry into a signal" [level=3] [ref=f5e103]
+              - paragraph [ref=f5e104]: Detect structured telemetry from live serial output and visualize selected numeric fields without leaving the terminal.
+            - article [ref=f5e105]:
+              - text: 04 / SEND
+              - heading "Speak text or hexadecimal" [level=3] [ref=f5e106]
+              - paragraph [ref=f5e107]: Send text or raw hexadecimal data with configurable line endings and per-device connection settings.
+            - article [ref=f5e108]:
+              - text: 05 / CAPTURE
+              - heading "Never lose the raw log" [level=3] [ref=f5e109]
+              - paragraph [ref=f5e110]: Pause or filter noisy output while capture continues, then browse, search, preview, export, or delete local logs.
+            - article [ref=f5e111]:
+              - text: 06 / RETURN
+              - heading "Save the setup you trust" [level=3] [ref=f5e112]
+              - paragraph [ref=f5e113]: Name terminal layouts and return to the workspace that already matches your board, cable, and test routine.
+            - article [ref=f5e114]:
+              - text: 07 / SHARE
+              - heading "Bring a phone into the loop" [level=3] [ref=f5e115]
+              - paragraph [ref=f5e116]: Share live output or read-only snapshots over a local network with QR-code links and explicit remote-control opt-in.
+            - article [ref=f5e117]:
+              - text: 08 / ADAPT
+              - heading "Choose your workspace" [level=3] [ref=f5e118]
+              - paragraph [ref=f5e119]: Switch between dark and light themes while keeping the same device-first workflow in view.
+        - region [ref=f5e120]:
+          - generic [ref=f5e121]:
+            - paragraph [ref=f5e122]: Product proof / interface tour
+            - heading "See the workspace before you wire in." [level=2] [ref=f5e123]
+            - paragraph [ref=f5e124]: These screens are captured from BaudTide's own interface preview, so the promise stays tied to the product people can actually open, inspect, and extend.
+          - generic [ref=f5e125]:
+            - figure [ref=f5e126]:
+              - generic [ref=f5e127]:
+                - generic [ref=f5e128]: Live terminal
+                - generic [ref=f5e130]: 02 / 04
+              - img "BaudTide live terminal screen with an ESP32 environmental sensor session and terminal controls." [ref=f5e132]
+              - generic [ref=f5e133]:
+                - strong [ref=f5e134]: Focused live terminals.
+                - text: Run independent serial monitors with session-level reconnect, pause, clear, and filter controls.
+            - figure [ref=f5e135]:
+              - generic [ref=f5e136]:
+                - generic [ref=f5e137]: Mobile companion
+                - generic [ref=f5e139]: 03 / 04
+              - img "BaudTide mobile share screen showing a read-only local network sharing workspace." [ref=f5e141]
+              - generic [ref=f5e142]:
+                - strong [ref=f5e143]: Share without handing over the bench.
+                - text: Give a phone a focused, read-only view of selected terminal output on the local network.
+            - figure [ref=f5e144]:
+              - generic [ref=f5e145]:
+                - generic [ref=f5e146]: Telemetry visualization
+                - generic [ref=f5e148]: 04 / 04
+              - img "BaudTide Visualize screen for inspecting numeric telemetry from an ESP32 session." [ref=f5e150]
+              - generic [ref=f5e151]:
+                - strong [ref=f5e152]: From output to observation.
+                - text: BaudTide's Visualize workspace is ready to detect repeatable numeric records and plot changing device values beside the terminal.
+        - region [ref=f5e153]:
+          - generic [ref=f5e154]:
+            - paragraph [ref=f5e155]: Built for the real bench
+            - heading "Small enough to stay out of the way. Thoughtful enough to earn a place in the loop." [level=2] [ref=f5e156]
+            - paragraph [ref=f5e157]: BaudTide pairs a Tauri v2 desktop shell with a React + TypeScript interface and Rust-backed Linux serial access—so the UI stays calm while the device work stays real.
+          - generic [ref=f5e158]:
+            - generic [ref=f5e159]:
+              - generic [ref=f5e160]: BaudTide / stack
+              - generic [ref=f5e161]: Active development
+            - generic [ref=f5e163]:
+              - generic [ref=f5e164]:
+                - strong [ref=f5e165]: Tauri v2
+                - generic [ref=f5e166]: desktop shell
+              - generic [ref=f5e167]:
+                - strong [ref=f5e168]: Rust
+                - generic [ref=f5e169]: native serial access
+              - generic [ref=f5e170]:
+                - strong [ref=f5e171]: React
+                - generic [ref=f5e172]: workspace UI
+              - generic [ref=f5e173]:
+                - strong [ref=f5e174]: TypeScript
+                - generic [ref=f5e175]: product logic
+              - generic [ref=f5e176]:
+                - strong [ref=f5e177]: Vite
+                - generic [ref=f5e178]: fast preview loop
+              - generic [ref=f5e179]:
+                - strong [ref=f5e180]: Local files
+                - generic [ref=f5e181]: raw capture library
+        - region [ref=f5e182]:
+          - generic [ref=f5e184]:
+            - paragraph [ref=f5e185]: AspidIoT / open-source ambitions
+            - heading "Use it, test it, shape what comes next." [level=2] [ref=f5e186]
+            - paragraph [ref=f5e187]: "The repository is the front door: read the code, try the workflow, report what your hardware needs, and help make IoT tooling more open by default."
+          - generic [ref=f5e188]:
+            - link "Visit the BaudTide repository" [ref=f5e189] [cursor=pointer]:
+              - /url: https://github.com/basilk15/baudtide
+              - text: Visit the BaudTide repository
+              - generic [ref=f5e190]: ↗
+            - link "Talk to AspidIoT" [ref=f5e191] [cursor=pointer]:
+              - /url: contact.html
+  - contentinfo [ref=f5e192]:
+    - generic [ref=f5e193]:
+      - generic [ref=f5e194]:
+        - link "AspidIoT home" [ref=f5e195] [cursor=pointer]:
+          - /url: index.html#home
+          - generic [ref=f5e197]: AspidIoT
+        - paragraph [ref=f5e198]: Lightweight security infrastructure for connected devices.
+      - navigation "Footer" [ref=f5e199]:
+        - link "Features" [ref=f5e200] [cursor=pointer]:
+          - /url: index.html#features
+        - link "Auth-X" [ref=f5e201] [cursor=pointer]:
+          - /url: auth-x.html
+        - link "BaudTide" [ref=f5e202] [cursor=pointer]:
+          - /url: baudtide.html
+        - link "About" [ref=f5e203] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=f5e204] [cursor=pointer]:
+          - /url: contact.html
+    - generic [ref=f5e205]:
+      - paragraph [ref=f5e206]: © 2026 AspidIoT. All rights reserved.
+      - generic [ref=f5e207]: Open tools · secure-by-design · IoT at the edge

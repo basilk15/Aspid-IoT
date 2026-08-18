@@ -1,0 +1,4 @@
+[     988ms] [WARNING] Scripts "build/three.js" and "build/three.min.js" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation @ https://unpkg.com/three@0.158.0/build/three.min.js:0
+[    1088ms] [WARNING] THREE.Texture: Property .encoding has been replaced by .colorSpace. @ https://unpkg.com/three@0.158.0/build/three.min.js:6
+[    1322ms] [WARNING] [.WebGL-0xabc001a9c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ http://localhost:4173/index.html:0
+[    1336ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:4173/favicon.ico:0

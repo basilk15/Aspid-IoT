@@ -1,0 +1,191 @@
+- generic [active] [ref=f2e1]:
+  - banner:
+    - generic [ref=f2e2]:
+      - link "AspidIoT home" [ref=f2e3] [cursor=pointer]:
+        - /url: "#home"
+        - generic [ref=f2e5]: AspidIoT
+      - navigation "Primary" [ref=f2e7]:
+        - link "Home" [ref=f2e8] [cursor=pointer]:
+          - /url: "#home"
+        - link "Features" [ref=f2e9] [cursor=pointer]:
+          - /url: "#features"
+        - button "Products" [ref=f2e11] [cursor=pointer]
+        - link "About" [ref=f2e14] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=f2e15] [cursor=pointer]:
+          - /url: contact.html
+  - main [ref=f2e16]:
+    - generic [ref=f2e18]:
+      - generic [ref=f2e19]:
+        - img "AspidIoT logo" [ref=f2e20]
+        - paragraph [ref=f2e21]: Lightweight Cryptographic Framework for Secure IoT
+      - generic:
+        - generic: Secure,
+        - generic: Modular,
+        - generic: Lightweight •
+    - region "Project narrative" [ref=f2e22]:
+      - generic [ref=f2e23]:
+        - paragraph [ref=f2e24]: Packet protection / live flow
+        - heading "Readable data goes in. Protected telemetry comes out." [level=2] [ref=f2e25]
+        - paragraph [ref=f2e26]: Watch a sensor payload cross the link, pass through the Lightweight Cryptography gate, and arrive as ciphertext that an eavesdropper cannot read.
+      - generic [ref=f2e27]:
+        - generic [ref=f2e28]:
+          - generic [ref=f2e29]: Source node
+          - generic [ref=f2e31]: ESP32 · sensor
+        - generic [ref=f2e32]:
+          - generic [ref=f2e33]:
+            - text: Telemetry flow
+            - generic [ref=f2e34]: →
+          - generic [ref=f2e36]: Readable
+          - generic [ref=f2e37]: Encrypted
+          - generic:
+            - generic: "01"
+            - generic:
+              - strong: Readable payload
+              - generic: Sensor values are visible
+          - generic:
+            - generic: Plaintext payload
+            - generic: Temperature · humidity · gas
+            - generic: "{ \"temp\": 24.7, \"hum\": 61, \"gas\": 0.02 }"
+          - generic:
+            - generic: "02"
+            - generic:
+              - strong: LWC encryption gate
+              - generic: Payload is transformed here
+          - generic:
+            - generic: Ciphertext
+            - generic: Unreadable on the wire
+            - generic: 9f 4b a2 7e c3 1d 88 04 6a 9b
+          - generic:
+            - generic: "03"
+            - generic:
+              - strong: Protected delivery
+              - generic: Only the destination can use it
+          - generic:
+            - generic:
+              - strong: LWC gate
+              - generic: Encrypted here
+          - generic:
+            - generic:
+              - strong: Eavesdropper blocked
+              - generic: Cannot read the payload
+        - generic [ref=f2e38]:
+          - generic [ref=f2e39]: Destination node
+          - generic [ref=f2e41]: ESP32 · receiver
+      - generic "Animation legend" [ref=f2e42]:
+        - generic [ref=f2e43]: Readable before encryption
+        - generic [ref=f2e45]: Protected at the LWC gate
+        - generic [ref=f2e47]: Ciphertext in transit
+      - generic [ref=f2e50]:
+        - paragraph [ref=f2e51]: A novel, end-to-end VPN framework.
+        - paragraph [ref=f2e52]: Engineered for IoT environments.
+        - paragraph [ref=f2e53]:
+          - text: Built on standardized Lightweight Cryptography.
+          - img "NIST logo" [ref=f2e54]
+        - paragraph [ref=f2e55]: Delivering strong security guarantees.
+        - paragraph [ref=f2e56]: Aligned with IoT system constraints.
+    - region "Encrypted device network" [ref=f2e57]:
+      - generic [ref=f2e58]:
+        - generic [ref=f2e59]:
+          - paragraph [ref=f2e60]: Encrypted tunnel / scalable hub-and-spoke
+          - heading "Encrypted telemetry, built to scale." [level=2] [ref=f2e61]
+          - paragraph [ref=f2e62]: Connected devices encrypt telemetry before sending it through authenticated tunnels to a central server, where it is verified, decrypted, and aggregated.
+          - generic "Network legend" [ref=f2e63]:
+            - generic [ref=f2e64]: Sensor node
+            - generic [ref=f2e66]: Encrypted channel
+            - generic [ref=f2e68]: Central server
+        - generic [ref=f2e71]:
+          - generic [ref=f2e72]:
+            - generic [ref=f2e73]: Secure channels
+            - generic [ref=f2e74]: Network online
+          - generic [ref=f2e86]:
+            - generic [ref=f2e90]:
+              - strong [ref=f2e91]: Central server
+              - generic [ref=f2e92]: Verify · decrypt · aggregate
+            - generic [ref=f2e93]: Secure
+          - generic [ref=f2e95]:
+            - generic [ref=f2e96]: Edge node
+            - strong [ref=f2e98]: ESP32
+            - generic [ref=f2e99]: Encrypted uplink
+          - generic [ref=f2e100]:
+            - generic [ref=f2e101]: Edge node
+            - strong [ref=f2e103]: ESP32
+            - generic [ref=f2e104]: Encrypted uplink
+          - generic [ref=f2e105]:
+            - generic [ref=f2e106]: Edge node
+            - strong [ref=f2e108]: ESP32
+            - generic [ref=f2e109]: Encrypted uplink
+          - generic [ref=f2e110]: 9F 4B 7E
+          - generic [ref=f2e112]: C3 1D 88
+          - generic [ref=f2e114]: 6A 9B 04
+    - region "Products" [ref=f2e116]:
+      - generic [ref=f2e117]:
+        - generic [ref=f2e118]:
+          - paragraph [ref=f2e119]: Products
+          - heading "Focused tools for secure, observable connected devices." [level=2] [ref=f2e120]
+          - paragraph [ref=f2e121]: Meet the products building AspidIoT's security practice—from trusted device sessions to open tools that help the wider IoT community see the signal clearly.
+        - generic [ref=f2e122]:
+          - article [ref=f2e123]:
+            - generic [ref=f2e124]: New
+            - heading "Auth-X" [level=3] [ref=f2e127]
+            - paragraph [ref=f2e128]: A focused authentication layer for devices that need trusted sessions without unnecessary overhead.
+            - link "Explore Auth-X" [ref=f2e129] [cursor=pointer]:
+              - /url: auth-x.html
+          - article [ref=f2e130]:
+            - generic [ref=f2e131]: Open source
+            - heading "BaudTide" [level=3] [ref=f2e134]
+            - paragraph [ref=f2e135]: Our open-source serial monitor for the greater IoT community—made for inspecting real devices, keeping raw capture local, and turning structured telemetry into a signal you can act on.
+            - list [ref=f2e136]:
+              - listitem [ref=f2e137]: Monitor multiple ESP32, Arduino, and USB/TTY devices.
+              - listitem [ref=f2e138]: Visualize telemetry, filter noisy output, and export local logs.
+              - listitem [ref=f2e139]: Share read-only terminal views over a trusted local network.
+            - generic [ref=f2e140]:
+              - link "Explore BaudTide" [ref=f2e141] [cursor=pointer]:
+                - /url: baudtide.html
+              - link "Open GitHub" [ref=f2e142] [cursor=pointer]:
+                - /url: https://github.com/basilk15/baudtide
+                - text: Open GitHub
+                - generic [ref=f2e143]: ↗
+    - region "About AspidIoT" [ref=f2e144]:
+      - generic [ref=f2e145]:
+        - generic [ref=f2e146]:
+          - paragraph [ref=f2e147]: About
+          - heading "Research-led foundations presented with a product-first mindset." [level=2] [ref=f2e148]
+          - paragraph [ref=f2e149]: Built as an FYP, AspidIoT explores how secure-by-design networking, authentication, and monitoring can be packaged into a practical platform for modern connected systems.
+        - generic [ref=f2e150]:
+          - generic [ref=f2e151]:
+            - strong [ref=f2e152]: "1"
+            - generic [ref=f2e153]: Active product module
+          - generic [ref=f2e154]:
+            - strong [ref=f2e155]: LWC
+            - generic [ref=f2e156]: Standardized cryptographic foundation
+          - generic [ref=f2e157]:
+            - strong [ref=f2e158]: ESP32
+            - generic [ref=f2e159]: Constrained-device deployment focus
+    - generic [ref=f2e161]:
+      - paragraph [ref=f2e162]: Contact
+      - heading "Meet the founder behind AspidIoT." [level=2] [ref=f2e163]
+      - paragraph [ref=f2e164]: Explore the work, the thinking, and the person building lightweight security infrastructure for connected devices.
+      - link "Meet the founder" [ref=f2e166] [cursor=pointer]:
+        - /url: contact.html
+  - contentinfo [ref=f2e167]:
+    - generic [ref=f2e168]:
+      - generic [ref=f2e169]:
+        - link "AspidIoT home" [ref=f2e170] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f2e172]: AspidIoT
+        - paragraph [ref=f2e173]: Lightweight security infrastructure for connected devices.
+      - navigation "Footer" [ref=f2e174]:
+        - link "Features" [ref=f2e175] [cursor=pointer]:
+          - /url: "#features"
+        - link "Auth-X" [ref=f2e176] [cursor=pointer]:
+          - /url: auth-x.html
+        - link "BaudTide" [ref=f2e177] [cursor=pointer]:
+          - /url: baudtide.html
+        - link "About" [ref=f2e178] [cursor=pointer]:
+          - /url: "#about"
+        - link "Contact" [ref=f2e179] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=f2e180]:
+      - paragraph [ref=f2e181]: © 2026 AspidIoT. All rights reserved.
+      - generic [ref=f2e182]: Secure-by-design · IoT at the edge

@@ -401,13 +401,13 @@ main::after {
 
 .mega-menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
 .product-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.9rem;
   align-items: flex-start;
   padding: 1rem;
@@ -439,6 +439,13 @@ main::after {
   border-color: rgba(89, 247, 255, 0.24);
 }
 
+.product-card-baudtide {
+  background:
+    linear-gradient(135deg, rgba(93, 226, 188, 0.09), rgba(89, 247, 255, 0.06)),
+    rgba(255, 255, 255, 0.03);
+  border-color: rgba(93, 226, 188, 0.24);
+}
+
 .product-card-upcoming {
   cursor: default;
   border-style: dashed;
@@ -464,21 +471,46 @@ main::after {
   flex: 0 0 auto;
   width: 2.8rem;
   height: 2.8rem;
-  border-radius: 14px;
-  background: linear-gradient(145deg, rgba(89, 247, 255, 0.16), rgba(137, 202, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  background: transparent;
+  border: 0;
   color: #d7fbff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 .product-icon svg,
 .showcase-icon svg {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.7rem;
+  height: 1.7rem;
   fill: currentColor;
 }
 
+.product-icon:not(.product-icon-baudtide):not(.product-icon-upcoming),
+.showcase-icon:not(.showcase-icon-baudtide) {
+  width: 6.4rem;
+  height: 2.2rem;
+  background-image: url("assets/auth-x-logos/auth-x-logo.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 100% auto;
+}
+
+.product-icon:not(.product-icon-baudtide):not(.product-icon-upcoming) svg,
+.showcase-icon:not(.showcase-icon-baudtide) svg {
+  display: none;
+}
+
+.product-icon-baudtide img,
+.showcase-icon-baudtide img {
+  display: block;
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(89, 247, 255, 0.34));
+}
+
 .product-icon-upcoming {
+  border-radius: 14px;
   border-style: dashed;
   border-color: rgba(208, 138, 239, 0.3);
   background: rgba(139, 124, 255, 0.08);
@@ -501,9 +533,11 @@ main::after {
 
 .product-title-row,
 .mobile-product-title-row {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.55rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .product-name {
@@ -537,15 +571,25 @@ main::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   min-height: 1.45rem;
   padding: 0 0.5rem;
   border-radius: 999px;
   background: rgba(89, 247, 255, 0.14);
   border: 1px solid rgba(89, 247, 255, 0.28);
   color: #d8fcff;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 0.61rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.product-badge-open {
+  background: rgba(93, 226, 188, 0.12);
+  border-color: rgba(93, 226, 188, 0.28);
+  color: #d7fff2;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .nav-actions {
@@ -1228,7 +1272,7 @@ body:not(.is-loaded) .hero-3d {
 
 .product-showcase-grid {
   display: grid;
-  grid-template-columns: minmax(0, 720px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -1259,6 +1303,13 @@ body:not(.is-loaded) .hero-3d {
   border-color: rgba(89, 247, 255, 0.24);
 }
 
+.showcase-card-baudtide {
+  background:
+    linear-gradient(150deg, rgba(93, 226, 188, 0.12), rgba(89, 247, 255, 0.09)),
+    linear-gradient(180deg, rgba(12, 19, 35, 0.94), rgba(7, 12, 23, 0.96));
+  border-color: rgba(93, 226, 188, 0.25);
+}
+
 .showcase-card-top {
   display: flex;
   align-items: center;
@@ -1280,6 +1331,18 @@ body:not(.is-loaded) .hero-3d {
 
 .showcase-card .button-link {
   margin-top: 1.25rem;
+}
+
+.showcase-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.showcase-actions .button-link {
+  width: auto;
+  margin: 0;
 }
 
 .showcase-list {
@@ -4567,7 +4630,7 @@ body:not(.is-loaded) .hero-3d {
   }
 
   .mobile-products.is-open .mobile-products-grid {
-    max-height: 28rem;
+    max-height: 42rem;
     opacity: 1;
     padding: 0.85rem 0 0.3rem;
   }
@@ -4596,6 +4659,11 @@ body:not(.is-loaded) .hero-3d {
   .mobile-product-card-featured {
     border-color: rgba(89, 247, 255, 0.24);
     background: linear-gradient(135deg, rgba(89, 247, 255, 0.08), rgba(139, 124, 255, 0.08));
+  }
+
+  .mobile-product-card-baudtide {
+    border-color: rgba(93, 226, 188, 0.24);
+    background: linear-gradient(135deg, rgba(93, 226, 188, 0.09), rgba(89, 247, 255, 0.06));
   }
 
   .mobile-product-card-upcoming {
