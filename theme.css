@@ -72,6 +72,7 @@ html[data-theme="light"] main::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   width: 4.85rem;
   height: 3rem;
   padding: 0;
@@ -1005,25 +1006,26 @@ html[data-theme="light"] .site-footer-meta {
   }
 
   .theme-toggle {
-    width: 3.65rem;
-    min-width: 3.65rem;
+    width: 4.15rem;
+    min-width: 4.15rem;
+    height: 2.9rem;
     padding: 0;
   }
 
   .theme-toggle-track {
-    width: 3.5rem;
+    width: 4rem;
     height: 2.45rem;
     padding: 0.2rem;
   }
 
   .theme-toggle-icon {
-    width: 1.42rem;
-    height: 1.42rem;
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .theme-toggle-icon svg {
-    width: 0.92rem;
-    height: 0.92rem;
+    width: 0.95rem;
+    height: 0.95rem;
   }
 
   .theme-toggle-thumb {
@@ -1033,7 +1035,7 @@ html[data-theme="light"] .site-footer-meta {
   }
 
   html[data-theme="light"] .theme-toggle-thumb {
-    transform: translate(1.35rem, -50%);
+    transform: translate(1.65rem, -50%);
   }
 }
 
