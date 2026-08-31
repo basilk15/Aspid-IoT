@@ -15,9 +15,9 @@
         }
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=clarity-43" />
+    <link rel="stylesheet" href="styles.css?v=clarity-44" />
     <link rel="stylesheet" href="auth-x-primitives.css?v=2" />
-    <link rel="stylesheet" href="theme.css?v=3" />
+    <link rel="stylesheet" href="theme.css?v=5" />
   </head>
   <body class="auth-x-page">
     <header class="site-header" data-header>
@@ -46,7 +46,7 @@
 
         <nav class="site-nav" aria-label="Primary">
           <a class="nav-link" href="index.html#home" data-nav-link>Home</a>
-          <a class="nav-link" href="index.html#features" data-nav-link>Features</a>
+          <a class="nav-link" href="services.html">Services</a>
 
           <div class="nav-dropdown" data-dropdown>
             <button
@@ -74,7 +74,6 @@
                   <span class="product-copy">
                     <span class="product-title-row">
                       <span class="product-name">Auth-X</span>
-                      <span class="product-badge">New</span>
                     </span>
                     <span class="product-description">
                       Lightweight authentication framework for secure communication and identity verification.
@@ -121,21 +120,23 @@
             type="button"
             data-theme-toggle
             aria-pressed="false"
-            aria-label="Switch to light mode"
-            title="Switch to light mode"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
           >
-            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="12" cy="12" r="3.25"></circle>
-                <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
-              </svg>
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
             </span>
-            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
-              </svg>
-            </span>
-            <span class="theme-toggle-label" data-theme-label>Light</span>
           </button>
 
           <button
@@ -156,7 +157,7 @@
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
         <div class="mobile-menu-inner">
           <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
-          <a class="mobile-nav-link" href="index.html#features" data-mobile-link>Features</a>
+          <a class="mobile-nav-link" href="services.html" data-mobile-link>Services</a>
 
           <div class="mobile-products">
             <button
@@ -177,7 +178,6 @@
                 </span>
                 <span class="mobile-product-title-row">
                   <span>Auth-X</span>
-                  <span class="product-badge">New</span>
                 </span>
                 <span>Lightweight authentication framework for secure communication and identity verification.</span>
               </a>
@@ -222,7 +222,6 @@
               <div class="auth-x-eyebrow">
                 <span class="auth-x-eyebrow-line"></span>
                 <span>Product / Auth-X</span>
-                <span class="product-badge">New</span>
               </div>
               <h1 class="auth-x-title">Trust every device before it earns a session.</h1>
               <p class="auth-x-lede">
@@ -528,7 +527,7 @@
           <p>Lightweight security infrastructure for connected devices.</p>
         </div>
         <nav class="site-footer-nav" aria-label="Footer">
-          <a href="index.html#features">Features</a>
+          <a href="services.html">Services</a>
           <a href="auth-x.html">Auth-X</a>
           <a href="baudtide.html">BaudTide</a>
           <a href="about.html">About</a>
@@ -541,7 +540,7 @@
       </div>
     </footer>
 
-    <script src="theme.js?v=1"></script>
+    <script src="theme.js?v=2"></script>
     <script src="auth-x.js?v=3"></script>
     <script src="auth-x-primitives.js?v=2"></script>
   </body>

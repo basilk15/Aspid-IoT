@@ -15,9 +15,9 @@
         }
       } catch {}
     </script>
-   <link rel="stylesheet" href="styles.css?v=clarity-43" />
-   <link rel="stylesheet" href="baudtide.css?v=4" />
-    <link rel="stylesheet" href="theme.css?v=3" />
+   <link rel="stylesheet" href="styles.css?v=clarity-44" />
+   <link rel="stylesheet" href="baudtide.css?v=14" />
+    <link rel="stylesheet" href="theme.css?v=5" />
   </head>
   <body class="baudtide-page">
     <header class="site-header" data-header>
@@ -46,7 +46,7 @@
 
         <nav class="site-nav" aria-label="Primary">
           <a class="nav-link" href="index.html#home">Home</a>
-          <a class="nav-link" href="index.html#features">Features</a>
+          <a class="nav-link" href="services.html">Services</a>
 
           <div class="nav-dropdown" data-dropdown>
             <button
@@ -76,7 +76,6 @@
                   <span class="product-copy">
                     <span class="product-title-row">
                       <span class="product-name">Auth-X</span>
-                      <span class="product-badge">New</span>
                     </span>
                     <span class="product-description">Lightweight authentication framework for secure communication and identity verification.</span>
                   </span>
@@ -119,21 +118,23 @@
             type="button"
             data-theme-toggle
             aria-pressed="false"
-            aria-label="Switch to light mode"
-            title="Switch to light mode"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
           >
-            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="12" cy="12" r="3.25"></circle>
-                <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
-              </svg>
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
             </span>
-            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
-              </svg>
-            </span>
-            <span class="theme-toggle-label" data-theme-label>Light</span>
           </button>
 
           <button
@@ -154,7 +155,7 @@
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
         <div class="mobile-menu-inner">
           <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
-          <a class="mobile-nav-link" href="index.html#features" data-mobile-link>Features</a>
+          <a class="mobile-nav-link" href="services.html" data-mobile-link>Services</a>
 
           <div class="mobile-products">
             <button
@@ -170,7 +171,7 @@
 
             <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
               <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
-                <span class="mobile-product-title-row"><span>Auth-X</span><span class="product-badge">New</span></span>
+              <span class="mobile-product-title-row"><span>Auth-X</span></span>
                 <span>Lightweight authentication framework for secure communication and identity verification.</span>
               </a>
               <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link aria-current="page">
@@ -208,7 +209,7 @@
 
               <h1 class="baudtide-title">Give every device a clearer signal.</h1>
               <p class="baudtide-lede">
-                BaudTide is AspidIoT's open-source Linux serial monitor for ESP32, Arduino, and USB/TTY devices—built to make embedded development calmer, more observable, and easier to share.
+                BaudTide is AspidIoT's open-source Linux serial workspace for ESP32, Arduino, and USB/TTY devices—built to run the whole bench, compare live and recorded telemetry, search every capture, and carry a safe view onto your iPhone.
               </p>
 
               <div class="baudtide-actions">
@@ -217,17 +218,28 @@
               </div>
 
               <div class="baudtide-facts" aria-label="BaudTide product facts">
-                <span><strong>Linux desktop</strong><small>native serial access</small></span>
-                <span><strong>ESP32 + Arduino</strong><small>made for the bench</small></span>
-                <span><strong>Tauri + React</strong><small>Rust-backed workspace</small></span>
+                <span><strong>Multi-session bench</strong><small>tabs + saved layouts</small></span>
+                <span><strong>Live + recorded</strong><small>overlay + replay</small></span>
+                <span><strong>iPhone companion</strong><small>read-only by default</small></span>
               </div>
             </div>
 
             <figure class="baudtide-hero-proof reveal" data-delay="120">
               <div class="baudtide-screenshot-frame baudtide-screenshot-hero">
-                <img class="baudtide-screenshot-image" src="assets/baudtide/screenshots/welcome.png" alt="BaudTide welcome screen showing a live serial capture preview and device-first setup." />
+                <video
+                  class="baudtide-screenshot-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  poster="assets/baudtide/screenshots/welcome.png"
+                  aria-label="BaudTide live terminal with an active environmental sensor, connection health, capture state, and incoming JSON telemetry."
+                >
+                  <source src="assets/baudtide/videos/baudtide-up.mp4" type="video/mp4" />
+                </video>
               </div>
-              <figcaption><span>BaudTide overview</span><span>Local-first serial workspace</span></figcaption>
+              <figcaption><span>Current desktop workspace</span><span>Live terminal / raw capture active</span></figcaption>
             </figure>
           </div>
 
@@ -255,36 +267,52 @@
 
             <div class="baudtide-feature-list">
               <article class="baudtide-feature-row reveal">
-                <div class="baudtide-feature-meta"><span>01</span><span>SET UP</span></div>
+                <div class="baudtide-feature-meta"><span>01</span><span>CONNECT</span></div>
                 <div>
-                  <h3>Start with a board, not a configuration maze.</h3>
-                  <p>Discover serial ports automatically or enter a path manually, then keep multiple devices open in tabs or side-by-side views.</p>
+                  <h3>Meet the device at the port.</h3>
+                  <p>Discover USB and TTY ports or enter a path manually, reuse recent device settings, tune serial framing, and let automatic reconnect watch for a board that drops away.</p>
                 </div>
-                <p class="baudtide-feature-detail">Auto-discovery / manual paths / session tabs</p>
+                <p class="baudtide-feature-detail">Auto-discovery / manual paths / recent profiles / auto-reconnect</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="60">
-                <div class="baudtide-feature-meta"><span>02</span><span>READ + SEND</span></div>
+                <div class="baudtide-feature-meta"><span>02</span><span>WORKSPACE</span></div>
                 <div>
-                  <h3>Read telemetry without leaving the terminal.</h3>
-                  <p>Detect structured values from live output, visualize the fields that matter, and send text or raw hexadecimal with per-device line endings.</p>
+                  <h3>Run the whole bench in one workspace.</h3>
+                  <p>Keep several devices open in independent tabs or tiled views, preserve per-device settings, and save named layouts you can return to later.</p>
                 </div>
-                <p class="baudtide-feature-detail">Live parsing / selected fields / text + hex</p>
+                <p class="baudtide-feature-detail">Multiple devices / tab + tile views / saved layouts / session restore</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="120">
-                <div class="baudtide-feature-meta"><span>03</span><span>CAPTURE</span></div>
+                <div class="baudtide-feature-meta"><span>03</span><span>READ + SEND</span></div>
                 <div>
-                  <h3>Keep the raw signal, even when the screen gets noisy.</h3>
-                  <p>Pause or filter the display while capture continues, then browse, search, preview, export, or delete local logs and saved layouts.</p>
+                  <h3>Control the stream without losing the capture.</h3>
+                  <p>Pause, filter, search, or clear the visible terminal while raw logging continues, then send text or exact hexadecimal bytes with session-specific line endings and display encoding.</p>
                 </div>
-                <p class="baudtide-feature-detail">Non-destructive capture / local logs / saved workspaces</p>
+                <p class="baudtide-feature-detail">Non-destructive display controls / text + hex / timestamps / encoding</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="180">
-                <div class="baudtide-feature-meta"><span>04</span><span>SHARE</span></div>
+                <div class="baudtide-feature-meta"><span>04</span><span>ANALYZE + REPLAY</span></div>
                 <div>
-                  <h3>Share the useful view, not the whole bench.</h3>
-                  <p>Open a focused, read-only mobile view over the local network, with QR links and explicit opt-in before any remote control is exposed.</p>
+                  <h3>Compare live behavior with what happened before.</h3>
+                  <p>Detect repeatable telemetry in nested JSON, key/value, CSV, and TSV streams; align live sessions with saved captures; then overlay, replay, window, and export the fields that matter.</p>
                 </div>
-                <p class="baudtide-feature-detail">Local network / read-only by default / opt-in control</p>
+                <p class="baudtide-feature-detail">Live + capture comparison / independent or overlay views / CSV + JSON export</p>
+              </article>
+              <article class="baudtide-feature-row reveal" data-delay="240">
+                <div class="baudtide-feature-meta"><span>05</span><span>CAPTURE + FIND</span></div>
+                <div>
+                  <h3>Search the capture library, not just its filenames.</h3>
+                  <p>Every terminal writes to a raw local log. Filter captures by state, search metadata and captured content, preview or save a copy, reopen a log in Visualize, or reconnect with its original setup.</p>
+                </div>
+                <p class="baudtide-feature-detail">Local raw logs / indexed content search / preview / reopen / save copy</p>
+              </article>
+              <article class="baudtide-feature-row reveal" data-delay="300">
+                <div class="baudtide-feature-meta"><span>06</span><span>SHARE + CONTROL</span></div>
+                <div>
+                  <h3>Put a read-only signal window on iPhone.</h3>
+                  <p>Scan a same-network link to open live telemetry and raw output on iPhone or another phone, share or download logs, and expose remote text or hex commands only when the desktop operator explicitly enables them.</p>
+                </div>
+                <p class="baudtide-feature-detail">iPhone-ready companion / QR pairing / read-only default / revocable control</p>
               </article>
             </div>
           </section>
@@ -293,74 +321,94 @@
             <div class="baudtide-section-heading reveal">
               <p class="section-kicker">Product proof / interface tour</p>
               <h2 class="section-title" id="baudtide-proof-title">See the workspace before you wire in.</h2>
-              <p class="section-summary">These screens are captured from BaudTide's own interface preview, so the promise stays tied to the product people can actually open, inspect, and extend.</p>
+              <p class="section-summary">Fresh captures from BaudTide's current desktop workspace, driven by a live environmental-sensor feed and a real same-network phone connection.</p>
             </div>
 
             <div class="baudtide-proof-rail">
               <figure class="baudtide-proof-row reveal">
-                <div class="baudtide-proof-media baudtide-proof-media-terminal">
-                  <img src="assets/baudtide/screenshots/live-terminal.png" alt="BaudTide live terminal screen with an ESP32 environmental sensor session and terminal controls." decoding="async" />
+                <div class="baudtide-proof-media baudtide-proof-media-visualize">
+                  <video
+                    class="baudtide-proof-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="assets/baudtide/screenshots/visualize.png"
+                    aria-label="BaudTide telemetry analysis workspace comparing live signals with a recorded capture on an aligned timeline."
+                  >
+                    <source src="assets/baudtide/videos/baudtide-middle.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>02 / LIVE TERMINAL</span></div>
-                  <h3>Independent terminals for every device.</h3>
-                  <p>Reconnect, pause, clear, and filter per session while the rest of the bench stays in view.</p>
+                  <div class="baudtide-proof-label"><span>02 / ANALYZE + REPLAY</span></div>
+                  <h3>One aligned canvas for now and before.</h3>
+                  <p>Compare a live session with recorded captures, align their starts or clocks, select up to eight signals, and replay the saved timeline at the pace you need.</p>
                 </figcaption>
               </figure>
 
               <figure class="baudtide-proof-row baudtide-proof-row-reverse reveal" data-delay="100">
-                <div class="baudtide-proof-media baudtide-mobile-stage" role="img" aria-label="iPhone-style BaudTide mobile companion showing a read-only ESP32 environmental sensor session shared over a local network.">
+                <div class="baudtide-proof-media baudtide-proof-media-logs">
+                  <video
+                    class="baudtide-proof-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="assets/baudtide/screenshots/saved-logs.png"
+                    aria-label="BaudTide saved logs capture library searching raw logs for temperature data, with capture-state filters and actions to reconnect, visualize, or preview each result."
+                  >
+                    <source src="assets/baudtide/videos/baudtide-logs.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <figcaption class="baudtide-proof-copy">
+                  <div class="baudtide-proof-label"><span>03 / CAPTURE LIBRARY</span></div>
+                  <h3>Find the byte that explains the bench.</h3>
+                  <p>Search captured content and metadata across the local library, separate active, completed, and interrupted logs, then preview or move a result straight into analysis.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="baudtide-proof-row reveal" data-delay="160">
+                <div class="baudtide-proof-media baudtide-mobile-stage" role="img" aria-label="An iPhone-style BaudTide companion showing a live environmental-sensor feed, incoming serial activity, recent packets, and read-only status.">
                   <div class="baudtide-phone-halo" aria-hidden="true"></div>
-                  <div class="baudtide-phone">
+                  <div class="baudtide-phone" aria-hidden="true">
                     <div class="baudtide-phone-bezel">
                       <div class="baudtide-phone-screen">
-                        <div class="baudtide-phone-island" aria-hidden="true"></div>
-                        <div class="baudtide-phone-status" aria-hidden="true"><span>9:41</span><span>5G&nbsp;&nbsp;84%</span></div>
-
+                        <div class="baudtide-phone-island"></div>
+                        <div class="baudtide-phone-status"><span>9:41</span><span>5G&nbsp;&nbsp;84%</span></div>
                         <div class="baudtide-phone-appbar">
                           <div class="baudtide-phone-brand"><img src="assets/baudtide/baudtide-mark.png" alt="" /><span>baud<span>tide</span></span></div>
                           <span class="baudtide-phone-live">LIVE</span>
                         </div>
-
                         <div class="baudtide-phone-content">
-                          <p class="baudtide-phone-kicker">Mobile companion</p>
-                          <h4>ESP32 environmental sensor</h4>
-                          <p class="baudtide-phone-subtitle">Read-only session · local network</p>
-
+                          <p class="baudtide-phone-kicker">Live feed</p>
+                          <h4>Environmental sensor</h4>
+                          <p class="baudtide-phone-subtitle">/dev/pts/5 · local network</p>
                           <div class="baudtide-phone-session">
-                            <div class="baudtide-phone-session-head"><span>Signal stable</span><span>115,200 baud</span></div>
-                            <div class="baudtide-phone-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                            <div class="baudtide-phone-session-head"><span>Incoming serial</span><span>packet 455</span></div>
+                            <div class="baudtide-phone-wave">
+                              <span></span><span></span><span></span><span></span><span></span><span></span>
+                              <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
                           </div>
-
                           <div class="baudtide-phone-log">
-                            <div class="baudtide-phone-log-head"><span>LIVE OUTPUT</span><span>00:14:32</span></div>
-                            <div class="baudtide-phone-log-line"><span>14:32:01.002</span><strong>temp=24.8°C</strong></div>
-                            <div class="baudtide-phone-log-line"><span>14:32:02.104</span><strong>hum=48.2%</strong></div>
-                            <div class="baudtide-phone-log-line baudtide-phone-log-line-active"><span>14:32:03.201</span><strong>air=stable</strong></div>
+                            <div class="baudtide-phone-log-head"><span>Recent packets</span><span>115,200 baud</span></div>
+                            <div class="baudtide-phone-log-line"><span>17:54:35</span><strong>temp&nbsp; 26.2°C</strong></div>
+                            <div class="baudtide-phone-log-line baudtide-phone-log-line-active"><span>17:54:36</span><strong>humidity&nbsp; 54.8%</strong></div>
+                            <div class="baudtide-phone-log-line"><span>17:54:37</span><strong>voltage&nbsp; 3.29V</strong></div>
                           </div>
-
-                          <div class="baudtide-phone-readonly"><span>Read-only by default</span><small>Shared from desktop</small></div>
+                          <div class="baudtide-phone-readonly"><span>Read-only by default</span><small>Desktop controls permissions</small></div>
                         </div>
-                        <div class="baudtide-phone-homebar" aria-hidden="true"></div>
+                        <div class="baudtide-phone-homebar"></div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>03 / MOBILE SHARE</span></div>
-                  <h3>Give the team a window into the signal.</h3>
-                  <p>Share a focused, read-only view with a phone on the local network without handing over the desktop workspace.</p>
-                </figcaption>
-              </figure>
-
-              <figure class="baudtide-proof-row reveal" data-delay="160">
-                <div class="baudtide-proof-media baudtide-proof-media-visualize">
-                  <img src="assets/baudtide/screenshots/visualize.png" alt="BaudTide Visualize screen for inspecting numeric telemetry from an ESP32 session." decoding="async" />
-                </div>
-                <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>04 / VISUALIZE</span></div>
-                  <h3>Turn repeatable bytes into a visible signal.</h3>
-                  <p>Inspect numeric telemetry beside the terminal so changing device values are easier to understand in context.</p>
+                  <div class="baudtide-proof-label"><span>04 / IPHONE COMPANION</span></div>
+                  <h3>A live terminal, ready for your pocket.</h3>
+                  <p>Open the same signal on iPhone with a QR link, follow live telemetry and recent packets, and keep the companion read-only until the desktop operator chooses otherwise.</p>
                 </figcaption>
               </figure>
             </div>
@@ -370,16 +418,16 @@
             <div class="baudtide-built-copy reveal">
               <p class="section-kicker">Built for the real bench</p>
               <h2 class="section-title" id="baudtide-built-title">Small enough to stay out of the way. Thoughtful enough to earn a place in the loop.</h2>
-              <p class="section-summary">BaudTide pairs a Tauri v2 desktop shell with a React + TypeScript interface and Rust-backed Linux serial access—so the UI stays calm while the device work stays real.</p>
+              <p class="section-summary">BaudTide pairs an Electron desktop shell with a React + TypeScript interface and Rust-backed Linux serial access—so the UI stays calm while the device work stays real.</p>
             </div>
             <div class="baudtide-stack-panel reveal" data-delay="100">
               <div class="baudtide-stack-heading"><span>BaudTide / stack</span><span>In active development</span></div>
               <div class="baudtide-stack-grid">
-                <div><strong>Tauri v2</strong><span>desktop shell</span></div>
-                <div><strong>Rust</strong><span>native serial access</span></div>
+                <div><strong>Electron</strong><span>desktop shell</span></div>
+                <div><strong>Rust sidecar</strong><span>native serial access</span></div>
                 <div><strong>React</strong><span>workspace UI</span></div>
                 <div><strong>TypeScript</strong><span>product logic</span></div>
-                <div><strong>Vite</strong><span>fast preview loop</span></div>
+                <div><strong>ECharts</strong><span>telemetry canvas</span></div>
                 <div><strong>Local files</strong><span>raw capture library</span></div>
               </div>
             </div>
@@ -411,7 +459,7 @@
           <p>Lightweight security infrastructure for connected devices.</p>
         </div>
         <nav class="site-footer-nav" aria-label="Footer">
-          <a href="index.html#features">Features</a>
+          <a href="services.html">Services</a>
           <a href="auth-x.html">Auth-X</a>
           <a href="baudtide.html">BaudTide</a>
           <a href="about.html">About</a>
@@ -424,7 +472,7 @@
       </div>
     </footer>
 
-    <script src="theme.js?v=1"></script>
-    <script src="script.js?v=network-12"></script>
+    <script src="theme.js?v=2"></script>
+    <script src="script.js?v=network-13"></script>
   </body>
 </html>

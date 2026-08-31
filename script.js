@@ -76,6 +76,13 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const hasThree = typeof THREE !== "undefined";
 
+if (prefersReducedMotion.matches) {
+  document.querySelectorAll(".baudtide-page video[autoplay]").forEach((video) => {
+    video.removeAttribute("autoplay");
+    video.pause();
+  });
+}
+
 const setHeaderScrolledState = () => {
   siteHeader?.classList.toggle("is-scrolled", window.scrollY > 16);
 };
@@ -252,6 +259,81 @@ window.addEventListener("DOMContentLoaded", () => {
   setDropdownState(false);
   setMobileProductsState(false);
 });
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const contactFormStatus = contactForm.querySelector("[data-form-status]");
+  const contactSubmitButton = contactForm.querySelector("[type=submit]");
+  const contactSubmitLabel = contactSubmitButton?.querySelector("span:first-child");
+  const defaultSubmitLabel = contactSubmitLabel?.textContent || "Send message";
+
+  const setContactFormStatus = (message, state = "") => {
+    if (!contactFormStatus) {
+      return;
+    }
+
+    contactFormStatus.textContent = message;
+    contactFormStatus.classList.remove("is-success", "is-error");
+    if (state) {
+      contactFormStatus.classList.add(`is-${state}`);
+    }
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      setContactFormStatus("Please complete the required fields before sending.", "error");
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+    const accessKey = String(formData.get("access_key") || "").trim();
+    if (!accessKey || accessKey.includes("YOUR_WEB3FORMS_ACCESS_KEY")) {
+      setContactFormStatus("The form is nearly ready. Please email basilkhowaja123@gmail.com directly for now.", "error");
+      return;
+    }
+
+    contactForm.classList.add("is-sending");
+    if (contactSubmitButton) {
+      contactSubmitButton.disabled = true;
+    }
+    if (contactSubmitLabel) {
+      contactSubmitLabel.textContent = "Sending…";
+    }
+    setContactFormStatus("Sending your message…");
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || result.body?.message || "Unable to send message");
+      }
+
+      contactForm.reset();
+      setContactFormStatus("Message sent. We’ll get back to you soon.", "success");
+    } catch (error) {
+      setContactFormStatus("We couldn’t send that message. Please email basilkhowaja123@gmail.com directly.", "error");
+    } finally {
+      contactForm.classList.remove("is-sending");
+      if (contactSubmitButton) {
+        contactSubmitButton.disabled = false;
+      }
+      if (contactSubmitLabel) {
+        contactSubmitLabel.textContent = defaultSubmitLabel;
+      }
+    }
+  });
+}
 
 const revealObserver = new IntersectionObserver(
   (entries) => {

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AspidIoT helps teams secure connected products across drone fleets, industrial IoT, autonomous robotics, and remote infrastructure."
+    />
+    <title>Services | Secure Connected Systems | AspidIoT</title>
+    <script>
+      try {
+        if (localStorage.getItem("aspid-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css?v=domains-2" />
+    <link rel="stylesheet" href="theme.css?v=domains-2" />
+  </head>
+  <body class="services-page services-domains-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home">Home</a>
+          <a class="nav-link is-active" href="services.html" aria-current="page">Services</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu" id="products-menu" data-dropdown-panel>
+              <div class="mega-menu-head">
+                <p class="mega-menu-kicker">Featured Product</p>
+                <h2>Focused security infrastructure for modern IoT systems</h2>
+              </div>
+
+              <div class="mega-menu-grid">
+                <a class="product-card product-card-featured" href="auth-x.html" data-product-link>
+                  <span class="product-icon product-icon-auth-x" aria-hidden="true">
+                    <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                    </span>
+                    <span class="product-description">
+                      Lightweight authentication framework for secure communication and identity verification.
+                    </span>
+                  </span>
+                </a>
+
+                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link>
+                  <span class="product-icon product-icon-baudtide" aria-hidden="true">
+                    <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">BaudTide</span>
+                      <span class="product-badge product-badge-open">Open source</span>
+                    </span>
+                    <span class="product-description">
+                      A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.
+                    </span>
+                  </span>
+                </a>
+
+                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
+                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
+                    <span>+</span>
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">More products</span>
+                      <span class="product-upcoming-label">Coming soon</span>
+                    </span>
+                    <span class="product-description">
+                      New security modules are in development. More tools for the secure edge are on the way.
+                    </span>
+                  </span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link is-active" href="services.html" aria-current="page" data-mobile-link>Services</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
+                <span class="mobile-product-logo" aria-hidden="true">
+                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
+                </span>
+                <span class="mobile-product-title-row">
+                  <span>Auth-X</span>
+                </span>
+                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+              </a>
+              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link>
+                <span class="mobile-product-title-row">
+                  <span>BaudTide</span>
+                  <span class="product-badge product-badge-open">Open source</span>
+                </span>
+                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
+              </a>
+              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
+                <span class="mobile-product-title-row">
+                  <span>More products</span>
+                  <span class="mobile-product-upcoming-label">Coming soon</span>
+                </span>
+                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="services-domains-hero" id="services" aria-labelledby="services-title">
+        <div class="services-domains-hero-shell">
+          <div class="services-domains-hero-copy reveal">
+            <p class="services-domains-kicker">AspidIoT / connected systems</p>
+            <h1 id="services-title">Where connected systems earn trust.</h1>
+            <p class="services-domains-hero-lede">
+              From autonomous fleets to industrial operations, we help teams build connected products
+              that recognize trusted participants, protect operational data, and stay dependable in the field.
+            </p>
+            <div class="services-domains-hero-actions">
+              <a class="button-link button-link-primary" href="#domains">Explore application domains <span aria-hidden="true">↓</span></a>
+              <a class="button-link button-link-muted" href="contact.html">Talk to us <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="services-domains-hero-status">
+              <span aria-hidden="true"></span>
+              Built for systems that move beyond the lab
+            </p>
+          </div>
+
+          <figure class="services-domains-hero-visual reveal" data-delay="120">
+            <picture>
+              <source srcset="assets/services/remote-infrastructure-v2.webp" type="image/webp" />
+              <img
+                src="assets/services/remote-infrastructure-v2.png"
+                alt="Off-grid monitoring station with solar panels beside a mountain reservoir"
+                width="1536"
+                height="1024"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+            <span class="services-hero-visual-label services-hero-visual-label-top">Remote infrastructure</span>
+            <figcaption>
+              <span>Field systems / remote assets</span>
+              <strong>Trust where the work lives.</strong>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="services-domains-proof" aria-label="Connected systems focus areas">
+          <div>
+            <span>Distributed</span>
+            <strong>Many devices, one clear point of trust.</strong>
+          </div>
+          <div>
+            <span>Operational</span>
+            <strong>Protection that holds up under real conditions.</strong>
+          </div>
+          <div>
+            <span>Adaptable</span>
+            <strong>A foundation that can move with the mission.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-domains-section" id="domains" aria-labelledby="services-domains-title">
+        <div class="services-domains-head">
+          <div>
+            <p class="services-domains-kicker">Where it applies</p>
+            <h2 id="services-domains-title">One security point of view. Many environments.</h2>
+          </div>
+          <p>
+            The same need appears in very different places: devices must be recognized, important data must
+            stay protected, and the people running the system need confidence in what they see.
+          </p>
+        </div>
+
+        <div class="services-domain-grid">
+          <article class="services-domain-card services-domain-card-wide services-domain-drone reveal">
+            <figure class="services-domain-media">
+              <picture>
+                <source srcset="assets/services/authenticated-drone-swarms.webp" type="image/webp" />
+                <img
+                  src="assets/services/authenticated-drone-swarms.png"
+                  alt="A formation of inspection drones flying above a coastal wind farm"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>Aerial systems</figcaption>
+            </figure>
+            <div class="services-domain-body">
+              <p class="services-domain-overline">Authenticated drone swarms</p>
+              <h3>Coordinate every aircraft with confidence.</h3>
+              <p>
+                Give inspection and delivery fleets a dependable way to recognize trusted members, protect
+                control paths, and keep mission data useful as the formation moves.
+              </p>
+              <ul class="services-domain-tags" aria-label="Drone swarm applications">
+                <li>Fleet identity</li>
+                <li>Trusted control</li>
+                <li>Mission telemetry</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="services-domain-card services-domain-industrial reveal" data-delay="80">
+            <figure class="services-domain-media">
+              <picture>
+                <source srcset="assets/services/industrial-iot.webp" type="image/webp" />
+                <img
+                  src="assets/services/industrial-iot.png"
+                  alt="Robotic arm and sensor-equipped conveyor line inside a modern factory"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>Smart manufacturing</figcaption>
+            </figure>
+            <div class="services-domain-body">
+              <p class="services-domain-overline">Industrial IoT &amp; smart manufacturing</p>
+              <h3>Keep the plant floor accountable.</h3>
+              <p>
+                Protect the relationship between sensors, gateways, controllers, and the teams responsible
+                for the line.
+              </p>
+              <ul class="services-domain-tags" aria-label="Industrial IoT applications">
+                <li>Plant-floor devices</li>
+                <li>Gateway trust</li>
+                <li>Operational data</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="services-domain-card services-domain-robotics reveal" data-delay="160">
+            <figure class="services-domain-media">
+              <picture>
+                <source srcset="assets/services/autonomous-robotics.webp" type="image/webp" />
+                <img
+                  src="assets/services/autonomous-robotics.png"
+                  alt="Autonomous mobile robots carrying boxes through a clean logistics warehouse"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>Autonomous mobility</figcaption>
+            </figure>
+            <div class="services-domain-body">
+              <p class="services-domain-overline">Autonomous robotics &amp; mobility</p>
+              <h3>Let machines move with a shared sense of trust.</h3>
+              <p>
+                Support robots, vehicles, and mobile equipment as they hand off work, exchange status, and
+                operate alongside the systems around them.
+              </p>
+              <ul class="services-domain-tags" aria-label="Autonomous robotics applications">
+                <li>Robot fleets</li>
+                <li>Device handoffs</li>
+                <li>Safe operations</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="services-domain-card services-domain-card-wide services-domain-infrastructure reveal" data-delay="240">
+            <figure class="services-domain-media">
+              <picture>
+                <source srcset="assets/services/remote-infrastructure-v2.webp" type="image/webp" />
+                <img
+                  src="assets/services/remote-infrastructure-v2.png"
+                  alt="Off-grid monitoring station with solar panels beside a mountain reservoir"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>Remote assets</figcaption>
+            </figure>
+            <div class="services-domain-body">
+              <p class="services-domain-overline">Critical infrastructure &amp; remote assets</p>
+              <h3>Bring field confidence to places people cannot always reach.</h3>
+              <p>
+                Keep distributed energy, water, logistics, and environmental systems dependable across long
+                distances, changing conditions, and imperfect connectivity.
+              </p>
+              <ul class="services-domain-tags" aria-label="Remote infrastructure applications">
+                <li>Distributed assets</li>
+                <li>Intermittent links</li>
+                <li>Field visibility</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="services-common-section" id="approach" aria-labelledby="services-common-title">
+        <div class="services-common-head">
+          <div>
+            <p class="services-domains-kicker">The common thread</p>
+            <h2 id="services-common-title">Security that makes room for the mission.</h2>
+          </div>
+          <p>
+            Different environments demand different details. The underlying expectation stays simple: know
+            what belongs, protect what matters, and keep the system ready for change.
+          </p>
+        </div>
+
+        <div class="services-common-grid">
+          <article class="services-common-card reveal">
+            <span class="services-common-glyph" aria-hidden="true">◌</span>
+            <h3>Know what belongs.</h3>
+            <p>Give every device and operator path a clear place in the system.</p>
+          </article>
+          <article class="services-common-card services-common-card-violet reveal" data-delay="80">
+            <span class="services-common-glyph" aria-hidden="true">↗</span>
+            <h3>Protect the signal.</h3>
+            <p>Keep operational data private, trustworthy, and useful where decisions happen.</p>
+          </article>
+          <article class="services-common-card services-common-card-mint reveal" data-delay="160">
+            <span class="services-common-glyph" aria-hidden="true">↻</span>
+            <h3>Stay ready for change.</h3>
+            <p>Adapt access and safeguards as fleets, environments, and missions evolve.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="services-domains-close" aria-labelledby="services-close-title">
+        <div class="services-domains-close-shell">
+          <div>
+            <p class="services-domains-kicker">Have a connected system in mind?</p>
+            <h2 id="services-close-title">Let’s find where trust matters most.</h2>
+            <p>
+              Bring us the environment, the devices, and the outcome you care about. We’ll help you see the
+              right security shape for the work ahead.
+            </p>
+          </div>
+          <a class="button-link button-link-primary" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="services.html" aria-current="page">Services</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="baudtide.html">BaudTide</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="theme.js?v=2"></script>
+    <script src="script.js?v=services-1"></script>
+  </body>
+</html>

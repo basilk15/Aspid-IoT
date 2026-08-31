@@ -234,7 +234,8 @@
   mix-blend-mode: screen;
 }
 
-.baudtide-screenshot-frame img {
+.baudtide-screenshot-frame img,
+.baudtide-screenshot-frame video {
   display: block;
   width: 100%;
   height: auto;
@@ -696,6 +697,8 @@ body.baudtide-page::after {
 }
 
 .baudtide-hero-proof {
+  align-self: start;
+  margin-top: 8.5rem;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -720,16 +723,22 @@ body.baudtide-page::after {
 }
 
 .baudtide-screenshot-hero {
-  aspect-ratio: 1.38;
+  aspect-ratio: 1626 / 946;
 }
 
 .baudtide-screenshot-image,
-.baudtide-screenshot-hero img {
+.baudtide-screenshot-hero img,
+.baudtide-screenshot-hero video {
   height: 100%;
   object-fit: cover;
-  object-position: 65% 45%;
-  transform: scale(1.12);
+  object-position: 61% 45%;
+  transform: scale(1.07);
   transform-origin: center center;
+}
+
+.baudtide-screenshot-hero video {
+  object-position: center center;
+  transform: none;
 }
 
 .baudtide-hero-proof figcaption {
@@ -856,6 +865,32 @@ body.baudtide-page::after {
   background: #0b1320;
 }
 
+.baudtide-proof-media-visualize {
+  aspect-ratio: 16 / 9;
+}
+
+.baudtide-proof-media-logs {
+  aspect-ratio: 1550 / 852;
+}
+
+.baudtide-proof-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.baudtide-proof-media-visualize video {
+  object-position: left center;
+  transform: none;
+  transform-origin: center center;
+}
+
+.baudtide-proof-media-logs video {
+  object-position: center center;
+}
+
 .baudtide-proof-media img {
   display: block;
   width: 100%;
@@ -870,11 +905,19 @@ body.baudtide-page::after {
 }
 
 .baudtide-proof-media-mobile img {
-  object-position: 64% 46%;
+  object-position: 63% 48%;
+  transform: scale(1.05);
 }
 
 .baudtide-proof-media-visualize img {
-  object-position: 65% 46%;
+  object-position: 56% 50%;
+  transform: scale(1.03);
+  transform-origin: center center;
+}
+
+.baudtide-proof-media-logs img {
+  object-position: 61% 43%;
+  transform: scale(1.06);
 }
 
 .baudtide-proof-copy {
@@ -976,6 +1019,11 @@ body.baudtide-page::after {
     gap: 3.5rem;
   }
 
+  .baudtide-hero-proof {
+    align-self: auto;
+    margin-top: 0;
+  }
+
   .baudtide-feature-row {
     grid-template-columns: minmax(6rem, 0.25fr) minmax(0, 1fr);
     gap: 1.5rem 2rem;
@@ -1049,8 +1097,25 @@ body.baudtide-page::after {
     aspect-ratio: 1.28;
   }
 
+  .baudtide-proof-media-visualize {
+    aspect-ratio: 16 / 9;
+  }
+
+  .baudtide-proof-media-logs {
+    aspect-ratio: 1550 / 852;
+  }
+
   .baudtide-proof-media img {
     transform: scale(1.14);
+  }
+
+  .baudtide-proof-media-visualize img {
+    transform: scale(1.01);
+  }
+
+  .baudtide-proof-media-mobile img,
+  .baudtide-proof-media-logs img {
+    transform: scale(1.02);
   }
 
   .baudtide-stack-grid {

@@ -28,18 +28,13 @@
 
     themeButtons.forEach((button) => {
       const targetTheme = isLight ? "dark" : "light";
-      const targetLabel = isLight ? "Dark" : "Light";
-      const targetDescription = `Switch to ${targetTheme} mode`;
+      const targetDescription = `Switch to ${targetTheme} theme`;
 
       button.setAttribute("aria-pressed", String(isLight));
       button.setAttribute("aria-label", targetDescription);
       button.setAttribute("title", targetDescription);
       button.dataset.theme = resolvedTheme;
 
-      const label = button.querySelector("[data-theme-label]");
-      if (label) {
-        label.textContent = targetLabel;
-      }
     });
 
     if (persist) {
