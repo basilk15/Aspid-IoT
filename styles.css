@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap");
-
 :root {
   color-scheme: dark;
   --bg: #05070c;
@@ -113,6 +111,24 @@ main::after {
   opacity: 0.08;
   filter: blur(0.4px);
   animation: glyphFade 24s ease-in-out infinite;
+}
+
+body.is-scrolling::after,
+body.is-scrolling main::before,
+body.is-scrolling main::after,
+html.page-hidden body::after,
+html.page-hidden main::before,
+html.page-hidden main::after,
+body.is-scrolling .network-route-line {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  body::after,
+  main::before,
+  main::after {
+    animation: none;
+  }
 }
 
 .site-header {
@@ -3615,6 +3631,12 @@ body:not(.is-loaded) .hero-3d {
   background: #0b1423;
 }
 
+.about-evidence-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .about-evidence-image img {
   display: block;
   width: 100%;
@@ -5531,6 +5553,17 @@ body:not(.is-loaded) .hero-3d {
   stroke-dasharray: 10 15;
   animation: network-route-flow 1.7s linear infinite;
   filter: drop-shadow(0 0 4px rgba(89, 247, 255, 0.45));
+}
+
+.network-map.is-motion-paused .network-route-line {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .network-route-line {
+    animation: none;
+    filter: none;
+  }
 }
 
 .network-route-line-vertical {

@@ -15,7 +15,10 @@
         }
       } catch {}
     </script>
-   <link rel="stylesheet" href="styles.css?v=clarity-44" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
+   <link rel="stylesheet" href="styles.css?v=performance-1" />
    <link rel="stylesheet" href="baudtide.css?v=14" />
     <link rel="stylesheet" href="theme.css?v=6" />
   </head>
@@ -228,11 +231,11 @@
               <div class="baudtide-screenshot-frame baudtide-screenshot-hero">
                 <video
                   class="baudtide-screenshot-video"
-                  autoplay
                   muted
                   loop
                   playsinline
-                  preload="metadata"
+                  preload="none"
+                  data-lazy-video
                   poster="assets/baudtide/screenshots/welcome.png"
                   aria-label="BaudTide live terminal with an active environmental sensor, connection health, capture state, and incoming JSON telemetry."
                 >
@@ -329,11 +332,11 @@
                 <div class="baudtide-proof-media baudtide-proof-media-visualize">
                   <video
                     class="baudtide-proof-video"
-                    autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    preload="none"
+                    data-lazy-video
                     poster="assets/baudtide/screenshots/visualize.png"
                     aria-label="BaudTide telemetry analysis workspace comparing live signals with a recorded capture on an aligned timeline."
                   >
@@ -351,11 +354,11 @@
                 <div class="baudtide-proof-media baudtide-proof-media-logs">
                   <video
                     class="baudtide-proof-video"
-                    autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    preload="none"
+                    data-lazy-video
                     poster="assets/baudtide/screenshots/saved-logs.png"
                     aria-label="BaudTide saved logs capture library searching raw logs for temperature data, with capture-state filters and actions to reconnect, visualize, or preview each result."
                   >
@@ -473,6 +476,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=network-13"></script>
+    <script src="script.js?v=performance-2"></script>
   </body>
 </html>

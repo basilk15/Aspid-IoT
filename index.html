@@ -15,7 +15,10 @@
         }
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=clarity-44" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=performance-1" />
     <link rel="stylesheet" href="theme.css?v=6" />
   </head>
   <body>
@@ -242,7 +245,7 @@
         <div class="device-bridge">
           <div class="device-node device-node-source">
             <span class="device-status"><span class="status-dot"></span>Source node</span>
-            <img class="device" src="esp32.png" alt="" />
+            <img class="device" src="esp32.png" alt="" loading="lazy" decoding="async" />
             <span class="device-label">ESP32 <span>· sensor</span></span>
           </div>
 
@@ -284,19 +287,19 @@
             </div>
 
             <div class="lock-indicator">
-              <img src="lock-removebg-preview.png" alt="" />
+              <img src="lock-removebg-preview.png" alt="" loading="lazy" decoding="async" />
               <span class="lock-label"><strong>LWC gate</strong><small>Encrypted here</small></span>
             </div>
 
             <div class="hacker-figure">
-              <img src="hacker-removebg-preview.png" alt="" />
+              <img src="hacker-removebg-preview.png" alt="" loading="lazy" decoding="async" />
               <span class="hacker-tag"><strong>Eavesdropper blocked</strong><small>Cannot read the payload</small></span>
             </div>
           </div>
 
           <div class="device-node device-node-destination">
             <span class="device-status"><span class="status-dot"></span>Destination node</span>
-            <img class="device" src="esp32.png" alt="" />
+            <img class="device" src="esp32.png" alt="" loading="lazy" decoding="async" />
             <span class="device-label">ESP32 <span>· receiver</span></span>
           </div>
         </div>
@@ -313,7 +316,7 @@
             <p class="story-line">Engineered for <span class="accent">IoT</span> environments.</p>
             <p class="story-line">
               Built on standardized <span class="accent">Lightweight Cryptography.</span>
-              <img class="story-logo" src="nist.png" alt="NIST logo" />
+              <img class="story-logo" src="nist.png" alt="NIST logo" loading="lazy" decoding="async" />
             </p>
             <p class="story-line">Delivering strong security guarantees.</p>
             <p class="story-line">Aligned with IoT system constraints.</p>
@@ -440,7 +443,7 @@
             <article class="showcase-card showcase-card-featured">
               <div class="showcase-card-top">
                 <span class="showcase-logo" aria-hidden="true">
-                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
+                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" loading="lazy" decoding="async" />
                 </span>
               </div>
               <h3>Auth-X</h3>
@@ -453,7 +456,7 @@
             <article class="showcase-card showcase-card-baudtide">
               <div class="showcase-card-top">
                 <span class="showcase-icon showcase-icon-baudtide" aria-hidden="true">
-                  <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                  <img src="assets/baudtide/baudtide-mark.png" alt="" loading="lazy" decoding="async" />
                 </span>
                 <span class="product-badge product-badge-open">Open source</span>
               </div>
@@ -539,8 +542,7 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=network-12"></script>
+    <script src="script.js?v=performance-2"></script>
   </body>
 </html>

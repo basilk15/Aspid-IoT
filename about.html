@@ -15,7 +15,10 @@
         }
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=clarity-44" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=performance-1" />
     <link rel="stylesheet" href="theme.css?v=6" />
   </head>
   <body class="about-page">
@@ -335,10 +338,21 @@
           <div class="about-evidence-grid">
             <figure class="about-evidence-card about-evidence-card-featured reveal">
               <div class="about-evidence-image">
-                <img
-                  src="about-project-showcase.jpg"
-                  alt="AspidIoT team presenting a lightweight cryptography-based VPN framework for secure IoT communication."
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="about-project-showcase-800.webp 800w, about-project-showcase-1600.webp 1600w"
+                    sizes="(max-width: 700px) calc(100vw - 2rem), 570px"
+                  />
+                  <img
+                    src="about-project-showcase-1600.jpg"
+                    alt="AspidIoT team presenting a lightweight cryptography-based VPN framework for secure IoT communication."
+                    width="1600"
+                    height="1064"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <figcaption>
                 <div class="about-evidence-caption-head">
@@ -354,10 +368,21 @@
 
             <figure class="about-evidence-card about-evidence-card-award reveal" data-delay="120">
               <div class="about-evidence-image">
-                <img
-                  src="about-capstone-award.jpg"
-                  alt="AspidIoT team receiving recognition for Best Capstone Design Project in Computer Engineering."
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="about-capstone-award-800.webp 800w, about-capstone-award-1600.webp 1600w"
+                    sizes="(max-width: 700px) calc(100vw - 2rem), 570px"
+                  />
+                  <img
+                    src="about-capstone-award-1600.jpg"
+                    alt="AspidIoT team receiving recognition for Best Capstone Design Project in Computer Engineering."
+                    width="1600"
+                    height="1066"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <figcaption>
                 <div class="about-evidence-caption-head">
@@ -532,6 +557,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=network-14"></script>
+    <script src="script.js?v=performance-2"></script>
   </body>
 </html>

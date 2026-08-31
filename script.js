@@ -20,6 +20,13 @@ const productLinks = document.querySelectorAll("[data-product-link]");
 const navShell = document.querySelector(".nav-shell");
 const navTraceSvg = navShell?.querySelector(".nav-shell-trace svg");
 const navTracePath = navShell?.querySelector(".nav-shell-trace-path");
+const updatePageVisibility = () => {
+  document.documentElement.classList.toggle("page-hidden", document.hidden);
+};
+
+document.addEventListener("visibilitychange", updatePageVisibility);
+updatePageVisibility();
+
 let dropdownCloseTimer = null;
 let dropdownHoverOpened = false;
 
@@ -74,14 +81,63 @@ if (navShell && typeof ResizeObserver !== "undefined") {
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-const hasThree = typeof THREE !== "undefined";
+const stopBaudtideVideo = (video) => {
+  video.removeAttribute("autoplay");
+  video.pause();
+  video.preload = "none";
+};
 
-if (prefersReducedMotion.matches) {
-  document.querySelectorAll(".baudtide-page video[autoplay]").forEach((video) => {
-    video.removeAttribute("autoplay");
-    video.pause();
+const setupBaudtideVideos = () => {
+  const videos = Array.from(document.querySelectorAll(".baudtide-page video"));
+  if (videos.length === 0) {
+    return;
+  }
+
+  const lazyVideos = videos.filter((video) => video.hasAttribute("data-lazy-video"));
+  const saveData = () => navigator.connection?.saveData === true;
+
+  if (prefersReducedMotion.matches || saveData()) {
+    videos.forEach(stopBaudtideVideo);
+    return;
+  }
+
+  if (lazyVideos.length === 0 || typeof IntersectionObserver === "undefined") {
+    return;
+  }
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!entry.isIntersecting) {
+          video.pause();
+          video.preload = "none";
+          return;
+        }
+
+        if (prefersReducedMotion.matches || saveData()) {
+          stopBaudtideVideo(video);
+          return;
+        }
+
+        video.preload = "auto";
+        const playPromise = video.play();
+        playPromise?.catch(() => {});
+      });
+    },
+    { rootMargin: "360px 0px", threshold: 0.01 }
+  );
+
+  lazyVideos.forEach((video) => videoObserver.observe(video));
+
+  prefersReducedMotion.addEventListener?.("change", (event) => {
+    if (event.matches) {
+      videos.forEach(stopBaudtideVideo);
+    }
   });
-}
+};
+
+setupBaudtideVideos();
 
 const setHeaderScrolledState = () => {
   siteHeader?.classList.toggle("is-scrolled", window.scrollY > 16);
@@ -167,6 +223,26 @@ const supportsWebGL = (() => {
   }
 })();
 
+let threeLoadPromise = null;
+
+const loadThree = () => {
+  if (window.THREE) {
+    return Promise.resolve(window.THREE);
+  }
+
+  if (!threeLoadPromise) {
+    threeLoadPromise = import("https://unpkg.com/three@0.158.0/build/three.module.js").then((module) => {
+      window.THREE = module;
+      return module;
+    });
+  }
+
+  return threeLoadPromise;
+};
+
+const isConstrainedRenderDevice = () => window.innerWidth <= 768 || navigator.connection?.saveData === true;
+const getRenderPixelRatio = () => Math.min(window.devicePixelRatio || 1, isConstrainedRenderDevice() ? 1.25 : 1.5);
+
 const getQualityTier = () => {
   const width = window.innerWidth;
   if (width <= 480) {
@@ -187,13 +263,14 @@ const setRendererColorSpace = (renderer) => {
 };
 
 const createRenderer = (canvas) => {
+  const constrained = isConstrainedRenderDevice();
   const renderer = new THREE.WebGLRenderer({
     canvas,
-    antialias: true,
+    antialias: !constrained,
     alpha: true,
-    powerPreference: "high-performance",
+    powerPreference: constrained ? "low-power" : "high-performance",
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setPixelRatio(getRenderPixelRatio());
   renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
   renderer.setClearColor(0x000000, 0);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -206,7 +283,7 @@ const resizeRendererToDisplaySize = (renderer, camera) => {
   const canvas = renderer.domElement;
   const width = canvas.clientWidth || 1;
   const height = canvas.clientHeight || 1;
-  const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  const dpr = getRenderPixelRatio();
   if (renderer.getPixelRatio() !== dpr) {
     renderer.setPixelRatio(dpr);
   }
@@ -243,9 +320,9 @@ const createGlowTexture = (innerColor, outerColor) => {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, size, size);
   const texture = new THREE.CanvasTexture(canvas);
-  if (texture.colorSpace) {
+  if ("colorSpace" in texture) {
     texture.colorSpace = THREE.SRGBColorSpace;
-  } else if (texture.encoding) {
+  } else {
     texture.encoding = THREE.sRGBEncoding;
   }
   return texture;
@@ -381,6 +458,7 @@ const activateStoryLine = () => {
 };
 
 const handleScroll = () => {
+  pauseDecorativeMotionDuringScroll();
   const offset = window.scrollY * 0.12;
   if (heroBg) {
     heroBg.style.transform = `translateY(${offset}px)`;
@@ -429,6 +507,19 @@ const ensureHeroUnlockedForViewport = () => {
 };
 
 let isTicking = false;
+let scrollResumeTimer = null;
+
+const pauseDecorativeMotionDuringScroll = () => {
+  document.body.classList.add("is-scrolling");
+  if (scrollResumeTimer !== null) {
+    window.clearTimeout(scrollResumeTimer);
+  }
+  scrollResumeTimer = window.setTimeout(() => {
+    document.body.classList.remove("is-scrolling");
+    scrollResumeTimer = null;
+  }, 180);
+};
+
 const onScroll = () => {
   if (isTicking) {
     return;
@@ -2153,6 +2244,42 @@ const getTooltipController = () => {
 const enableHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const tooltipController = enableHover ? getTooltipController() : null;
 
+const networkMap = document.querySelector(".network-map");
+let networkMapVisible = false;
+
+const setNetworkMotionState = (isVisible) => {
+  if (!networkMap) {
+    return;
+  }
+
+  networkMapVisible = isVisible;
+  const shouldAnimate = isVisible && !prefersReducedMotion.matches && !document.hidden;
+  networkMap.classList.toggle("is-motion-paused", !shouldAnimate);
+
+  if (typeof networkMap.pauseAnimations === "function") {
+    if (shouldAnimate) {
+      networkMap.unpauseAnimations();
+    } else {
+      networkMap.pauseAnimations();
+    }
+  }
+};
+
+if (networkMap) {
+  if (typeof IntersectionObserver === "undefined") {
+    setNetworkMotionState(true);
+  } else {
+    const networkMotionObserver = new IntersectionObserver(
+      ([entry]) => setNetworkMotionState(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    networkMotionObserver.observe(networkMap);
+  }
+
+  prefersReducedMotion.addEventListener?.("change", () => setNetworkMotionState(networkMapVisible));
+  document.addEventListener("visibilitychange", () => setNetworkMotionState(networkMapVisible));
+}
+
 const sceneConfigs = [
   {
     key: "hero",
@@ -2171,37 +2298,68 @@ const sceneConfigs = [
 ];
 
 const sceneState = new Map();
+const sceneInitPromises = new Map();
+const sceneVisibility = new Map();
 
 const initScene = (sceneConfig) => {
   if (!sceneConfig.section || !sceneConfig.canvas || !sceneConfig.container) {
-    return null;
+    return Promise.resolve(null);
   }
 
-  if (!supportsWebGL || !hasThree) {
+  if (!supportsWebGL || prefersReducedMotion.matches) {
     sceneConfig.container.classList.add("is-disabled");
-    return null;
+    return Promise.resolve(null);
   }
 
-  if (!sceneState.has(sceneConfig.key)) {
-    const controller = sceneConfig.init(sceneConfig.canvas, sceneConfig.section);
-    sceneState.set(sceneConfig.key, controller);
-    sceneConfig.container.classList.add("is-ready");
-    sceneConfig.section.classList.add("has-3d");
-
-    if (sceneConfig.key === "bridge") {
-      sceneConfig.section.querySelector(".device-bridge")?.classList.add("is-3d");
-    }
-
-    if (sceneConfig.key === "network") {
-      sceneConfig.section.querySelector(".network-viz")?.classList.add("is-3d");
-    }
-
-    if (prefersReducedMotion.matches) {
-      controller.renderStatic?.();
-    }
+  if (sceneState.has(sceneConfig.key)) {
+    return Promise.resolve(sceneState.get(sceneConfig.key));
   }
 
-  return sceneState.get(sceneConfig.key) || null;
+  if (sceneInitPromises.has(sceneConfig.key)) {
+    return sceneInitPromises.get(sceneConfig.key);
+  }
+
+  const initPromise = loadThree()
+    .then(() => {
+      if (!window.THREE || prefersReducedMotion.matches) {
+        sceneConfig.container.classList.add("is-disabled");
+        return null;
+      }
+
+      if (!sceneState.has(sceneConfig.key)) {
+        const controller = sceneConfig.init(sceneConfig.canvas, sceneConfig.section);
+        sceneState.set(sceneConfig.key, controller);
+        sceneConfig.container.classList.add("is-ready");
+        sceneConfig.section.classList.add("has-3d");
+
+        if (sceneConfig.key === "bridge") {
+          sceneConfig.section.querySelector(".device-bridge")?.classList.add("is-3d");
+        }
+
+        if (sceneConfig.key === "network") {
+          sceneConfig.section.querySelector(".network-viz")?.classList.add("is-3d");
+        }
+      }
+
+      return sceneState.get(sceneConfig.key) || null;
+    })
+    .catch(() => {
+      sceneConfig.container.classList.add("is-disabled");
+      return null;
+    });
+
+  sceneInitPromises.set(sceneConfig.key, initPromise);
+  return initPromise;
+};
+
+const setSceneMotionState = (matchesReducedMotion) => {
+  sceneState.forEach((controller, key) => {
+    if (matchesReducedMotion || document.hidden || !sceneVisibility.get(key)) {
+      controller.stop?.();
+    } else {
+      controller.start?.();
+    }
+  });
 };
 
 const sceneObserver = new IntersectionObserver(
@@ -2212,18 +2370,23 @@ const sceneObserver = new IntersectionObserver(
         return;
       }
 
-      const controller = initScene(config);
-      if (!controller) {
+      sceneVisibility.set(config.key, entry.isIntersecting);
+
+      if (!entry.isIntersecting) {
+        sceneState.get(config.key)?.stop?.();
         return;
       }
 
-      if (entry.isIntersecting) {
-        if (!prefersReducedMotion.matches) {
+      initScene(config).then((controller) => {
+        if (!controller || !sceneVisibility.get(config.key)) {
+          controller?.stop?.();
+          return;
+        }
+
+        if (!prefersReducedMotion.matches && !document.hidden) {
           controller.start?.();
         }
-      } else {
-        controller.stop?.();
-      }
+      });
     });
   },
   { threshold: 0.2 }
@@ -2234,6 +2397,9 @@ sceneConfigs.forEach((scene) => {
     sceneObserver.observe(scene.section);
   }
 });
+
+prefersReducedMotion.addEventListener?.("change", (event) => setSceneMotionState(event.matches));
+document.addEventListener("visibilitychange", () => setSceneMotionState(false));
 
 const handleResize = () => {
   sceneState.forEach((controller) => {
