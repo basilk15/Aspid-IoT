@@ -17,6 +17,7 @@ const dropdownPanel = document.querySelector("[data-dropdown-panel]");
 const mobileProducts = document.querySelector(".mobile-products");
 const mobileProductsToggle = document.querySelector("[data-mobile-products-toggle]");
 const productLinks = document.querySelectorAll("[data-product-link]");
+const productFamilyToggles = document.querySelectorAll("[data-product-family-toggle]");
 const navShell = document.querySelector(".nav-shell");
 const navTraceSvg = navShell?.querySelector(".nav-shell-trace svg");
 const navTracePath = navShell?.querySelector(".nav-shell-trace-path");
@@ -31,14 +32,20 @@ let dropdownCloseTimer = null;
 let dropdownHoverOpened = false;
 
 const getNavTracePath = (width, height) => {
-  const inset = 0.9;
-  const x = inset;
-  const y = inset;
-  const w = Math.max(0, width - inset * 2);
-  const h = Math.max(0, height - inset * 2);
-  const radius = Math.min(23.1, Math.max(0, h / 2));
-  const right = x + w;
-  const bottom = y + h;
+  const navStyle = window.getComputedStyle(navShell);
+  const pixels = (value) => Number.parseFloat(value) || 0;
+  const insetLeft = pixels(navStyle.borderLeftWidth) / 2;
+  const insetRight = pixels(navStyle.borderRightWidth) / 2;
+  const insetTop = pixels(navStyle.borderTopWidth) / 2;
+  const insetBottom = pixels(navStyle.borderBottomWidth) / 2;
+  const x = insetLeft;
+  const y = insetTop;
+  const right = Math.max(x, width - insetRight);
+  const bottom = Math.max(y, height - insetBottom);
+  const w = Math.max(0, right - x);
+  const h = Math.max(0, bottom - y);
+  const cornerRadius = pixels(navStyle.borderTopLeftRadius);
+  const radius = Math.max(0, Math.min(cornerRadius - Math.max(insetLeft, insetTop), w / 2, h / 2));
   const centerX = x + w / 2;
 
   return [
@@ -60,8 +67,9 @@ const updateNavTrace = () => {
     return;
   }
 
-  const width = navShell.clientWidth;
-  const height = navShell.clientHeight;
+  const bounds = navTraceSvg.getBoundingClientRect();
+  const width = bounds.width;
+  const height = bounds.height;
   if (width <= 0 || height <= 0) {
     return;
   }
@@ -139,6 +147,81 @@ const setupBaudtideVideos = () => {
 
 setupBaudtideVideos();
 
+const stopAmbientVideo = (video) => {
+  video.pause();
+  video.removeAttribute("autoplay");
+  video.preload = "none";
+};
+
+const setupAmbientVideos = () => {
+  const videos = Array.from(document.querySelectorAll("[data-ambient-video]"));
+  if (videos.length === 0) {
+    return;
+  }
+
+  const saveData = () => navigator.connection?.saveData === true;
+  const stopAll = () => videos.forEach(stopAmbientVideo);
+
+  if (prefersReducedMotion.matches || saveData()) {
+    stopAll();
+    return;
+  }
+
+  if (typeof IntersectionObserver === "undefined") {
+    videos.forEach((video) => {
+      video.preload = "auto";
+      video.play().catch(() => {});
+    });
+    return;
+  }
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!entry.isIntersecting) {
+          video.pause();
+          video.preload = "none";
+          return;
+        }
+
+        if (prefersReducedMotion.matches || saveData()) {
+          stopAmbientVideo(video);
+          return;
+        }
+
+        video.preload = "auto";
+        video.play().catch(() => {});
+      });
+    },
+    { rootMargin: "260px 0px", threshold: 0.01 }
+  );
+
+  videos.forEach((video) => {
+    const showVideo = () => video.classList.add("is-ready");
+
+    video.addEventListener("loadeddata", showVideo, { once: true });
+    video.addEventListener("canplay", showVideo, { once: true });
+    video.addEventListener("error", () => {
+      video.hidden = true;
+    });
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      showVideo();
+    }
+
+    videoObserver.observe(video);
+  });
+
+  prefersReducedMotion.addEventListener?.("change", (event) => {
+    if (event.matches) {
+      stopAll();
+    }
+  });
+};
+
+setupAmbientVideos();
+
 const setHeaderScrolledState = () => {
   siteHeader?.classList.toggle("is-scrolled", window.scrollY > 16);
 };
@@ -169,6 +252,24 @@ const scheduleDropdownClose = () => {
   }, 280);
 };
 
+const setProductFamilyState = (family, isExpanded) => {
+  if (!family) {
+    return;
+  }
+
+  const toggle = family.querySelector("[data-product-family-toggle]");
+  const panel = family.querySelector(".product-menu-family-panel");
+  family.classList.toggle("is-expanded", isExpanded);
+  toggle?.setAttribute("aria-expanded", String(isExpanded));
+  panel?.setAttribute("aria-hidden", String(!isExpanded));
+};
+
+const collapseProductFamilies = (container) => {
+  container?.querySelectorAll("[data-product-family]").forEach((family) => {
+    setProductFamilyState(family, false);
+  });
+};
+
 const setDropdownState = (isOpen) => {
   if (!dropdown || !dropdownToggle || !dropdownPanel) {
     return;
@@ -177,6 +278,7 @@ const setDropdownState = (isOpen) => {
   cancelDropdownClose();
   if (!isOpen) {
     dropdownHoverOpened = false;
+    collapseProductFamilies(dropdownPanel);
   }
   dropdown.classList.toggle("is-open", isOpen);
   dropdownToggle.setAttribute("aria-expanded", String(isOpen));
@@ -190,6 +292,9 @@ const setMobileProductsState = (isOpen) => {
 
   mobileProducts.classList.toggle("is-open", isOpen);
   mobileProductsToggle.setAttribute("aria-expanded", String(isOpen));
+  if (!isOpen) {
+    collapseProductFamilies(mobileProducts);
+  }
 };
 
 const setActiveNavLink = () => {
@@ -412,23 +517,28 @@ if (contactForm) {
   });
 }
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = Number(entry.target.dataset.delay || 0);
-        entry.target.style.transitionDelay = `${delay}ms`;
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-  }
-);
+if (prefersReducedMotion.matches || typeof IntersectionObserver === "undefined") {
+  reveals.forEach((element) => element.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = Number(entry.target.dataset.delay || 0);
+          entry.target.style.setProperty("--reveal-delay", `${delay}ms`);
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18,
+    }
+  );
 
-reveals.forEach((element) => revealObserver.observe(element));
+  reveals.forEach((element) => revealObserver.observe(element));
+}
 
 const activateStoryLine = () => {
   if (storyLines.length === 0) {
@@ -587,6 +697,19 @@ dropdown?.addEventListener("focusout", (event) => {
   if (!isMobileViewport() && !dropdown.contains(event.relatedTarget)) {
     scheduleDropdownClose();
   }
+});
+
+productFamilyToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const family = toggle.closest("[data-product-family]");
+    const familyList = toggle.closest("[data-product-family-list]");
+    const isExpanded = family?.classList.contains("is-expanded");
+
+    familyList?.querySelectorAll("[data-product-family]").forEach((item) => {
+      setProductFamilyState(item, false);
+    });
+    setProductFamilyState(family, !isExpanded);
+  });
 });
 
 navToggle?.addEventListener("click", () => {

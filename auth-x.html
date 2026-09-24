@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles.css?v=performance-1" />
     <link rel="stylesheet" href="auth-x-primitives.css?v=2" />
     <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=4" />
   </head>
   <body class="auth-x-page">
     <header class="site-header" data-header>
@@ -63,27 +64,39 @@
               <span class="nav-caret" aria-hidden="true"></span>
             </button>
 
-            <div class="mega-menu" id="products-menu" data-dropdown-panel>
-              <div class="mega-menu-head">
-                <p class="mega-menu-kicker">Featured Product</p>
-                <h2>Focused security infrastructure for modern IoT systems</h2>
-              </div>
-
-              <div class="mega-menu-grid">
-                <a class="product-card product-card-featured" href="auth-x.html" data-product-link aria-current="page">
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Device identity + session setup</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                <a class="product-menu-item" href="auth-x.html" data-product-link aria-current="page">
+                  <span class="product-family-label">Secure-X lineup</span>
                   <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
+                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
                   </span>
                   <span class="product-copy">
                     <span class="product-title-row">
                       <span class="product-name">Auth-X</span>
                     </span>
                     <span class="product-description">
-                      Lightweight authentication framework for secure communication and identity verification.
+                      Device identity &amp; session setup
                     </span>
                   </span>
                 </a>
-                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                <a class="product-menu-item" href="baudtide.html" data-product-link>
+                  <span class="product-family-label">DataTide</span>
                   <span class="product-icon product-icon-baudtide" aria-hidden="true">
                     <img src="assets/baudtide/baudtide-mark.png" alt="" />
                   </span>
@@ -95,20 +108,8 @@
                     <span class="product-description">A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.</span>
                   </span>
                 </a>
-                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
-                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
-                    <span>+</span>
-                  </span>
-                  <span class="product-copy">
-                    <span class="product-title-row">
-                      <span class="product-name">More products</span>
-                      <span class="product-upcoming-label">Coming soon</span>
-                    </span>
-                    <span class="product-description">
-                      New security modules are in development. More tools for the secure edge are on the way.
-                    </span>
-                  </span>
-                </article>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -175,28 +176,37 @@
             </button>
 
             <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
-              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link aria-current="page">
-                <span class="mobile-product-logo" aria-hidden="true">
-                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
-                </span>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Device identity + session setup</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+              <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link aria-current="page">
                 <span class="mobile-product-title-row">
+                  <img class="mobile-product-mark" src="assets/auth-x-logos/auth-x-mark.svg" alt="" aria-hidden="true" width="64" height="64" decoding="async" />
                   <span>Auth-X</span>
                 </span>
-                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+                <span>Device identity &amp; session setup</span>
               </a>
-              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+              <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
                 <span class="mobile-product-title-row">
                   <span>BaudTide</span>
                   <span class="product-badge product-badge-open">Open source</span>
                 </span>
-                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
+                <span>Local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
               </a>
-              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
-                <span class="mobile-product-title-row">
-                  <span>More products</span>
-                  <span class="mobile-product-upcoming-label">Coming soon</span>
-                </span>
-                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -395,7 +405,7 @@
               <p class="section-kicker">Security properties</p>
               <h2 class="section-title">Guardrails around every trust decision.</h2>
               <p class="section-summary">
-                These are properties of the authentication flow above—not additional handshake steps.
+                These are properties of the authentication flow above. They are not additional handshake steps.
               </p>
             </div>
 
@@ -437,7 +447,7 @@
                 <small>server-side observation</small>
               </div>
               <div class="auth-x-stat-card reveal" data-delay="140">
-                <strong>88–279<span>ms</span></strong>
+                  <strong>88-279<span>ms</span></strong>
                 <span>observed authentication range</span>
                 <small>across observed runs</small>
               </div>
@@ -455,7 +465,7 @@
                     <span class="auth-x-chart-kicker">Timing comparison</span>
                     <h3>Authentication stays lightweight before session unlock.</h3>
                   </div>
-                  <span class="auth-x-chart-scale">same scale · 0–500 ms</span>
+                  <span class="auth-x-chart-scale">same scale · 0-500 ms</span>
                 </div>
                 <div class="auth-x-chart-axis" aria-hidden="true">
                   <span>0</span>
@@ -484,7 +494,7 @@
                     <span class="auth-x-chart-kicker">Latency spread</span>
                     <h3>The full observed authentication band.</h3>
                   </div>
-                  <span class="auth-x-chart-scale">observed runs · 0–300 ms</span>
+                  <span class="auth-x-chart-scale">observed runs · 0-300 ms</span>
                 </div>
                 <div class="auth-x-chart-axis auth-x-range-axis" aria-hidden="true">
                   <span>0</span>
@@ -544,7 +554,7 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="auth-x.js?v=3"></script>
+    <script src="auth-x.js?v=4"></script>
     <script src="auth-x-primitives.js?v=2"></script>
   </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AspidIoT helps teams secure connected products across drone fleets, industrial IoT, autonomous robotics, and remote infrastructure."
+      content="AspidIoT helps teams secure connected products across urban safety monitoring, drone fleets, industrial IoT, autonomous robotics, and remote infrastructure."
     />
     <title>Services | Secure Connected Systems | AspidIoT</title>
     <script>
@@ -18,8 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=performance-1" />
+    <link rel="stylesheet" href="styles.css?v=services-card-motion-1" />
     <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=4" />
   </head>
   <body class="services-page services-domains-page">
     <header class="site-header" data-header>
@@ -62,28 +63,39 @@
               <span class="nav-caret" aria-hidden="true"></span>
             </button>
 
-            <div class="mega-menu" id="products-menu" data-dropdown-panel>
-              <div class="mega-menu-head">
-                <p class="mega-menu-kicker">Featured Product</p>
-                <h2>Focused security infrastructure for modern IoT systems</h2>
-              </div>
-
-              <div class="mega-menu-grid">
-                <a class="product-card product-card-featured" href="auth-x.html" data-product-link>
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Device identity + session setup</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                <a class="product-menu-item" href="auth-x.html" data-product-link>
+                  <span class="product-family-label">Secure-X lineup</span>
                   <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
+                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
                   </span>
                   <span class="product-copy">
                     <span class="product-title-row">
                       <span class="product-name">Auth-X</span>
                     </span>
                     <span class="product-description">
-                      Lightweight authentication framework for secure communication and identity verification.
+                      Device identity &amp; session setup
                     </span>
                   </span>
                 </a>
-
-                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                <a class="product-menu-item" href="baudtide.html" data-product-link>
+                  <span class="product-family-label">DataTide</span>
                   <span class="product-icon product-icon-baudtide" aria-hidden="true">
                     <img src="assets/baudtide/baudtide-mark.png" alt="" />
                   </span>
@@ -97,21 +109,8 @@
                     </span>
                   </span>
                 </a>
-
-                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
-                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
-                    <span>+</span>
-                  </span>
-                  <span class="product-copy">
-                    <span class="product-title-row">
-                      <span class="product-name">More products</span>
-                      <span class="product-upcoming-label">Coming soon</span>
-                    </span>
-                    <span class="product-description">
-                      New security modules are in development. More tools for the secure edge are on the way.
-                    </span>
-                  </span>
-                </article>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -178,28 +177,37 @@
             </button>
 
             <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
-              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
-                <span class="mobile-product-logo" aria-hidden="true">
-                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
-                </span>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Device identity + session setup</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+              <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
                 <span class="mobile-product-title-row">
+                  <img class="mobile-product-mark" src="assets/auth-x-logos/auth-x-mark.svg" alt="" aria-hidden="true" width="64" height="64" decoding="async" />
                   <span>Auth-X</span>
                 </span>
-                <span>Lightweight authentication framework for secure communication and identity verification.</span>
+                <span>Device identity &amp; session setup</span>
               </a>
-              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+              <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
                 <span class="mobile-product-title-row">
                   <span>BaudTide</span>
                   <span class="product-badge product-badge-open">Open source</span>
                 </span>
-                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
+                <span>Local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
               </a>
-              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
-                <span class="mobile-product-title-row">
-                  <span>More products</span>
-                  <span class="mobile-product-upcoming-label">Coming soon</span>
-                </span>
-                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -215,53 +223,41 @@
         <div class="services-domains-hero-shell">
           <div class="services-domains-hero-copy reveal">
             <p class="services-domains-kicker">AspidIoT / connected systems</p>
-            <h1 id="services-title">Where connected systems earn trust.</h1>
+            <h1 id="services-title">Secure systems that move.</h1>
             <p class="services-domains-hero-lede">
-              From autonomous fleets to industrial operations, we help teams build connected products
-              that recognize trusted participants, protect operational data, and stay dependable in the field.
+              We connect cameras, machines, and remote devices with identity and encrypted transport built for the field.
             </p>
             <div class="services-domains-hero-actions">
-              <a class="button-link button-link-primary" href="#domains">Explore application domains <span aria-hidden="true">↓</span></a>
-              <a class="button-link button-link-muted" href="contact.html">Talk to us <span aria-hidden="true">↗</span></a>
+              <a class="button-link button-link-primary" href="#domains">See application areas <span aria-hidden="true">↓</span></a>
+              <a class="button-link button-link-muted" href="contact.html">Contact us <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="services-domains-hero-status">
-              <span aria-hidden="true"></span>
-              Built for systems that move beyond the lab
-            </p>
           </div>
 
           <figure class="services-domains-hero-visual reveal" data-delay="120">
-            <picture>
-              <source srcset="assets/services/remote-infrastructure-v2.webp" type="image/webp" />
-              <img
-                src="assets/services/remote-infrastructure-v2.png"
-                alt="Off-grid monitoring station with solar panels beside a mountain reservoir"
-                width="1536"
-                height="1024"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </picture>
-            <span class="services-hero-visual-label services-hero-visual-label-top">Remote infrastructure</span>
-            <figcaption>
-              <span>Field systems / remote assets</span>
-              <strong>Trust where the work lives.</strong>
-            </figcaption>
+            <img
+              class="services-hero-media-fallback"
+              src="assets/services/authenticated-drone-swarm-clean.webp"
+              alt="A coordinated group of autonomous drones above a coastal industrial port at blue hour"
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+              decoding="async"
+            />
           </figure>
         </div>
 
         <div class="services-domains-proof" aria-label="Connected systems focus areas">
           <div>
             <span>Distributed</span>
-            <strong>Many devices, one clear point of trust.</strong>
+            <strong>One identity layer for every connected device.</strong>
           </div>
           <div>
             <span>Operational</span>
-            <strong>Protection that holds up under real conditions.</strong>
+            <strong>Encrypted transport for the data people depend on.</strong>
           </div>
           <div>
             <span>Adaptable</span>
-            <strong>A foundation that can move with the mission.</strong>
+            <strong>A security foundation that fits the environment.</strong>
           </div>
         </div>
       </section>
@@ -269,42 +265,38 @@
       <section class="services-domains-section" id="domains" aria-labelledby="services-domains-title">
         <div class="services-domains-head">
           <div>
-            <p class="services-domains-kicker">Where it applies</p>
-            <h2 id="services-domains-title">One security point of view. Many environments.</h2>
+            <h2 id="services-domains-title">One foundation for every environment.</h2>
           </div>
           <p>
-            The same need appears in very different places: devices must be recognized, important data must
-            stay protected, and the people running the system need confidence in what they see.
+            Different devices, same requirement: identify what is trusted, protect every exchange, and keep the operation moving.
           </p>
         </div>
 
         <div class="services-domain-grid">
-          <article class="services-domain-card services-domain-card-wide services-domain-drone reveal">
+          <article class="services-domain-card services-domain-card-wide services-domain-cctv reveal">
             <figure class="services-domain-media">
               <picture>
-                <source srcset="assets/services/authenticated-drone-swarms.webp" type="image/webp" />
+                <source srcset="assets/services/urban-safety-cctv-network.webp" type="image/webp" />
                 <img
-                  src="assets/services/authenticated-drone-swarms.png"
-                  alt="A formation of inspection drones flying above a coastal wind farm"
+                  src="assets/services/urban-safety-cctv-network.png"
+                  alt="Street cameras connected to a secure edge server across an urban safety network"
                   width="1536"
                   height="1024"
                   loading="lazy"
                   decoding="async"
                 />
               </picture>
-              <figcaption>Aerial systems</figcaption>
             </figure>
             <div class="services-domain-body">
-              <p class="services-domain-overline">Authenticated drone swarms</p>
-              <h3>Coordinate every aircraft with confidence.</h3>
+              <p class="services-domain-overline">Urban safety / camera networks</p>
+              <h3>Connect every camera securely.</h3>
               <p>
-                Give inspection and delivery fleets a dependable way to recognize trusted members, protect
-                control paths, and keep mission data useful as the formation moves.
+                Connect distributed cameras to a central service over authenticated, encrypted tunnels.
               </p>
-              <ul class="services-domain-tags" aria-label="Drone swarm applications">
-                <li>Fleet identity</li>
-                <li>Trusted control</li>
-                <li>Mission telemetry</li>
+              <ul class="services-domain-tags" aria-label="Urban safety monitoring applications">
+                <li>Camera identity</li>
+                <li>Encrypted telemetry</li>
+                <li>Local visibility</li>
               </ul>
             </div>
           </article>
@@ -322,17 +314,15 @@
                   decoding="async"
                 />
               </picture>
-              <figcaption>Smart manufacturing</figcaption>
             </figure>
             <div class="services-domain-body">
-              <p class="services-domain-overline">Industrial IoT &amp; smart manufacturing</p>
-              <h3>Keep the plant floor accountable.</h3>
+              <p class="services-domain-overline">Industrial systems</p>
+              <h3>Protect the plant floor.</h3>
               <p>
-                Protect the relationship between sensors, gateways, controllers, and the teams responsible
-                for the line.
+                Keep sensors, gateways, controllers, and operators on the same trusted path.
               </p>
               <ul class="services-domain-tags" aria-label="Industrial IoT applications">
-                <li>Plant-floor devices</li>
+                <li>Plant devices</li>
                 <li>Gateway trust</li>
                 <li>Operational data</li>
               </ul>
@@ -352,19 +342,17 @@
                   decoding="async"
                 />
               </picture>
-              <figcaption>Autonomous mobility</figcaption>
             </figure>
             <div class="services-domain-body">
-              <p class="services-domain-overline">Autonomous robotics &amp; mobility</p>
-              <h3>Let machines move with a shared sense of trust.</h3>
+              <p class="services-domain-overline">Robotics and mobile fleets</p>
+              <h3>Coordinate machines that move.</h3>
               <p>
-                Support robots, vehicles, and mobile equipment as they hand off work, exchange status, and
-                operate alongside the systems around them.
+                Protect handoffs between robots, vehicles, and the systems that coordinate them.
               </p>
               <ul class="services-domain-tags" aria-label="Autonomous robotics applications">
                 <li>Robot fleets</li>
                 <li>Device handoffs</li>
-                <li>Safe operations</li>
+                <li>Fleet visibility</li>
               </ul>
             </div>
           </article>
@@ -382,18 +370,16 @@
                   decoding="async"
                 />
               </picture>
-              <figcaption>Remote assets</figcaption>
             </figure>
             <div class="services-domain-body">
-              <p class="services-domain-overline">Critical infrastructure &amp; remote assets</p>
-              <h3>Bring field confidence to places people cannot always reach.</h3>
+              <p class="services-domain-overline">Remote infrastructure</p>
+              <h3>Secure assets beyond the site.</h3>
               <p>
-                Keep distributed energy, water, logistics, and environmental systems dependable across long
-                distances, changing conditions, and imperfect connectivity.
+                Extend identity and encrypted telemetry to energy, water, logistics, and environmental assets.
               </p>
               <ul class="services-domain-tags" aria-label="Remote infrastructure applications">
                 <li>Distributed assets</li>
-                <li>Intermittent links</li>
+                <li>Remote links</li>
                 <li>Field visibility</li>
               </ul>
             </div>
@@ -404,30 +390,25 @@
       <section class="services-common-section" id="approach" aria-labelledby="services-common-title">
         <div class="services-common-head">
           <div>
-            <p class="services-domains-kicker">The common thread</p>
-            <h2 id="services-common-title">Security that makes room for the mission.</h2>
+            <h2 id="services-common-title">What every system needs.</h2>
           </div>
           <p>
-            Different environments demand different details. The underlying expectation stays simple: know
-            what belongs, protect what matters, and keep the system ready for change.
+            Across cameras, factories, fleets, and remote assets, the job is simple: know each device, protect data, and adapt access as conditions change.
           </p>
         </div>
 
         <div class="services-common-grid">
           <article class="services-common-card reveal">
-            <span class="services-common-glyph" aria-hidden="true">◌</span>
-            <h3>Know what belongs.</h3>
-            <p>Give every device and operator path a clear place in the system.</p>
+            <h3>Know every device.</h3>
+            <p>Give each device and operator a clear, verifiable place in the system.</p>
           </article>
           <article class="services-common-card services-common-card-violet reveal" data-delay="80">
-            <span class="services-common-glyph" aria-hidden="true">↗</span>
-            <h3>Protect the signal.</h3>
-            <p>Keep operational data private, trustworthy, and useful where decisions happen.</p>
+            <h3>Protect every exchange.</h3>
+            <p>Keep operational data private from the edge to the service that receives it.</p>
           </article>
           <article class="services-common-card services-common-card-mint reveal" data-delay="160">
-            <span class="services-common-glyph" aria-hidden="true">↻</span>
-            <h3>Stay ready for change.</h3>
-            <p>Adapt access and safeguards as fleets, environments, and missions evolve.</p>
+            <h3>Adapt as conditions change.</h3>
+            <p>Update access as devices, sites, and responsibilities change.</p>
           </article>
         </div>
       </section>
@@ -435,14 +416,13 @@
       <section class="services-domains-close" aria-labelledby="services-close-title">
         <div class="services-domains-close-shell">
           <div>
-            <p class="services-domains-kicker">Have a connected system in mind?</p>
-            <h2 id="services-close-title">Let’s find where trust matters most.</h2>
+            <p class="services-domains-kicker">Start with the system</p>
+            <h2 id="services-close-title">Find the right security boundary.</h2>
             <p>
-              Bring us the environment, the devices, and the outcome you care about. We’ll help you see the
-              right security shape for the work ahead.
+              Share the devices, the environment, and the outcome. We can map the identity and transport work around it.
             </p>
           </div>
-          <a class="button-link button-link-primary" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a>
+          <a class="button-link button-link-primary" href="contact.html">Contact us <span aria-hidden="true">↗</span></a>
         </div>
       </section>
     </main>
@@ -471,6 +451,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-2"></script>
+    <script src="script.js?v=performance-4"></script>
   </body>
 </html>

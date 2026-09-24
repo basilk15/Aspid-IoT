@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Auth-X mark</title>
+  <desc id="desc">Two linked paths crossing between four identity nodes.</desc>
+  <defs>
+    <linearGradient id="authXMarkCyan" x1="8" y1="14" x2="54" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42F6F1" />
+      <stop offset="0.52" stop-color="#4DB7FF" />
+      <stop offset="1" stop-color="#8C7CFF" />
+    </linearGradient>
+    <linearGradient id="authXMarkViolet" x1="8" y1="48" x2="54" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFC56F" />
+      <stop offset="0.52" stop-color="#E97CF0" />
+      <stop offset="1" stop-color="#A58BFF" />
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 17h7c7 0 8 13 14 13s7-13 14-13h7" stroke="url(#authXMarkCyan)" stroke-width="7" />
+    <path d="M11 47h7c7 0 8-13 14-13s7 13 14 13h7" stroke="url(#authXMarkViolet)" stroke-width="7" />
+  </g>
+  <g stroke="#071421" stroke-width="1.2">
+    <circle cx="11" cy="17" r="4.2" fill="#42F6F1" />
+    <circle cx="53" cy="17" r="4.2" fill="#C77AF1" />
+    <circle cx="11" cy="47" r="4.2" fill="#FFC56F" />
+    <circle cx="53" cy="47" r="4.2" fill="#49E5F1" />
+  </g>
+</svg>

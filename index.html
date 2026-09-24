@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
     <link rel="stylesheet" href="styles.css?v=performance-1" />
     <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=4" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -62,57 +63,49 @@
               <span class="nav-caret" aria-hidden="true"></span>
             </button>
 
-            <div class="mega-menu" id="products-menu" data-dropdown-panel>
-              <div class="mega-menu-head">
-                <p class="mega-menu-kicker">Featured Product</p>
-                <h2>Focused security infrastructure for modern IoT systems</h2>
-              </div>
-
-              <div class="mega-menu-grid">
-                <a class="product-card product-card-featured" href="auth-x.html" data-product-link>
-                  <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
-                  </span>
-                  <span class="product-copy">
-                    <span class="product-title-row">
-                      <span class="product-name">Auth-X</span>
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Device identity + session setup</span>
                     </span>
-                    <span class="product-description">
-                      Lightweight authentication framework for secure communication and identity verification.
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
                     </span>
-                  </span>
-                </a>
-
-                <a class="product-card product-card-baudtide" href="baudtide.html" data-product-link>
-                  <span class="product-icon product-icon-baudtide" aria-hidden="true">
-                    <img src="assets/baudtide/baudtide-mark.png" alt="" />
-                  </span>
-                  <span class="product-copy">
-                    <span class="product-title-row">
-                      <span class="product-name">BaudTide</span>
-                      <span class="product-badge product-badge-open">Open source</span>
-                    </span>
-                    <span class="product-description">
-                      A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.
-                    </span>
-                  </span>
-                </a>
-
-                <article class="product-card product-card-upcoming" aria-label="More products coming soon">
-                  <span class="product-icon product-icon-upcoming" aria-hidden="true">
-                    <span>+</span>
-                  </span>
-                  <span class="product-copy">
-                    <span class="product-title-row">
-                      <span class="product-name">More products</span>
-                      <span class="product-upcoming-label">Coming soon</span>
-                    </span>
-                    <span class="product-description">
-                      New security modules are in development. More tools for the secure edge are on the way.
-                    </span>
-                  </span>
-                </article>
-
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -179,28 +172,47 @@
             </button>
 
             <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
-              <a class="mobile-product-card mobile-product-card-featured" href="auth-x.html" data-mobile-link>
-                <span class="mobile-product-logo" aria-hidden="true">
-                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" decoding="async" />
-                </span>
-                <span class="mobile-product-title-row">
-                  <span>Auth-X</span>
-                </span>
-                <span>Lightweight authentication framework for secure communication and identity verification.</span>
-              </a>
-              <a class="mobile-product-card mobile-product-card-baudtide" href="baudtide.html" data-mobile-link>
-                <span class="mobile-product-title-row">
-                  <span>BaudTide</span>
-                  <span class="product-badge product-badge-open">Open source</span>
-                </span>
-                <span>Calm, local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
-              </a>
-              <div class="mobile-product-card mobile-product-card-upcoming" aria-label="More products coming soon">
-                <span class="mobile-product-title-row">
-                  <span>More products</span>
-                  <span class="mobile-product-upcoming-label">Coming soon</span>
-                </span>
-                <span>New security modules are in development. More tools for the secure edge are on the way.</span>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Device identity + session setup</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -433,47 +445,60 @@
         <div class="section-shell reveal">
           <div class="section-heading">
             <p class="section-kicker">Products</p>
-            <h2 class="section-title">Focused tools for secure, observable connected devices.</h2>
+            <h2 class="section-title">Tools for secure connected systems.</h2>
             <p class="section-summary">
-              Meet the products building AspidIoT's security practice—from trusted device sessions to open tools that help the wider IoT community see the signal clearly.
+              Our products cover device identity and local telemetry for connected systems.
             </p>
           </div>
 
           <div class="product-showcase-grid">
-            <article class="showcase-card showcase-card-featured">
-              <div class="showcase-card-top">
-                <span class="showcase-logo" aria-hidden="true">
-                  <img src="assets/auth-x-logos/auth-x-logo.png" alt="" width="2172" height="724" loading="lazy" decoding="async" />
-                </span>
-              </div>
-              <h3>Auth-X</h3>
-              <p>
-                A focused authentication layer for devices that need trusted sessions without unnecessary overhead.
-              </p>
-              <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
-            </article>
+            <section class="product-showcase-family" aria-label="Secure-X product lineup">
+              <p class="product-showcase-family-label">Secure-X</p>
+              <article class="showcase-card showcase-card-featured reveal" data-delay="80">
+                <div class="showcase-card-top">
+                  <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
+                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  </span>
+                </div>
+                <h3>Auth-X</h3>
+                <p>
+                  A lightweight identity layer for IoT devices. Prove the endpoint, derive the session, and hand off trusted context.
+                </p>
+                <ul class="showcase-list">
+                  <li>Establish device identity with a fresh challenge.</li>
+                  <li>Bind proof to the session before trust is granted.</li>
+                  <li>Hand authenticated context to protected transport.</li>
+                </ul>
+                <div class="showcase-actions">
+                  <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
+                </div>
+              </article>
+            </section>
 
-            <article class="showcase-card showcase-card-baudtide">
-              <div class="showcase-card-top">
-                <span class="showcase-icon showcase-icon-baudtide" aria-hidden="true">
-                  <img src="assets/baudtide/baudtide-mark.png" alt="" loading="lazy" decoding="async" />
-                </span>
-                <span class="product-badge product-badge-open">Open source</span>
-              </div>
-              <h3>BaudTide</h3>
-              <p>
-                Our open-source serial monitor for the greater IoT community—made for inspecting real devices, keeping raw capture local, and turning structured telemetry into a signal you can act on.
-              </p>
-              <ul class="showcase-list">
-                <li>Monitor multiple ESP32, Arduino, and USB/TTY devices.</li>
-                <li>Visualize telemetry, filter noisy output, and export local logs.</li>
-                <li>Share read-only terminal views over a trusted local network.</li>
-              </ul>
-              <div class="showcase-actions">
-                <a class="button-link button-link-primary" href="baudtide.html">Explore BaudTide</a>
-                <a class="button-link button-link-muted" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
+            <section class="product-showcase-family" aria-label="DataTide tools">
+              <p class="product-showcase-family-label">DataTide</p>
+              <article class="showcase-card showcase-card-baudtide reveal" data-delay="160">
+                <div class="showcase-card-top">
+                  <span class="showcase-icon showcase-icon-baudtide" aria-hidden="true">
+                    <img src="assets/baudtide/baudtide-mark.png" alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <span class="product-badge product-badge-open">Open source</span>
+                </div>
+                <h3>BaudTide</h3>
+                <p>
+                  A local-first serial monitor for ESP32, Arduino, and USB/TTY devices. Keep telemetry local and export useful logs.
+                </p>
+                <ul class="showcase-list">
+                  <li>Monitor ESP32, Arduino, and USB/TTY devices in one workspace.</li>
+                  <li>Filter telemetry and export local logs.</li>
+                  <li>Share a read-only terminal view on a trusted local network.</li>
+                </ul>
+                <div class="showcase-actions">
+                  <a class="button-link button-link-primary" href="baudtide.html">Explore BaudTide</a>
+                  <a class="button-link button-link-muted" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+            </section>
           </div>
         </div>
       </section>
@@ -508,12 +533,12 @@
       <section class="final" id="contact">
         <div class="contact-panel reveal">
           <p class="section-kicker">Contact</p>
-          <h2 class="contact-title">Have a connected system in mind?</h2>
+          <h2 class="contact-title">Need to secure a connected system?</h2>
           <p class="contact-copy">
-            Tell us what you’re building, what needs to stay secure, or where the edge is asking for a clearer path.
+            Tell us what you are building and where the system needs a trusted path.
           </p>
           <div class="contact-actions">
-            <a class="button-link button-link-primary" href="contact.html">Start a conversation</a>
+            <a class="button-link button-link-primary" href="contact.html">Contact us</a>
           </div>
         </div>
       </section>
@@ -543,6 +568,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-2"></script>
+    <script src="script.js?v=performance-4"></script>
   </body>
 </html>

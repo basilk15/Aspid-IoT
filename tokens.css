@@ -1,0 +1,90 @@
+/* Hallmark · macrostructure: Map / Diagram · tone: technical-editorial · anchor hue: cyan · artifact: tokens */
+:root {
+  --color-paper: oklch(15% 0.025 235);
+  --color-paper-2: oklch(19% 0.032 235);
+  --color-paper-3: oklch(25% 0.04 235);
+  --color-ink: oklch(94% 0.025 225);
+  --color-ink-2: oklch(78% 0.04 225);
+  --color-muted: oklch(64% 0.04 225);
+  --color-rule: oklch(45% 0.045 230 / 0.55);
+  --color-rule-strong: oklch(68% 0.09 195 / 0.58);
+  --color-accent: oklch(88% 0.16 188);
+  --color-accent-soft: oklch(71% 0.12 188);
+  --color-warm: oklch(81% 0.14 70);
+  --color-accent-ink: oklch(20% 0.03 235);
+  --color-focus: oklch(91% 0.15 103);
+  --color-shadow: oklch(8% 0.02 235 / 0.2);
+
+  --font-display: "Syne", "Space Grotesk", sans-serif;
+  --font-body: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-hero-top: calc(var(--nav-height) + var(--space-lg));
+  --space-hero-top-mobile: calc(var(--nav-height) + var(--space-xl));
+
+  --text-xxs: 0.64rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-3xl: 3.0518rem;
+  --text-4xl: 3.8147rem;
+  --text-lede: clamp(1.125rem, 1.4vw, 1.375rem);
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2.5rem, 4.5vw + 0.75rem, 4.25rem);
+
+  --leading-display: 1.04;
+  --leading-heading: 1.1;
+  --leading-body: 1.6;
+  --tracking-tight: -0.035em;
+  --tracking-label: 0.12em;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+  --dur-reduced: 120ms;
+
+  --radius-none: 0;
+  --radius-node: 0.25rem;
+  --hit-size: 44px;
+  --measure-wide: 88rem;
+  --measure-product: 73.75rem;
+  --measure-copy: 65ch;
+  --line-thick: 2px;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+}
+
+html[data-theme="light"] {
+  --color-paper: oklch(96% 0.02 220);
+  --color-paper-2: oklch(92% 0.03 220);
+  --color-paper-3: oklch(87% 0.04 220);
+  --color-ink: oklch(25% 0.04 235);
+  --color-ink-2: oklch(40% 0.04 235);
+  --color-muted: oklch(52% 0.04 235);
+  --color-rule: oklch(55% 0.04 230 / 0.36);
+  --color-rule-strong: oklch(47% 0.08 195 / 0.5);
+  --color-accent: oklch(55% 0.15 188);
+  --color-accent-soft: oklch(46% 0.11 188);
+  --color-warm: oklch(59% 0.13 70);
+  --color-accent-ink: oklch(20% 0.03 235);
+  --color-focus: oklch(51% 0.16 103);
+  --color-shadow: oklch(25% 0.02 235 / 0.12);
+}

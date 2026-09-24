@@ -15,14 +15,20 @@ const reveals = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const getNavTracePath = (width, height) => {
-  const inset = 0.9;
-  const x = inset;
-  const y = inset;
-  const w = Math.max(0, width - inset * 2);
-  const h = Math.max(0, height - inset * 2);
-  const radius = Math.min(23.1, Math.max(0, h / 2));
-  const right = x + w;
-  const bottom = y + h;
+  const navStyle = window.getComputedStyle(navShell);
+  const pixels = (value) => Number.parseFloat(value) || 0;
+  const insetLeft = pixels(navStyle.borderLeftWidth) / 2;
+  const insetRight = pixels(navStyle.borderRightWidth) / 2;
+  const insetTop = pixels(navStyle.borderTopWidth) / 2;
+  const insetBottom = pixels(navStyle.borderBottomWidth) / 2;
+  const x = insetLeft;
+  const y = insetTop;
+  const right = Math.max(x, width - insetRight);
+  const bottom = Math.max(y, height - insetBottom);
+  const w = Math.max(0, right - x);
+  const h = Math.max(0, bottom - y);
+  const cornerRadius = pixels(navStyle.borderTopLeftRadius);
+  const radius = Math.max(0, Math.min(cornerRadius - Math.max(insetLeft, insetTop), w / 2, h / 2));
   const centerX = x + w / 2;
 
   return [
@@ -44,8 +50,9 @@ const updateNavTrace = () => {
     return;
   }
 
-  const width = navShell.clientWidth;
-  const height = navShell.clientHeight;
+  const bounds = navTraceSvg.getBoundingClientRect();
+  const width = bounds.width;
+  const height = bounds.height;
   if (width <= 0 || height <= 0) {
     return;
   }

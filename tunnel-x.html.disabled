@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tunnel-X is AspidIoT's encrypted IoT data plane for Ascon-128 frames, security-association state, telemetry verification, and in-band rekeying."
+    />
+    <title>Tunnel-X | Encrypted IoT Data Plane | AspidIoT</title>
+    <script>
+      try {
+        if (localStorage.getItem("aspid-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=performance-1" />
+    <link rel="stylesheet" href="tokens.css?v=1" />
+    <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="tunnel-x-editorial.css?v=1" />
+    <link rel="stylesheet" href="design-taste.css?v=3" />
+  </head>
+  <body class="tunnel-x-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home">Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle is-active"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + encrypted transport</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true"><img src="assets/tunnel-x/tunnel-x-mark.svg" alt="" width="64" height="64" decoding="async" /></span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X <span class="product-badge product-badge-next">Data plane</span></span>
+                        <span class="product-menu-item-detail">Ascon-128 data plane &amp; in-band rekey</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="services.html" data-mobile-link>Services</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + encrypted transport</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true"><img src="assets/tunnel-x/tunnel-x-mark.svg" alt="" width="64" height="64" decoding="async" /></span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X <span class="product-badge product-badge-next">Data plane</span></span>
+                        <span class="product-menu-item-detail">Ascon-128 data plane &amp; in-band rekey</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="tunnel-hero" id="tunnel-x" aria-labelledby="tunnel-x-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-hero-grid">
+            <div class="tunnel-hero-copy reveal">
+              <div class="tunnel-product-lockup" aria-label="Tunnel-X">
+                <span class="tunnel-product-mark" aria-hidden="true"><img src="assets/tunnel-x/tunnel-x-mark.svg" alt="" width="64" height="64" decoding="async" /></span>
+                <span class="tunnel-product-lockup-name">tunnel-x</span>
+              </div>
+              <p class="tunnel-kicker">Secure-X / product 02 · encrypted data plane</p>
+              <h1 id="tunnel-x-title">The secure data plane <span class="tunnel-title-accent">after Auth-X.</span></h1>
+              <p class="tunnel-lede">Once Auth-X proves a device, Tunnel-X installs a per-session security association and protects each telemetry frame from ESP32 to sink.</p>
+              <div class="tunnel-actions">
+                <a class="button-link button-link-primary" href="#tunnel-frame">Inspect the frame <span aria-hidden="true">↘</span></a>
+                <a class="button-link button-link-muted" href="contact.html">Talk through a pilot <span aria-hidden="true">↗</span></a>
+              </div>
+              <p class="tunnel-hero-footnote">Reference path · 16 Apr EDS-3 / ESP32 client → C++ sink</p>
+            </div>
+
+            <figure class="tunnel-map reveal" data-delay="120" aria-labelledby="tunnel-map-title">
+              <div class="tunnel-map-head">
+                <span id="tunnel-map-title">MSG7 / secure data</span>
+                <span>Ascon-128 AEAD</span>
+              </div>
+              <div class="tunnel-map-route" role="img" aria-label="Tunnel-X seals a 21-byte sensor payload with Ascon-128, authenticates the MSG7 header, and sends it to a sink that checks SPI and sequence before decrypting and logging it.">
+                <div class="tunnel-map-node">
+                  <span>01 / CLIENT</span>
+                  <strong>ESP32</strong>
+                  <small>serialize / seal</small>
+                </div>
+                <div class="tunnel-map-channel" aria-hidden="true">
+                  <span class="tunnel-map-channel-label">18 B HEADER · ASSOCIATED DATA</span>
+                  <span class="tunnel-map-channel-line"></span>
+                  <span class="tunnel-map-packet">21 B + 16 B TAG</span>
+                </div>
+                <div class="tunnel-map-node tunnel-map-node-gateway">
+                  <span>02 / SINK</span>
+                  <strong>ACCEPT</strong>
+                  <small>SPI / SEQ / TAG</small>
+                </div>
+              </div>
+              <div class="tunnel-map-data">
+                <span>NONCE = 8 B SA SALT || 8 B SEQ</span>
+                <span>MSG7 / 55 B TOTAL</span>
+                <span>JSONL / LOGGED</span>
+              </div>
+              <figcaption>The sink only decodes after the frame's SPI, sequence, and authentication tag pass.</figcaption>
+            </figure>
+          </div>
+
+          <div class="tunnel-hero-rule">
+            <span>Handoff / MSG6 → MSG7</span>
+            <span>Auth-X → Tunnel-X</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tunnel-section tunnel-handoff-section" id="tunnel-handoff" aria-labelledby="tunnel-handoff-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-section-head reveal">
+            <p class="tunnel-section-kicker">Product boundary</p>
+            <h2 id="tunnel-handoff-title">The handoff is the product.</h2>
+            <p>Auth-X answers “who is connecting?” Tunnel-X answers “what is allowed to cross the session?” The security association is the handoff between them.</p>
+          </div>
+
+          <div class="tunnel-handoff-grid">
+            <article class="tunnel-handoff-stage reveal">
+              <span class="tunnel-handoff-index">01</span>
+              <div>
+                <h3>Auth-X</h3>
+                <p>PSK/HMAC admission, challenge proof, X25519 exchange, and session-key derivation.</p>
+              </div>
+              <span class="tunnel-handoff-state">through MSG6</span>
+            </article>
+            <div class="tunnel-handoff-connector" aria-hidden="true">
+              <span>SA active</span>
+              <strong>→</strong>
+            </div>
+            <article class="tunnel-handoff-stage tunnel-handoff-stage-current reveal" data-delay="100">
+              <span class="tunnel-handoff-index">02</span>
+              <div>
+                <h3>Tunnel-X</h3>
+                <p>Ascon-128 frames, SPI/sequence enforcement, gateway decode, and policy-led rekey.</p>
+              </div>
+              <span class="tunnel-handoff-state">MSG7 onward</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tunnel-section tunnel-frame-section" id="tunnel-frame" aria-labelledby="tunnel-frame-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-section-head reveal">
+            <p class="tunnel-section-kicker">Inside MSG7 / secure data</p>
+            <h2 id="tunnel-frame-title">Every frame carries its own decision context.</h2>
+            <p>Tunnel-X gives the gateway enough structure to reject a bad frame before the application sees it.</p>
+          </div>
+
+          <dl class="tunnel-frame-ledger">
+            <div class="tunnel-frame-row reveal">
+              <dt>Associated data</dt>
+              <dd>18-byte header with version, algorithm, SPI, sequence, and payload length, authenticated with the frame.</dd>
+              <span>HEADER</span>
+            </div>
+            <div class="tunnel-frame-row reveal" data-delay="60">
+              <dt>Protected payload</dt>
+              <dd>21-byte sensor record sealed with Ascon-128 AEAD and carried with a 16-byte authentication tag.</dd>
+              <span>PAYLOAD</span>
+            </div>
+            <div class="tunnel-frame-row reveal" data-delay="120">
+              <dt>Nonce discipline</dt>
+              <dd>Every frame derives a 16-byte nonce from the SA’s 8-byte salt and its 8-byte sequence number.</dd>
+              <span>NONCE</span>
+            </div>
+            <div class="tunnel-frame-row reveal" data-delay="180">
+              <dt>Gateway decision</dt>
+              <dd>The sink checks SPI and the next sequence, verifies the tag, decodes the sample, and appends per-peer JSONL telemetry.</dd>
+              <span>ACCEPT</span>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="tunnel-section tunnel-rekey-section" id="tunnel-rekey" aria-labelledby="tunnel-rekey-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-section-head reveal">
+            <p class="tunnel-section-kicker">Security-association lifecycle</p>
+            <h2 id="tunnel-rekey-title">Rotate the session without dropping TCP.</h2>
+            <p>Rekeying is an in-band state transition, not a reconnect. The policy can use the default 24-hour age, a custom time, or a packet-count threshold.</p>
+          </div>
+
+          <ol class="tunnel-rekey-ledger">
+            <li class="tunnel-rekey-row reveal">
+              <span class="tunnel-rekey-code">MSG12</span>
+              <h3>Set the policy</h3>
+              <p>The sink sends the active SA’s rekey policy under the current session key.</p>
+              <span class="tunnel-rekey-state">policy</span>
+            </li>
+            <li class="tunnel-rekey-row reveal" data-delay="80">
+              <span class="tunnel-rekey-code">MSG8 → MSG9</span>
+              <h3>Negotiate fresh material</h3>
+              <p>Both sides contribute fresh X25519 key material, nonces, a new salt, and a new SPI.</p>
+              <span class="tunnel-rekey-state">pending SA</span>
+            </li>
+            <li class="tunnel-rekey-row reveal" data-delay="160">
+              <span class="tunnel-rekey-code">MSG10 → MSG11</span>
+              <h3>Confirm, then switch</h3>
+              <p>The new SA is confirmed with its derived key; the old association is superseded on the same TCP session.</p>
+              <span class="tunnel-rekey-state">active SA</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="tunnel-section tunnel-reference-section" id="tunnel-reference" aria-labelledby="tunnel-reference-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-reference-grid">
+            <div class="tunnel-reference-copy reveal">
+              <p class="tunnel-section-kicker">Reference build</p>
+              <h2 id="tunnel-reference-title">Small frames. Explicit state. Useful logs.</h2>
+              <p>These are implementation facts from the 16 Apr EDS-3 pipeline. They are not universal performance promises.</p>
+            </div>
+            <dl class="tunnel-reference-list reveal" data-delay="120">
+              <div>
+                <dt>05</dt>
+                <dd>concurrent client sessions accepted by the sink</dd>
+              </div>
+              <div>
+                <dt>25</dt>
+                <dd>received frames between persisted sequence checkpoints</dd>
+              </div>
+              <div>
+                <dt>24<span>h</span></dt>
+                <dd>default security-association age policy</dd>
+              </div>
+              <div>
+                <dt>JSONL</dt>
+                <dd>per-peer raw telemetry records at the gateway</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="tunnel-section tunnel-cta-section" id="tunnel-pilot" aria-labelledby="tunnel-pilot-title">
+        <div class="tunnel-shell">
+          <div class="tunnel-cta reveal">
+            <div>
+              <h2 id="tunnel-pilot-title">Own the boundary after identity.</h2>
+              <p>Bring an ESP32-class device path or gateway protocol. We’ll map the payload, SA lifecycle, and operating policy.</p>
+            </div>
+            <a class="button-link button-link-primary" href="contact.html">Talk through a pilot <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Identity and encrypted transport for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="services.html">Services</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="tunnel-x.html" aria-current="page">Tunnel-X</a>
+          <a href="baudtide.html">BaudTide</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="theme.js?v=2"></script>
+    <script src="script.js?v=performance-3"></script>
+  </body>
+</html>
