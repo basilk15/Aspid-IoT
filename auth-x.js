@@ -11,6 +11,7 @@ const dropdownPanel = document.querySelector("[data-dropdown-panel]");
 const productLinks = document.querySelectorAll("[data-product-link]");
 const mobileProducts = document.querySelector(".mobile-products");
 const mobileProductsToggle = document.querySelector("[data-mobile-products-toggle]");
+const productFamilyToggles = document.querySelectorAll("[data-product-family-toggle]");
 const reveals = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -78,11 +79,32 @@ const setMobileMenuState = (isOpen) => {
   document.body.classList.toggle("menu-open", isOpen && isMobileViewport());
 };
 
+const setProductFamilyState = (family, isExpanded) => {
+  if (!family) {
+    return;
+  }
+
+  const toggle = family.querySelector("[data-product-family-toggle]");
+  const panel = family.querySelector(".product-menu-family-panel");
+  family.classList.toggle("is-expanded", isExpanded);
+  toggle?.setAttribute("aria-expanded", String(isExpanded));
+  panel?.setAttribute("aria-hidden", String(!isExpanded));
+};
+
+const collapseProductFamilies = (container) => {
+  container?.querySelectorAll("[data-product-family]").forEach((family) => {
+    setProductFamilyState(family, false);
+  });
+};
+
 const setDropdownState = (isOpen) => {
   if (!dropdown || !dropdownToggle || !dropdownPanel) {
     return;
   }
 
+  if (!isOpen) {
+    collapseProductFamilies(dropdownPanel);
+  }
   dropdown.classList.toggle("is-open", isOpen);
   dropdownToggle.setAttribute("aria-expanded", String(isOpen));
   dropdownPanel.setAttribute("aria-hidden", String(!isOpen));
@@ -95,6 +117,9 @@ const setMobileProductsState = (isOpen) => {
 
   mobileProducts.classList.toggle("is-open", isOpen);
   mobileProductsToggle.setAttribute("aria-expanded", String(isOpen));
+  if (!isOpen) {
+    collapseProductFamilies(mobileProducts);
+  }
 };
 
 updateNavTrace();
@@ -163,6 +188,19 @@ dropdown?.addEventListener("focusout", (event) => {
   if (!isMobileViewport() && !dropdown.contains(event.relatedTarget)) {
     setDropdownState(false);
   }
+});
+
+productFamilyToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const family = toggle.closest("[data-product-family]");
+    const familyList = toggle.closest("[data-product-family-list]");
+    const isExpanded = family?.classList.contains("is-expanded");
+
+    familyList?.querySelectorAll("[data-product-family]").forEach((item) => {
+      setProductFamilyState(item, false);
+    });
+    setProductFamilyState(family, !isExpanded);
+  });
 });
 
 navToggle?.addEventListener("click", () => {

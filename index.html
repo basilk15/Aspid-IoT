@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=performance-1" />
+    <link rel="stylesheet" href="styles.css?v=performance-2" />
     <link rel="stylesheet" href="theme.css?v=6" />
-    <link rel="stylesheet" href="design-taste.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=7" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -472,30 +472,47 @@
           <div class="product-showcase-grid">
             <section class="product-showcase-family" aria-label="Secure-X product lineup">
               <p class="product-showcase-family-label">Secure-X</p>
-              <article class="showcase-card showcase-card-featured reveal" data-delay="80">
-                <div class="showcase-card-top">
-                  <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" loading="lazy" decoding="async" />
-                  </span>
-                </div>
-                <h3>Auth-X</h3>
-                <p>
-                  A lightweight identity layer for IoT devices. Prove the endpoint, derive the session, and hand off trusted context.
-                </p>
-                <ul class="showcase-list">
-                  <li>Establish device identity with a fresh challenge.</li>
-                  <li>Bind proof to the session before trust is granted.</li>
-                  <li>Hand authenticated context to protected transport.</li>
-                </ul>
-                <div class="showcase-actions">
-                  <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
-                </div>
-              </article>
-              <a class="secure-x-next-link" href="tunnel-x.html">
-                <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
-                <span><strong>Tunnel-X</strong><small>Protected telemetry after device trust</small></span>
-                <span class="secure-x-next-arrow" aria-hidden="true">↗</span>
-              </a>
+              <div class="secure-x-product-grid">
+                <article class="showcase-card showcase-card-featured reveal" data-delay="80">
+                  <div class="showcase-card-top">
+                    <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
+                      <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                    </span>
+                  </div>
+                  <h3>Auth-X</h3>
+                  <p>
+                    A lightweight identity layer for IoT devices. Prove the endpoint, derive the session, and hand off trusted context.
+                  </p>
+                  <ul class="showcase-list">
+                    <li>Establish device identity with a fresh challenge.</li>
+                    <li>Bind proof to the session before trust is granted.</li>
+                    <li>Hand authenticated context to protected transport.</li>
+                  </ul>
+                  <div class="showcase-actions">
+                    <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
+                  </div>
+                </article>
+
+                <article class="showcase-card showcase-card-tunnel reveal" data-delay="140">
+                  <div class="showcase-card-top">
+                    <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
+                      <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                    </span>
+                  </div>
+                  <h3>Tunnel-X</h3>
+                  <p>
+                    Protected telemetry after device trust. Keep IoT data private as it moves from device to receiving sink.
+                  </p>
+                  <ul class="showcase-list">
+                    <li>Encrypt telemetry before it leaves the device.</li>
+                    <li>Protect readings across the connection.</li>
+                    <li>Decrypt and process data at the receiving sink.</li>
+                  </ul>
+                  <div class="showcase-actions">
+                    <a class="button-link button-link-primary" href="tunnel-x.html">Explore Tunnel-X</a>
+                  </div>
+                </article>
+              </div>
             </section>
 
             <section class="product-showcase-family" aria-label="DataTide tools">
@@ -538,8 +555,8 @@
 
           <div class="about-panel">
             <div class="about-metric">
-              <strong>1</strong>
-              <span>Active product module</span>
+              <strong>2</strong>
+              <span>Secure-X product modules</span>
             </div>
             <div class="about-metric">
               <strong>LWC</strong>

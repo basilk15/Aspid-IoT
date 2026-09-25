@@ -899,7 +899,7 @@ main::before {
   animation-duration: 9s;
 }
 
-/* Product showcase: two editorial product columns instead of two floating cards. */
+/* Product showcase: two Secure-X products alongside the separate DataTide tool. */
 .products-section .section-heading {
   max-width: 760px;
   text-align: left;
@@ -923,58 +923,58 @@ main::before {
 }
 
 .products-section .product-showcase-grid {
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: 0;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1rem;
   margin-top: clamp(2.8rem, 5vw, 4.4rem);
-  border-top: 1px solid var(--taste-line);
-  border-bottom: 1px solid var(--taste-line);
 }
 
 .products-section .product-showcase-family {
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-width: 0;
 }
 
-.products-section .product-showcase-family + .product-showcase-family {
-  border-left: 1px solid var(--taste-line);
+.products-section .secure-x-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  min-width: 0;
 }
 
 .products-section .product-showcase-family-label {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0;
-  padding: 1.25rem 1.5rem 0;
+  display: block;
+  margin: 0 0 0.85rem;
+  padding: 0 0.2rem;
   color: var(--taste-accent);
   font-size: 0.72rem;
   font-weight: 650;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   line-height: 1.2;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .products-section .product-showcase-family-label::before {
-  width: 1.8rem;
-  height: 1px;
-  background: currentColor;
-  content: "";
+  display: none;
 }
 
 .products-section .showcase-card,
 .products-section .showcase-card-featured,
-.products-section .showcase-card-baudtide {
-  min-height: 100%;
-  padding: 1.6rem 1.5rem 2.25rem;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+.products-section .showcase-card-baudtide,
+.products-section .showcase-card-tunnel {
+  min-height: 0;
+  padding: clamp(1.35rem, 2vw, 1.8rem);
+  border: 1px solid var(--taste-line);
+  border-radius: var(--taste-panel-radius);
+  background: var(--taste-surface);
+  box-shadow: 0 20px 48px rgba(2, 10, 20, 0.18);
 }
 
 .products-section .showcase-card:hover {
   transform: translateY(-2px);
-  border: 0;
-  background: rgba(89, 247, 255, 0.025);
-  box-shadow: none;
+  border-color: var(--taste-line-strong);
+  background: var(--taste-surface-strong);
+  box-shadow: var(--taste-shadow);
 }
 
 .products-section .showcase-card-top {
@@ -1517,9 +1517,8 @@ main::before {
     grid-template-columns: 1fr;
   }
 
-  .products-section .product-showcase-family + .product-showcase-family {
-    border-top: 1px solid var(--taste-line);
-    border-left: 0;
+  .products-section .secure-x-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .services-domains-page .services-domain-card-wide,
@@ -1736,9 +1735,6 @@ html[data-theme="light"] main::before {
   opacity: 0.025;
 }
 
-html[data-theme="light"] .products-section .showcase-card,
-html[data-theme="light"] .products-section .showcase-card-featured,
-html[data-theme="light"] .products-section .showcase-card-baudtide,
 html[data-theme="light"] .final .contact-panel,
 html[data-theme="light"] .services-domains-page .services-domain-card,
 html[data-theme="light"] .services-domains-page .services-common-card,
@@ -1872,56 +1868,6 @@ html[data-theme="light"] .services-domains-page .services-domains-hero-visual::a
   flex-direction: column;
 }
 
-.secure-x-next-link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin: 0 1.5rem 1.6rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--taste-line);
-  color: var(--taste-ink);
-  text-decoration: none;
-}
-
-.secure-x-next-link img {
-  flex: 0 0 auto;
-  width: 2.7rem;
-  height: 2.7rem;
-  object-fit: contain;
-}
-
-.secure-x-next-link > span:not(.secure-x-next-arrow) {
-  display: grid;
-  gap: 0.15rem;
-  min-width: 0;
-}
-
-.secure-x-next-link strong {
-  font-size: 1rem;
-}
-
-.secure-x-next-link small {
-  color: var(--taste-muted);
-  font-size: 0.84rem;
-  line-height: 1.35;
-}
-
-.secure-x-next-arrow {
-  margin-left: auto;
-  color: var(--taste-accent);
-  font-size: 1.1rem;
-  transition: transform 180ms ease;
-}
-
-.secure-x-next-link:hover .secure-x-next-arrow {
-  transform: translate(2px, -2px);
-}
-
-.secure-x-next-link:focus-visible {
-  outline: 2px solid var(--taste-accent);
-  outline-offset: 3px;
-}
-
 .products-section .showcase-card-top {
   display: flex;
   align-items: center;
@@ -2018,6 +1964,12 @@ html[data-theme="light"] .services-domains-page .services-domains-hero-visual::a
 
   .mobile-products-grid .product-menu-item:has(.mobile-product-title-row) > :last-child {
     grid-row: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-section .secure-x-product-grid {
+    grid-template-columns: 1fr;
   }
 }
 
