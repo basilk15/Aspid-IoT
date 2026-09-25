@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tunnel-X protects IoT telemetry from device to sink with authenticated encryption, verified delivery, and in-band key rotation."
+    />
+    <title>Tunnel-X | Protected IoT Telemetry | AspidIoT</title>
+    <script>
+      try {
+        if (localStorage.getItem("aspid-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=performance-1" />
+    <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=6" />
+    <link rel="stylesheet" href="tunnel-x-product.css?v=6" />
+  </head>
+  <body class="tunnel-x-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home" data-nav-link>Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
+                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X</span>
+                        <span class="product-menu-item-detail">Protected IoT telemetry</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+       </nav>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="services.html" data-mobile-link>Services</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
+                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X</span>
+                        <span class="product-menu-item-detail">Protected IoT telemetry</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="tx-hero" id="tunnel-x" aria-labelledby="tx-title">
+        <div class="tx-shell tx-hero-layout">
+          <div class="tx-hero-copy reveal">
+            <div class="tx-lockup">
+              <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="68" height="68" decoding="async" />
+              <span>Tunnel-X</span>
+            </div>
+            <h1 id="tx-title">Trusted devices. <span>Protected data.</span></h1>
+            <p>Tunnel-X encrypts IoT telemetry from device to sink, checks each frame, and refreshes keys without interrupting the connection.</p>
+            <div class="tx-actions">
+              <a class="tx-button tx-button-primary" href="contact.html">Discuss a pilot</a>
+              <a class="tx-button tx-button-secondary" href="#protection">Explore Tunnel-X</a>
+            </div>
+          </div>
+          <figure class="tx-hero-art reveal" aria-label="A protected data path runs from an IoT device toward its receiving gateway">
+            <img src="assets/tunnel-x/tunnel-x-hero.png" alt="A luminous data path passes through a protective corridor between a device and its gateway" width="1536" height="1024" decoding="async" fetchpriority="high" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="tx-handoff" aria-labelledby="tx-handoff-title">
+        <div class="tx-shell tx-handoff-layout">
+          <div class="tx-handoff-intro reveal">
+            <h2 id="tx-handoff-title">Trust the device. Then protect the data.</h2>
+            <p>Auth-X establishes who is connecting. Tunnel-X carries that trust into every telemetry exchange that follows.</p>
+          </div>
+          <div class="tx-handoff-path reveal" aria-label="Auth-X establishes the session and Tunnel-X protects its telemetry">
+            <a href="auth-x.html" class="tx-handoff-product">
+              <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <span><strong>Auth-X</strong><small>Establish trust</small></span>
+            </a>
+            <span class="tx-handoff-line" aria-hidden="true"></span>
+            <div class="tx-handoff-product tx-handoff-product-current">
+              <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <span><strong>Tunnel-X</strong><small>Protect the exchange</small></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tx-encryption" id="encryption" aria-labelledby="tx-encryption-title">
+        <div class="tx-shell">
+          <div class="tx-encryption-intro reveal">
+            <div>
+              <span class="tx-eyebrow">The protected path</span>
+              <h2 id="tx-encryption-title">Readable here. <span>Protected in between.</span></h2>
+            </div>
+            <p>A sensor reading is encrypted on the device, travels as a protected frame, then is authenticated, decrypted, and processed at the sink.</p>
+          </div>
+        </div>
+
+        <div class="tx-film reveal" data-tx-flow role="group" aria-label="Simulated IoT telemetry. Sensor data leaves the device as encrypted data, then is authenticated, decrypted, and processed at the sink.">
+            <canvas class="tx-film-canvas" data-tx-canvas aria-hidden="true"></canvas>
+            <div class="tx-film-grain" aria-hidden="true"></div>
+            <div class="tx-shell tx-film-inner">
+              <div class="tx-film-bar">
+                <span class="tx-film-live"><span class="tx-film-live-dot" aria-hidden="true"></span> Simulated data path</span>
+              </div>
+
+              <div class="tx-film-stage" aria-hidden="true">
+                <div class="tx-film-readout tx-film-device">
+                  <span class="tx-film-kicker">01 / Edge device</span>
+                  <span class="tx-film-label">Sensor reading</span>
+                  <strong class="tx-film-temperature"><span data-tx-device-temp>24.6</span><small>°C</small></strong>
+                  <span class="tx-film-humidity">Humidity <b><span data-tx-device-humidity>48</span>%</b></span>
+                  <span class="tx-film-status" data-tx-device-status>Preparing sample 01</span>
+                </div>
+
+                <div class="tx-film-core">
+                  <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+                  <strong>Encrypted in transit</strong>
+                  <span data-tx-core-status>Securing telemetry at the edge</span>
+                  <div class="tx-film-cipher">
+                    <code data-tx-cipher>8F A2 C7 4D E0 91</code>
+                  </div>
+                </div>
+
+                <div class="tx-film-readout tx-film-sink">
+                  <span class="tx-film-kicker">02 / Receiving sink</span>
+                  <span class="tx-film-sink-mark" aria-hidden="true">✓</span>
+                  <strong class="tx-film-sink-heading" data-tx-sink-heading>Waiting</strong>
+                  <span class="tx-film-sink-reading"><span data-tx-sink-temp>—</span> °C <i>·</i> <span data-tx-sink-humidity>—</span>% RH</span>
+                  <span class="tx-film-status" data-tx-sink-status>Awaiting protected reading</span>
+                </div>
+              </div>
+
+              <div class="tx-film-footer">
+                <span>Device sample <b data-tx-sent-count>01</b></span>
+                <span>Protected across the link</span>
+                <span>Processed sample <b data-tx-received-count>00</b></span>
+              </div>
+            </div>
+        </div>
+        <div class="tx-shell">
+          <p class="tx-flow-note">Simulated sample data. This page is not connected to a live device.</p>
+        </div>
+      </section>
+
+      <section class="tx-protection" id="protection" aria-labelledby="tx-protection-title">
+        <div class="tx-shell">
+          <div class="tx-section-heading reveal">
+            <h2 id="tx-protection-title">Security that travels with the signal.</h2>
+            <p>From the ESP32 to the receiving sink, each part of the path has a clear job.</p>
+          </div>
+          <div class="tx-feature-grid">
+            <article class="tx-feature tx-feature-primary reveal">
+              <div class="tx-feature-visual" aria-hidden="true">
+                <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="480" height="480" loading="lazy" decoding="async" />
+              </div>
+              <div class="tx-feature-copy">
+                <span class="tx-feature-index">01</span>
+                <h3>Private before it leaves the device.</h3>
+                <p>Telemetry is encrypted at the edge, so the data moving across the link is protected from the start.</p>
+              </div>
+            </article>
+            <article class="tx-feature tx-feature-verify reveal" data-delay="80">
+              <span class="tx-feature-index">02</span>
+              <h3>Verified before it is used.</h3>
+              <p>The receiving sink checks the session, order, and integrity of each protected frame before decoding its contents.</p>
+            </article>
+            <article class="tx-feature tx-feature-rekey reveal" data-delay="160">
+              <span class="tx-feature-index">03</span>
+              <h3>Fresh keys, steady connection.</h3>
+              <p>In-band rekeying renews the protected session while the existing TCP connection stays in place.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tx-evidence" aria-labelledby="tx-evidence-title">
+        <div class="tx-shell tx-evidence-layout">
+          <div class="tx-evidence-copy reveal">
+            <h2 id="tx-evidence-title">Built from a working device-to-sink path.</h2>
+            <p>The current reference implementation connects ESP32 clients to a C++ sink. It records accepted telemetry and gives the operator per-device rekey control.</p>
+            <p class="tx-evidence-note">The reference build supports five concurrent client sessions. Broader fleet scale and new hardware integrations are work for a deployment pilot.</p>
+          </div>
+          <div class="tx-evidence-list reveal" aria-label="Reference implementation capabilities">
+            <div><strong>ESP32 to sink</strong><span>Protected telemetry on a live TCP session</span></div>
+            <div><strong>Per-device control</strong><span>Rekey policy managed for each connected device</span></div>
+            <div><strong>Observable delivery</strong><span>Verified readings recorded at the gateway</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tx-cta" aria-labelledby="tx-cta-title">
+        <div class="tx-shell tx-cta-layout reveal">
+          <div>
+            <h2 id="tx-cta-title">Bring a device. We’ll map the protected path.</h2>
+            <p>Tell us what your devices send and where it needs to arrive. We’ll scope a focused Tunnel-X pilot.</p>
+          </div>
+          <a class="tx-button tx-button-primary" href="contact.html">Discuss a pilot</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="services.html">Services</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="tunnel-x.html">Tunnel-X</a>
+          <a href="baudtide.html">BaudTide</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="theme.js?v=2"></script>
+    <script src="script.js?v=performance-4"></script>
+    <script src="tunnel-x-animation.js?v=4" defer></script>
+  </body>
+</html>
