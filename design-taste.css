@@ -152,6 +152,7 @@ main::after {
 .theme-toggle-track {
   width: 4.35rem;
   height: 2.35rem;
+  overflow: hidden;
 }
 
 .theme-toggle-icon {
@@ -162,6 +163,10 @@ main::after {
 .theme-toggle-thumb {
   width: 1.82rem;
   height: 1.82rem;
+}
+
+html[data-theme="light"] .theme-toggle-thumb {
+  transform: translate(1.92rem, -50%);
 }
 
 .mega-menu {
@@ -507,7 +512,7 @@ html[data-theme="light"] .site-footer {
   }
 
   html[data-theme="light"] .theme-toggle-thumb {
-    transform: translate(1.88rem, -50%);
+    transform: translate(1.58rem, -50%);
   }
 
   .section-shell,
