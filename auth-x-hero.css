@@ -1,0 +1,110 @@
+/* Auth-X campaign artwork sits behind the hero and fades into the product page. */
+.auth-x-section {
+  isolation: isolate;
+}
+
+.auth-x-section::before,
+.auth-x-section::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(52rem, 100dvh, 66rem);
+  z-index: 0;
+  pointer-events: none;
+  mask-image: linear-gradient(#000 0%, #000 70%, transparent 100%);
+}
+
+.auth-x-section::before {
+  background: url("assets/auth-x/auth-x-hero.png") center 50% / cover no-repeat;
+  opacity: 0.88;
+}
+
+.auth-x-section::after {
+  background:
+    linear-gradient(90deg, rgba(5, 10, 18, 0.9), rgba(5, 10, 18, 0.75) 37%, rgba(5, 10, 18, 0.36) 68%, rgba(5, 10, 18, 0.32)),
+    linear-gradient(180deg, rgba(5, 10, 18, 0.08), transparent 48%, rgba(5, 10, 18, 0.78));
+}
+
+.auth-x-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-x-hero {
+  min-height: clamp(40rem, 75dvh, 52rem);
+}
+
+.auth-x-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.85rem, 1.5vw, 1.2rem);
+  width: auto;
+}
+
+.auth-x-brand-lockup img {
+  width: clamp(4.7rem, 7vw, 6.2rem);
+  height: clamp(4.7rem, 7vw, 6.2rem);
+  object-fit: contain;
+  filter: none;
+}
+
+.auth-x-brand-lockup span {
+  color: #f7fbff;
+  font-family: "Syne", "Space Grotesk", sans-serif;
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+html[data-theme="light"] .auth-x-brand-lockup span { color: #172b38; }
+
+html[data-theme="light"] .auth-x-section::before {
+  opacity: 0.42;
+  filter: brightness(1.08) saturate(0.8) contrast(1.04);
+}
+
+html[data-theme="light"] .auth-x-section::after {
+  background:
+    linear-gradient(90deg, rgba(228, 241, 248, 0.94), rgba(228, 241, 248, 0.8) 42%, rgba(228, 241, 248, 0.5) 72%, rgba(228, 241, 248, 0.38)),
+    linear-gradient(180deg, rgba(228, 241, 248, 0.16), transparent 48%, rgba(228, 241, 248, 0.82));
+}
+
+@media (max-width: 900px) {
+  .auth-x-section::before,
+  .auth-x-section::after {
+    height: 64rem;
+    mask-image: linear-gradient(#000 0%, #000 66%, transparent 100%);
+  }
+
+  .auth-x-hero {
+    min-height: 48rem;
+  }
+
+  .auth-x-section::before {
+    background-position: 76% top;
+  }
+
+  .auth-x-section::after {
+    background:
+      linear-gradient(180deg, rgba(5, 10, 18, 0.78), rgba(5, 10, 18, 0.66) 43%, rgba(5, 10, 18, 0.58) 70%, rgba(5, 10, 18, 0.88)),
+      linear-gradient(90deg, rgba(5, 10, 18, 0.44), transparent 72%);
+  }
+
+  html[data-theme="light"] .auth-x-section::after {
+    background:
+      linear-gradient(180deg, rgba(228, 241, 248, 0.91), rgba(228, 241, 248, 0.76) 48%, rgba(228, 241, 248, 0.88)),
+      linear-gradient(90deg, rgba(228, 241, 248, 0.34), transparent 76%);
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-x-section::before,
+  .auth-x-section::after {
+    height: 68rem;
+  }
+
+  .auth-x-section::before {
+    background-position: 80% top;
+  }
+}

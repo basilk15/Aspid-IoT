@@ -1,0 +1,179 @@
+/* The default three-column layout remains visible without scroll scripting. */
+.services-domains-page main { overflow: clip; }
+
+.services-domains-page .services-common-card > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.services-domains-page .services-common-card::before { transform: scaleX(1); }
+.services-domains-page .services-common-step { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .services-domains-page .services-common-section.is-story-ready {
+    height: 370vh;
+    height: 370svh;
+    padding: 0;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-stage {
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: min(1260px, calc(100% - 3rem));
+    height: 100vh;
+    height: 100svh;
+    margin-inline: auto;
+    padding: clamp(6rem, 11vh, 8rem) 0 clamp(2.4rem, 5vh, 4rem);
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head h2 {
+    max-width: 14ch;
+    font-size: clamp(2.1rem, 3.5vw, 3.5rem);
+    line-height: 1.02;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head > p {
+    max-width: 47ch;
+    margin: 0;
+    font-size: clamp(0.86rem, 1.15vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-grid {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    border: 0;
+    perspective: 1100px;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card,
+  .services-domains-page .services-common-section.is-story-ready .services-common-card-violet,
+  .services-domains-page .services-common-section.is-story-ready .services-common-card-mint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
+    padding: 0 clamp(0.5rem, 7vw, 7rem);
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: var(--story-opacity, 0);
+    transform: translate3d(0, var(--story-y, 100px), 0) rotateX(var(--story-rotate, 15deg)) scale(var(--story-scale, .72));
+    transform-origin: 50% 55%;
+    backface-visibility: hidden;
+    pointer-events: none;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card + .services-common-card {
+    border: 0;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card::before {
+    width: 4rem;
+    height: 2px;
+    flex: 0 0 2px;
+    margin-bottom: clamp(1rem, 2.4vh, 1.7rem);
+    transform: none;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-step {
+    display: block;
+    color: var(--taste-accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card h3 {
+    max-width: 16ch;
+    margin-top: 0.7rem;
+    font-size: clamp(3.4rem, 6.1vw, 6.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card p {
+    max-width: 47ch;
+    margin-top: clamp(1.1rem, 2.4vh, 1.8rem);
+    color: var(--taste-muted);
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+}
+
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .services-domains-page .services-common-section.is-story-ready {
+    height: 330vh;
+    height: 330svh;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-stage {
+    width: min(100% - 2rem, 600px);
+    padding: clamp(5.3rem, 11vh, 7rem) 0 2rem;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head {
+    display: block;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head h2 {
+    max-width: 18ch;
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head > p {
+    max-width: 40ch;
+    margin-top: 0.8rem;
+    font-size: 0.88rem;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card,
+  .services-domains-page .services-common-section.is-story-ready .services-common-card-violet,
+  .services-domains-page .services-common-section.is-story-ready .services-common-card-mint {
+    padding: 0 0.25rem;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card h3 {
+    font-size: clamp(2.6rem, 10.5vw, 4.7rem);
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-card p {
+    font-size: clamp(1rem, 3.8vw, 1.18rem);
+  }
+
+}
+
+@media (max-height: 620px) and (prefers-reduced-motion: no-preference) {
+  .services-domains-page .services-common-section.is-story-ready .services-common-stage {
+    padding-top: 4.7rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .services-domains-page .services-common-section.is-story-ready .services-common-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+  .services-domains-page .services-common-section.is-story-ready .services-common-head > p { font-size: 0.82rem; }
+  .services-domains-page .services-common-section.is-story-ready .services-common-card h3 { font-size: clamp(2.4rem, 7vw, 4.5rem); }
+}

@@ -8,6 +8,11 @@
       content="BaudTide is AspidIoT's open-source Linux serial monitor for ESP32, Arduino, and USB/TTY devices."
     />
    <title>BaudTide | Open-Source Serial Monitoring | AspidIoT</title>
+    <meta name="application-name" content="AspidIoT" />
+    <meta property="og:site_name" content="AspidIoT" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <script>
       try {
         if (localStorage.getItem("aspid-theme") === "light") {
@@ -21,7 +26,7 @@
    <link rel="stylesheet" href="styles.css?v=performance-2" />
    <link rel="stylesheet" href="baudtide.css?v=14" />
     <link rel="stylesheet" href="theme.css?v=6" />
-    <link rel="stylesheet" href="design-taste.css?v=7" />
+    <link rel="stylesheet" href="design-taste.css?v=15" />
   </head>
   <body class="baudtide-page">
     <header class="site-header" data-header>
@@ -76,7 +81,7 @@
                 <a class="product-menu-item" href="auth-x.html" data-product-link>
                   <span class="product-family-label">Secure-X lineup</span>
                   <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                    <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
                   </span>
                   <span class="product-copy">
                     <span class="product-title-row">
@@ -87,7 +92,7 @@
                 </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -122,6 +127,7 @@
           </div>
 
           <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
           <a class="nav-link" href="contact.html">Contact</a>
        </nav>
 
@@ -186,20 +192,25 @@
               <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Identity + protected telemetry</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
-              <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
-              <span class="mobile-product-title-row">
-                <img class="mobile-product-mark" src="assets/auth-x-logos/auth-x-mark.svg" alt="" aria-hidden="true" width="64" height="64" decoding="async" />
-                <span>Auth-X</span>
-              </span>
-                <span>Device identity &amp; session setup</span>
-              </a>
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -210,14 +221,22 @@
                 </section>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
-              <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link aria-current="page">
-                <span class="mobile-product-title-row"><span>BaudTide</span><span class="product-badge product-badge-open">Open source</span></span>
-                <span>Local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
-              </a>
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
                   </div>
                 </section>
               </div>
@@ -225,6 +244,7 @@
           </div>
 
           <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="pricing.html" data-mobile-link>Pricing</a>
           <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
         </div>
       </div>
@@ -503,6 +523,7 @@
           <a href="tunnel-x.html">Tunnel-X</a>
           <a href="baudtide.html">BaudTide</a>
           <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
@@ -513,6 +534,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-4"></script>
+    <script src="script.js?v=performance-5"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 # Auth-X primitive marks
 
+The current Auth-X product mark is `auth-x-mark-v3.png`. Its concept and generation prompt are documented in [the product marks guide](../PRODUCT_MARKS.md). Earlier branding assets remain in this folder.
+
 These marks identify the source projects or standards associated with the primitives shown on the Auth-X page. They are not presented as Auth-X branding.
 
 - `mbed-tls.png` — Mbed TLS project mark: <https://github.com/Mbed-TLS.png?size=256>

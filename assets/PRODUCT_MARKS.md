@@ -1,0 +1,25 @@
+# Product marks
+
+The current product marks were generated with the built-in imagegen tool on 26 September 2026. All three are transparent 1254 × 1254 PNGs. The older marks remain in their asset folders as historical files.
+
+| Product | Current asset | Meaning |
+| --- | --- | --- |
+| Auth-X | `auth-x-logos/auth-x-mark-v3.png` | A machined round aperture and device node: admission into a trusted session. |
+| Tunnel-X | `tunnel-x/tunnel-x-mark-v4.png` | A machined conduit containing a continuous cyan data path: authenticated telemetry in transit. |
+| Secure-X | `secure-x/secure-x-mark-v3.png` | A graphite assembly joining an admission aperture to a protected channel: identity and telemetry protection in one path. |
+
+All three current marks use satin graphite metal, precise bevels, restrained cyan light, and a small violet identity accent where relevant. Their silhouettes remain distinct. The graphics describe the product roles; they do not imply that the three offers are independently deployable in the current reference implementation.
+
+## Current generation prompts
+
+### Auth-X
+
+> Use case: style-transfer / logo-brand. Image 1 is the earlier Auth-X mark to redesign; preserve its distinctive nearly circular open admission aperture and one small identity node at the gap. Images 2 and 3 are material references: Tunnel-X and Secure-X use satin graphite titanium, brushed gunmetal, precise bevels, realistic edge reflections, and restrained cyan internal light. Create a new Auth-X mark in the same enterprise product family. Replace the bright cyan and blue ring with a machined graphite titanium aperture, realistically lit and sculpted like the other two. Add a narrow cyan inner edge light to indicate a trusted session, and keep the tiny identity node as a subtle violet inset. Metal should dominate. Retain a round open-gate silhouette, distinct from Tunnel-X's horizontal conduit and Secure-X's angular integrated frame. Keep it simple and legible at 48px. Output one isolated centered square transparent PNG with genuine alpha, with the mark occupying roughly 80% of the canvas. No text, letters, wordmark, second ring, padlock, shield, circuit traces, cartoon gloss, neon bloom, plastic, thick blue surfaces, shadows outside the silhouette, or watermark.
+
+### Tunnel-X
+
+> Use case: logo-brand. Asset type: final transparent square product emblem for Tunnel-X, a serious B2B IoT security product; legible at 48px in a website menu and at 72px on pricing. Tunnel-X protects authenticated device telemetry after a trusted session exists; it verifies data frames and keeps the protected channel continuous. Create one distinctive compact engineered conduit mark, like a short protected telemetry channel seen in subtle three-quarter perspective. Two precise dark titanium side walls form a narrow protected passage around one continuous restrained cyan light path. The path is visibly contained within the structure, entering one side and exiting the other. Use a strong simple silhouette and generous negative space, with no letter H or X. Use photorealistic premium industrial material: machined graphite titanium with satin finish, subtle beveled edges, realistic reflections, tightly controlled cyan internal illumination. Keep it credible, quiet, and precise. No plastic, candy colors, soft cartoon rounding, thick neon glow, busy details, or toy-like styling. Center one isolated emblem on a 1:1 transparent canvas, occupying around 72% of width and 65% of height. No scene, background, badge, tile, typography, shield, padlock, arrows, circuit board, extra nodes, animation streaks, or watermark.
+
+### Secure-X
+
+> Use case: logo-brand. Asset type: final transparent square product emblem for Secure-X, a serious B2B IoT security bundle; legible at 48px in a website menu and 72px on pricing. Secure-X combines authenticated device admission and session establishment with protected continuous device-to-sink telemetry into one integrated path. Create one compact precision-machined security core emblem. A dark graphite six-sided architectural frame holds two clearly integrated internal elements: one small circular admission aperture near the top and one short enclosed cyan data channel near the bottom, connected by a single rigid central bridge. It should feel engineered as one assembly rather than separate icons pasted together. Use a strong clean silhouette without an X crossing. Use photorealistic premium industrial material: satin black titanium and brushed gunmetal with precise bevels and realistic controlled reflections. Allow only a narrow internal cyan light line and a very small violet identity point. The dark structure should dominate. Avoid bright blue filled surfaces, toy-like gloss, cartoon geometry, oversize balls, and neon glow. Center one isolated emblem on a 1:1 transparent canvas, around 70% of canvas width and height. No scene, tile, plaque, mockup, text, letters, generic shield point, padlock, circuit board, arrows, multiple loose symbols, plastic, bloom, outside shadow, or watermark.

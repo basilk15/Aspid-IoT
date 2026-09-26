@@ -249,7 +249,7 @@ const scheduleDropdownClose = () => {
   dropdownCloseTimer = window.setTimeout(() => {
     dropdownCloseTimer = null;
     setDropdownState(false);
-  }, 280);
+  }, 550);
 };
 
 const setProductFamilyState = (family, isExpanded) => {

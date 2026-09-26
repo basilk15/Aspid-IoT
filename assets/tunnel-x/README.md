@@ -1,5 +1,7 @@
 # Tunnel-X generated assets
 
+The current Tunnel-X product mark is `tunnel-x-mark-v4.png`. Its concept and generation prompt are documented in [the product marks guide](../PRODUCT_MARKS.md). Earlier marks and hero artwork below are retained.
+
 Both assets were generated with the built-in imagegen tool on 25 September 2026 and copied into this project. The earlier `tunnel-x-mark.png` and `tunnel-x-mark.svg` are retained as prior assets.
 
 ## `tunnel-x-emblem-v2.png`

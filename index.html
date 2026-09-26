@@ -8,6 +8,20 @@
       content="AspidIoT builds lightweight security infrastructure for connected devices and IoT systems."
     />
     <title>AspidIoT | Lightweight Security for IoT</title>
+    <meta name="application-name" content="AspidIoT" />
+    <meta property="og:site_name" content="AspidIoT" />
+    <link rel="canonical" href="https://aspid-iot.vercel.app/" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AspidIoT",
+        "url": "https://aspid-iot.vercel.app/"
+      }
+    </script>
     <script>
       try {
         if (localStorage.getItem("aspid-theme") === "light") {
@@ -20,7 +34,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
     <link rel="stylesheet" href="styles.css?v=performance-2" />
     <link rel="stylesheet" href="theme.css?v=6" />
-    <link rel="stylesheet" href="design-taste.css?v=7" />
+    <link rel="stylesheet" href="design-taste.css?v=15" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -77,7 +91,7 @@
                   <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
                     <a class="product-menu-item" href="auth-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
-                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Auth-X</span>
@@ -86,7 +100,7 @@
                     </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -105,7 +119,7 @@
                   </button>
                   <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
                     <a class="product-menu-item" href="baudtide.html" data-product-link>
-                      <span class="product-menu-item-logo" aria-hidden="true">
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
                         <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
@@ -120,6 +134,7 @@
           </div>
 
           <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
           <a class="nav-link" href="contact.html">Contact</a>
        </nav>
 
@@ -193,7 +208,7 @@
                   <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
                     <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
-                        <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Auth-X</span>
@@ -202,7 +217,7 @@
                     </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -221,8 +236,8 @@
                   </button>
                   <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
                     <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
-                      <span class="product-menu-item-logo" aria-hidden="true">
-                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
@@ -236,6 +251,7 @@
           </div>
 
           <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="pricing.html" data-mobile-link>Pricing</a>
           <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
 
         </div>
@@ -465,7 +481,7 @@
             <p class="section-kicker">Products</p>
             <h2 class="section-title">Tools for secure connected systems.</h2>
             <p class="section-summary">
-              Our products cover device identity, protected telemetry, and local tools for connected systems.
+              Device identity, protected telemetry, and local serial tools.
             </p>
           </div>
 
@@ -473,40 +489,36 @@
             <section class="product-showcase-family" aria-label="Secure-X product lineup">
               <p class="product-showcase-family-label">Secure-X</p>
               <div class="secure-x-product-grid">
-                <article class="showcase-card showcase-card-featured reveal" data-delay="80">
+                <article class="showcase-card showcase-card-featured reveal" data-delay="0">
                   <div class="showcase-card-top">
                     <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
-                      <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                      <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" loading="lazy" decoding="async" />
                     </span>
                   </div>
                   <h3>Auth-X</h3>
-                  <p>
-                    A lightweight identity layer for IoT devices. Prove the endpoint, derive the session, and hand off trusted context.
-                  </p>
+                  <p>Prove device identity. Establish a trusted session.</p>
                   <ul class="showcase-list">
-                    <li>Establish device identity with a fresh challenge.</li>
-                    <li>Bind proof to the session before trust is granted.</li>
-                    <li>Hand authenticated context to protected transport.</li>
+                    <li>Fresh challenge per device</li>
+                    <li>Session-bound proof</li>
+                    <li>Trusted context handoff</li>
                   </ul>
                   <div class="showcase-actions">
                     <a class="button-link button-link-primary" href="auth-x.html">Explore Auth-X</a>
                   </div>
                 </article>
 
-                <article class="showcase-card showcase-card-tunnel reveal" data-delay="140">
+                <article class="showcase-card showcase-card-tunnel reveal" data-delay="110">
                   <div class="showcase-card-top">
                     <span class="showcase-logo showcase-logo-mark" aria-hidden="true">
-                      <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                      <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" loading="lazy" decoding="async" />
                     </span>
                   </div>
                   <h3>Tunnel-X</h3>
-                  <p>
-                    Protected telemetry after device trust. Keep IoT data private as it moves from device to receiving sink.
-                  </p>
+                  <p>Private telemetry from device to sink.</p>
                   <ul class="showcase-list">
-                    <li>Encrypt telemetry before it leaves the device.</li>
-                    <li>Protect readings across the connection.</li>
-                    <li>Decrypt and process data at the receiving sink.</li>
+                    <li>Encrypt before transmission</li>
+                    <li>Verify every frame</li>
+                    <li>Decrypt at the sink</li>
                   </ul>
                   <div class="showcase-actions">
                     <a class="button-link button-link-primary" href="tunnel-x.html">Explore Tunnel-X</a>
@@ -517,7 +529,7 @@
 
             <section class="product-showcase-family" aria-label="DataTide tools">
               <p class="product-showcase-family-label">DataTide</p>
-              <article class="showcase-card showcase-card-baudtide reveal" data-delay="160">
+              <article class="showcase-card showcase-card-baudtide reveal" data-delay="180">
                 <div class="showcase-card-top">
                   <span class="showcase-icon showcase-icon-baudtide" aria-hidden="true">
                     <img src="assets/baudtide/baudtide-mark.png" alt="" loading="lazy" decoding="async" />
@@ -525,13 +537,11 @@
                   <span class="product-badge product-badge-open">Open source</span>
                 </div>
                 <h3>BaudTide</h3>
-                <p>
-                  A local-first serial monitor for ESP32, Arduino, and USB/TTY devices. Keep telemetry local and export useful logs.
-                </p>
+                <p>Local serial monitor for embedded devices.</p>
                 <ul class="showcase-list">
-                  <li>Monitor ESP32, Arduino, and USB/TTY devices in one workspace.</li>
-                  <li>Filter telemetry and export local logs.</li>
-                  <li>Share a read-only terminal view on a trusted local network.</li>
+                  <li>Monitor ESP32, Arduino, and USB/TTY</li>
+                  <li>Filter streams and export logs</li>
+                  <li>Share a read-only terminal</li>
                 </ul>
                 <div class="showcase-actions">
                   <a class="button-link button-link-primary" href="baudtide.html">Explore BaudTide</a>
@@ -609,6 +619,6 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-4"></script>
+    <script src="script.js?v=performance-5"></script>
   </body>
 </html>

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Compare proposed Auth-X, Tunnel-X, and Secure-X pricing by active device count, including pilot terms, annual prepayment, and fleet overage rates."
+    />
+    <title>Pricing | AspidIoT</title>
+    <meta name="application-name" content="AspidIoT" />
+    <meta property="og:site_name" content="AspidIoT" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <script>
+      try {
+        if (localStorage.getItem("aspid-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&amp;family=Syne:wght@600;700&amp;display=swap" />
+    <link rel="stylesheet" href="styles.css?v=performance-2" />
+    <link rel="stylesheet" href="theme.css?v=6" />
+    <link rel="stylesheet" href="design-taste.css?v=15" />
+    <link rel="stylesheet" href="pricing.css?v=9" />
+    <link rel="stylesheet" href="pricing-modern.css?v=21" />
+  </head>
+  <body class="pricing-page">
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <span class="nav-shell-trace" aria-hidden="true">
+          <svg viewBox="0 0 0 0" focusable="false" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="aspidNavTraceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#59f7ff" stop-opacity="0.76" />
+                <stop offset="55%" stop-color="#f0ffff" />
+                <stop offset="100%" stop-color="#d08aef" stop-opacity="0.94" />
+              </linearGradient>
+            </defs>
+            <path class="nav-shell-trace-path" pathLength="100" />
+          </svg>
+        </span>
+
+        <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">AspidIoT</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home" data-nav-link>Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-link nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="products-menu"
+              data-dropdown-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
+              <p class="product-menu-kicker">Product families</p>
+              <div class="product-menu-list" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Identity + protected telemetry</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
+                <a class="product-menu-item" href="auth-x.html" data-product-link>
+                  <span class="product-family-label">Secure-X lineup</span>
+                  <span class="product-icon product-icon-auth-x" aria-hidden="true">
+                    <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">Auth-X</span>
+                    </span>
+                    <span class="product-description">
+                      Device identity &amp; session setup
+                    </span>
+                  </span>
+                </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X</span>
+                        <span class="product-menu-item-detail">Protected IoT telemetry</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
+                <a class="product-menu-item" href="baudtide.html" data-product-link>
+                  <span class="product-family-label">DataTide</span>
+                  <span class="product-icon product-icon-baudtide" aria-hidden="true">
+                    <img src="assets/baudtide/baudtide-mark.png" alt="" />
+                  </span>
+                  <span class="product-copy">
+                    <span class="product-title-row">
+                      <span class="product-name">BaudTide</span>
+                      <span class="product-badge product-badge-open">Open source</span>
+                    </span>
+                    <span class="product-description">A calm, local-first serial monitor for ESP32, Arduino, and USB/TTY devices.</span>
+                  </span>
+                </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link is-active" href="pricing.html" aria-current="page">Pricing</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+       </nav>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-icon theme-toggle-icon-sun">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <circle cx="12" cy="12" r="3.25"></circle>
+                  <path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M19.07 4.93l-1.56 1.56M6.49 17.51l-1.56 1.56"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-icon theme-toggle-icon-moon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+                </svg>
+              </span>
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-inner">
+          <a class="mobile-nav-link" href="index.html#home" data-mobile-link>Home</a>
+          <a class="mobile-nav-link" href="services.html" data-mobile-link>Services</a>
+
+          <div class="mobile-products">
+            <button
+              class="mobile-products-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-products-grid"
+              data-mobile-products-toggle
+            >
+              <span>Products</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+
+            <div class="mobile-products-grid" id="mobile-products-grid" data-mobile-products-grid>
+              <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
+                    <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Tunnel-X</span>
+                        <span class="product-menu-item-detail">Protected IoT telemetry</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+                <section class="product-menu-family" data-product-family>
+                  <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
+                    <span class="product-menu-family-caret" aria-hidden="true"></span>
+                  </button>
+                  <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link is-active" href="pricing.html" aria-current="page">Pricing</a>
+          <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pricing-main">
+      <section class="pricing-hero" aria-labelledby="pricing-title">
+        <div class="pricing-shell pricing-hero-layout">
+          <div class="pricing-intro reveal">
+            <p class="pricing-eyebrow">Pricing proposal</p>
+            <h1 id="pricing-title">Security for your<br /><span>connected fleet.</span></h1>
+            <p class="pricing-lede">Start with device identity, protect telemetry using an existing trusted session, or choose the complete Secure-X path.</p>
+            <div class="pricing-hero-actions">
+              <a class="pricing-button pricing-button-primary" href="contact.html">Discuss a pilot <span aria-hidden="true">↗</span></a>
+              <a class="pricing-button pricing-button-text" href="#compare">Compare products <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="pricing-availability">The pilot comes first. Subscription figures below are targets for a future production release, not plans available to buy today.</p>
+          </div>
+
+
+        </div>
+      </section>
+
+      <section class="pricing-products pricing-section" aria-labelledby="products-title">
+        <div class="pricing-shell">
+          <div class="pricing-section-heading pricing-products-heading reveal">
+            <p class="pricing-eyebrow">Products</p>
+            <h2 id="products-title">Choose what your deployment needs.</h2>
+            <p class="pricing-product-definition">Three proposed licenses, two fleet sizes. Secure-X includes both Auth-X and Tunnel-X for less than buying them separately.</p>
+          </div>
+
+          <p class="pricing-target-status reveal">Proposed production pricing. These licenses are not available to purchase yet; the design-partner pilot comes first.</p>
+
+          <div class="pricing-product-panels">
+            <article class="pricing-product-panel pricing-product-auth reveal" aria-labelledby="auth-title">
+              <div class="product-panel-mark product-mark-auth" aria-hidden="true"><span class="pricing-mark-reel"><img class="pricing-mark-face" src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="72" height="72" /></span></div>
+              <div class="product-panel-copy">
+                <p class="product-panel-index">Session setup</p>
+                <h3 id="auth-title">Auth-X</h3>
+                <p class="product-panel-description">Establish device identity and a trusted session for your existing data path.</p>
+                <div class="product-base-prices" role="group" aria-label="Auth-X monthly base prices">
+                  <div class="product-base-price"><span>Team</span><strong>$99 <small>/ mo</small></strong><p>50 included; +$0.75/device</p></div>
+                  <div class="product-base-price"><span>Fleet</span><strong>$399 <small>/ mo</small></strong><p>500 included; +$0.45/device</p></div>
+                </div>
+                <ul class="product-panel-features"><li>Device admission</li><li>Key agreement and session setup</li><li>Use your existing data path</li></ul>
+              </div>
+              <a class="product-panel-link" href="auth-x.html">Explore Auth-X <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="pricing-product-panel pricing-product-tunnel reveal" aria-labelledby="tunnel-title">
+              <div class="product-panel-mark product-mark-tunnel" aria-hidden="true"><span class="pricing-mark-reel"><img class="pricing-mark-face" src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="72" height="72" /></span></div>
+              <div class="product-panel-copy">
+                <p class="product-panel-index">Protected telemetry</p>
+                <h3 id="tunnel-title">Tunnel-X</h3>
+                <p class="product-panel-description">Protect telemetry using a trusted session from a compatible external provider.</p>
+                <div class="product-base-prices" role="group" aria-label="Tunnel-X standalone monthly base prices">
+                  <div class="product-base-price"><span>Team</span><strong>$149 <small>/ mo</small></strong><p>50 included; +$1.10/device</p></div>
+                  <div class="product-base-price"><span>Fleet</span><strong>$599 <small>/ mo</small></strong><p>500 included; +$0.65/device</p></div>
+                </div>
+                <ul class="product-panel-features"><li>Authenticated telemetry</li><li>Frame sequence checks</li><li>Compatible session provider required</li></ul>
+              </div>
+              <a class="product-panel-link" href="tunnel-x.html">Explore Tunnel-X <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="pricing-product-panel pricing-product-secure reveal" data-delay="100" aria-labelledby="secure-title">
+              <div class="product-panel-mark product-mark-secure" aria-hidden="true"><span class="pricing-mark-reel"><img class="pricing-mark-face" src="assets/secure-x/secure-x-mark-v3.png" alt="" width="72" height="72" /></span></div>
+              <div class="product-panel-copy">
+                <p class="product-panel-index">Complete path</p>
+                <h3 id="secure-title">Secure-X</h3>
+                <p class="product-panel-description">Identity and protected telemetry in one integrated device-to-sink path.</p>
+                <div class="product-base-prices" role="group" aria-label="Secure-X monthly base prices">
+                  <div class="product-base-price"><span>Team</span><strong>$199 <small>/ mo</small></strong><p>50 included; +$1.50/device</p></div>
+                  <div class="product-base-price"><span>Fleet</span><strong>$799 <small>/ mo</small></strong><p>500 included; +$0.90/device</p></div>
+                </div>
+                <ul class="product-panel-features"><li>Everything in Auth-X</li><li>Everything in Tunnel-X</li><li>About 20% less on the base</li></ul>
+              </div>
+              <a class="product-panel-link" href="#capabilities">Explore Secure-X <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <p class="pricing-plan-billing">USD per month. Annual prepay reduces the base by 15%; additional devices are billed monthly.</p>
+          <p class="pricing-product-boundary">The current reference build runs as one integrated protocol. Separate module interfaces, including Tunnel-X with an external session provider, still require testing.</p>
+          <p class="pricing-crossover-note" data-crossover-note>For Secure-X, Team and Fleet meet at 450 active devices.</p>
+        </div>
+      </section>
+
+      <section class="pricing-estimate-section pricing-section" aria-label="Estimate your license">
+        <div class="pricing-shell">
+          <section class="pricing-estimator reveal" data-delay="100" aria-label="Deployment price estimator">
+            <div class="estimator-content">
+              <div class="estimator-topline">
+                <div class="estimator-title-lockup">
+                  <div><p class="estimator-heading">Estimate your monthly license</p><p class="estimator-subheading">Choose a product and your expected active devices</p></div>
+                </div>
+                <div class="estimator-billing" role="group" aria-label="Billing cadence">
+                  <button type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+                  <button type="button" data-billing="yearly" aria-pressed="false">Yearly <span>−15%</span></button>
+                </div>
+              </div>
+
+              <div class="estimator-body">
+                <div class="estimator-controls">
+                  <div class="estimator-control-block estimator-product-control">
+                    <div class="estimator-control-heading">
+                      <div>
+                        <span class="estimator-control-label">Product</span>
+                        <span class="estimator-control-hint">Choose a deployment path</span>
+                      </div>
+                    </div>
+                    <div class="estimator-product-switch" role="group" aria-label="Choose product">
+                      <button type="button" data-product="auth" aria-pressed="false">Auth-X</button>
+                      <button type="button" data-product="tunnel" aria-pressed="false">Tunnel-X</button>
+                      <button type="button" data-product="secure" aria-pressed="true">Secure-X</button>
+                    </div>
+                  </div>
+                  <div class="estimator-fleet-control">
+                    <div class="estimator-count-heading">
+                      <div class="estimator-control-heading-copy">
+                        <label for="active-device-count">Active devices</label>
+                        <span class="estimator-control-hint">Counted per month</span>
+                      </div>
+                      <div class="estimator-count-input">
+                        <input id="active-device-count" type="number" min="1" max="100000" step="1" value="100" inputmode="numeric" aria-describedby="usage-definition" />
+                        <span>devices</span>
+                      </div>
+                    </div>
+                    <span id="active-device-caption" class="pricing-sr-only">100 devices</span>
+                    <input class="estimator-slider" id="active-device-slider" type="range" min="0" max="1000" step="1" value="400" aria-label="Adjust monthly active devices" aria-describedby="usage-definition" />
+                    <div class="estimator-slider-scale" aria-hidden="true"><span>1</span><span>50</span><span>500</span><span>100,000</span></div>
+                  </div>
+                  <p id="usage-definition" class="estimator-usage-note">Registered devices with an accepted authenticated session this month.</p>
+                </div>
+                <div class="estimator-result">
+                  <div class="estimator-result-heading"><img class="estimator-product-mark" data-estimate-mark src="assets/secure-x/secure-x-mark-v3.png" alt="" width="230" height="230" decoding="async" /></div>
+                  <div class="estimator-output" aria-live="polite" aria-atomic="true">
+                    <div class="estimator-output-top"><span class="estimator-recommendation">Recommended tier</span><strong data-estimate-tier>Team</strong></div>
+                    <p class="estimator-output-label" data-estimate-period>Estimated monthly total</p>
+                    <div class="estimator-price-line"><strong data-estimate-price>$274.00</strong><span data-estimate-unit>/ month</span></div>
+                    <p class="estimator-price-detail" data-estimate-detail>Base $199 · 50 × $1.50 overage</p>
+                    <p class="estimator-product-note" data-product-note>Auth-X and Tunnel-X in one device-to-sink path.</p>
+                  </div>
+                  <div class="estimator-facts" role="group" aria-label="Recommended plan details">
+                    <div><span>Devices included</span><strong><b data-estimate-included>50</b> / month</strong></div>
+                    <div><span>Additional device</span><strong><b data-estimate-overage>$1.50</b> / month</strong></div>
+                  </div>
+                </div>
+              </div>
+              <p id="billing-note" class="estimator-billing-note">Annual prepay saves 15% on base; overage stays monthly.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="pricing-enterprise" aria-labelledby="enterprise-title">
+        <div class="pricing-shell pricing-enterprise-inner reveal">
+          <div><p class="pricing-eyebrow">Enterprise</p><h2 id="enterprise-title">Deploying at fleet scale?</h2></div>
+          <p class="pricing-enterprise-scope">Multi-site deployments <span>·</span> custom integrations <span>·</span> SLA <span>·</span> rollout support</p>
+          <a class="pricing-button pricing-button-outline" href="contact.html">Talk to our team <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="pricing-pilot-section pricing-section" id="pilot" aria-labelledby="pilot-title">
+        <div class="pricing-shell">
+          <div class="pricing-pilot-callout reveal">
+            <div class="pilot-price-block">
+              <p class="pricing-eyebrow">Proposed design partner pilot</p>
+              <h2 id="pilot-title">$2,500</h2>
+              <p>8 weeks <span>·</span> up to 5 concurrent devices</p>
+            </div>
+            <div class="pilot-copy-block">
+              <p class="pilot-credit">50% of the pilot fee is credited toward an annual Secure-X license.</p>
+              <p class="pilot-credit-note">Credit applies when signed within 90 days of pilot completion.</p>
+              <a class="pricing-button pricing-button-light" href="#pilot-terms">Explore pilot <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-comparison pricing-section" aria-labelledby="compare-title">
+        <div class="pricing-shell">
+          <div class="pricing-section-heading pricing-compare-heading reveal">
+            <p class="pricing-eyebrow">Details</p>
+            <h2 id="compare-title">Compare the essentials.</h2>
+          </div>
+          <div class="pricing-details-list" id="compare">
+            <details class="pricing-disclosure" id="rates">
+              <summary><span>Target subscription rates</span><span class="disclosure-meta">Three products · two tiers</span><i aria-hidden="true"></i></summary>
+              <div class="pricing-disclosure-content">
+                <p class="pricing-detail-intro">Proposed USD pricing for customer-hosted deployments.</p>
+                <div class="pricing-table-scroll" tabindex="0" aria-label="Detailed monthly rates">
+                  <table class="pricing-rate-table">
+                    <thead><tr><th scope="col">License</th><th scope="col">Base / month</th><th scope="col">Devices included</th><th scope="col">Overage / device / month</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">Auth-X Team</th><td>$99</td><td>50</td><td>$0.75</td></tr>
+                      <tr><th scope="row">Tunnel-X Team</th><td>$149</td><td>50</td><td>$1.10</td></tr>
+                      <tr><th scope="row">Secure-X Team</th><td>$199</td><td>50</td><td>$1.50</td></tr>
+                      <tr><th scope="row">Auth-X Fleet</th><td>$399</td><td>500</td><td>$0.45</td></tr>
+                      <tr><th scope="row">Tunnel-X Fleet</th><td>$599</td><td>500</td><td>$0.65</td></tr>
+                      <tr><th scope="row">Secure-X Fleet</th><td>$799</td><td>500</td><td>$0.90</td></tr>
+                      <tr><th scope="row">Enterprise</th><td>Custom</td><td>Contracted</td><td>Contracted</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="pricing-detail-note">Secure-X saves $49 per month on Team or $199 on Fleet versus the two standalone base licenses. An Auth-X customer can upgrade to Secure-X for an additional $100 Team or $400 Fleet base per month. Annual prepay reduces base fees by 15%; overage remains monthly. A Secure-X device is counted once. No per-message or per-GB fee applies.</p>
+              </div>
+            </details>
+
+            <details class="pricing-disclosure" id="capabilities">
+              <summary><span>Included capabilities</span><span class="disclosure-meta">Compare all three products</span><i aria-hidden="true"></i></summary>
+              <div class="pricing-disclosure-content">
+                <div class="pricing-table-scroll" tabindex="0" aria-label="Technical capability comparison">
+                  <table class="pricing-capability-table">
+                    <thead><tr><th scope="col">Capability</th><th scope="col">Auth-X</th><th scope="col">Tunnel-X</th><th scope="col">Secure-X</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">Device identity</th><td><span class="capability-included" aria-label="Included">✓</span></td><td>External provider</td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                      <tr><th scope="row">Session setup</th><td><span class="capability-included" aria-label="Included">✓</span></td><td>External provider</td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                      <tr><th scope="row">Protected telemetry</th><td>—</td><td><span class="capability-included" aria-label="Included">✓</span></td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                      <tr><th scope="row">Frame sequence checks</th><td>—</td><td><span class="capability-included" aria-label="Included">✓</span></td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                      <tr><th scope="row">In-band rekey</th><td>—</td><td>Interface planned</td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                      <tr><th scope="row">Customer-hosted gateway</th><td><span class="capability-included" aria-label="Included">✓</span></td><td><span class="capability-included" aria-label="Included">✓</span></td><td><span class="capability-included" aria-label="Included">✓</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="pricing-detail-note">Tunnel-X as a separate license depends on a tested external session-provider interface; that interface is not yet available. The customer provides gateway infrastructure, connectivity and telemetry storage. Hosted operation, adapter engineering, on-site installation and formal SLAs are quoted separately.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-faq pricing-section" aria-labelledby="faq-title">
+        <div class="pricing-shell pricing-faq-layout">
+          <div class="pricing-section-heading pricing-faq-heading reveal">
+            <p class="pricing-eyebrow">Good to know</p>
+            <h2 id="faq-title">Questions, answered.</h2>
+          </div>
+          <div class="pricing-faq-list">
+            <details><summary>What exactly is Secure-X?<i aria-hidden="true"></i></summary><p>Secure-X is the proposed bundle of Auth-X and Tunnel-X. Auth-X authenticates a device and establishes its session; Tunnel-X protects telemetry on that session. Today they are product labels for one working device-to-sink protocol; separate module interfaces are still being designed.</p></details>
+            <details><summary>What counts as an active device?<i aria-hidden="true"></i></summary><p>A unique registered device with at least one accepted authenticated session during the billing month. Devices with no accepted session are not billed. Overage is billed monthly in arrears, with usage alerts at 80% and 100% of the allowance. Billing thresholds never interrupt an established session.</p></details>
+            <details><summary>How does annual billing work?<i aria-hidden="true"></i></summary><p>Prepay annually for 15% off the base subscription. The base is paid upfront; additional active-device usage remains billed monthly.</p></details>
+            <details><summary>When will subscriptions be available?<i aria-hidden="true"></i></summary><p>Production subscriptions are proposed, not currently available to purchase. The paid design-partner pilot comes first while scale testing, reliable metering, integration boundaries and operating procedures are completed.</p></details>
+            <details id="pilot-terms"><summary>What is included in the pilot?<i aria-hidden="true"></i></summary><p>The proposed $2,500 fixed-fee, eight-week engagement covers up to five concurrent ESP32-class devices, one customer-controlled sink and telemetry use case, an integration workshop, deployment steps, a test report and scheduled engineering support. It has no production uptime SLA. 50% of the pilot fee is credited toward the first annual Secure-X license if signed within 90 days after completion. The statement of work sets acceptance criteria and hardware, network and custom firmware responsibilities. A supervised evaluation of up to five lab devices may come first; there is no self-service cloud tier.</p></details>
+            <details><summary>What does the customer provide?<i aria-hidden="true"></i></summary><p>You provide and pay for gateway infrastructure, connectivity and retained telemetry storage. Customer-hosted plans include updates and email support, with no per-message or per-GB charge. Hosted operation, custom firmware or SDK work, on-site installation and formal SLA support are quoted separately.</p></details>
+            <details><summary>Can Tunnel-X be licensed on its own?<i aria-hidden="true"></i></summary><p>That is the proposed separate license for customers who already have a compatible identity and session provider. Tunnel-X still needs a trusted session to protect telemetry. Its external provider interface must be designed and tested before standalone production sales; integration work is scoped separately. Customers using Auth-X can upgrade to Secure-X instead.</p></details>
+            <details><summary>Can we pilot Tunnel-X with our own session provider?<i aria-hidden="true"></i></summary><p>We can scope a focused pilot if your session provider can supply the trust and key state Tunnel-X needs. The standard $2,500 pilot covers the current integrated path; external adapter design and validation are quoted in the statement of work.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-shell">
+        <div class="site-footer-branding">
+          <a class="site-footer-brand" href="index.html#home" aria-label="AspidIoT home">
+            <span class="site-footer-brand-mark" aria-hidden="true"></span>
+            <span>AspidIoT</span>
+          </a>
+          <p>Lightweight security infrastructure for connected devices.</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="services.html">Services</a>
+          <a href="auth-x.html">Auth-X</a>
+          <a href="tunnel-x.html">Tunnel-X</a>
+          <a href="baudtide.html">BaudTide</a>
+          <a href="about.html">About</a>
+          <a href="pricing.html" aria-current="page">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer-meta">
+        <p>© 2026 AspidIoT. All rights reserved.</p>
+        <span>Secure-by-design · IoT at the edge</span>
+      </div>
+    </footer>
+
+    <script src="theme.js?v=2"></script>
+    <script src="pricing.js?v=13"></script>
+    <script src="script.js?v=performance-5"></script>
+  </body>
+</html>

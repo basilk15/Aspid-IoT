@@ -8,6 +8,11 @@
       content="Auth-X is AspidIoT's lightweight device-authentication layer for trusted IoT sessions."
     />
     <title>Auth-X | Lightweight Device Authentication | AspidIoT</title>
+    <meta name="application-name" content="AspidIoT" />
+    <meta property="og:site_name" content="AspidIoT" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <script>
       try {
         if (localStorage.getItem("aspid-theme") === "light") {
@@ -19,9 +24,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
     <link rel="stylesheet" href="styles.css?v=performance-2" />
-    <link rel="stylesheet" href="auth-x-primitives.css?v=13" />
+    <link rel="stylesheet" href="auth-x-primitives.css?v=20" />
     <link rel="stylesheet" href="theme.css?v=15" />
-    <link rel="stylesheet" href="design-taste.css?v=7" />
+    <link rel="stylesheet" href="design-taste.css?v=15" />
+    <link rel="stylesheet" href="auth-x-hero.css?v=5" />
   </head>
   <body class="auth-x-page">
     <header class="site-header" data-header>
@@ -76,7 +82,7 @@
                 <a class="product-menu-item" href="auth-x.html" data-product-link aria-current="page">
                   <span class="product-family-label">Secure-X lineup</span>
                   <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                    <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
                   </span>
                   <span class="product-copy">
                     <span class="product-title-row">
@@ -89,7 +95,7 @@
                 </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -124,6 +130,7 @@
           </div>
 
           <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
           <a class="nav-link" href="contact.html">Contact</a>
        </nav>
 
@@ -188,20 +195,25 @@
               <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Identity + protected telemetry</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
-              <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link aria-current="page">
-                <span class="mobile-product-title-row">
-                  <img class="mobile-product-mark" src="assets/auth-x-logos/auth-x-mark.svg" alt="" aria-hidden="true" width="64" height="64" decoding="async" />
-                  <span>Auth-X</span>
-                </span>
-                <span>Device identity &amp; session setup</span>
-              </a>
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link aria-current="page">
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -212,17 +224,22 @@
                 </section>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
-              <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
-                <span class="mobile-product-title-row">
-                  <span>BaudTide</span>
-                  <span class="product-badge product-badge-open">Open source</span>
-                </span>
-                <span>Local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
-              </a>
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
                   </div>
                 </section>
               </div>
@@ -230,6 +247,7 @@
           </div>
 
           <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="pricing.html" data-mobile-link>Pricing</a>
           <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
 
         </div>
@@ -242,13 +260,8 @@
           <div class="auth-x-hero reveal">
             <div class="auth-x-hero-copy">
               <div class="auth-x-brand-lockup">
-                <img
-                  src="assets/auth-x-logos/auth-x-logo.png"
-                  alt="Auth-X"
-                  width="2172"
-                  height="724"
-                  decoding="async"
-                />
+                <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="80" height="80" decoding="async" />
+                <span>Auth-X</span>
               </div>
               <div class="auth-x-eyebrow">
                 <span class="auth-x-eyebrow-line"></span>
@@ -262,59 +275,6 @@
               <div class="auth-x-actions">
                 <a class="button-link button-link-primary" href="#auth-x-benchmarks">View observed results</a>
                 <a class="button-link button-link-muted" href="#auth-x-flow">See how it works</a>
-              </div>
-            </div>
-
-            <div class="auth-x-hero-visual auth-x-signal-flow" data-auth-x-signal aria-label="Generic Auth-X authentication message flow">
-              <div class="auth-x-signal-grid" aria-hidden="true"></div>
-              <div class="auth-x-signal-endpoints">
-                <span class="auth-x-signal-participant">
-                  <i></i><strong>DEVICE</strong><small>request origin</small>
-                </span>
-                <span class="auth-x-signal-participant auth-x-signal-participant-verifier">
-                  <i></i><strong>VERIFIER</strong><small>trust decision</small>
-                </span>
-              </div>
-
-              <div class="auth-x-signal-sequence">
-                <div class="auth-x-signal-row auth-x-signal-row-forward">
-                  <span class="auth-x-signal-index">01</span>
-                  <span class="auth-x-signal-copy"><strong>Identity request</strong><small>Device → verifier</small></span>
-                  <span class="auth-x-signal-line"><i></i></span>
-                </div>
-                <div class="auth-x-signal-row auth-x-signal-row-reverse">
-                  <span class="auth-x-signal-index">02</span>
-                  <span class="auth-x-signal-copy"><strong>Fresh challenge</strong><small>Verifier → device</small></span>
-                  <span class="auth-x-signal-line"><i></i></span>
-                </div>
-                <div class="auth-x-signal-row auth-x-signal-row-forward">
-                  <span class="auth-x-signal-index">03</span>
-                  <span class="auth-x-signal-copy"><strong>Proof response</strong><small>Device → verifier</small></span>
-                  <span class="auth-x-signal-line"><i></i></span>
-                </div>
-                <div class="auth-x-signal-row auth-x-signal-row-reverse">
-                  <span class="auth-x-signal-index">04</span>
-                  <span class="auth-x-signal-copy"><strong>Session confirmation</strong><small>Verifier → device</small></span>
-                  <span class="auth-x-signal-line"><i></i></span>
-                </div>
-              </div>
-
-              <div class="auth-x-orbit-stage" aria-hidden="true">
-                <span class="auth-x-orbit-stage-label">IDENTITY FORGED</span>
-                <div class="auth-x-forge-field">
-                  <span class="auth-x-forge-source auth-x-forge-source-left">
-                    <i></i><small>DEVICE ID</small>
-                  </span>
-                  <span class="auth-x-forge-source auth-x-forge-source-right">
-                    <small>VERIFIER ID</small><i></i>
-                  </span>
-                  <span class="auth-x-forge-impact"></span>
-                  <div class="auth-x-orbit-field">
-                    <span class="auth-x-orbit-ring auth-x-orbit-ring-one"></span>
-                    <span class="auth-x-orbit-ring auth-x-orbit-ring-two"></span>
-                    <strong class="auth-x-orbit-word">Auth-X</strong>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -370,74 +330,64 @@
 
             <div class="auth-x-primitives-stage" data-auth-x-primitives>
               <div class="auth-x-primitives-stage-top">
-                <span>Cryptographic composition</span>
-                <button class="auth-x-primitives-motion-toggle" type="button" data-auth-x-motion-toggle>Pause motion</button>
+                <button class="auth-x-primitives-motion-toggle" type="button" data-auth-x-motion-toggle aria-label="Pause animation" title="Pause animation">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path class="auth-x-motion-pause" d="M7 5v10M13 5v10"/><path class="auth-x-motion-play" d="m7 4 9 6-9 6Z"/></svg>
+                </button>
               </div>
               <div
                 class="auth-x-primitives-grid"
                 role="group"
                 aria-label="Cryptographic primitives and the device authentication outcome"
               >
-                <svg class="auth-x-primitives-wiring" viewBox="0 0 1100 420" preserveAspectRatio="none" focusable="false" aria-hidden="true">
-                  <path class="auth-x-wire" d="M320 75 C420 75 452 154 550 210" />
-                  <path class="auth-x-wire" d="M320 165 C432 165 456 189 550 210" />
-                  <path class="auth-x-wire" d="M320 255 C432 255 456 231 550 210" />
-                  <path class="auth-x-wire" d="M320 345 C420 345 452 266 550 210" />
-                  <path class="auth-x-wire auth-x-wire-output" d="M550 210 C665 210 742 210 860 210" />
-                  <path class="auth-x-wire-light auth-x-wire-light-hkdf" pathLength="100" d="M320 75 C420 75 452 154 550 210" />
-                  <path class="auth-x-wire-light auth-x-wire-light-hmac" pathLength="100" d="M320 165 C432 165 456 189 550 210" />
-                  <path class="auth-x-wire-light auth-x-wire-light-x25519" pathLength="100" d="M320 255 C432 255 456 231 550 210" />
-                  <path class="auth-x-wire-light auth-x-wire-light-ascon" pathLength="100" d="M320 345 C420 345 452 266 550 210" />
-                  <path class="auth-x-wire-light auth-x-wire-light-output" pathLength="100" d="M550 210 C665 210 742 210 860 210" />
+                <svg class="auth-x-primitives-wiring" viewBox="0 0 1100 390" preserveAspectRatio="none" focusable="false" aria-hidden="true">
+                  <path class="auth-x-wire auth-x-wire-hkdf" d="M365 65 C438 65 464 155 550 195" />
+                  <path class="auth-x-wire auth-x-wire-hmac" d="M365 151 C438 151 474 182 550 195" />
+                  <path class="auth-x-wire auth-x-wire-x25519" d="M365 239 C438 239 474 208 550 195" />
+                  <path class="auth-x-wire auth-x-wire-ascon" d="M365 325 C438 325 464 235 550 195" />
+                  <path class="auth-x-wire auth-x-wire-output" d="M550 195 C645 195 760 195 860 195" />
+                  <path class="auth-x-wire-signal auth-x-wire-signal-hkdf" pathLength="100" d="M365 65 C438 65 464 155 550 195" />
+                  <path class="auth-x-wire-signal auth-x-wire-signal-hmac" pathLength="100" d="M365 151 C438 151 474 182 550 195" />
+                  <path class="auth-x-wire-signal auth-x-wire-signal-x25519" pathLength="100" d="M365 239 C438 239 474 208 550 195" />
+                  <path class="auth-x-wire-signal auth-x-wire-signal-ascon" pathLength="100" d="M365 325 C438 325 464 235 550 195" />
+                  <path class="auth-x-wire-signal auth-x-wire-signal-output" pathLength="100" d="M550 195 C645 195 760 195 860 195" />
                   <g class="auth-x-wire-ports">
-                    <circle cx="320" cy="75" r="3" /><circle cx="320" cy="165" r="3" />
-                    <circle cx="320" cy="255" r="3" /><circle cx="320" cy="345" r="3" />
-                    <circle cx="860" cy="210" r="3" />
+                    <circle cx="365" cy="65" r="3" />
+                    <circle cx="365" cy="151" r="3" />
+                    <circle cx="365" cy="239" r="3" />
+                    <circle cx="365" cy="325" r="3" />
+                    <circle cx="860" cy="195" r="3" />
                   </g>
                 </svg>
                 <div class="auth-x-primitives-inputs">
                   <article class="auth-x-primitive-node auth-x-primitive-node-hkdf" data-primitive="hkdf">
-                    <span class="auth-x-primitive-code" aria-hidden="true">KDF</span>
-                    <div class="auth-x-primitive-copy"><h3>HKDF-SHA-256</h3><small>Key derivation</small></div>
+                    <span class="auth-x-primitive-dot" aria-hidden="true"></span>
+                    <div class="auth-x-primitive-copy"><h3>HKDF-SHA-256</h3></div>
                   </article>
                   <article class="auth-x-primitive-node auth-x-primitive-node-hmac" data-primitive="hmac">
-                    <span class="auth-x-primitive-code" aria-hidden="true">MAC</span>
-                    <div class="auth-x-primitive-copy"><h3>HMAC-BLAKE2s</h3><small>Message authentication</small></div>
+                    <span class="auth-x-primitive-dot" aria-hidden="true"></span>
+                    <div class="auth-x-primitive-copy"><h3>HMAC-BLAKE2s</h3></div>
                   </article>
                   <article class="auth-x-primitive-node auth-x-primitive-node-x25519" data-primitive="x25519">
-                    <span class="auth-x-primitive-code" aria-hidden="true">DH</span>
-                    <div class="auth-x-primitive-copy"><h3>X25519 / Curve25519</h3><small>Shared-secret agreement</small></div>
+                    <span class="auth-x-primitive-dot" aria-hidden="true"></span>
+                    <div class="auth-x-primitive-copy"><h3>X25519 / Curve25519</h3></div>
                   </article>
                   <article class="auth-x-primitive-node auth-x-primitive-node-ascon" data-primitive="ascon">
-                    <span class="auth-x-primitive-code" aria-hidden="true">AEAD</span>
-                    <div class="auth-x-primitive-copy"><h3>Ascon-AEAD128</h3><small>Authenticated encryption</small></div>
+                    <span class="auth-x-primitive-dot" aria-hidden="true"></span>
+                    <div class="auth-x-primitive-copy"><h3>Ascon-AEAD128</h3></div>
                   </article>
                 </div>
 
                 <div class="auth-x-primitives-core" aria-hidden="true">
-                  <svg class="auth-x-core-ring" viewBox="0 0 200 200" focusable="false">
-                    <circle class="auth-x-core-ring-base" cx="100" cy="100" r="87" />
-                    <circle class="auth-x-core-segment auth-x-core-segment-hkdf" cx="100" cy="100" r="87" pathLength="100" />
-                    <circle class="auth-x-core-segment auth-x-core-segment-hmac" cx="100" cy="100" r="87" pathLength="100" />
-                    <circle class="auth-x-core-segment auth-x-core-segment-x25519" cx="100" cy="100" r="87" pathLength="100" />
-                    <circle class="auth-x-core-segment auth-x-core-segment-ascon" cx="100" cy="100" r="87" pathLength="100" />
-                  </svg>
                   <span class="auth-x-core-disc">
-                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="74" height="74" decoding="async" />
-                    <strong>AUTH-X</strong>
+                    <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="128" height="128" decoding="async" />
                   </span>
                   <span class="auth-x-core-check"><svg viewBox="0 0 24 24" focusable="false"><path d="m5 12 5 5 9-10"/></svg></span>
-                  <span class="auth-x-core-impact"></span>
                 </div>
 
                 <div class="auth-x-primitives-output">
-                  <span class="auth-x-output-eyebrow">Session result</span>
-                  <span class="auth-x-output-check" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m5 12 5 5 9-10"/></svg></span>
                   <h3>Device<br />authenticated</h3>
-                  <span class="auth-x-output-state">Secure session established</span>
                 </div>
               </div>
-              <div class="auth-x-primitives-stage-bottom" aria-hidden="true"><span>Independent primitives</span><span>One authenticated session</span></div>
             </div>
           </section>
 
@@ -586,6 +536,7 @@
           <a href="tunnel-x.html">Tunnel-X</a>
           <a href="baudtide.html">BaudTide</a>
           <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
@@ -596,7 +547,7 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="auth-x.js?v=5"></script>
-    <script src="auth-x-primitives.js?v=6"></script>
+    <script src="auth-x.js?v=7"></script>
+    <script src="auth-x-primitives.js?v=7"></script>
   </body>
 </html>

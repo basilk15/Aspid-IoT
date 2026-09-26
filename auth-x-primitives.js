@@ -19,7 +19,10 @@ const updateAuthXPrimitivesMotion = () => {
 
 authXPrimitiveMotionToggle?.addEventListener("click", () => {
   authXPrimitivesPaused = !authXPrimitivesPaused;
-  authXPrimitiveMotionToggle.textContent = authXPrimitivesPaused ? "Play motion" : "Pause motion";
+  const motionLabel = authXPrimitivesPaused ? "Play animation" : "Pause animation";
+  authXPrimitiveMotionToggle.classList.toggle("is-paused", authXPrimitivesPaused);
+  authXPrimitiveMotionToggle.setAttribute("aria-label", motionLabel);
+  authXPrimitiveMotionToggle.setAttribute("title", motionLabel);
   updateAuthXPrimitivesMotion();
 });
 

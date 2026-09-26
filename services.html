@@ -8,6 +8,11 @@
       content="AspidIoT helps teams secure connected products across urban safety monitoring, drone fleets, industrial IoT, autonomous robotics, and remote infrastructure."
     />
     <title>Services | Secure Connected Systems | AspidIoT</title>
+    <meta name="application-name" content="AspidIoT" />
+    <meta property="og:site_name" content="AspidIoT" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <script>
       try {
         if (localStorage.getItem("aspid-theme") === "light") {
@@ -20,7 +25,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
     <link rel="stylesheet" href="styles.css?v=services-card-motion-1" />
     <link rel="stylesheet" href="theme.css?v=6" />
-    <link rel="stylesheet" href="design-taste.css?v=7" />
+    <link rel="stylesheet" href="design-taste.css?v=15" />
+    <link rel="stylesheet" href="services-common-motion.css?v=3" />
   </head>
   <body class="services-page services-domains-page">
     <header class="site-header" data-header>
@@ -75,7 +81,7 @@
                 <a class="product-menu-item" href="auth-x.html" data-product-link>
                   <span class="product-family-label">Secure-X lineup</span>
                   <span class="product-icon product-icon-auth-x" aria-hidden="true">
-                    <img src="assets/auth-x-logos/auth-x-mark.svg" alt="" width="64" height="64" decoding="async" />
+                    <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
                   </span>
                   <span class="product-copy">
                     <span class="product-title-row">
@@ -88,7 +94,7 @@
                 </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -125,6 +131,7 @@
           </div>
 
           <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
 
@@ -189,20 +196,25 @@
               <div class="product-menu-list product-menu-list-mobile" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-secure-x-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">Secure-X</span><span class="product-menu-family-detail">Identity + protected telemetry</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">Secure-X</span>
+                      <span class="product-menu-family-detail">Identity + protected telemetry</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
-              <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
-                <span class="mobile-product-title-row">
-                  <img class="mobile-product-mark" src="assets/auth-x-logos/auth-x-mark.svg" alt="" aria-hidden="true" width="64" height="64" decoding="async" />
-                  <span>Auth-X</span>
-                </span>
-                <span>Device identity &amp; session setup</span>
-              </a>
+                    <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">Auth-X</span>
+                        <span class="product-menu-item-detail">Device identity &amp; session setup</span>
+                      </span>
+                    </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-emblem-v2.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -213,17 +225,22 @@
                 </section>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="mobile-datatide-products" data-product-family-toggle>
-                    <span class="product-menu-family-copy"><span class="product-menu-family-name">DataTide</span><span class="product-menu-family-detail">Local telemetry tools</span></span>
+                    <span class="product-menu-family-copy">
+                      <span class="product-menu-family-name">DataTide</span>
+                      <span class="product-menu-family-detail">Local telemetry tools</span>
+                    </span>
                     <span class="product-menu-family-caret" aria-hidden="true"></span>
                   </button>
                   <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
-              <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
-                <span class="mobile-product-title-row">
-                  <span>BaudTide</span>
-                  <span class="product-badge product-badge-open">Open source</span>
-                </span>
-                <span>Local-first serial monitoring for ESP32, Arduino, and USB/TTY devices.</span>
-              </a>
+                    <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
+                      <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
+                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
+                      </span>
+                      <span class="product-menu-item-copy">
+                        <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
+                        <span class="product-menu-item-detail">Local-first serial monitoring</span>
+                      </span>
+                    </a>
                   </div>
                 </section>
               </div>
@@ -231,6 +248,7 @@
           </div>
 
           <a class="mobile-nav-link" href="about.html" data-mobile-link>About</a>
+          <a class="mobile-nav-link" href="pricing.html" data-mobile-link>Pricing</a>
           <a class="mobile-nav-link" href="contact.html" data-mobile-link>Contact</a>
         </div>
       </div>
@@ -406,28 +424,33 @@
       </section>
 
       <section class="services-common-section" id="approach" aria-labelledby="services-common-title">
-        <div class="services-common-head">
-          <div>
-            <h2 id="services-common-title">What every system needs.</h2>
+        <div class="services-common-stage">
+          <div class="services-common-head">
+            <div>
+              <h2 id="services-common-title">What every system needs.</h2>
+            </div>
+            <p>
+              Across cameras, factories, fleets, and remote assets, the job is simple: know each device, protect data, and adapt access as conditions change.
+            </p>
           </div>
-          <p>
-            Across cameras, factories, fleets, and remote assets, the job is simple: know each device, protect data, and adapt access as conditions change.
-          </p>
-        </div>
 
-        <div class="services-common-grid">
-          <article class="services-common-card reveal">
-            <h3>Know every device.</h3>
-            <p>Give each device and operator a clear, verifiable place in the system.</p>
-          </article>
-          <article class="services-common-card services-common-card-violet reveal" data-delay="80">
-            <h3>Protect every exchange.</h3>
-            <p>Keep operational data private from the edge to the service that receives it.</p>
-          </article>
-          <article class="services-common-card services-common-card-mint reveal" data-delay="160">
-            <h3>Adapt as conditions change.</h3>
-            <p>Update access as devices, sites, and responsibilities change.</p>
-          </article>
+          <div class="services-common-grid">
+            <article class="services-common-card">
+              <span class="services-common-step" aria-hidden="true">01 / Identity</span>
+              <h3>Know every device.</h3>
+              <p>Give each device and operator a clear, verifiable place in the system.</p>
+            </article>
+            <article class="services-common-card services-common-card-violet">
+              <span class="services-common-step" aria-hidden="true">02 / Protection</span>
+              <h3>Protect every exchange.</h3>
+              <p>Keep operational data private from the edge to the service that receives it.</p>
+            </article>
+            <article class="services-common-card services-common-card-mint">
+              <span class="services-common-step" aria-hidden="true">03 / Adaptation</span>
+              <h3>Adapt as conditions change.</h3>
+              <p>Update access as devices, sites, and responsibilities change.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -460,6 +483,7 @@
           <a href="tunnel-x.html">Tunnel-X</a>
           <a href="baudtide.html">BaudTide</a>
           <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
@@ -470,6 +494,7 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-4"></script>
+    <script src="script.js?v=performance-5"></script>
+    <script src="services-common-scroll.js?v=3"></script>
   </body>
 </html>

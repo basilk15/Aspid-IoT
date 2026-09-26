@@ -42,6 +42,7 @@
   let elapsed = 0;
   let lastTime = 0;
   let lastPaint = 0;
+  let currentProgress = null;
   let shownCycle = -1;
   let deliveredCycle = -1;
   let frameId = 0;
@@ -50,7 +51,7 @@
   function point(t, offset = 0) {
     if (width < 768) {
       return {
-        x: width * (0.84 - 0.035 * Math.sin(Math.PI * t)) + offset,
+        x: width * (0.5 - 0.018 * Math.sin(Math.PI * t)) + offset,
         y: height * (0.13 + 0.72 * t),
       };
     }
@@ -69,7 +70,9 @@
     }
     context.strokeStyle = color;
     context.lineWidth = lineWidth;
-    context.shadowColor = "#4fdfff";
+    context.shadowColor = document.documentElement.dataset.theme === "light"
+      ? "rgba(8, 127, 148, 0.3)"
+      : "#4fdfff";
     context.shadowBlur = blur;
     context.stroke();
     context.shadowBlur = 0;
@@ -77,18 +80,24 @@
 
   function draw(progress = null) {
     if (!width || !height) return;
+    const lightTheme = document.documentElement.dataset.theme === "light";
     context.clearRect(0, 0, width, height);
     context.save();
-    context.globalCompositeOperation = "lighter";
+    context.globalCompositeOperation = lightTheme ? "source-over" : "lighter";
 
     const sideways = width < 768;
     for (let strand = -3; strand <= 3; strand++) {
       const offset = strand * (sideways ? 8 : 7);
-      strokeRoute(offset, 1, `rgba(58, 170, 205, ${strand === 0 ? 0.16 : 0.075})`);
+      const opacity = lightTheme
+        ? (strand === 0 ? 0.2 : 0.1)
+        : (strand === 0 ? 0.16 : 0.075);
+      strokeRoute(offset, 1, lightTheme
+        ? `rgba(22, 104, 128, ${opacity})`
+        : `rgba(58, 170, 205, ${opacity})`);
     }
-    strokeRoute(0, 15, "rgba(22, 176, 230, 0.08)", 26);
-    strokeRoute(0, 3.4, "rgba(75, 218, 251, 0.42)", 20);
-    strokeRoute(0, 1.1, "rgba(209, 253, 255, 0.8)", 8);
+    strokeRoute(0, 15, lightTheme ? "rgba(8, 127, 148, 0.06)" : "rgba(22, 176, 230, 0.08)", lightTheme ? 14 : 26);
+    strokeRoute(0, 3.4, lightTheme ? "rgba(8, 127, 148, 0.3)" : "rgba(75, 218, 251, 0.42)", lightTheme ? 8 : 20);
+    strokeRoute(0, 1.1, lightTheme ? "rgba(16, 76, 95, 0.72)" : "rgba(209, 253, 255, 0.8)", lightTheme ? 3 : 8);
 
     const motion = elapsed / 9600;
     for (let index = 0; index < 38; index++) {
@@ -100,7 +109,9 @@
       context.moveTo(tail.x, tail.y);
       context.lineTo(head.x, head.y);
       context.lineWidth = index % 7 === 0 ? 2.4 : 1.15;
-      context.strokeStyle = t < 0.49 ? "rgba(198, 249, 255, 0.67)" : "rgba(82, 218, 255, 0.64)";
+      context.strokeStyle = lightTheme
+        ? (t < 0.49 ? "rgba(16, 76, 95, 0.58)" : "rgba(8, 127, 148, 0.72)")
+        : (t < 0.49 ? "rgba(198, 249, 255, 0.67)" : "rgba(82, 218, 255, 0.64)");
       context.stroke();
     }
 
@@ -121,10 +132,10 @@
       context.lineTo(gate.x + 9, gate.y);
       context.lineTo(gate.x + 27, gate.y + 42);
     }
-    context.strokeStyle = "rgba(103, 233, 255, 0.44)";
+    context.strokeStyle = lightTheme ? "rgba(8, 127, 148, 0.66)" : "rgba(103, 233, 255, 0.44)";
     context.lineWidth = 1.4;
-    context.shadowColor = "#59f7ff";
-    context.shadowBlur = 15;
+    context.shadowColor = lightTheme ? "#087f94" : "#59f7ff";
+    context.shadowBlur = lightTheme ? 7 : 15;
     context.stroke();
     context.shadowBlur = 0;
 
@@ -134,28 +145,28 @@
       context.beginPath();
       context.moveTo(tail.x, tail.y);
       context.lineTo(head.x, head.y);
-      context.strokeStyle = "rgba(232, 255, 255, 0.97)";
-      context.lineWidth = 5.5;
+      context.strokeStyle = lightTheme ? "rgba(8, 127, 148, 0.92)" : "rgba(232, 255, 255, 0.97)";
+      context.lineWidth = lightTheme ? 3.5 : 5.5;
       context.lineCap = "round";
-      context.shadowColor = "#65eaff";
-      context.shadowBlur = 30;
+      context.shadowColor = lightTheme ? "#087f94" : "#65eaff";
+      context.shadowBlur = lightTheme ? 12 : 30;
       context.stroke();
       context.lineCap = "butt";
       context.shadowBlur = 0;
 
       const flare = context.createRadialGradient(head.x, head.y, 1, head.x, head.y, 24);
-      flare.addColorStop(0, "rgba(244, 255, 255, 0.92)");
-      flare.addColorStop(0.25, "rgba(95, 235, 255, 0.43)");
-      flare.addColorStop(1, "rgba(95, 235, 255, 0)");
+      flare.addColorStop(0, lightTheme ? "rgba(8, 127, 148, 0.5)" : "rgba(244, 255, 255, 0.92)");
+      flare.addColorStop(0.25, lightTheme ? "rgba(89, 180, 200, 0.24)" : "rgba(95, 235, 255, 0.43)");
+      flare.addColorStop(1, lightTheme ? "rgba(89, 180, 200, 0)" : "rgba(95, 235, 255, 0)");
       context.fillStyle = flare;
       context.fillRect(head.x - 24, head.y - 24, 48, 48);
 
       // Illustrative bytes travel beside the light path; they are not a computed cipher output.
       const bytes = samples[Math.floor(elapsed / cycleDuration) % samples.length].cipher.split(" ");
       context.font = "600 12px ui-monospace, SFMono-Regular, Consolas, monospace";
-      context.fillStyle = "rgba(178, 247, 255, 0.82)";
-      context.shadowColor = "#59f7ff";
-      context.shadowBlur = 10;
+      context.fillStyle = lightTheme ? "rgba(16, 76, 95, 0.88)" : "rgba(178, 247, 255, 0.82)";
+      context.shadowColor = lightTheme ? "rgba(8, 127, 148, 0.25)" : "#59f7ff";
+      context.shadowBlur = lightTheme ? 4 : 10;
       for (let index = 0; index < 4; index++) {
         const trail = progress - 0.042 * (index + 1);
         if (trail <= 0.05) continue;
@@ -177,7 +188,7 @@
     canvas.width = Math.round(width * ratio);
     canvas.height = Math.round(height * ratio);
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    draw();
+    draw(currentProgress);
   }
 
   function showDevice(cycle) {
@@ -234,9 +245,9 @@
       showProcessed(cycle);
       setText(fields.deviceStatus, `Sample ${countLabel(cycle + 1)} sent`);
     }
+    currentProgress = transmitting ? (phase - launchTime) / (arrivalTime - launchTime) : null;
     if (time - lastPaint >= 32) {
-      const progress = transmitting ? (phase - launchTime) / (arrivalTime - launchTime) : null;
-      draw(progress);
+      draw(currentProgress);
       lastPaint = time;
     }
     frameId = requestAnimationFrame(tick);
@@ -258,6 +269,13 @@
     window.addEventListener("resize", resizeCanvas, { passive: true });
   }
   resizeCanvas();
+
+  if ("MutationObserver" in window) {
+    new MutationObserver(() => draw(currentProgress)).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+  }
 
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(([entry]) => {
