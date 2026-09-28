@@ -292,23 +292,46 @@ html[data-theme="light"] .theme-toggle-thumb {
 
 .site-footer {
   border-top-color: var(--taste-line);
-  background: linear-gradient(180deg, rgba(4, 9, 15, 0.52), rgba(3, 7, 12, 0.96));
+  background-color: #03070d;
+  background-image:
+    linear-gradient(180deg, rgba(3, 8, 15, 0.58), rgba(3, 8, 15, 0.68) 48%, rgba(3, 7, 12, 0.94)),
+    url("assets/footer/aspid-footer-network-bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.site-footer-brand { gap: 0.45rem; }
+.site-footer-brand {
+  gap: 0.65rem;
+  font-size: clamp(1.15rem, 1.45vw, 1.32rem);
+}
 
 .site-footer-brand-mark {
-  flex: 0 0 1.65rem;
-  width: 1.65rem;
-  height: 2rem;
+  flex: 0 0 3.15rem;
+  width: 3.15rem;
+  height: 3.15rem;
   border: 0;
   border-radius: 0;
   background-color: transparent;
   background-image: url("logo.png");
   background-position: left center;
   background-repeat: no-repeat;
-  background-size: auto 2rem;
+  background-size: auto 3.75rem;
   box-shadow: none;
+}
+
+.site-footer-branding p {
+  margin-top: 0.7rem;
+}
+
+.site-footer-nav {
+  padding-top: 1.05rem;
+}
+
+@media (max-width: 640px) {
+  .site-footer-nav {
+    padding-top: 0.15rem;
+  }
 }
 
 .site-footer-shell {
@@ -499,7 +522,13 @@ html[data-theme="light"] .contact-panel:hover {
 }
 
 html[data-theme="light"] .site-footer {
-  background: linear-gradient(180deg, rgba(223, 238, 247, 0.58), rgba(237, 245, 251, 0.98));
+  background-color: #edf5fb;
+  background-image:
+    linear-gradient(180deg, rgba(237, 246, 251, 0.86), rgba(237, 245, 251, 0.96)),
+    url("assets/footer/aspid-footer-network-bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Small screens keep the same editorial hierarchy without forcing desktop proportions into a narrow viewport. */
@@ -513,6 +542,13 @@ html[data-theme="light"] .site-footer {
     flex-basis: 2.85rem;
     width: 2.85rem;
     height: 2.85rem;
+  }
+
+  .site-footer-brand-mark {
+    flex-basis: 2.55rem;
+    width: 2.55rem;
+    height: 2.7rem;
+    background-size: auto 3.1rem;
   }
 
   .theme-toggle {
