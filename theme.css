@@ -660,8 +660,7 @@ html[data-theme="light"] .auth-x-stat-card-accent {
 }
 
 html[data-theme="light"] .auth-x-flow-chip,
-html[data-theme="light"] .auth-x-chart-scale,
-html[data-theme="light"] .auth-x-primitives-status {
+html[data-theme="light"] .auth-x-chart-scale {
   border-color: rgba(5, 143, 166, 0.2);
   color: rgba(10, 76, 97, 0.72);
 }
@@ -912,27 +911,6 @@ html[data-theme="light"] .founder-avatar::before {
 
 html[data-theme="light"] .founder-focus-list strong {
   color: rgba(16, 42, 63, 0.82);
-}
-
-/* Auth-X composition diagram uses the same signal colors on a light surface. */
-html[data-theme="light"] .auth-x-primitives-stage {
-  --auth-ink: #153247;
-  --auth-muted: #476778;
-  --auth-rule: rgba(24, 78, 104, 0.2);
-  --auth-wire: rgba(8, 113, 145, 0.3);
-  --auth-accent: #087f9b;
-  --auth-violet: #6957c6;
-  --auth-amber: #a96012;
-  --auth-check-ink: #f1fbff;
-  background: #f8fbfc;
-}
-
-html[data-theme="light"] .auth-x-primitives-section::before {
-  background: rgba(16, 42, 63, 0.14);
-}
-
-html[data-theme="light"] .auth-x-core-disc {
-  background: #183947;
 }
 
 /* Footer contrast follows the same light surface hierarchy. */

@@ -23,10 +23,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&amp;family=Syne:wght@600;700&amp;display=swap" />
-    <link rel="stylesheet" href="styles.css?v=performance-2" />
-    <link rel="stylesheet" href="theme.css?v=6" />
-    <link rel="stylesheet" href="design-taste.css?v=17" />
-    <link rel="stylesheet" href="tunnel-x-product.css?v=11" />
+    <link rel="stylesheet" href="styles.css?v=performance-3" />
+    <link rel="stylesheet" href="theme.css?v=16" />
+    <link rel="stylesheet" href="design-taste.css?v=18" />
+    <link rel="stylesheet" href="tunnel-x-product.css?v=12" />
+    <link rel="preload" as="image" type="image/webp" href="assets/tunnel-x/tunnel-x-hero-800.webp" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="assets/tunnel-x/tunnel-x-hero.webp" media="(width > 767px)" fetchpriority="high" />
   </head>
   <body class="tunnel-x-page">
     <header class="site-header" data-header>
@@ -46,7 +48,7 @@
 
         <a class="brand-mark" href="index.html#home" aria-label="AspidIoT home">
           <span class="brand-logo" aria-hidden="true">
-            <img src="logo.png" alt="" />
+            <img src="logo.webp" alt="" width="640" height="360" decoding="async" />
           </span>
           <span class="brand-copy">
             <span class="brand-name">AspidIoT</span>
@@ -83,7 +85,7 @@
                   <div class="product-menu-family-panel" id="secure-x-products" aria-hidden="true">
                     <a class="product-menu-item" href="auth-x.html" data-product-link>
                       <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
-                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Auth-X</span>
@@ -92,7 +94,7 @@
                     </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link aria-current="page">
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -112,7 +114,7 @@
                   <div class="product-menu-family-panel" id="datatide-products" aria-hidden="true">
                     <a class="product-menu-item" href="baudtide.html" data-product-link>
                       <span class="product-menu-item-logo" aria-hidden="true">
-                        <img src="assets/baudtide/baudtide-mark.png" alt="" decoding="async" />
+                        <img src="assets/baudtide/baudtide-mark.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
@@ -200,7 +202,7 @@
                   <div class="product-menu-family-panel" id="mobile-secure-x-products" aria-hidden="true">
                     <a class="product-menu-item" href="auth-x.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-auth-x" aria-hidden="true">
-                        <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/auth-x-logos/auth-x-mark-v3.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Auth-X</span>
@@ -209,7 +211,7 @@
                     </a>
                     <a class="product-menu-item" href="tunnel-x.html" data-product-link data-mobile-link aria-current="page">
                       <span class="product-menu-item-logo product-menu-item-logo-tunnel-x" aria-hidden="true">
-                        <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">Tunnel-X</span>
@@ -229,7 +231,7 @@
                   <div class="product-menu-family-panel" id="mobile-datatide-products" aria-hidden="true">
                     <a class="product-menu-item" href="baudtide.html" data-product-link data-mobile-link>
                       <span class="product-menu-item-logo product-menu-item-logo-baudtide" aria-hidden="true">
-                        <img src="assets/baudtide/baudtide-mark.png" alt="" width="64" height="64" decoding="async" />
+                        <img src="assets/baudtide/baudtide-mark.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
                       </span>
                       <span class="product-menu-item-copy">
                         <span class="product-menu-item-name">BaudTide <span class="product-badge product-badge-open">Open source</span></span>
@@ -255,7 +257,7 @@
         <div class="tx-shell tx-hero-layout">
           <div class="tx-hero-copy reveal">
             <div class="tx-lockup">
-              <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="68" height="68" decoding="async" />
+              <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="68" height="68" decoding="async" />
               <span>Tunnel-X</span>
             </div>
             <h1 id="tx-title">Trusted devices. <span>Protected data.</span></h1>
@@ -276,12 +278,12 @@
           </div>
           <div class="tx-handoff-path reveal" aria-label="Auth-X authenticates the device; Tunnel-X encrypts its telemetry for verified delivery to the sink">
             <a href="auth-x.html" class="tx-handoff-product">
-              <img src="assets/auth-x-logos/auth-x-mark-v3.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <img src="assets/auth-x-logos/auth-x-mark-v3.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />
               <span><strong>Auth-X</strong><small>Authenticate device</small></span>
             </a>
             <span class="tx-handoff-line" aria-hidden="true"></span>
             <div class="tx-handoff-product tx-handoff-product-current">
-              <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />
               <span><strong>Tunnel-X</strong><small>Protect telemetry</small></span>
             </div>
           </div>
@@ -317,7 +319,7 @@
                 </div>
 
                 <div class="tx-film-core">
-                  <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+                  <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="108" height="108" loading="lazy" decoding="async" />
                   <strong>Encrypted in transit</strong>
                   <span data-tx-core-status>Securing telemetry at the edge</span>
                   <div class="tx-film-cipher">
@@ -355,7 +357,7 @@
           <div class="tx-feature-grid">
             <article class="tx-feature tx-feature-primary reveal">
               <div class="tx-feature-visual" aria-hidden="true">
-                <img src="assets/tunnel-x/tunnel-x-mark-v4.png" alt="" width="480" height="480" loading="lazy" decoding="async" />
+                <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="480" height="480" loading="lazy" decoding="async" />
               </div>
               <div class="tx-feature-copy">
                 <span class="tx-feature-index">01</span>
@@ -429,7 +431,7 @@
     </footer>
 
     <script src="theme.js?v=2"></script>
-    <script src="script.js?v=performance-5"></script>
+    <script src="script.js?v=performance-6"></script>
     <script src="tunnel-x-animation.js?v=6" defer></script>
   </body>
 </html>

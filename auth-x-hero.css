@@ -15,7 +15,7 @@
 }
 
 .auth-x-section::before {
-  background: url("assets/auth-x/auth-x-hero.png") center 50% / cover no-repeat;
+  background: url("assets/auth-x/auth-x-hero.webp") center 50% / cover no-repeat;
   opacity: 0.88;
 }
 
@@ -101,10 +101,15 @@ html[data-theme="light"] .auth-x-section::after {
 @media (max-width: 600px) {
   .auth-x-section::before,
   .auth-x-section::after {
-    height: 68rem;
+    height: clamp(44rem, 112svh, 58rem);
+  }
+
+  .auth-x-hero {
+    min-height: clamp(32rem, 76svh, 42rem);
   }
 
   .auth-x-section::before {
+    background-image: url("assets/auth-x/auth-x-hero-800.webp");
     background-position: 80% top;
   }
 }

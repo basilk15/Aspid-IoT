@@ -5,12 +5,14 @@ const heroBg = document.querySelector(".hero-bg");
 const heroSection = document.querySelector(".hero");
 const heroFeatures = document.querySelector(".hero-features");
 const storyLines = document.querySelectorAll(".story-line");
+const storySection = document.querySelector(".story-lines");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const siteHeader = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const mobileLinks = document.querySelectorAll("[data-mobile-link]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
+const navSections = navLinks.length ? Array.from(document.querySelectorAll("main section[id]")) : [];
 const dropdown = document.querySelector("[data-dropdown]");
 const dropdownToggle = document.querySelector("[data-dropdown-toggle]");
 const dropdownPanel = document.querySelector("[data-dropdown-panel]");
@@ -27,6 +29,18 @@ const updatePageVisibility = () => {
 
 document.addEventListener("visibilitychange", updatePageVisibility);
 updatePageVisibility();
+
+if ("IntersectionObserver" in window) {
+  const motionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      target.classList.toggle("motion-offscreen", !isIntersecting);
+    });
+  });
+  document.querySelectorAll(".hero, .device-bridge, .about-origin-identity, .services-domains-hero-visual, .baudtide-mobile-stage").forEach((scene) => {
+    scene.classList.add("motion-scene", "motion-offscreen");
+    motionObserver.observe(scene);
+  });
+}
 
 let dropdownCloseTimer = null;
 let dropdownHoverOpened = false;
@@ -298,15 +312,14 @@ const setMobileProductsState = (isOpen) => {
 };
 
 const setActiveNavLink = () => {
-  const sections = [...document.querySelectorAll("main section[id]")];
-  if (sections.length === 0 || navLinks.length === 0) {
+  if (navSections.length === 0) {
     return;
   }
 
   const headerOffset = 140;
-  let activeId = sections[0].id;
+  let activeId = navSections[0].id;
 
-  sections.forEach((section) => {
+  navSections.forEach((section) => {
     const rectTop = section.offsetTop - headerOffset;
     if (window.scrollY >= rectTop) {
       activeId = section.id;
@@ -318,15 +331,6 @@ const setActiveNavLink = () => {
     link.classList.toggle("is-active", linkId === activeId);
   });
 };
-
-const supportsWebGL = (() => {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(canvas.getContext("webgl2") || canvas.getContext("webgl"));
-  } catch (error) {
-    return false;
-  }
-})();
 
 let threeLoadPromise = null;
 
@@ -541,17 +545,25 @@ if (prefersReducedMotion.matches || typeof IntersectionObserver === "undefined")
 }
 
 const activateStoryLine = () => {
-  if (storyLines.length === 0) {
+  if (!storySection || prefersReducedMotion.matches) {
     return;
   }
 
   const viewportCenter = window.innerHeight / 2;
   const maxDistance = window.innerHeight * 0.7;
+  const sectionBounds = storySection.getBoundingClientRect();
+  if (sectionBounds.bottom < -maxDistance || sectionBounds.top > window.innerHeight + maxDistance) {
+    return;
+  }
 
-  storyLines.forEach((line) => {
+  // Read every position before updating styles to avoid forcing layout between lines.
+  const distances = Array.from(storyLines, (line) => {
     const rect = line.getBoundingClientRect();
-    const lineCenter = rect.top + rect.height / 2;
-    const distance = lineCenter - viewportCenter;
+    return rect.top + rect.height / 2 - viewportCenter;
+  });
+
+  storyLines.forEach((line, index) => {
+    const distance = distances[index];
     const normalized = Math.min(Math.abs(distance) / maxDistance, 1);
     const opacity = 1 - normalized * 0.7;
     const shift = clamp(distance * 0.07, -50, 50);
@@ -568,14 +580,14 @@ const activateStoryLine = () => {
 };
 
 const handleScroll = () => {
+  activateStoryLine();
+  setActiveNavLink();
+  setHeaderScrolledState();
   pauseDecorativeMotionDuringScroll();
   const offset = window.scrollY * 0.12;
   if (heroBg) {
     heroBg.style.transform = `translateY(${offset}px)`;
   }
-  activateStoryLine();
-  setHeaderScrolledState();
-  setActiveNavLink();
 };
 
 const ensureHeroUnlockedForViewport = () => {
@@ -943,6 +955,10 @@ const updateMobileHeroSequence = () => {
   }
 
   const progress = getMobileHeroProgress();
+  if (progress === heroProgress && heroSection.classList.contains("hero--mobile-sequence")
+      && heroSection.style.getPropertyValue("--hero-progress")) {
+    return;
+  }
   heroSection.classList.add("hero--mobile-sequence");
   heroSection.classList.remove("hero--scrub", "hero--centered", "hero--logo-left", "hero--features-visible");
   heroTargetProgress = progress;
@@ -1063,9 +1079,24 @@ const onTouchMove = (event) => {
 setHeroLeftShift();
 setupHeroScrollLock();
 
-window.addEventListener("wheel", onWheel, { passive: false });
-window.addEventListener("touchstart", onTouchStart, { passive: true });
-window.addEventListener("touchmove", onTouchMove, { passive: false });
+const desktopHero = window.matchMedia("(width > 768px)");
+const syncHeroGestureListeners = () => {
+  if (shouldGateHero()) {
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+  } else {
+    window.removeEventListener("wheel", onWheel);
+    window.removeEventListener("touchstart", onTouchStart);
+    window.removeEventListener("touchmove", onTouchMove);
+  }
+};
+
+if (heroSection) {
+  syncHeroGestureListeners();
+  desktopHero.addEventListener?.("change", syncHeroGestureListeners);
+  prefersReducedMotion.addEventListener?.("change", syncHeroGestureListeners);
+}
 
 window.addEventListener("resize", () => {
   setHeroLeftShift();
@@ -1177,7 +1208,6 @@ const createHeroScene = (canvas, section) => {
   const clock = new THREE.Clock();
 
   const renderFrame = (staticFrame) => {
-    resizeRendererToDisplaySize(renderer, camera);
     const elapsed = staticFrame ? 0 : clock.getElapsedTime();
     const drift = 0;
 
@@ -1216,6 +1246,7 @@ const createHeroScene = (canvas, section) => {
       return;
     }
     running = true;
+    resizeRendererToDisplaySize(renderer, camera);
     clock.start();
     animate();
   };
@@ -1230,7 +1261,9 @@ const createHeroScene = (canvas, section) => {
 
   const renderStatic = () => renderFrame(true);
 
-  const onResize = () => resizeRendererToDisplaySize(renderer, camera);
+  const onResize = () => {
+    if (resizeRendererToDisplaySize(renderer, camera) && !running) renderStatic();
+  };
 
   return { start, stop, renderStatic, onResize };
 };
@@ -1404,8 +1437,6 @@ const createBridgeScene = (canvas) => {
   const clock = new THREE.Clock();
 
   const renderFrame = (staticFrame) => {
-    resizeRendererToDisplaySize(renderer, camera);
-
     const elapsed = staticFrame ? 0 : clock.getElapsedTime();
     const cycle = 8;
     const t = (elapsed % cycle) / cycle;
@@ -1454,6 +1485,7 @@ const createBridgeScene = (canvas) => {
       return;
     }
     running = true;
+    resizeRendererToDisplaySize(renderer, camera);
     clock.start();
     animate();
   };
@@ -1468,7 +1500,9 @@ const createBridgeScene = (canvas) => {
 
   const renderStatic = () => renderFrame(true);
 
-  const onResize = () => resizeRendererToDisplaySize(renderer, camera);
+  const onResize = () => {
+    if (resizeRendererToDisplaySize(renderer, camera) && !running) renderStatic();
+  };
 
   return { start, stop, renderStatic, onResize };
 };
@@ -2414,6 +2448,7 @@ const sceneConfigs = [
   {
     key: "bridge",
     section: document.querySelector(".narrative"),
+    trigger: document.querySelector(".device-bridge"),
     canvas: document.getElementById("bridge-canvas"),
     container: document.querySelector(".bridge-3d"),
     init: (canvas) => createBridgeScene(canvas),
@@ -2429,8 +2464,7 @@ const initScene = (sceneConfig) => {
     return Promise.resolve(null);
   }
 
-  if (!supportsWebGL || prefersReducedMotion.matches) {
-    sceneConfig.container.classList.add("is-disabled");
+  if (prefersReducedMotion.matches) {
     return Promise.resolve(null);
   }
 
@@ -2445,7 +2479,6 @@ const initScene = (sceneConfig) => {
   const initPromise = loadThree()
     .then(() => {
       if (!window.THREE || prefersReducedMotion.matches) {
-        sceneConfig.container.classList.add("is-disabled");
         return null;
       }
 
@@ -2488,7 +2521,7 @@ const setSceneMotionState = (matchesReducedMotion) => {
 const sceneObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      const config = sceneConfigs.find((scene) => scene.section === entry.target);
+      const config = sceneConfigs.find((scene) => (scene.trigger || scene.section) === entry.target);
       if (!config) {
         return;
       }
@@ -2517,7 +2550,7 @@ const sceneObserver = new IntersectionObserver(
 
 sceneConfigs.forEach((scene) => {
   if (scene.section) {
-    sceneObserver.observe(scene.section);
+    sceneObserver.observe(scene.trigger || scene.section);
   }
 });
 

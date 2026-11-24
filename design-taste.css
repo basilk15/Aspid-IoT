@@ -291,11 +291,12 @@ html[data-theme="light"] .theme-toggle-thumb {
 }
 
 .site-footer {
+  --footer-art: url("assets/footer/aspid-footer-network-bg.webp");
   border-top-color: var(--taste-line);
   background-color: #03070d;
   background-image:
     linear-gradient(180deg, rgba(3, 8, 15, 0.58), rgba(3, 8, 15, 0.68) 48%, rgba(3, 7, 12, 0.94)),
-    url("assets/footer/aspid-footer-network-bg.png");
+    var(--footer-art);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -313,7 +314,7 @@ html[data-theme="light"] .theme-toggle-thumb {
   border: 0;
   border-radius: 0;
   background-color: transparent;
-  background-image: url("logo.png");
+  background-image: url("logo.webp");
   background-position: left center;
   background-repeat: no-repeat;
   background-size: auto 3.75rem;
@@ -525,7 +526,7 @@ html[data-theme="light"] .site-footer {
   background-color: #edf5fb;
   background-image:
     linear-gradient(180deg, rgba(237, 246, 251, 0.86), rgba(237, 245, 251, 0.96)),
-    url("assets/footer/aspid-footer-network-bg.png");
+    var(--footer-art);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -533,6 +534,10 @@ html[data-theme="light"] .site-footer {
 
 /* Small screens keep the same editorial hierarchy without forcing desktop proportions into a narrow viewport. */
 @media (max-width: 768px) {
+  .site-footer {
+    --footer-art: url("assets/footer/aspid-footer-network-bg-960.webp");
+  }
+
   .nav-shell {
     padding: 0.62rem 0.68rem 0.62rem 0.8rem;
     border-radius: 16px;
@@ -1296,15 +1301,6 @@ main::before {
     linear-gradient(90deg, rgba(3, 9, 17, 0.1), transparent 58%);
 }
 
-.services-domains-page .services-domains-hero-visual.reveal {
-  transform: translateY(1rem);
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.services-domains-page .services-domains-hero-visual.reveal.is-visible {
-  transform: translateY(0);
-}
-
 .services-domains-page .services-domains-hero h1 {
   max-width: 100%;
   font-size: clamp(3.2rem, 4.25vw, 4.4rem);
@@ -2037,100 +2033,35 @@ html[data-theme="light"] .services-domains-page .services-domains-hero-visual::a
   }
 }
 
-/* Shared scroll reveals: lift into focus with a small signal-like focus settle. */
+/* Scroll reveals use translation and opacity so large panels stay crisp. */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    --reveal-shift-x: 0px;
-    opacity: 0;
-    transform: none;
-    translate: var(--reveal-shift-x) 2rem;
-    rotate: x 1.4deg;
-    scale: 0.985;
-    filter: blur(5px);
-    transition:
-      opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-      translate 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      rotate 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      scale 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 720ms cubic-bezier(0.16, 1, 0.3, 1);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
-
-  .reveal.is-visible {
-    opacity: 1;
-    translate: 0 0;
-    rotate: none;
-    scale: 1;
-    filter: blur(0);
-    transform: none;
-  }
-
+  .reveal,
   .auth-x-section .reveal {
     opacity: 0;
     transform: none;
-    translate: var(--reveal-shift-x, 0px) 2rem;
-    rotate: x 1.4deg;
-    scale: 0.985;
-    filter: blur(5px);
+    translate: var(--reveal-shift-x, 0px) 0.85rem;
     transition:
-      opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-      translate 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      rotate 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      scale 860ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 720ms cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 440ms ease,
+      translate 520ms cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: var(--reveal-delay, 0ms);
   }
 
+  .reveal.is-visible,
   .auth-x-section .reveal.is-visible {
     opacity: 1;
     translate: 0 0;
-    rotate: none;
-    scale: 1;
-    filter: blur(0);
-    transform: none;
-  }
-
-  .services-domains-page .services-domains-hero-visual.reveal {
-    transform: none;
-    translate: var(--reveal-shift-x, 0px) 1rem;
-    rotate: x 1.2deg;
-    scale: 0.99;
-    filter: blur(5px);
-    transition:
-      opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
-      translate 800ms cubic-bezier(0.16, 1, 0.3, 1),
-      rotate 800ms cubic-bezier(0.16, 1, 0.3, 1),
-      scale 800ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 800ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .services-domains-page .services-domains-hero-visual.reveal.is-visible {
-    translate: 0 0;
-    rotate: none;
-    scale: 1;
-    filter: blur(0);
     transform: none;
   }
 
   .services-domain-card.reveal,
   .services-common-card.reveal {
     translate: none;
-    rotate: none;
-    scale: 1;
-    filter: blur(4px);
     transition:
-      opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-      transform 720ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 720ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 440ms ease,
       border-color 220ms ease,
       background 220ms ease,
       box-shadow 220ms ease;
     transition-delay: var(--reveal-delay, 0ms);
-  }
-
-  .services-domain-card.reveal.is-visible,
-  .services-common-card.reveal.is-visible {
-    filter: blur(0);
   }
 
   .about-story-row.reveal:nth-of-type(odd),
@@ -2169,8 +2100,6 @@ html[data-theme="light"] .services-domains-page .services-domains-hero-visual::a
   .reveal.is-visible,
   .auth-x-section .reveal,
   .auth-x-section .reveal.is-visible,
-  .services-domains-page .services-domains-hero-visual.reveal,
-  .services-domains-page .services-domains-hero-visual.reveal.is-visible,
   .services-domain-card.reveal,
   .services-domain-card.reveal.is-visible,
   .services-common-card.reveal,

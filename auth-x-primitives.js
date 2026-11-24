@@ -1,44 +1,16 @@
-const authXPrimitivesStage = document.querySelector("[data-auth-x-primitives]");
-const authXPrimitiveMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const authXPrimitiveMotionToggle = document.querySelector("[data-auth-x-motion-toggle]");
-let authXPrimitivesInView = false;
-let authXPrimitivesPaused = false;
+(() => {
+  const session = document.querySelector("[data-auth-x-session]");
+  if (!session || !("IntersectionObserver" in window)) return;
 
-const updateAuthXPrimitivesMotion = () => {
-  if (!authXPrimitivesStage) return;
+  const scene = session.querySelector(".auth-x-session-scene");
+  const motion = window.matchMedia("(prefers-reduced-motion: no-preference)");
 
-  if (authXPrimitivesInView) {
-    authXPrimitivesStage.classList.add("is-active");
-  }
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.intersectionRatio < 0.35) return;
 
-  authXPrimitivesStage.classList.toggle(
-    "is-playing",
-    authXPrimitivesInView && !document.hidden && !authXPrimitiveMotion.matches && !authXPrimitivesPaused
-  );
-};
+    observer.disconnect();
+    if (motion.matches) session.classList.add("is-playing");
+  }, { threshold: 0.35 });
 
-authXPrimitiveMotionToggle?.addEventListener("click", () => {
-  authXPrimitivesPaused = !authXPrimitivesPaused;
-  const motionLabel = authXPrimitivesPaused ? "Play animation" : "Pause animation";
-  authXPrimitiveMotionToggle.classList.toggle("is-paused", authXPrimitivesPaused);
-  authXPrimitiveMotionToggle.setAttribute("aria-label", motionLabel);
-  authXPrimitiveMotionToggle.setAttribute("title", motionLabel);
-  updateAuthXPrimitivesMotion();
-});
-
-if (authXPrimitivesStage && !("IntersectionObserver" in window)) {
-  authXPrimitivesInView = true;
-  updateAuthXPrimitivesMotion();
-} else if (authXPrimitivesStage) {
-  const authXPrimitivesObserver = new IntersectionObserver(
-    (entries) => {
-      authXPrimitivesInView = entries.some((entry) => entry.isIntersecting);
-      updateAuthXPrimitivesMotion();
-    },
-    { threshold: 0.12 }
-  );
-  authXPrimitivesObserver.observe(authXPrimitivesStage);
-}
-
-document.addEventListener("visibilitychange", updateAuthXPrimitivesMotion);
-authXPrimitiveMotion.addEventListener("change", updateAuthXPrimitivesMotion);
+  observer.observe(scene);
+})();

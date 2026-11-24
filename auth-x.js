@@ -153,7 +153,20 @@ if (navShell && typeof ResizeObserver !== "undefined") {
   window.addEventListener("resize", updateNavTrace);
 }
 
-window.addEventListener("scroll", setHeaderScrolledState, { passive: true });
+let headerScrollFrame = null;
+window.addEventListener("scroll", () => {
+  if (headerScrollFrame !== null) return;
+  headerScrollFrame = window.requestAnimationFrame(() => {
+    setHeaderScrolledState();
+    headerScrollFrame = null;
+  });
+}, { passive: true });
+
+const syncPageVisibility = () => {
+  document.documentElement.classList.toggle("page-hidden", document.hidden);
+};
+document.addEventListener("visibilitychange", syncPageVisibility);
+syncPageVisibility();
 
 if ("IntersectionObserver" in window && !prefersReducedMotion.matches) {
   const revealObserver = new IntersectionObserver(

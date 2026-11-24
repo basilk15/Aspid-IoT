@@ -51,7 +51,7 @@ body.tunnel-x-page {
 }
 
 .tx-hero::before {
-  background: url("assets/tunnel-x/tunnel-x-hero.png") center 54% / cover no-repeat;
+  background: var(--tx-hero-art, url("assets/tunnel-x/tunnel-x-hero.webp")) center 54% / cover no-repeat;
   opacity: 0.88;
   transition: filter 260ms ease, opacity 260ms ease;
 }
@@ -324,7 +324,7 @@ body.tunnel-x-page {
   position: absolute;
   z-index: 0;
   inset: -3%;
-  background: url("assets/tunnel-x/tunnel-x-hero.png") center 55% / cover no-repeat;
+  background: var(--tx-hero-art, url("assets/tunnel-x/tunnel-x-hero.webp")) center 55% / cover no-repeat;
   content: "";
   opacity: 0.27;
   transform: scale(1.03);
@@ -963,6 +963,7 @@ html[data-theme="light"] .tx-button-secondary:hover {
 }
 
 @media (max-width: 767px) {
+  .tunnel-x-page { --tx-hero-art: url("assets/tunnel-x/tunnel-x-hero-800.webp"); }
   .tx-shell {
     width: min(100% - 2rem, 34rem);
   }

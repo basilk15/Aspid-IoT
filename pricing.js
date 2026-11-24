@@ -13,21 +13,21 @@
   const plans = {
     auth: {
       label: "Auth-X",
-      mark: "assets/auth-x-logos/auth-x-mark-v3.png",
+      mark: "assets/auth-x-logos/auth-x-mark-v3.webp",
       note: "Session setup for an existing telemetry path.",
       team: { base: 99, included: 50, overage: 0.75 },
       fleet: { base: 399, included: 500, overage: 0.45 },
     },
     tunnel: {
       label: "Tunnel-X",
-      mark: "assets/tunnel-x/tunnel-x-mark-v4.png",
+      mark: "assets/tunnel-x/tunnel-x-mark-v4.webp",
       note: "Requires a compatible external session provider. The integration interface is still planned.",
       team: { base: 149, included: 50, overage: 1.1 },
       fleet: { base: 599, included: 500, overage: 0.65 },
     },
     secure: {
       label: "Secure-X",
-      mark: "assets/secure-x/secure-x-mark-v3.png",
+      mark: "assets/secure-x/secure-x-mark-v3.webp",
       note: "Auth-X and Tunnel-X in one device-to-sink path.",
       team: { base: 199, included: 50, overage: 1.5 },
       fleet: { base: 799, included: 500, overage: 0.9 },
