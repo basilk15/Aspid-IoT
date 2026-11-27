@@ -293,8 +293,7 @@ html[data-theme="light"] .mega-menu {
   color: var(--ink);
 }
 
-html[data-theme="light"] .mega-menu-kicker,
-html[data-theme="light"] .section-kicker {
+html[data-theme="light"] .mega-menu-kicker {
   color: rgba(16, 42, 63, 0.56);
 }
 
@@ -588,11 +587,6 @@ html[data-theme="light"] .auth-x-section {
     linear-gradient(180deg, rgba(228, 241, 248, 0.96), rgba(237, 245, 251, 1));
 }
 
-html[data-theme="light"] .auth-x-eyebrow,
-html[data-theme="light"] .founder-contact-eyebrow {
-  color: rgba(16, 42, 63, 0.62);
-}
-
 html[data-theme="light"] .auth-x-title,
 html[data-theme="light"] .auth-x-flow-card h3,
 html[data-theme="light"] .auth-x-feature-card h3,
@@ -659,7 +653,6 @@ html[data-theme="light"] .auth-x-stat-card-accent {
     rgba(255, 255, 255, 0.84);
 }
 
-html[data-theme="light"] .auth-x-flow-chip,
 html[data-theme="light"] .auth-x-chart-scale {
   border-color: rgba(5, 143, 166, 0.2);
   color: rgba(10, 76, 97, 0.72);
@@ -848,15 +841,10 @@ html[data-theme="light"] .about-principle-card p {
   color: rgba(16, 42, 63, 0.7);
 }
 
-html[data-theme="light"] .about-origin-head,
-html[data-theme="light"] .about-origin-foot,
 html[data-theme="light"] .about-origin-identity-label,
-html[data-theme="light"] .about-evidence-caption-head,
-html[data-theme="light"] .about-story-label,
 html[data-theme="light"] .founder-profile-head,
 html[data-theme="light"] .founder-profile-role,
-html[data-theme="light"] .founder-profile-footer,
-html[data-theme="light"] .founder-contact-note {
+html[data-theme="light"] .founder-profile-footer {
   color: rgba(16, 42, 63, 0.58);
 }
 
@@ -1341,10 +1329,6 @@ html[data-theme="light"] .services-domains-hero-visual {
     inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
-html[data-theme="light"] .services-domains-proof > div + div {
-  border-color: rgba(53, 133, 153, 0.18);
-}
-
 html[data-theme="light"] .services-domains-section {
   background:
     radial-gradient(circle at 12% 15%, rgba(105, 87, 198, 0.08), transparent 28%),
@@ -1360,11 +1344,6 @@ html[data-theme="light"] .services-domain-card {
 html[data-theme="light"] .services-domain-card:hover {
   border-color: rgba(5, 143, 166, 0.32);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), var(--domain-panel));
-}
-
-html[data-theme="light"] .services-domain-tags li {
-  border-color: rgba(5, 143, 166, 0.22);
-  color: #17516b;
 }
 
 html[data-theme="light"] .services-common-section {
@@ -1434,11 +1413,6 @@ html[data-theme="light"] .contact-hero-orbit-two {
   border-color: rgba(105, 87, 198, 0.18);
 }
 
-html[data-theme="light"] .contact-eyebrow,
-html[data-theme="light"] .contact-form-kicker {
-  color: rgba(16, 42, 63, 0.6);
-}
-
 html[data-theme="light"] .contact-page-title,
 html[data-theme="light"] .contact-form-card h2,
 html[data-theme="light"] .founder-profile-person h3 {
@@ -1490,10 +1464,6 @@ html[data-theme="light"] .contact-form-card::after {
   background-image:
     linear-gradient(rgba(5, 143, 166, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(5, 143, 166, 0.07) 1px, transparent 1px);
-}
-
-html[data-theme="light"] .contact-form-index {
-  color: #058fa6;
 }
 
 html[data-theme="light"] .contact-field label {

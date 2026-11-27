@@ -281,16 +281,6 @@ body.tunnel-x-page {
   margin-bottom: clamp(2.7rem, 5vw, 4.5rem);
 }
 
-.tx-eyebrow {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--tx-accent);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
 .tx-encryption h2 {
   max-width: 18ch;
   color: var(--tx-ink);
@@ -647,14 +637,6 @@ body.tunnel-x-page {
 
 .tx-feature-rekey {
   background: #102230;
-}
-
-.tx-feature-index {
-  display: block;
-  margin-bottom: 1.5rem;
-  color: var(--tx-accent);
-  font-size: 0.79rem;
-  font-weight: 700;
 }
 
 .tx-feature h3 {

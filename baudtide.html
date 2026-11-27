@@ -23,10 +23,10 @@
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
-   <link rel="stylesheet" href="styles.css?v=performance-3" />
-   <link rel="stylesheet" href="baudtide.css?v=14" />
-    <link rel="stylesheet" href="theme.css?v=16" />
-    <link rel="stylesheet" href="design-taste.css?v=18" />
+   <link rel="stylesheet" href="styles.css?v=performance-5" />
+   <link rel="stylesheet" href="baudtide.css?v=15" />
+    <link rel="stylesheet" href="theme.css?v=17" />
+    <link rel="stylesheet" href="design-taste.css?v=20" />
   </head>
   <body class="baudtide-page">
     <header class="site-header" data-header>
@@ -70,7 +70,6 @@
             </button>
 
             <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
-              <p class="product-menu-kicker">Product families</p>
               <div class="product-menu-list" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
@@ -255,12 +254,6 @@
         <div class="baudtide-shell">
           <div class="baudtide-hero">
             <div class="baudtide-hero-copy reveal">
-              <div class="baudtide-eyebrow">
-                <span class="baudtide-eyebrow-line"></span>
-                <span>Open source / BaudTide</span>
-                <span class="product-badge product-badge-open">MIT license</span>
-              </div>
-
               <div class="baudtide-brandlockup">
                 <span class="baudtide-mark"><img src="assets/baudtide/baudtide-mark.webp" alt="BaudTide mark" /></span>
                 <span class="baudtide-wordmark">baud<span>tide</span></span>
@@ -274,12 +267,6 @@
               <div class="baudtide-actions">
                 <a class="button-link button-link-primary" href="https://github.com/basilk15/baudtide" target="_blank" rel="noreferrer">Open BaudTide on GitHub <span aria-hidden="true">↗</span></a>
                 <a class="button-link button-link-muted" href="#baudtide-features">Explore the workspace</a>
-              </div>
-
-              <div class="baudtide-facts" aria-label="BaudTide product facts">
-                <span><strong>Multi-session bench</strong><small>tabs + saved layouts</small></span>
-                <span><strong>Live + recorded</strong><small>overlay + replay</small></span>
-                <span><strong>iPhone companion</strong><small>read-only by default</small></span>
               </div>
             </div>
 
@@ -298,87 +285,60 @@
                   <source src="assets/baudtide/videos/baudtide-up.mp4" type="video/mp4" />
                 </video>
               </div>
-              <figcaption><span>Current desktop workspace</span><span>Live terminal / raw capture active</span></figcaption>
+              <figcaption>BaudTide desktop workspace with a live terminal and raw capture.</figcaption>
             </figure>
           </div>
 
           <section class="baudtide-open-source reveal" aria-labelledby="baudtide-open-source-title">
             <div>
-              <p class="section-kicker">Open-source ambition</p>
               <h2 class="section-title" id="baudtide-open-source-title">Tools for the bench should belong to the community using them.</h2>
               <p class="section-summary">
-                BaudTide is our contribution to the greater IoT community: a public, inspectable workspace for the everyday work between a board, a serial line, and the engineer trying to understand what just happened.
+                BaudTide is our contribution to the greater IoT community: a public, inspectable workspace for the everyday work between a board and the engineer debugging it. BaudTide is released under the MIT license.
               </p>
             </div>
             <div class="baudtide-open-source-points">
-              <div><span>01</span><strong>Build in public</strong><p>Let the roadmap, issues, and implementation stay visible to the people building with connected hardware.</p></div>
-              <div><span>02</span><strong>Keep the signal local</strong><p>Capture raw device output on the machine where the work is happening, with exports when the team needs them.</p></div>
-              <div><span>03</span><strong>Make contribution easier</strong><p>Give embedded developers a focused starting point for testing, observing, and extending the serial workflow.</p></div>
+              <div><strong>Build in public</strong><p>Let the roadmap, issues, and implementation stay visible to the people building with connected hardware.</p></div>
+              <div><strong>Keep the signal local</strong><p>Capture raw device output on the machine where the work is happening, with exports when the team needs them.</p></div>
+              <div><strong>Make contribution easier</strong><p>Give embedded developers a focused starting point for testing, observing, and extending the serial workflow.</p></div>
             </div>
           </section>
 
           <section class="baudtide-feature-section" id="baudtide-features" aria-labelledby="baudtide-features-title">
             <div class="baudtide-section-heading reveal">
-              <p class="section-kicker">What ships inside</p>
               <h2 class="section-title" id="baudtide-features-title">One workspace for the whole serial loop.</h2>
               <p class="section-summary">From the first port discovery to the final exported log, BaudTide keeps embedded debugging readable and close to the device.</p>
             </div>
 
             <div class="baudtide-feature-list">
               <article class="baudtide-feature-row reveal">
-                <div class="baudtide-feature-meta"><span>01</span><span>CONNECT</span></div>
-                <div>
-                  <h3>Meet the device at the port.</h3>
-                  <p>Discover USB and TTY ports or enter a path manually, reuse recent device settings, tune serial framing, and let automatic reconnect watch for a board that drops away.</p>
-                </div>
-                <p class="baudtide-feature-detail">Auto-discovery / manual paths / recent profiles / auto-reconnect</p>
+                <h3>Meet the device at the port.</h3>
+                <p>Discover USB and TTY ports or enter a path manually, reuse recent device settings, tune serial framing, and let automatic reconnect watch for a board that drops away.</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="60">
-                <div class="baudtide-feature-meta"><span>02</span><span>WORKSPACE</span></div>
-                <div>
-                  <h3>Run the whole bench in one workspace.</h3>
-                  <p>Keep several devices open in independent tabs or tiled views, preserve per-device settings, and save named layouts you can return to later.</p>
-                </div>
-                <p class="baudtide-feature-detail">Multiple devices / tab + tile views / saved layouts / session restore</p>
+                <h3>Run the whole bench in one workspace.</h3>
+                <p>Keep several devices open in independent tabs or tiled views, preserve per-device settings, and save named layouts to restore your sessions later.</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="120">
-                <div class="baudtide-feature-meta"><span>03</span><span>READ + SEND</span></div>
-                <div>
-                  <h3>Control the stream without losing the capture.</h3>
-                  <p>Pause, filter, search, or clear the visible terminal while raw logging continues, then send text or exact hexadecimal bytes with session-specific line endings and display encoding.</p>
-                </div>
-                <p class="baudtide-feature-detail">Non-destructive display controls / text + hex / timestamps / encoding</p>
+                <h3>Control the stream without losing the capture.</h3>
+                <p>Pause, filter, search, or clear the visible terminal while raw logging continues, view timestamps, and send text or exact hexadecimal bytes with session-specific line endings and display encoding.</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="180">
-                <div class="baudtide-feature-meta"><span>04</span><span>ANALYZE + REPLAY</span></div>
-                <div>
-                  <h3>Compare live behavior with what happened before.</h3>
-                  <p>Detect repeatable telemetry in nested JSON, key/value, CSV, and TSV streams; align live sessions with saved captures; then overlay, replay, window, and export the fields that matter.</p>
-                </div>
-                <p class="baudtide-feature-detail">Live + capture comparison / independent or overlay views / CSV + JSON export</p>
+                <h3>Compare live behavior with what happened before.</h3>
+                <p>Detect repeatable telemetry in nested JSON, key/value, CSV, and TSV streams; align live sessions with saved captures; then overlay, replay, window, and export the fields that matter as CSV or JSON.</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="240">
-                <div class="baudtide-feature-meta"><span>05</span><span>CAPTURE + FIND</span></div>
-                <div>
-                  <h3>Search the capture library, not just its filenames.</h3>
-                  <p>Every terminal writes to a raw local log. Filter captures by state, search metadata and captured content, preview or save a copy, reopen a log in Visualize, or reconnect with its original setup.</p>
-                </div>
-                <p class="baudtide-feature-detail">Local raw logs / indexed content search / preview / reopen / save copy</p>
+                <h3>Search the capture library, not just its filenames.</h3>
+                <p>Every terminal writes to a raw local log. Filter captures by state, search metadata and captured content, preview or save a copy, reopen a log in Visualize, or reconnect with its original setup.</p>
               </article>
               <article class="baudtide-feature-row reveal" data-delay="300">
-                <div class="baudtide-feature-meta"><span>06</span><span>SHARE + CONTROL</span></div>
-                <div>
-                  <h3>Put a read-only signal window on iPhone.</h3>
-                  <p>Scan a same-network link to open live telemetry and raw output on iPhone or another phone, share or download logs, and expose remote text or hex commands only when the desktop operator explicitly enables them.</p>
-                </div>
-                <p class="baudtide-feature-detail">iPhone-ready companion / QR pairing / read-only default / revocable control</p>
+                <h3>Put a read-only signal window on iPhone.</h3>
+                <p>Scan a QR code on the same network to open live telemetry and raw output on iPhone or another phone, share or download logs, and send remote text or hex commands only while the desktop operator has enabled that access.</p>
               </article>
             </div>
           </section>
 
           <section class="baudtide-evidence-section" id="baudtide-proof" aria-labelledby="baudtide-proof-title">
             <div class="baudtide-section-heading reveal">
-              <p class="section-kicker">Product proof / interface tour</p>
               <h2 class="section-title" id="baudtide-proof-title">See the workspace before you wire in.</h2>
               <p class="section-summary">Fresh captures from BaudTide's current desktop workspace, driven by a live environmental-sensor feed and a real same-network phone connection.</p>
             </div>
@@ -400,7 +360,6 @@
                   </video>
                 </div>
                 <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>02 / ANALYZE + REPLAY</span></div>
                   <h3>One aligned canvas for now and before.</h3>
                   <p>Compare a live session with recorded captures, align their starts or clocks, select up to eight signals, and replay the saved timeline at the pace you need.</p>
                 </figcaption>
@@ -422,7 +381,6 @@
                   </video>
                 </div>
                 <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>03 / CAPTURE LIBRARY</span></div>
                   <h3>Find the byte that explains the bench.</h3>
                   <p>Search captured content and metadata across the local library, separate active, completed, and interrupted logs, then preview or move a result straight into analysis.</p>
                 </figcaption>
@@ -465,7 +423,6 @@
                   </div>
                 </div>
                 <figcaption class="baudtide-proof-copy">
-                  <div class="baudtide-proof-label"><span>04 / IPHONE COMPANION</span></div>
                   <h3>A live terminal, ready for your pocket.</h3>
                   <p>Open the same signal on iPhone with a QR link, follow live telemetry and recent packets, and keep the companion read-only until the desktop operator chooses otherwise.</p>
                 </figcaption>
@@ -475,12 +432,10 @@
 
           <section class="baudtide-built-section" aria-labelledby="baudtide-built-title">
             <div class="baudtide-built-copy reveal">
-              <p class="section-kicker">Built for the real bench</p>
               <h2 class="section-title" id="baudtide-built-title">Small enough to stay out of the way. Thoughtful enough to earn a place in the loop.</h2>
-              <p class="section-summary">BaudTide pairs an Electron desktop shell with a React + TypeScript interface and Rust-backed Linux serial access, so the UI stays calm while the device work stays real.</p>
+              <p class="section-summary">BaudTide pairs an Electron desktop shell with a React + TypeScript interface and Rust-backed Linux serial access, so the UI stays calm while the device work stays real. BaudTide is in active development.</p>
             </div>
             <div class="baudtide-stack-panel reveal" data-delay="100">
-              <div class="baudtide-stack-heading"><span>BaudTide / stack</span><span>In active development</span></div>
               <div class="baudtide-stack-grid">
                 <div><strong>Electron</strong><span>desktop shell</span></div>
                 <div><strong>Rust sidecar</strong><span>native serial access</span></div>
@@ -495,7 +450,6 @@
           <section class="baudtide-cta reveal" aria-labelledby="baudtide-cta-title">
             <div class="baudtide-cta-mark"><img src="assets/baudtide/baudtide-mark.webp" alt="" width="64" height="64" loading="lazy" decoding="async" /></div>
             <div>
-              <p class="section-kicker">AspidIoT / open-source ambitions</p>
               <h2 class="section-title" id="baudtide-cta-title">Use it, test it, shape what comes next.</h2>
               <p class="section-summary">The repository is the front door: read the code, try the workflow, report what your hardware needs, and help make IoT tooling more open by default.</p>
             </div>
@@ -529,7 +483,6 @@
       </div>
       <div class="site-footer-meta">
         <p>© 2026 AspidIoT. All rights reserved.</p>
-        <span>Open tools · secure-by-design · IoT at the edge</span>
       </div>
     </footer>
 

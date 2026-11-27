@@ -385,8 +385,7 @@ html.page-hidden .nav-shell-trace-path,
   padding: 0.5rem 0.35rem 1rem;
 }
 
-.mega-menu-kicker,
-.section-kicker {
+.mega-menu-kicker {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.72rem;
@@ -1431,23 +1430,6 @@ body:not(.is-loaded) .hero-3d {
     drop-shadow(0 0 18px rgba(89, 247, 255, 0.18));
 }
 
-.auth-x-eyebrow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  color: rgba(241, 245, 255, 0.6);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.auth-x-eyebrow-line {
-  width: 2.4rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent));
-}
-
 .auth-x-title {
   max-width: 11ch;
   margin-top: 1.2rem;
@@ -1717,30 +1699,8 @@ body:not(.is-loaded) .hero-3d {
   background: linear-gradient(90deg, transparent, rgba(89, 247, 255, 0.72));
 }
 
-.auth-x-flow-index,
-.auth-x-feature-mark {
-  display: block;
-  color: var(--accent);
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-}
-
-.auth-x-flow-chip {
-  display: inline-flex;
-  margin-top: 1.45rem;
-  padding: 0.3rem 0.52rem;
-  border: 1px solid rgba(89, 247, 255, 0.18);
-  border-radius: 999px;
-  color: rgba(206, 253, 255, 0.8);
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
 .auth-x-flow-card h3,
 .auth-x-feature-card h3 {
-  margin-top: 0.85rem;
   color: #fff;
   font-family: "Syne", "Space Grotesk", sans-serif;
   font-size: 1.05rem;
@@ -2557,13 +2517,6 @@ body:not(.is-loaded) .hero-3d {
   gap: 1rem;
 }
 
-.auth-x-chart-kicker {
-  color: rgba(206, 253, 255, 0.68);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 .auth-x-chart h3 {
   max-width: 26ch;
   margin-top: 0.55rem;
@@ -2843,13 +2796,6 @@ body:not(.is-loaded) .hero-3d {
   gap: 0.3rem;
 }
 
-.auth-x-product-footer-kicker {
-  color: var(--accent);
-  font-size: 0.64rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 .auth-x-product-footer strong {
   color: rgba(241, 245, 255, 0.9);
   font-family: "Syne", "Space Grotesk", sans-serif;
@@ -2908,13 +2854,6 @@ body:not(.is-loaded) .hero-3d {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-}
-
-.network-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.75rem;
-  color: var(--muted);
 }
 
 .network-title {
@@ -3369,19 +3308,6 @@ body:not(.is-loaded) .hero-3d {
   transform: rotate(-20deg) scaleY(0.48);
 }
 
-.about-origin-head {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  color: rgba(206, 253, 255, 0.58);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 .about-origin-identity {
   position: relative;
   z-index: 1;
@@ -3548,30 +3474,6 @@ body:not(.is-loaded) .hero-3d {
   line-height: 1.65;
 }
 
-.about-origin-rule {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 1px;
-  margin-top: 1.8rem;
-  background: linear-gradient(90deg, rgba(89, 247, 255, 0.4), transparent);
-}
-
-.about-origin-foot {
-  position: relative;
-  z-index: 1;
-  margin-top: 0.9rem;
-  color: rgba(206, 253, 255, 0.55);
-  font-size: 0.64rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.about-origin-foot span {
-  margin: 0 0.35rem;
-  color: var(--accent);
-}
-
 .about-story-section,
 .about-principles-section {
   padding: clamp(5rem, 10vw, 9rem) 1.5rem;
@@ -3640,17 +3542,6 @@ body:not(.is-loaded) .hero-3d {
   padding: 1.35rem 1.4rem 1.5rem;
 }
 
-.about-evidence-caption-head {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  color: rgba(206, 253, 255, 0.58);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
 .about-evidence-card h3 {
   max-width: 16ch;
   margin-top: 0.8rem;
@@ -3712,28 +3603,8 @@ body:not(.is-loaded) .hero-3d {
 }
 
 .about-story-row {
-  display: grid;
-  grid-template-columns: minmax(9rem, 0.42fr) minmax(0, 1.2fr);
-  align-items: start;
-  gap: 1.4rem;
   padding: 1.65rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-principle-label {
-  color: var(--accent);
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.about-story-label {
-  padding-top: 0.08rem;
-  color: rgba(206, 253, 255, 0.58);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
 }
 
 .about-story-copy {
@@ -3932,23 +3803,6 @@ body:not(.is-loaded) .hero-3d {
   max-width: 650px;
 }
 
-.contact-eyebrow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  color: rgba(206, 253, 255, 0.68);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.contact-eyebrow-line {
-  width: 2.5rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent));
-}
-
 .contact-page-title {
   max-width: 10ch;
   margin-top: 1.35rem;
@@ -4060,14 +3914,6 @@ body:not(.is-loaded) .hero-3d {
   gap: 1rem;
 }
 
-.contact-form-kicker {
-  display: block;
-  color: rgba(206, 253, 255, 0.58);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 .contact-form-card h2 {
   margin-top: 0.65rem;
   color: #f7fbff;
@@ -4075,13 +3921,6 @@ body:not(.is-loaded) .hero-3d {
   font-size: clamp(1.8rem, 3.1vw, 2.75rem);
   line-height: 1;
   letter-spacing: -0.05em;
-}
-
-.contact-form-index {
-  color: var(--accent);
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
 }
 
 .contact-form-intro {
@@ -4340,23 +4179,6 @@ body:not(.is-loaded) .hero-3d {
   max-width: 720px;
 }
 
-.founder-contact-eyebrow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  color: rgba(206, 253, 255, 0.68);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.founder-contact-eyebrow-line {
-  width: 2.5rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent));
-}
-
 .founder-contact-title {
   max-width: 11ch;
   margin-top: 1.35rem;
@@ -4408,14 +4230,6 @@ body:not(.is-loaded) .hero-3d {
   margin-left: 0.1rem;
   font-size: 1.15rem;
   line-height: 1;
-}
-
-.founder-contact-note {
-  margin-top: 1.35rem;
-  color: rgba(241, 245, 255, 0.42);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .founder-contact-orbit {
@@ -4930,10 +4744,6 @@ body:not(.is-loaded) .hero-3d {
 }
 
 .site-footer-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 1rem 0 0;
   border-top: 1px solid rgba(126, 214, 231, 0.12);
   color: rgba(241, 245, 255, 0.42);
@@ -4957,12 +4767,6 @@ body:not(.is-loaded) .hero-3d {
   .site-footer-nav {
     justify-content: flex-start;
     gap: 0.8rem 1rem;
-  }
-
-  .site-footer-meta {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.45rem;
   }
 }
 
@@ -5346,13 +5150,6 @@ body:not(.is-loaded) .hero-3d {
 
 .network-text {
   gap: 1.1rem;
-}
-
-.network-kicker {
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
 }
 
 .network-title {
@@ -5904,11 +5701,6 @@ body:not(.is-loaded) .hero-3d {
   text-align: center;
 }
 
-.narrative-intro .section-kicker {
-  color: var(--accent);
-  opacity: 0.8;
-}
-
 .narrative-title {
   margin-top: 0.9rem;
   font-family: "Syne", "Space Grotesk", sans-serif;
@@ -6123,18 +5915,6 @@ body:not(.is-loaded) .hero-3d {
 .bridge-stage-deliver {
   right: 2%;
   animation-name: stage-label-deliver;
-}
-
-.stage-index {
-  display: grid;
-  width: 1.7rem;
-  height: 1.7rem;
-  place-items: center;
-  border: 1px solid rgba(89, 247, 255, 0.45);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 0.58rem;
-  letter-spacing: 0;
 }
 
 .stage-copy {
@@ -7245,18 +7025,7 @@ body:not(.is-loaded) .hero-3d {
   }
 
   .about-story-row {
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
     padding: 1.35rem 0;
-  }
-
-  .about-story-label,
-  .about-story-copy {
-    grid-column: auto;
-  }
-
-  .about-story-label {
-    padding-top: 0;
   }
 
   .about-story-copy h3 {
@@ -7290,12 +7059,6 @@ body:not(.is-loaded) .hero-3d {
     padding: 7.5rem 1rem 3.5rem;
   }
 
-  .founder-contact-eyebrow {
-    gap: 0.55rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-  }
-
   .founder-contact-title {
     max-width: 12ch;
     font-size: clamp(2.8rem, 14vw, 4.3rem);
@@ -7312,11 +7075,6 @@ body:not(.is-loaded) .hero-3d {
 
   .founder-contact-actions .button-link {
     width: 100%;
-  }
-
-  .founder-contact-note {
-    font-size: 0.58rem;
-    line-height: 1.7;
   }
 
   .founder-profile-card {
@@ -9715,15 +9473,6 @@ body:not(.is-loaded) .hero-3d {
   min-width: 0;
 }
 
-.services-domains-kicker {
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
 .services-domains-hero h1,
 .services-domains-head h2,
 .services-common-head h2,
@@ -9892,41 +9641,6 @@ body:not(.is-loaded) .hero-3d {
   text-align: right;
 }
 
-.services-domains-proof {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: min(1080px, 100%);
-  margin: clamp(3.5rem, 7vw, 5.5rem) auto 0;
-  border-top: 1px solid var(--domain-line);
-}
-
-.services-domains-proof > div {
-  display: grid;
-  gap: 0.4rem;
-  min-width: 0;
-  padding: 1.25rem 1.4rem 0;
-}
-
-.services-domains-proof > div + div {
-  border-left: 1px solid var(--domain-line);
-}
-
-.services-domains-proof span {
-  color: var(--accent);
-  font-size: 0.61rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.services-domains-proof strong {
-  max-width: 25ch;
-  color: var(--ink);
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
 .services-domains-section {
   padding: clamp(5.5rem, 10vw, 9rem) 1.5rem clamp(5.5rem, 11vw, 10rem);
   background:
@@ -10050,15 +9764,6 @@ body:not(.is-loaded) .hero-3d {
   transition-delay: calc(var(--reveal-delay, 0ms) + 130ms);
 }
 
-.services-domain-card.is-visible .services-domain-body > *:nth-child(3),
-.services-common-card.is-visible > *:nth-child(3) {
-  transition-delay: calc(var(--reveal-delay, 0ms) + 180ms);
-}
-
-.services-domain-card.is-visible .services-domain-body > *:nth-child(4) {
-  transition-delay: calc(var(--reveal-delay, 0ms) + 230ms);
-}
-
 .services-domain-card-wide {
   display: grid;
   grid-column: 1 / -1;
@@ -10133,30 +9838,8 @@ body:not(.is-loaded) .hero-3d {
   padding: clamp(1.45rem, 3vw, 2.3rem);
 }
 
-.services-domain-overline {
-  color: var(--accent);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.services-domain-card:nth-child(2) .services-domain-overline {
-  color: var(--domain-warm);
-}
-
-.services-domain-card:nth-child(3) .services-domain-overline {
-  color: var(--domain-violet);
-}
-
-.services-domain-card:nth-child(4) .services-domain-overline {
-  color: var(--domain-mint);
-}
-
 .services-domain-body h3 {
   max-width: 19ch;
-  margin-top: 0.7rem;
   color: var(--ink);
   font-family: "Syne", "Space Grotesk", sans-serif;
   font-size: clamp(1.55rem, 2.6vw, 2.45rem);
@@ -10165,29 +9848,11 @@ body:not(.is-loaded) .hero-3d {
   text-wrap: balance;
 }
 
-.services-domain-body > p:not(.services-domain-overline) {
+.services-domain-body > p {
   max-width: 47ch;
   margin-top: 1rem;
   color: var(--domain-quiet);
   line-height: 1.68;
-}
-
-.services-domain-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: auto;
-  padding-top: 1.65rem;
-  list-style: none;
-}
-
-.services-domain-tags li {
-  padding: 0.42rem 0.62rem;
-  border: 1px solid rgba(126, 214, 231, 0.22);
-  border-radius: 999px;
-  color: rgba(221, 250, 255, 0.68);
-  font-size: 0.68rem;
-  line-height: 1.1;
 }
 
 .services-common-section {
@@ -10398,19 +10063,6 @@ body:not(.is-loaded) .hero-3d {
     border-radius: 23px;
   }
 
-  .services-domains-proof {
-    grid-template-columns: 1fr;
-  }
-
-  .services-domains-proof > div {
-    padding: 1.05rem 0;
-  }
-
-  .services-domains-proof > div + div {
-    border-top: 1px solid var(--domain-line);
-    border-left: 0;
-  }
-
   .services-domain-grid,
   .services-common-grid {
     grid-template-columns: 1fr;
@@ -10520,12 +10172,6 @@ body:not(.is-loaded) .hero-3d {
   .contact-hero {
     min-height: auto;
     padding: 7.5rem 1rem 3.5rem;
-  }
-
-  .contact-eyebrow {
-    gap: 0.55rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
   }
 
   .contact-page-title {

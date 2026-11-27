@@ -27,34 +27,6 @@
   max-width: 640px;
 }
 
-.baudtide-eyebrow,
-.baudtide-proof-label,
-.baudtide-stack-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  color: rgba(241, 245, 255, 0.58);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.baudtide-eyebrow {
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.baudtide-eyebrow-line {
-  width: 2.2rem;
-  height: 1px;
-  background: linear-gradient(90deg, #5de2bc, #59f7ff);
-  box-shadow: 0 0 12px rgba(93, 226, 188, 0.48);
-}
-
 .baudtide-brandlockup {
   display: flex;
   align-items: center;
@@ -130,32 +102,6 @@
   margin: 0;
 }
 
-.baudtide-facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin-top: 3rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid rgba(126, 214, 231, 0.14);
-}
-
-.baudtide-facts span {
-  display: grid;
-  gap: 0.24rem;
-}
-
-.baudtide-facts strong {
-  color: rgba(241, 245, 255, 0.88);
-  font-size: 0.76rem;
-  font-weight: 600;
-}
-
-.baudtide-facts small {
-  color: rgba(241, 245, 255, 0.48);
-  font-size: 0.66rem;
-  line-height: 1.4;
-}
-
 .baudtide-hero-proof {
   position: relative;
   min-width: 0;
@@ -192,28 +138,6 @@
   border: 1px solid rgba(93, 226, 188, 0.22);
   border-radius: 50%;
   box-shadow: 0 0 0 1.1rem rgba(93, 226, 188, 0.04), 0 0 0 2.2rem rgba(93, 226, 188, 0.025);
-}
-
-.baudtide-proof-label {
-  position: relative;
-  z-index: 1;
-  padding: 0.2rem 0.15rem 0.9rem;
-}
-
-.baudtide-proof-label span:first-child {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.baudtide-proof-label i,
-.baudtide-stack-heading i {
-  display: inline-block;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 50%;
-  background: #5de2bc;
-  box-shadow: 0 0 12px rgba(93, 226, 188, 0.75);
 }
 
 .baudtide-screenshot-frame {
@@ -272,22 +196,6 @@
 .baudtide-open-source-points {
   display: grid;
   gap: 1.2rem;
-}
-
-.baudtide-open-source-points > div {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  column-gap: 0.8rem;
-  align-items: start;
-}
-
-.baudtide-open-source-points span {
-  grid-row: span 2;
-  color: #5de2bc;
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .baudtide-open-source-points strong {
@@ -409,7 +317,6 @@
   align-items: start;
 }
 
-.baudtide-evidence-card-wide .baudtide-proof-label,
 .baudtide-evidence-card-wide figcaption {
   grid-column: 1 / -1;
 }
@@ -442,19 +349,6 @@
     linear-gradient(145deg, rgba(93, 226, 188, 0.09), rgba(89, 247, 255, 0.04)),
     rgba(8, 16, 27, 0.86);
   box-shadow: var(--shadow-strong);
-}
-
-.baudtide-stack-heading {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(126, 214, 231, 0.14);
-}
-
-.baudtide-stack-heading span:last-child {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: #bfffee;
-  letter-spacing: 0.11em;
 }
 
 .baudtide-stack-grid {
@@ -582,7 +476,6 @@
     grid-template-columns: 1fr;
   }
 
-  .baudtide-evidence-card-wide .baudtide-proof-label,
   .baudtide-evidence-card-wide figcaption {
     grid-column: auto;
   }
@@ -616,18 +509,9 @@
     width: 100%;
   }
 
-  .baudtide-facts {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
   .baudtide-hero-proof {
     padding: 0.7rem;
     border-radius: 22px;
-  }
-
-  .baudtide-proof-label {
-    font-size: 0.58rem;
   }
 
   .baudtide-screenshot-frame {
@@ -742,20 +626,12 @@ body.baudtide-page::after {
 }
 
 .baudtide-hero-proof figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   margin: 0.85rem 0.15rem 0;
   color: rgba(241, 245, 255, 0.46);
   font-size: 0.66rem;
   letter-spacing: 0.1em;
   line-height: 1.45;
   text-transform: uppercase;
-}
-
-.baudtide-hero-proof figcaption span:last-child {
-  color: rgba(93, 226, 188, 0.72);
-  text-align: right;
 }
 
 .baudtide-feature-grid,
@@ -769,36 +645,8 @@ body.baudtide-page::after {
 }
 
 .baudtide-feature-row {
-  display: grid;
-  grid-template-columns: minmax(7rem, 0.24fr) minmax(0, 1fr) minmax(12rem, 0.52fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: start;
   padding: 1.55rem 0 1.7rem;
   border-bottom: 1px solid rgba(126, 214, 231, 0.14);
-}
-
-.baudtide-feature-meta {
-  display: grid;
-  gap: 0.42rem;
-  padding-top: 0.15rem;
-  color: #5de2bc;
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.baudtide-feature-meta span:first-child {
-  color: rgba(241, 245, 255, 0.82);
-  font-family: "Syne", "Space Grotesk", sans-serif;
-  font-size: 1.4rem;
-  letter-spacing: -0.04em;
-}
-
-.baudtide-feature-meta span:last-child {
-  color: rgba(93, 226, 188, 0.74);
-  font-size: 0.58rem;
 }
 
 .baudtide-feature-row h3 {
@@ -810,22 +658,12 @@ body.baudtide-page::after {
   line-height: 1.12;
 }
 
-.baudtide-feature-row > div:nth-child(2) p {
+.baudtide-feature-row > p {
   max-width: 54ch;
   margin-top: 0.65rem;
   color: rgba(241, 245, 255, 0.58);
   font-size: 0.9rem;
   line-height: 1.65;
-}
-
-.baudtide-feature-detail {
-  align-self: center;
-  margin: 0 !important;
-  padding-left: 1.25rem;
-  border-left: 1px solid rgba(93, 226, 188, 0.24);
-  color: rgba(241, 245, 255, 0.5);
-  font-size: 0.72rem;
-  line-height: 1.55;
 }
 
 .baudtide-proof-rail {
@@ -924,19 +762,6 @@ body.baudtide-page::after {
   max-width: 31ch;
 }
 
-.baudtide-proof-label {
-  justify-content: flex-start;
-  padding: 0;
-  color: rgba(93, 226, 188, 0.78);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-}
-
-.baudtide-proof-label i,
-.baudtide-stack-heading i {
-  display: none;
-}
-
 .baudtide-proof-copy h3 {
   margin-top: 1rem;
   color: #f4f8ff;
@@ -959,15 +784,6 @@ body.baudtide-page::after {
   border-radius: 0;
   background: none;
   box-shadow: none;
-}
-
-.baudtide-stack-heading {
-  padding-bottom: 1.1rem;
-  border-bottom: 1px solid rgba(126, 214, 231, 0.2);
-}
-
-.baudtide-stack-heading span:last-child {
-  color: rgba(93, 226, 188, 0.78);
 }
 
 .baudtide-stack-grid {
@@ -1024,16 +840,6 @@ body.baudtide-page::after {
     margin-top: 0;
   }
 
-  .baudtide-feature-row {
-    grid-template-columns: minmax(6rem, 0.25fr) minmax(0, 1fr);
-    gap: 1.5rem 2rem;
-  }
-
-  .baudtide-feature-detail {
-    grid-column: 2;
-    align-self: start;
-  }
-
   .baudtide-proof-row,
   .baudtide-proof-row-reverse {
     grid-template-columns: minmax(0, 1fr);
@@ -1061,36 +867,8 @@ body.baudtide-page::after {
     border-radius: 14px;
   }
 
-  .baudtide-hero-proof figcaption {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .baudtide-hero-proof figcaption span:last-child {
-    text-align: left;
-  }
-
   .baudtide-feature-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
     padding: 1.35rem 0 1.5rem;
-  }
-
-  .baudtide-feature-meta {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-  }
-
-  .baudtide-feature-meta span:first-child {
-    font-size: 1.15rem;
-  }
-
-  .baudtide-feature-detail {
-    grid-column: auto;
-    padding-top: 0.1rem;
-    padding-left: 0.9rem;
   }
 
   .baudtide-proof-media {
@@ -1565,12 +1343,6 @@ html[data-theme="light"] .baudtide-section {
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(237, 245, 251, 0.92));
 }
 
-html[data-theme="light"] .baudtide-eyebrow,
-html[data-theme="light"] .baudtide-proof-label,
-html[data-theme="light"] .baudtide-stack-heading {
-  color: rgba(16, 42, 63, 0.58);
-}
-
 html[data-theme="light"] .baudtide-mark,
 html[data-theme="light"] .baudtide-cta-mark {
   border-color: rgba(5, 143, 166, 0.25);
@@ -1594,47 +1366,28 @@ html[data-theme="light"] .baudtide-cta .section-title {
 
 html[data-theme="light"] .baudtide-lede,
 html[data-theme="light"] .baudtide-open-source .section-summary,
-html[data-theme="light"] .baudtide-facts small,
-html[data-theme="light"] .baudtide-feature-row > div:nth-child(2) p,
-html[data-theme="light"] .baudtide-feature-detail,
+html[data-theme="light"] .baudtide-feature-row > p,
 html[data-theme="light"] .baudtide-proof-copy p,
 html[data-theme="light"] .baudtide-cta .section-summary {
   color: rgba(16, 42, 63, 0.68);
 }
 
-html[data-theme="light"] .baudtide-facts,
 html[data-theme="light"] .baudtide-feature-list,
 html[data-theme="light"] .baudtide-proof-rail,
-html[data-theme="light"] .baudtide-stack-heading,
 html[data-theme="light"] .baudtide-stack-grid div,
 html[data-theme="light"] .baudtide-cta {
   border-color: rgba(18, 64, 94, 0.14);
 }
 
-html[data-theme="light"] .baudtide-facts strong,
-html[data-theme="light"] .baudtide-feature-meta span:first-child,
 html[data-theme="light"] .baudtide-stack-grid strong,
 html[data-theme="light"] .baudtide-evidence-card figcaption strong {
   color: rgba(16, 42, 63, 0.86);
 }
 
-html[data-theme="light"] .baudtide-feature-meta,
-html[data-theme="light"] .baudtide-feature-meta span:last-child,
-html[data-theme="light"] .baudtide-proof-label,
-html[data-theme="light"] .baudtide-stack-heading span:last-child,
-html[data-theme="light"] .baudtide-hero-proof figcaption span:last-child {
-  color: #058fa6;
-}
-
-html[data-theme="light"] .baudtide-proof-copy .baudtide-proof-label,
 html[data-theme="light"] .baudtide-hero-proof figcaption,
 html[data-theme="light"] .baudtide-evidence-card figcaption,
 html[data-theme="light"] .baudtide-stack-grid span {
   color: rgba(16, 42, 63, 0.56);
-}
-
-html[data-theme="light"] .baudtide-feature-detail {
-  border-left-color: rgba(5, 143, 166, 0.28);
 }
 
 html[data-theme="light"] .baudtide-proof-media {

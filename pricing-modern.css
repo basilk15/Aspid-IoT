@@ -27,14 +27,6 @@ html[data-theme="light"] .pricing-page {
 
 .pricing-shell { width: min(1200px, calc(100% - 3rem)); }
 .pricing-section { padding-block: clamp(4rem, 7vw, 6rem); }
-.pricing-eyebrow {
-  color: var(--pricing-accent);
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.4;
-  text-transform: none;
-}
 
 /* The introductory copy uses one axis, so it cannot drift against the estimate. */
 .pricing-hero {
@@ -273,7 +265,6 @@ html[data-theme="light"] .pricing-page {
   margin-inline: auto;
   text-align: center;
 }
-.pricing-products-heading .pricing-eyebrow { justify-content: center; }
 .pricing-products-heading h2 {
   max-width: none;
   font-size: clamp(2.45rem, 4vw, 3.8rem);
@@ -399,12 +390,6 @@ html[data-theme="light"] .pricing-product-secure:hover { background: transparent
   flex-direction: column;
   align-items: stretch;
   min-width: 0;
-}
-.product-panel-index,
-.pricing-product-tunnel .product-panel-index {
-  color: var(--pricing-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
 }
 .product-panel-copy h3 {
   margin-top: 0.25rem !important;
@@ -657,11 +642,6 @@ html[data-theme="light"] .pricing-product-secure:hover { background: transparent
 .pricing-product-panel .product-panel-copy {
   width: 100%;
   align-items: center;
-  text-align: center;
-}
-
-.pricing-product-panel .product-panel-index {
-  justify-content: center;
   text-align: center;
 }
 

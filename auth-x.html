@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=performance-3" />
+    <link rel="stylesheet" href="styles.css?v=performance-5" />
     <link rel="stylesheet" href="auth-x-primitives.css?v=session-2" />
-    <link rel="stylesheet" href="theme.css?v=16" />
-    <link rel="stylesheet" href="design-taste.css?v=18" />
+    <link rel="stylesheet" href="theme.css?v=17" />
+    <link rel="stylesheet" href="design-taste.css?v=20" />
     <link rel="stylesheet" href="auth-x-hero.css?v=6" />
     <link rel="preload" as="image" type="image/webp" href="assets/auth-x/auth-x-hero-800.webp" media="(max-width: 600px)" fetchpriority="high" />
     <link rel="preload" as="image" type="image/webp" href="assets/auth-x/auth-x-hero.webp" media="(width > 600px)" fetchpriority="high" />
@@ -73,7 +73,6 @@
             </button>
 
             <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
-              <p class="product-menu-kicker">Product families</p>
               <div class="product-menu-list" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
@@ -265,10 +264,6 @@
                 <img src="assets/auth-x-logos/auth-x-mark-v3.webp" alt="" width="80" height="80" decoding="async" />
                 <span>Auth-X</span>
               </div>
-              <div class="auth-x-eyebrow">
-                <span class="auth-x-eyebrow-line"></span>
-                <span>Product / Auth-X</span>
-              </div>
               <h1 class="auth-x-title">Trust every device before it earns a session.</h1>
               <p class="auth-x-lede">
                 Auth-X is a lightweight identity layer for IoT systems that need reliable trust
@@ -283,7 +278,6 @@
 
           <div class="auth-x-flow-section" id="auth-x-flow">
             <div class="auth-x-section-heading reveal">
-              <p class="section-kicker">Authentication flow</p>
               <h2 class="section-title">Four stages from device identity to a live secure session.</h2>
               <p class="section-summary">
                 This is the implemented sequence: the device identifies itself, receives a fresh
@@ -293,26 +287,18 @@
 
             <div class="auth-x-flow-grid">
               <article class="auth-x-flow-card reveal">
-                <span class="auth-x-flow-index">01</span>
-                <span class="auth-x-flow-chip">Identity</span>
                 <h3>Start with device proof</h3>
                 <p>The device opens with its identity, a fresh nonce, and an integrity check.</p>
               </article>
               <article class="auth-x-flow-card reveal" data-delay="80">
-                <span class="auth-x-flow-index">02</span>
-                <span class="auth-x-flow-chip">Challenge</span>
                 <h3>Receive a fresh challenge</h3>
                 <p>The verifier returns a session-specific challenge before any trust decision is made.</p>
               </article>
               <article class="auth-x-flow-card reveal" data-delay="160">
-                <span class="auth-x-flow-index">03</span>
-                <span class="auth-x-flow-chip">Proof</span>
                 <h3>Prove the session</h3>
                 <p>The device answers with a challenge-bound proof; identity, freshness, and integrity are checked together.</p>
               </article>
               <article class="auth-x-flow-card reveal" data-delay="240">
-                <span class="auth-x-flow-index">04</span>
-                <span class="auth-x-flow-chip">Confirmation</span>
                 <h3>Confirm and install</h3>
                 <p>Both sides confirm the session context, then the protected device session is installed.</p>
               </article>
@@ -365,7 +351,6 @@
 
           <div class="auth-x-properties-section">
             <div class="auth-x-section-heading reveal">
-              <p class="section-kicker">Security properties</p>
               <h2 class="section-title">Guardrails around every trust decision.</h2>
               <p class="section-summary">
                 These are properties of the authentication flow above. They are not additional handshake steps.
@@ -374,17 +359,14 @@
 
             <div class="auth-x-feature-grid">
               <article class="auth-x-feature-card reveal">
-                <span class="auth-x-feature-mark">BOUND</span>
                 <h3>Device-specific trust</h3>
                 <p>Separate device identities let the verifier make an intentional decision for every endpoint.</p>
               </article>
               <article class="auth-x-feature-card reveal" data-delay="80">
-                <span class="auth-x-feature-mark">FRESH</span>
                 <h3>Replay-aware by design</h3>
                 <p>Fresh challenge material keeps old proofs from becoming new permissions.</p>
               </article>
               <article class="auth-x-feature-card reveal" data-delay="160">
-                <span class="auth-x-feature-mark">STOP</span>
                 <h3>Fail-closed handoff</h3>
                 <p>Invalid, stale, or mismatched proofs stop the flow before a trusted session is installed.</p>
               </article>
@@ -394,7 +376,6 @@
           <div class="auth-x-benchmark-panel" id="auth-x-benchmarks">
             <div class="auth-x-benchmark-heading reveal">
               <div>
-                <p class="section-kicker">Observed lab evidence</p>
                 <h2 class="section-title">Proof you can put next to the promise.</h2>
                 <p class="section-summary">
                   Results below come from the recorded 16 April EDS-3 server run and are shown as
@@ -425,7 +406,6 @@
               <figure class="auth-x-chart auth-x-timing-chart reveal" data-delay="140">
                 <div class="auth-x-chart-heading">
                   <div>
-                    <span class="auth-x-chart-kicker">Timing comparison</span>
                     <h3>Authentication stays lightweight before session unlock.</h3>
                   </div>
                   <span class="auth-x-chart-scale">same scale · 0-500 ms</span>
@@ -454,7 +434,6 @@
               <figure class="auth-x-chart auth-x-range-chart reveal" data-delay="220">
                 <div class="auth-x-chart-heading">
                   <div>
-                    <span class="auth-x-chart-kicker">Latency spread</span>
                     <h3>The full observed authentication band.</h3>
                   </div>
                   <span class="auth-x-chart-scale">observed runs · 0-300 ms</span>
@@ -484,7 +463,6 @@
 
           <div class="auth-x-product-footer reveal">
             <div>
-              <span class="auth-x-product-footer-kicker">AspidIoT / Auth-X</span>
               <strong>Start with identity. Scale into secure sessions.</strong>
             </div>
             <a class="button-link button-link-primary" href="contact.html">Talk to AspidIoT</a>
@@ -514,7 +492,6 @@
       </div>
       <div class="site-footer-meta">
         <p>© 2026 AspidIoT. All rights reserved.</p>
-        <span>Secure-by-design · IoT at the edge</span>
       </div>
     </footer>
 

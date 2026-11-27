@@ -280,7 +280,6 @@ html[data-theme="light"] .theme-toggle-thumb {
   gap: 1.2rem;
 }
 
-.section-kicker,
 .mega-menu-kicker,
 .product-showcase-family-label {
   letter-spacing: 0.2em;
@@ -695,15 +694,6 @@ html[data-theme="light"] .site-footer {
   border-radius: 20px;
 }
 
-.product-menu-kicker {
-  padding: 0.35rem 0.45rem 0.7rem;
-  color: rgba(237, 247, 255, 0.56);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 .product-menu-list {
   display: grid;
   gap: 0.45rem;
@@ -1097,11 +1087,6 @@ main::before {
   text-align: left;
 }
 
-.final .contact-panel .section-kicker {
-  grid-column: 1 / -1;
-  margin-bottom: 1.35rem;
-}
-
 .final .contact-title {
   grid-column: 1;
   max-width: 16ch;
@@ -1135,22 +1120,11 @@ main::before {
 
 /* Product menu: one outer surface, with flat family rows inside it. */
 .product-menu {
-  width: min(28rem, calc(100vw - 1.5rem));
-  max-width: calc(100vw - 1.5rem);
   padding: 1rem 1.05rem 1.05rem;
   border: 1px solid var(--taste-line);
   border-radius: 14px;
   background: var(--taste-surface-strong);
   box-shadow: 0 24px 54px rgba(2, 10, 20, 0.32);
-}
-
-.product-menu-kicker {
-  padding: 0.15rem 0 0.8rem;
-  color: var(--taste-accent);
-  font-size: 0.64rem;
-  font-weight: 650;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .product-menu-list {
@@ -1440,46 +1414,17 @@ main::before {
   padding: 0.7rem 0 0;
 }
 
-.services-domains-page .services-domain-overline,
-.services-domains-page .services-domain-card:nth-child(2) .services-domain-overline,
-.services-domains-page .services-domain-card:nth-child(3) .services-domain-overline,
-.services-domains-page .services-domain-card:nth-child(4) .services-domain-overline {
-  color: var(--taste-accent);
-}
-
 .services-domains-page .services-domain-body h3 {
   max-width: 17ch;
-  margin-top: 0.8rem;
   font-size: clamp(1.7rem, 3vw, 2.8rem);
   line-height: 1;
 }
 
-.services-domains-page .services-domain-body > p:not(.services-domain-overline) {
+.services-domains-page .services-domain-body > p {
   max-width: 46ch;
   margin-top: 1rem;
   color: var(--taste-muted);
   line-height: 1.65;
-}
-
-.services-domains-page .services-domain-tags {
-  gap: 0;
-  margin-top: auto;
-  padding-top: 1.6rem;
-}
-
-.services-domains-page .services-domain-tags li {
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  color: var(--taste-muted);
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-}
-
-.services-domains-page .services-domain-tags li + li::before {
-  margin: 0 0.45rem;
-  color: var(--taste-accent);
-  content: "/";
 }
 
 /* Common principles: one continuous rail with three readable stops. */
@@ -1602,10 +1547,6 @@ main::before {
   .final .contact-panel {
     display: block;
     padding: 1.55rem 0 1.8rem;
-  }
-
-  .final .contact-panel .section-kicker {
-    margin-bottom: 1.15rem;
   }
 
   .final .contact-title {
@@ -1839,11 +1780,6 @@ html[data-theme="light"] .services-domains-page .services-domain-card:hover {
   background:
     linear-gradient(90deg, rgba(3, 9, 17, 0.98) 0%, rgba(3, 9, 17, 0.88) 25%, rgba(3, 9, 17, 0.48) 58%, rgba(3, 9, 17, 0.24) 100%),
     linear-gradient(180deg, rgba(3, 9, 17, 0.28) 0%, rgba(3, 9, 17, 0.08) 46%, rgba(3, 9, 17, 0.9) 100%);
-}
-
-.services-domains-page .services-domains-proof {
-  position: relative;
-  z-index: 3;
 }
 
 @media (max-width: 760px) {

@@ -79,18 +79,6 @@ html[data-theme="light"] .pricing-page {
   padding-block: clamp(5rem, 9vw, 8rem);
 }
 
-.pricing-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: var(--pricing-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
 .pricing-signal {
   width: 0.5rem;
   height: 0.5rem;
@@ -736,19 +724,6 @@ html[data-theme="light"] .pricing-page {
   min-width: 0;
 }
 
-.product-panel-index {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--pricing-faint);
-  font-size: 0.82rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.product-panel-index span {
-  color: var(--pricing-muted);
-}
-
 .product-panel-copy h3 {
   margin-top: 0.7rem !important;
   font-family: "Syne", "Space Grotesk", sans-serif;
@@ -915,11 +890,6 @@ html[data-theme="light"] .pricing-enterprise {
   line-height: 1.7;
 }
 
-.pricing-enterprise-scope span {
-  padding-inline: 0.15rem;
-  color: var(--pricing-violet);
-}
-
 .pricing-button-outline {
   border-color: var(--pricing-line-strong);
   color: var(--pricing-ink);
@@ -956,10 +926,6 @@ html[data-theme="light"] .pricing-enterprise {
   z-index: 1;
 }
 
-.pilot-price-block .pricing-eyebrow {
-  color: var(--pricing-accent);
-}
-
 .pilot-price-block h2 {
   margin-top: 0.85rem !important;
   font-family: "Syne", "Space Grotesk", sans-serif;
@@ -974,10 +940,6 @@ html[data-theme="light"] .pricing-enterprise {
   margin-top: 1rem !important;
   color: var(--pricing-muted);
   font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-}
-
-.pilot-price-block > p:last-child span {
-  color: var(--pricing-violet);
 }
 
 .pilot-copy-block {
@@ -1151,7 +1113,7 @@ html[data-theme="light"] .pricing-enterprise {
 
 .pricing-disclosure summary {
   display: grid;
-  grid-template-columns: 1fr auto 1.7rem;
+  grid-template-columns: minmax(0, 1fr) 1.7rem;
   align-items: center;
   gap: 1.5rem;
   min-height: 5.4rem;
@@ -1165,12 +1127,6 @@ html[data-theme="light"] .pricing-enterprise {
 .pricing-disclosure summary::-webkit-details-marker,
 .pricing-faq-list summary::-webkit-details-marker {
   display: none;
-}
-
-.disclosure-meta {
-  color: var(--pricing-muted);
-  font-size: 0.9rem;
-  font-weight: 400;
 }
 
 .pricing-disclosure summary i,
@@ -1548,11 +1504,6 @@ html[data-theme="light"] .pricing-pilot-callout {
     font-size: 2.45rem;
   }
 
-  .product-panel-index {
-    flex-wrap: wrap;
-    gap: 0.35rem 0.6rem;
-  }
-
   .product-panel-description {
     min-height: 0;
     margin-top: 0.65rem !important;
@@ -1568,7 +1519,6 @@ html[data-theme="light"] .pricing-pilot-callout {
     display: contents;
   }
 
-  .product-panel-index,
   .product-panel-copy h3,
   .product-panel-description {
     grid-column: 2;
@@ -1654,10 +1604,6 @@ html[data-theme="light"] .pricing-pilot-callout {
     min-height: 4.7rem;
   }
 
-  .disclosure-meta {
-    display: none;
-  }
-
   .pricing-table-scroll {
     margin-inline: -0.35rem;
   }
@@ -1722,10 +1668,6 @@ html[data-theme="light"] .pricing-pilot-callout {
     width: 6.5rem;
   }
 
-  .product-panel-index {
-    font-size: 0.8rem;
-  }
-
   .product-panel-description {
     font-size: 0.95rem;
   }
@@ -1767,11 +1709,6 @@ html[data-theme="light"] .pricing-pilot-callout {
   letter-spacing: -0.055em;
 }
 
-.pricing-eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.085em;
-}
-
 .pricing-lede {
   max-width: 47ch;
   font-size: clamp(1.08rem, 1.45vw, 1.22rem);
@@ -1808,14 +1745,6 @@ html[data-theme="light"] .pricing-pilot-callout {
   font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.5;
-}
-
-.product-panel-index {
-  display: block;
-  color: var(--pricing-accent);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
 }
 
 .product-panel-copy h3 {
@@ -1960,7 +1889,6 @@ html[data-theme="light"] .pricing-page {
   align-items: start;
   max-width: none;
 }
-.pricing-intro .pricing-eyebrow { grid-column: 1 / -1; }
 .pricing-intro h1 {
   grid-column: 1;
   grid-row: 2 / span 3;
@@ -2109,12 +2037,11 @@ html[data-theme="light"] .pricing-page {
   grid-template-columns: minmax(0, 1fr) minmax(270px, 0.9fr);
   gap: 0 clamp(2rem, 5vw, 5rem);
 }
-.product-panel-index { grid-column: 1; grid-row: 1; }
-.product-panel-copy h3 { grid-column: 1; grid-row: 2; }
-.product-panel-description { grid-column: 1; grid-row: 3; min-height: 0; }
+.product-panel-copy h3 { grid-column: 1; grid-row: 1; }
+.product-panel-description { grid-column: 1; grid-row: 2; min-height: 0; }
 .product-base-prices {
   grid-column: 2;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
   align-self: center;
   margin: 0;
 }
@@ -2169,7 +2096,6 @@ html[data-theme="light"] .pricing-page {
   .pricing-product-auth,
   .pricing-product-secure { grid-template-columns: 3.5rem minmax(0, 1fr); column-gap: 1rem; }
   .pricing-product-panel .product-panel-copy { display: grid; grid-column: 2; grid-row: 1; }
-  .product-panel-index,
   .product-panel-copy h3,
   .product-panel-description { grid-column: 1; }
   .product-panel-mark { grid-row: 1; width: 3.4rem; height: 3.4rem; }
@@ -2212,7 +2138,6 @@ html[data-theme="light"] .pricing-page {
 .pricing-relationship strong { font-weight: 700; }
 .pricing-target-status { margin-top: clamp(1.8rem, 3vw, 3rem) !important; }
 .pricing-product-panels { margin-top: 1.15rem; }
-.pricing-product-tunnel .product-panel-index { color: var(--pricing-muted); }
 .product-mark-tunnel img {
   width: 100%;
   height: 100%;

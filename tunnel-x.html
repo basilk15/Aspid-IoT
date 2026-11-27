@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&amp;family=Syne:wght@600;700&amp;display=swap" />
-    <link rel="stylesheet" href="styles.css?v=performance-3" />
-    <link rel="stylesheet" href="theme.css?v=16" />
-    <link rel="stylesheet" href="design-taste.css?v=18" />
-    <link rel="stylesheet" href="tunnel-x-product.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=performance-5" />
+    <link rel="stylesheet" href="theme.css?v=17" />
+    <link rel="stylesheet" href="design-taste.css?v=20" />
+    <link rel="stylesheet" href="tunnel-x-product.css?v=13" />
     <link rel="preload" as="image" type="image/webp" href="assets/tunnel-x/tunnel-x-hero-800.webp" media="(max-width: 767px)" fetchpriority="high" />
     <link rel="preload" as="image" type="image/webp" href="assets/tunnel-x/tunnel-x-hero.webp" media="(width > 767px)" fetchpriority="high" />
   </head>
@@ -72,7 +72,6 @@
             </button>
 
             <div class="mega-menu product-menu" id="products-menu" data-dropdown-panel>
-              <p class="product-menu-kicker">Product families</p>
               <div class="product-menu-list" data-product-family-list>
                 <section class="product-menu-family" data-product-family>
                   <button class="product-menu-family-toggle" type="button" aria-expanded="false" aria-controls="secure-x-products" data-product-family-toggle>
@@ -294,7 +293,6 @@
         <div class="tx-shell">
           <div class="tx-encryption-intro reveal">
             <div>
-              <span class="tx-eyebrow">The protected path</span>
               <h2 id="tx-encryption-title">Readable here. <span>Protected in between.</span></h2>
             </div>
             <p>A sensor reading is encrypted on the device, travels as a protected frame, then is authenticated, decrypted, and processed at the sink.</p>
@@ -311,7 +309,7 @@
 
               <div class="tx-film-stage" aria-hidden="true">
                 <div class="tx-film-readout tx-film-device">
-                  <span class="tx-film-kicker">01 / Edge device</span>
+                  <span class="tx-film-kicker">Edge device</span>
                   <span class="tx-film-label">Sensor reading</span>
                   <strong class="tx-film-temperature"><span data-tx-device-temp>24.6</span><small>°C</small></strong>
                   <span class="tx-film-humidity">Humidity <b><span data-tx-device-humidity>48</span>%</b></span>
@@ -328,7 +326,7 @@
                 </div>
 
                 <div class="tx-film-readout tx-film-sink">
-                  <span class="tx-film-kicker">02 / Receiving sink</span>
+                  <span class="tx-film-kicker">Receiving sink</span>
                   <span class="tx-film-sink-mark" aria-hidden="true">✓</span>
                   <strong class="tx-film-sink-heading" data-tx-sink-heading>Waiting</strong>
                   <span class="tx-film-sink-reading"><span data-tx-sink-temp>—</span> °C <i>·</i> <span data-tx-sink-humidity>—</span>% RH</span>
@@ -360,18 +358,15 @@
                 <img src="assets/tunnel-x/tunnel-x-mark-v4.webp" alt="" width="480" height="480" loading="lazy" decoding="async" />
               </div>
               <div class="tx-feature-copy">
-                <span class="tx-feature-index">01</span>
                 <h3>Private before it leaves the device.</h3>
                 <p>Telemetry is encrypted at the edge, so the data moving across the link is protected from the start.</p>
               </div>
             </article>
             <article class="tx-feature tx-feature-verify reveal" data-delay="80">
-              <span class="tx-feature-index">02</span>
               <h3>Verified before it is used.</h3>
               <p>The receiving sink checks the session, order, and integrity of each protected frame before decoding its contents.</p>
             </article>
             <article class="tx-feature tx-feature-rekey reveal" data-delay="160">
-              <span class="tx-feature-index">03</span>
               <h3>Fresh keys, steady connection.</h3>
               <p>In-band rekeying renews the protected session while the existing TCP connection stays in place.</p>
             </article>
@@ -426,7 +421,6 @@
       </div>
       <div class="site-footer-meta">
         <p>© 2026 AspidIoT. All rights reserved.</p>
-        <span>Secure-by-design · IoT at the edge</span>
       </div>
     </footer>
 
